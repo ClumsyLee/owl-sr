@@ -24,12 +24,11 @@ class Predictor(object):
     def __init__(self) -> None:
         super().__init__()
 
-    def train(self, teams: Tuple[Team, Team],
-              rosters: Tuple[Roster, Roster],
-              score: Tuple[int, int],
-              drawable: bool) -> float:
-        """Given a game result, train the underlying model.
-        Return the prediction point for this game before training."""
+    def _train(self, teams: Tuple[Team, Team],
+               rosters: Tuple[Roster, Roster],
+               score: Tuple[int, int],
+               drawable: bool) -> None:
+        """Given a game result, train the underlying model."""
         raise NotImplementedError
 
     def predict(self, teams: Tuple[Team, Team],
@@ -37,6 +36,16 @@ class Predictor(object):
                 drawable: bool=False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         raise NotImplementedError
+
+    def train(self, teams: Tuple[Team, Team],
+              rosters: Tuple[Roster, Roster],
+              score: Tuple[int, int],
+              drawable: bool) -> float:
+        """Given a game result, train the underlying model.
+        Return the prediction point for this game before training."""
+        point = self.evaluate(teams, rosters, score)
+        self._train(teams, rosters, score, drawable=drawable)
+        return point
 
     def evaluate(self, teams: Tuple[Team, Team],
                  rosters: Tuple[Roster, Roster],
@@ -142,12 +151,70 @@ class Predictor(object):
         return p_scores
 
 
+class SimplePredictor(Predictor):
+    """A simple predictor based on map differentials."""
+
+    def __init__(self):
+        super().__init__()
+
+        self.wins = defaultdict(int)
+        self.records = defaultdict(int)
+
+    def _train(self, teams: Tuple[Team, Team],
+               rosters: Tuple[Roster, Roster],
+               score: Tuple[int, int],
+               drawable: bool):
+        """Given a game result, train the underlying model.
+        Return the prediction point for this game before training."""
+        team1, team2 = teams
+        score1, score2 = score
+
+        if score1 > score2:
+            # Team 1 wins.
+            self.wins[team1] += 1
+            self.wins[team2] -= 1
+            self.records[(team1, team2)] += 1
+            self.records[(team2, team1)] -= 1
+        elif score1 == score2:
+            # Draw.
+            pass
+        else:
+            # Team 2 wins.
+            self.wins[team2] += 1
+            self.wins[team1] -= 1
+            self.records[(team2, team1)] += 1
+            self.records[(team1, team2)] -= 1
+
+    def predict(self, teams: Tuple[Team, Team],
+                rosters: Tuple[Roster, Roster],
+                drawable: bool=False) -> Tuple[float, float]:
+        """Given two teams, return win/draw probabilities of them."""
+        team1, team2 = teams
+        wins1 = self.wins[team1]
+        wins2 = self.wins[team2]
+
+        if wins1 > wins2:
+            p_win = 0.7
+        elif wins1 == wins2:
+            record = self.records[teams]
+            if record > 0:
+                p_win = 0.6
+            elif record == 0:
+                p_win = 0.5
+            else:
+                p_win = 0.4
+        else:
+            p_win = 0.25
+
+        return p_win, 0.0
+
+
 class TrueSkillPredictor(Predictor):
     """TrueSkill predictor."""
 
     def __init__(self, mu: float=2500.0, sigma: float=2500.0 / 3.0,
                  beta: float=2500.0 / 6.0, tau: float=25.0 / 3.0,
-                 draw_probability: float=0.03) -> None:
+                 draw_probability: float=0.02) -> None:
         super().__init__()
 
         self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
@@ -156,14 +223,12 @@ class TrueSkillPredictor(Predictor):
                                         draw_probability=0.0)
         self.ratings = defaultdict(lambda: self.env_drawable.create_rating())
 
-    def train(self, teams: Tuple[Team, Team],
-              rosters: Tuple[Roster, Roster],
-              score: Tuple[int, int],
-              drawable: bool) -> float:
+    def _train(self, teams: Tuple[Team, Team],
+               rosters: Tuple[Roster, Roster],
+               score: Tuple[int, int],
+               drawable: bool) -> None:
         """Given a game result, train the underlying model.
         Return the prediction point for this game before training."""
-        point = self.evaluate(teams, rosters, score)
-
         score1, score2 = score
         if score1 > score2:
             ranks = [0, 1]  # Team 1 wins.
@@ -175,8 +240,6 @@ class TrueSkillPredictor(Predictor):
         env = self.env_drawable if drawable else self.env_undrawable
         rosters_ratings = env.rate(self._rosters_ratings(rosters), ranks=ranks)
         self._update_rosters_ratings(rosters, rosters_ratings)
-
-        return point
 
     def predict(self, teams: Tuple[Team, Team],
                 rosters: Tuple[Roster, Roster],
@@ -212,6 +275,7 @@ class TrueSkillPredictor(Predictor):
 
 
 if __name__ == '__main__':
-    predictor = TrueSkillPredictor()
-    print(predictor.train_all('owl.csv'))
-    print(predictor.ratings)
+    simple_predictor = SimplePredictor()
+    trueskill_predictor = TrueSkillPredictor()
+    print(simple_predictor.train_all('owl.csv'))
+    print(trueskill_predictor.train_all('owl.csv'))
