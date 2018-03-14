@@ -242,8 +242,9 @@ class TrueSkillPredictor(Predictor):
             ranks = [1, 0]  # Team 2 wins.
 
         env = self.env_drawable if drawable else self.env_undrawable
-        rosters_ratings = env.rate(self._rosters_ratings(rosters), ranks=ranks)
-        self._update_rosters_ratings(rosters, rosters_ratings)
+        teams_ratings = env.rate(self._teams_ratings(teams, rosters),
+                                 ranks=ranks)
+        self._update_teams_ratings(teams, rosters, teams_ratings)
 
     def predict(self, teams: Tuple[Team, Team],
                 rosters: Tuple[Roster, Roster],
@@ -251,31 +252,48 @@ class TrueSkillPredictor(Predictor):
         """Given two teams, return win/draw probabilities of them."""
         env = self.env_drawable if drawable else self.env_undrawable
 
-        team1_ratings, team2_ratings = self._rosters_ratings(rosters)
+        team1_ratings, team2_ratings = self._teams_ratings(teams, rosters)
+        size = len(team1_ratings) + len(team2_ratings)
 
         delta_mu = (sum(r.mu for r in team1_ratings) -
                     sum(r.mu for r in team2_ratings))
-        draw_margin = calc_draw_margin(env.draw_probability, 12)
+        draw_margin = calc_draw_margin(env.draw_probability, size)
         sum_sigma = sum(r.sigma**2 for r in chain(team1_ratings,
                                                   team2_ratings))
-        denom = sqrt(12 * env.beta**2 + sum_sigma)
+        denom = sqrt(size * env.beta**2 + sum_sigma)
 
         p_win = env.cdf((delta_mu - draw_margin) / denom)
         p_not_loss = env.cdf((delta_mu + draw_margin) / denom)
 
         return p_win, p_not_loss - p_win
 
-    def _rosters_ratings(self, rosters: Tuple[Roster, Roster]):
-        roster1, roster2 = rosters
-        roster1_ratings = [self.ratings[name] for name in roster1]
-        roster2_ratings = [self.ratings[name] for name in roster2]
-        return roster1_ratings, roster2_ratings
+    def _teams_ratings(self, teams: Tuple[Team, Team],
+                       rosters: Tuple[Roster, Roster]):
+        return [self._team_ratings(team, roster)
+                for team, roster in zip(teams, rosters)]
 
-    def _update_rosters_ratings(self, rosters: Tuple[Roster, Roster],
-                                rosters_ratings):
-        for roster, ratings in zip(rosters, rosters_ratings):
-            for name, rating in zip(roster, ratings):
-                self.ratings[name] = rating
+    def _update_teams_ratings(self, teams: Tuple[Team, Team],
+                              rosters: Tuple[Roster, Roster],
+                              teams_ratings):
+        for team, roster, ratings in zip(teams, rosters, teams_ratings):
+            self._update_team_ratings(team, roster, ratings)
+
+    def _team_ratings(self, team: Team, roster: Roster):
+        return [self.ratings[name] for name in roster]
+
+    def _update_team_ratings(self, team: Team, roster: Roster, team_ratings):
+        for name, rating in zip(roster, team_ratings):
+            self.ratings[name] = rating
+
+
+class TeamTrueSkillPredictor(TrueSkillPredictor):
+    """Team-based TrueSkill predictor."""
+
+    def _team_ratings(self, team: Team, roster: Roster):
+        return [self.ratings[team]]
+
+    def _update_team_ratings(self, team: Team, roster: Roster, team_ratings):
+        self.ratings[team] = team_ratings[0]
 
 
 if __name__ == '__main__':
