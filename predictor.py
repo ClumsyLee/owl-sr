@@ -5,6 +5,7 @@ from itertools import chain
 from math import sqrt
 from typing import Dict, List, Tuple
 
+# from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
@@ -154,8 +155,11 @@ class Predictor(object):
 class SimplePredictor(Predictor):
     """A simple predictor based on map differentials."""
 
-    def __init__(self):
+    def __init__(self, alpha=0.2, beta=0.0):
         super().__init__()
+
+        self.alpha = alpha
+        self.beta = beta
 
         self.wins = defaultdict(int)
         self.records = defaultdict(int)
@@ -194,17 +198,17 @@ class SimplePredictor(Predictor):
         wins2 = self.wins[team2]
 
         if wins1 > wins2:
-            p_win = 0.7
+            p_win = 0.5 + self.alpha
         elif wins1 == wins2:
             record = self.records[teams]
             if record > 0:
-                p_win = 0.6
+                p_win = 0.5 + self.beta
             elif record == 0:
                 p_win = 0.5
             else:
-                p_win = 0.4
+                p_win = 0.5 - self.beta
         else:
-            p_win = 0.25
+            p_win = 0.5 - self.alpha
 
         return p_win, 0.0
 
@@ -213,8 +217,8 @@ class TrueSkillPredictor(Predictor):
     """TrueSkill predictor."""
 
     def __init__(self, mu: float=2500.0, sigma: float=2500.0 / 3.0,
-                 beta: float=2500.0 / 6.0, tau: float=25.0 / 3.0,
-                 draw_probability: float=0.02) -> None:
+                 beta: float=2500.0 / 6.0 * 3.7, tau: float=25.0 / 3.0,
+                 draw_probability: float=0.6) -> None:
         super().__init__()
 
         self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
