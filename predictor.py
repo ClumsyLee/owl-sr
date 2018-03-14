@@ -218,7 +218,7 @@ class TrueSkillPredictor(Predictor):
 
     def __init__(self, mu: float=2500.0, sigma: float=2500.0 / 3.0,
                  beta: float=2500.0 / 6.0 * 3.7, tau: float=25.0 / 3.0,
-                 draw_probability: float=0.6) -> None:
+                 draw_probability: float=0.06) -> None:
         super().__init__()
 
         self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
@@ -257,7 +257,7 @@ class TrueSkillPredictor(Predictor):
 
         delta_mu = (sum(r.mu for r in team1_ratings) -
                     sum(r.mu for r in team2_ratings))
-        draw_margin = calc_draw_margin(env.draw_probability, size)
+        draw_margin = calc_draw_margin(env.draw_probability, size, env=env)
         sum_sigma = sum(r.sigma**2 for r in chain(team1_ratings,
                                                   team2_ratings))
         denom = sqrt(size * env.beta**2 + sum_sigma)
