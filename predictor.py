@@ -28,6 +28,8 @@ class Predictor(object):
         self.expected_draws = 0.0
         self.real_draws = 0.0
 
+        self.points = []
+
     def _train(self, teams: Tuple[Team, Team],
                rosters: Tuple[Roster, Roster],
                score: Tuple[int, int],
@@ -55,7 +57,9 @@ class Predictor(object):
             self.real_draws += 1.0
 
         point = self.evaluate(teams, rosters, score)
+        self.points.append(point)
         self._train(teams, rosters, score, drawable=drawable)
+
         return point
 
     def evaluate(self, teams: Tuple[Team, Team],
