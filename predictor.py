@@ -4,16 +4,14 @@ from enum import Enum
 from typing import Dict, List, Tuple, Union
 
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
-Map = Enum('Map', 'DORADO GIBRALTAR JUNKERTOWN ROUTE ' +
-                  'HANAMURA HORIZON TEMPLE VOLSKAYA ' +
-                  'ILIOS LIJIANG NEPAL OASIS ' +
-                  'EICHENWALDE HOLLYWOOD KINGS NUMBANI')
 Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
 Roster = Tuple[str, str, str, str, str, str]
 PScores = Dict[Tuple[int, int], float]
 
-DRAWABLE_MAPS = set([Map.HANAMURA, Map.HORIZON, Map.TEMPLE, Map.VOLSKAYA,
-                     Map.EICHENWALDE, Map.HOLLYWOOD, Map.KINGS, Map.NUMBANI])
+DRAWABLE_MAPS = set([
+    'hanamura', 'horizon-lunar-colony', 'temple-of-anubis', 'volskaya',
+    'eichenwalde', 'hollywood', 'kings-row', 'numbani'
+])
 
 
 class Predictor(object):
@@ -27,13 +25,13 @@ class Predictor(object):
               score: Tuple[int, int],
               drawable: bool) -> float:
         """Given a game result, train the underlying model.
-        Return the prediction point for this game."""
+        Return the prediction point for this game before training."""
         raise NotImplementedError
 
     def predict(self, teams: Tuple[Team, Team],
                 rosters: Tuple[Roster, Roster],
-                drawable: bool=False) -> Union[float, Tuple[float, float]]:
-        """Given two teams, return win/win & draw probabilities of them."""
+                drawable: bool=False) -> Tuple[float, float]:
+        """Given two teams, return win/draw probabilities of them."""
         raise NotImplementedError
 
     def evaluate(self, teams: Tuple[Team, Team],
@@ -42,9 +40,9 @@ class Predictor(object):
                  drawable: bool) -> float:
         """Return the prediction point for this game."""
         if score[0] == score[1]:
-            point = 0.0
+            return 0.0
 
-        p_win = self.predict(teams, rosters)
+        p_win, _ = self.predict(teams, rosters)
         win = score[0] > score[1]
         return 0.25 - (p_win - win)**2
 
@@ -57,15 +55,13 @@ class Predictor(object):
             reader = DictReader(csv_file)
 
             for row in reader:
-                teams = (Team[row['team1'].upper()],
-                         Team[row['team2'].upper()])
+                teams = (Team[row['team1']], Team[row['team2']])
                 rosters = ((row['team1-p1'], row['team1-p2'], row['team1-p3'],
                             row['team1-p4'], row['team1-p5'], row['team1-p6']),
                            (row['team2-p1'], row['team2-p2'], row['team2-p3'],
                             row['team2-p4'], row['team2-p5'], row['team2-p6']))
-                score = (int(row['score1']),
-                         int(row['score2']))
-                drawable = Map[row['map'].upper()] in DRAWABLE_MAPS
+                score = (int(row['score1']), int(row['score2']))
+                drawable = row['map'] in DRAWABLE_MAPS
 
                 point += self.train(teams, rosters, score, drawable=drawable)
 
@@ -109,7 +105,7 @@ class Predictor(object):
         p_scores = defaultdict(float)
         p_scores[(0, 0)] = 1.0
 
-        p_undrawable = (self.predict(teams, rosters), 0.0)
+        p_undrawable = self.predict(teams, rosters)
         p_drawable = self.predict(teams, rosters, drawable=True)
 
         for drawable in drawables:
