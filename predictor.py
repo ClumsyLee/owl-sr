@@ -1,15 +1,15 @@
 from collections import defaultdict
+from csv import DictReader
 from enum import Enum
-from typing import Tuple, List, Dict
+from typing import Dict, List, Tuple, Union
 
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
-MatchResult = Enum('MatchResult', 'WIN DRAW LOSS')
-Map = Enum('Map', 'DORADO GIBRALTAR JUNKERTOWN ROUTE' +
-                  'HANAMURA HORIZON TEMPLE VOLSKAYA' +
-                  'ILIOS LIJIANG NEPAL OASIS' +
+Map = Enum('Map', 'DORADO GIBRALTAR JUNKERTOWN ROUTE ' +
+                  'HANAMURA HORIZON TEMPLE VOLSKAYA ' +
+                  'ILIOS LIJIANG NEPAL OASIS ' +
                   'EICHENWALDE HOLLYWOOD KINGS NUMBANI')
 Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
-Roster = Tuple(str, str, str, str, str, str)
+Roster = Tuple[str, str, str, str, str, str]
 PScores = Dict[Tuple[int, int], float]
 
 DRAWABLE_MAPS = set([Map.HANAMURA, Map.HORIZON, Map.TEMPLE, Map.VOLSKAYA,
@@ -25,52 +25,65 @@ class Predictor(object):
     def train(self, teams: Tuple[Team, Team],
               rosters: Tuple[Roster, Roster],
               score: Tuple[int, int],
-              drawable: bool) -> Tuple(float, float):
-        """Given a game result, train the underlying model."""
+              drawable: bool) -> float:
+        """Given a game result, train the underlying model.
+        Return the prediction point for this game."""
         raise NotImplementedError
 
     def predict(self, teams: Tuple[Team, Team],
                 rosters: Tuple[Roster, Roster],
-                drawable: bool) -> Tuple(float, float):
-        """Given two teams, return win/draw probabilities of them."""
+                drawable: bool=False) -> Union[float, Tuple[float, float]]:
+        """Given two teams, return win/win & draw probabilities of them."""
         raise NotImplementedError
 
-    def train_match(self, teams: Tuple[Team, Team],
-                    rosters: Tuple[Roster, Roster],
-                    maps: List[Map],
-                    scores: List[Tuple[int, int]],
-                    match_format: MatchFormat = MatchFormat.REGULAR) -> float:
-        """Given a match result, train the underlying model,
-        return the prediction point for this match."""
-        # Calculate the prediction point.
-        p_win = self.predict_match(teams, rosters, match_format=match_format)
-        match_result = self._calculate_match_result(scores)
-        if match_result == MatchResult.DRAW:
+    def evaluate(self, teams: Tuple[Team, Team],
+                 rosters: Tuple[Roster, Roster],
+                 score: Tuple[int, int],
+                 drawable: bool) -> float:
+        """Return the prediction point for this game."""
+        if score[0] == score[1]:
             point = 0.0
-        else:
-            win = match_result == MatchResult.WIN
-            point = 0.25 - (p_win - win)**2
 
-        # Train on each map.
-        for map_name, score in zip(maps, scores):
-            drawable = map_name in DRAWABLE_MAPS
-            self.train(teams, rosters, score, drawable)
+        p_win = self.predict(teams, rosters)
+        win = score[0] > score[1]
+        return 0.25 - (p_win - win)**2
+
+    def train_all(self, csv_filename) -> float:
+        """Given a csv file containing matches, train the underlying model.
+        Return the prediction point for all the matches."""
+        point = 0.0
+
+        with open(csv_filename, newline='') as csv_file:
+            reader = DictReader(csv_file)
+
+            for row in reader:
+                teams = (Team[row['team1'].upper()],
+                         Team[row['team2'].upper()])
+                rosters = ((row['team1-p1'], row['team1-p2'], row['team1-p3'],
+                            row['team1-p4'], row['team1-p5'], row['team1-p6']),
+                           (row['team2-p1'], row['team2-p2'], row['team2-p3'],
+                            row['team2-p4'], row['team2-p5'], row['team2-p6']))
+                score = (int(row['score1']),
+                         int(row['score2']))
+                drawable = Map[row['map'].upper()] in DRAWABLE_MAPS
+
+                point += self.train(teams, rosters, score, drawable=drawable)
 
         return point
 
-    def predict_match_scores(
+    def predict_match_score(
             self, teams: Tuple[Team, Team],
             rosters: Tuple[Roster, Roster],
             match_format: MatchFormat = MatchFormat.REGULAR) -> PScores:
         """Predict the scores of a given match."""
         if match_format == MatchFormat.REGULAR:
             drawables = [True, False, True, False]
-            return self._predict_bo_match_scores(teams, rosters,
-                                                 drawables=drawables)
+            return self._predict_bo_match_score(teams, rosters,
+                                                drawables=drawables)
         elif match_format == MatchFormat.TITLE:
             drawables = [False, False, True, True, False]
-            return self._predict_bo_match_scores(teams, rosters,
-                                                 drawables=drawables)
+            return self._predict_bo_match_score(teams, rosters,
+                                                drawables=drawables)
         else:
             raise NotImplementedError
 
@@ -79,8 +92,8 @@ class Predictor(object):
             rosters: Tuple[Roster, Roster],
             match_format: MatchFormat = MatchFormat.REGULAR) -> float:
         """Predict the win probability of a given match."""
-        p_scores = self.predict_match_scores(teams, rosters,
-                                             match_format=match_format)
+        p_scores = self.predict_match_score(teams, rosters,
+                                            match_format=match_format)
         p_win = 0.0
 
         for (score1, score2), p in p_scores.items():
@@ -89,14 +102,14 @@ class Predictor(object):
 
         return p_win
 
-    def _predict_bo_match_scores(self, teams: Tuple[Team, Team],
-                                 rosters: Tuple[Roster, Roster],
-                                 drawables: List[bool]) -> PScores:
+    def _predict_bo_match_score(self, teams: Tuple[Team, Team],
+                                rosters: Tuple[Roster, Roster],
+                                drawables: List[bool]) -> PScores:
         """Predict the scores of a given BO match."""
         p_scores = defaultdict(float)
         p_scores[(0, 0)] = 1.0
 
-        p_undrawable = self.predict(teams, rosters, drawable=False)
+        p_undrawable = (self.predict(teams, rosters), 0.0)
         p_drawable = self.predict(teams, rosters, drawable=True)
 
         for drawable in drawables:
@@ -126,14 +139,3 @@ class Predictor(object):
         p_scores = new_p_scores
 
         return p_scores
-
-    def _calculate_match_result(scores: List[Tuple[int, int]]) -> MatchResult:
-        score1 = sum(score[0] for score in scores)
-        score2 = sum(score[1] for score in scores)
-
-        if score1 > score2:
-            return MatchResult.WIN
-        elif score1 == score2:
-            return MatchResult.DRAW
-        else:
-            return MatchResult.LOSS
