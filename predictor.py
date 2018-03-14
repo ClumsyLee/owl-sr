@@ -5,7 +5,7 @@ from itertools import chain
 from math import sqrt
 from typing import Dict, List, Tuple
 
-# from scipy.optimize import fmin
+from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
@@ -24,6 +24,9 @@ class Predictor(object):
 
     def __init__(self) -> None:
         super().__init__()
+
+        self.expected_draws = 0.0
+        self.real_draws = 0.0
 
     def _train(self, teams: Tuple[Team, Team],
                rosters: Tuple[Roster, Roster],
@@ -44,6 +47,13 @@ class Predictor(object):
               drawable: bool) -> float:
         """Given a game result, train the underlying model.
         Return the prediction point for this game before training."""
+        # Count draws.
+        if drawable:
+            _, p_draw = self.predict(teams, rosters, drawable=True)
+            self.expected_draws += p_draw
+        if score[0] == score[1]:
+            self.real_draws += 1.0
+
         point = self.evaluate(teams, rosters, score)
         self._train(teams, rosters, score, drawable=drawable)
         return point
@@ -78,6 +88,7 @@ class Predictor(object):
                 drawable = row['map'] in DRAWABLE_MAPS
 
                 point = self.train(teams, rosters, score, drawable=drawable)
+                # print(point)
                 total_point += point
 
         return total_point
@@ -217,7 +228,7 @@ class TrueSkillPredictor(Predictor):
     """TrueSkill predictor."""
 
     def __init__(self, mu: float=2500.0, sigma: float=2500.0 / 3.0,
-                 beta: float=2500.0 / 6.0 * 3.7, tau: float=25.0 / 3.0,
+                 beta: float=2500.0 / 2.0, tau: float=25.0 / 3.0,
                  draw_probability: float=0.06) -> None:
         super().__init__()
 
@@ -296,8 +307,28 @@ class TeamTrueSkillPredictor(TrueSkillPredictor):
         self.ratings[team] = team_ratings[0]
 
 
+def optimize_beta(maxfun=100):
+    def f(x):
+        beta = 2500.0 / 6.0 * x[0]
+        return -TrueSkillPredictor(beta=beta).train_all('owl.csv')
+
+    args = fmin(f, [3.7], maxfun=maxfun)
+    print(args, f(args))
+
+
 if __name__ == '__main__':
-    simple_predictor = SimplePredictor()
+    # optimize_beta(100)
+
+    # print(SimplePredictor(alpha=0.20).train_all('owl.csv'))
+
     trueskill_predictor = TrueSkillPredictor()
-    print(simple_predictor.train_all('owl.csv'))
     print(trueskill_predictor.train_all('owl.csv'))
+    print(trueskill_predictor.expected_draws, trueskill_predictor.real_draws)
+    print(trueskill_predictor.predict((None, None), (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
+                                                     ('Munchkin', 'FLETA', 'tobi', 'ZUNBA', 'Miro', 'ryujehong')), drawable=True))
+
+    # team_trueskill_predictor = TeamTrueSkillPredictor()
+    # print(team_trueskill_predictor.train_all('owl.csv'))
+    # print(trueskill_predictor.predict_match_score(('SEO', 'SHD'),
+    #                                               (['gido', 'Wekeed', 'XepheR', 'KuKi', 'tobi', 'Bunny'],
+    #                                                ['Undead', 'Diya', 'Fiveking', 'MG', 'Freefeel', 'Roshan'])))
