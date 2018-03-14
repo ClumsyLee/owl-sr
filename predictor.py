@@ -1,7 +1,11 @@
 from collections import defaultdict
 from csv import DictReader
 from enum import Enum
-from typing import Dict, List, Tuple, Union
+from itertools import chain
+from math import sqrt
+from typing import Dict, List, Tuple
+
+from trueskill import TrueSkill, calc_draw_margin
 
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
 Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
@@ -36,9 +40,9 @@ class Predictor(object):
 
     def evaluate(self, teams: Tuple[Team, Team],
                  rosters: Tuple[Roster, Roster],
-                 score: Tuple[int, int],
-                 drawable: bool) -> float:
-        """Return the prediction point for this game."""
+                 score: Tuple[int, int]) -> float:
+        """Return the prediction point for this game.
+        Assume it will not draw."""
         if score[0] == score[1]:
             return 0.0
 
@@ -49,7 +53,7 @@ class Predictor(object):
     def train_all(self, csv_filename) -> float:
         """Given a csv file containing matches, train the underlying model.
         Return the prediction point for all the matches."""
-        point = 0.0
+        total_point = 0.0
 
         with open(csv_filename, newline='') as csv_file:
             reader = DictReader(csv_file)
@@ -63,9 +67,10 @@ class Predictor(object):
                 score = (int(row['score1']), int(row['score2']))
                 drawable = row['map'] in DRAWABLE_MAPS
 
-                point += self.train(teams, rosters, score, drawable=drawable)
+                point = self.train(teams, rosters, score, drawable=drawable)
+                total_point += point
 
-        return point
+        return total_point
 
     def predict_match_score(
             self, teams: Tuple[Team, Team],
@@ -135,3 +140,78 @@ class Predictor(object):
         p_scores = new_p_scores
 
         return p_scores
+
+
+class TrueSkillPredictor(Predictor):
+    """TrueSkill predictor."""
+
+    def __init__(self, mu: float=2500.0, sigma: float=2500.0 / 3.0,
+                 beta: float=2500.0 / 6.0, tau: float=25.0 / 3.0,
+                 draw_probability: float=0.03) -> None:
+        super().__init__()
+
+        self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
+                                      draw_probability=draw_probability)
+        self.env_undrawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
+                                        draw_probability=0.0)
+        self.ratings = defaultdict(lambda: self.env_drawable.create_rating())
+
+    def train(self, teams: Tuple[Team, Team],
+              rosters: Tuple[Roster, Roster],
+              score: Tuple[int, int],
+              drawable: bool) -> float:
+        """Given a game result, train the underlying model.
+        Return the prediction point for this game before training."""
+        point = self.evaluate(teams, rosters, score)
+
+        score1, score2 = score
+        if score1 > score2:
+            ranks = [0, 1]  # Team 1 wins.
+        elif score1 == score2:
+            ranks = [0, 0]  # Draw.
+        else:
+            ranks = [1, 0]  # Team 2 wins.
+
+        env = self.env_drawable if drawable else self.env_undrawable
+        rosters_ratings = env.rate(self._rosters_ratings(rosters), ranks=ranks)
+        self._update_rosters_ratings(rosters, rosters_ratings)
+
+        return point
+
+    def predict(self, teams: Tuple[Team, Team],
+                rosters: Tuple[Roster, Roster],
+                drawable: bool=False) -> Tuple[float, float]:
+        """Given two teams, return win/draw probabilities of them."""
+        env = self.env_drawable if drawable else self.env_undrawable
+
+        team1_ratings, team2_ratings = self._rosters_ratings(rosters)
+
+        delta_mu = (sum(r.mu for r in team1_ratings) -
+                    sum(r.mu for r in team2_ratings))
+        draw_margin = calc_draw_margin(env.draw_probability, 12)
+        sum_sigma = sum(r.sigma**2 for r in chain(team1_ratings,
+                                                  team2_ratings))
+        denom = sqrt(12 * env.beta**2 + sum_sigma)
+
+        p_win = env.cdf((delta_mu - draw_margin) / denom)
+        p_not_loss = env.cdf((delta_mu + draw_margin) / denom)
+
+        return p_win, p_not_loss - p_win
+
+    def _rosters_ratings(self, rosters: Tuple[Roster, Roster]):
+        roster1, roster2 = rosters
+        roster1_ratings = [self.ratings[name] for name in roster1]
+        roster2_ratings = [self.ratings[name] for name in roster2]
+        return roster1_ratings, roster2_ratings
+
+    def _update_rosters_ratings(self, rosters: Tuple[Roster, Roster],
+                                rosters_ratings):
+        for roster, ratings in zip(rosters, rosters_ratings):
+            for name, rating in zip(roster, ratings):
+                self.ratings[name] = rating
+
+
+if __name__ == '__main__':
+    predictor = TrueSkillPredictor()
+    print(predictor.train_all('owl.csv'))
+    print(predictor.ratings)
