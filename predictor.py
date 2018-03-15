@@ -113,6 +113,21 @@ class Predictor(object):
         else:
             raise NotImplementedError
 
+    def predict_match_map_diff(
+            self, teams: Tuple[Team, Team],
+            rosters: Tuple[Roster, Roster],
+            match_format: MatchFormat = MatchFormat.REGULAR):
+        p_scores = self.predict_match_score(teams, rosters,
+                                            match_format=match_format)
+        diffs = range(-4, 5)
+        p_diffs = {diff: 0.0 for diff in diffs}
+
+        for (score1, score2), p in p_scores.items():
+            diff = score1 - score2
+            p_diffs[diff] += p
+
+        return [p_diffs[diff] for diff in diffs]
+
     def predict_match(
             self, teams: Tuple[Team, Team],
             rosters: Tuple[Roster, Roster],
