@@ -8,6 +8,8 @@ from typing import Dict, List, Tuple
 from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
+from fetcher import GAMES_CSV
+
 MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
 Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
 Roster = Tuple[str, str, str, str, str, str]
@@ -17,7 +19,6 @@ DRAWABLE_MAPS = set([
     'hanamura', 'horizon-lunar-colony', 'temple-of-anubis', 'volskaya',
     'eichenwalde', 'hollywood', 'kings-row', 'numbani'
 ])
-GAMES_CSV = 'owl.csv'
 
 
 class Predictor(object):
@@ -84,11 +85,14 @@ class Predictor(object):
             reader = DictReader(csv_file)
 
             for row in reader:
+                if not row['game_id']:
+                    continue  # This is a future match.
+
                 teams = (Team[row['team1']], Team[row['team2']])
-                rosters = ((row['team1-p1'], row['team1-p2'], row['team1-p3'],
-                            row['team1-p4'], row['team1-p5'], row['team1-p6']),
-                           (row['team2-p1'], row['team2-p2'], row['team2-p3'],
-                            row['team2-p4'], row['team2-p5'], row['team2-p6']))
+                rosters = ((row['team1_p1'], row['team1_p2'], row['team1_p3'],
+                            row['team1_p4'], row['team1_p5'], row['team1_p6']),
+                           (row['team2_p1'], row['team2_p2'], row['team2_p3'],
+                            row['team2_p4'], row['team2_p5'], row['team2_p6']))
                 score = (int(row['score1']), int(row['score2']))
                 drawable = row['map'] in DRAWABLE_MAPS
 
