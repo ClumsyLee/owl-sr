@@ -108,9 +108,8 @@ def parse_game(raw_game, base_game: Dict, team1_id: str, team2_id: str):
 
 def save_games(games: List[Dict], csv_filename: str=GAMES_CSV) -> None:
     fieldnames = [
-        'match_id', 'game_id',
-        'stage', 'start_time', 'team1', 'team2', 'match_format',
-        'game_number', 'map', 'score1', 'score2',
+        'match_id', 'stage', 'start_time', 'team1', 'team2', 'match_format',
+        'game_id', 'game_number', 'map', 'score1', 'score2',
         'team1_p1', 'team1_p2', 'team1_p3', 'team1_p4', 'team1_p5', 'team1_p6',
         'team2_p1', 'team2_p2', 'team2_p3', 'team2_p4', 'team2_p5', 'team2_p6',
     ]
