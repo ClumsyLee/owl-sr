@@ -17,6 +17,7 @@ DRAWABLE_MAPS = set([
     'hanamura', 'horizon-lunar-colony', 'temple-of-anubis', 'volskaya',
     'eichenwalde', 'hollywood', 'kings-row', 'numbani'
 ])
+GAMES_CSV = 'owl.csv'
 
 
 class Predictor(object):
@@ -74,7 +75,7 @@ class Predictor(object):
         win = score[0] > score[1]
         return 0.25 - (p_win - win)**2
 
-    def train_all(self, csv_filename) -> float:
+    def train_all(self, csv_filename=GAMES_CSV) -> float:
         """Given a csv file containing matches, train the underlying model.
         Return the prediction point for all the matches."""
         total_point = 0.0
@@ -113,35 +114,22 @@ class Predictor(object):
         else:
             raise NotImplementedError
 
-    def predict_match_map_diff(
-            self, teams: Tuple[Team, Team],
-            rosters: Tuple[Roster, Roster],
-            match_format: MatchFormat = MatchFormat.REGULAR):
-        p_scores = self.predict_match_score(teams, rosters,
-                                            match_format=match_format)
-        diffs = range(-4, 5)
-        p_diffs = {diff: 0.0 for diff in diffs}
-
-        for (score1, score2), p in p_scores.items():
-            diff = score1 - score2
-            p_diffs[diff] += p
-
-        return [p_diffs[diff] for diff in diffs]
-
     def predict_match(
             self, teams: Tuple[Team, Team],
             rosters: Tuple[Roster, Roster],
             match_format: MatchFormat = MatchFormat.REGULAR) -> float:
-        """Predict the win probability of a given match."""
+        """Predict the win probability & diff expectation of a given match."""
         p_scores = self.predict_match_score(teams, rosters,
                                             match_format=match_format)
         p_win = 0.0
+        e_diff = 0.0
 
         for (score1, score2), p in p_scores.items():
             if score1 > score2:
                 p_win += p
+            e_diff += p * (score1 - score2)
 
-        return p_win
+        return p_win, e_diff
 
     def _predict_bo_match_score(self, teams: Tuple[Team, Team],
                                 rosters: Tuple[Roster, Roster],
@@ -329,25 +317,32 @@ class TeamTrueSkillPredictor(TrueSkillPredictor):
 def optimize_beta(maxfun=100):
     def f(x):
         beta = 2500.0 / 6.0 * x[0]
-        return -TrueSkillPredictor(beta=beta).train_all('owl.csv')
+        return -TrueSkillPredictor(beta=beta).train_all()
 
     args = fmin(f, [3.7], maxfun=maxfun)
     print(args, f(args))
 
 
+def compare_methods():
+    classes = [
+        SimplePredictor,
+        TrueSkillPredictor,
+        TeamTrueSkillPredictor
+    ]
+
+    for class_ in classes:
+        predictor = class_()
+        print(class_.__name__, predictor.train_all())
+
+
 if __name__ == '__main__':
-    # optimize_beta(100)
+    predictor = TrueSkillPredictor()
+    predictor.train_all()
 
-    # print(SimplePredictor(alpha=0.20).train_all('owl.csv'))
+    teams = ('NYE', 'SEO')
+    rosters = (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
+               ('Miro', 'Munchkin', 'tobi', 'ryujehong', 'ZUNBA', 'FLETA'))
 
-    trueskill_predictor = TrueSkillPredictor()
-    print(trueskill_predictor.train_all('owl.csv'))
-    print(trueskill_predictor.expected_draws, trueskill_predictor.real_draws)
-    print(trueskill_predictor.predict((None, None), (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
-                                                     ('Munchkin', 'FLETA', 'tobi', 'ZUNBA', 'Miro', 'ryujehong')), drawable=True))
-
-    # team_trueskill_predictor = TeamTrueSkillPredictor()
-    # print(team_trueskill_predictor.train_all('owl.csv'))
-    # print(trueskill_predictor.predict_match_score(('SEO', 'SHD'),
-    #                                               (['gido', 'Wekeed', 'XepheR', 'KuKi', 'tobi', 'Bunny'],
-    #                                                ['Undead', 'Diya', 'Fiveking', 'MG', 'Freefeel', 'Roshan'])))
+    p_win, e_diff = predictor.predict_match(teams, rosters)
+    win_percentage = round(p_win * 100.0)
+    print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
