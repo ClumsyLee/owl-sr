@@ -4,7 +4,7 @@ from typing import Dict, List
 
 import requests
 
-GAMES_CSV = 'owl.csv'
+GAMES_CSV = 'games.csv'
 BASE_URL = 'https://api.overwatchleague.com/'
 
 
