@@ -28,8 +28,8 @@ class Predictor(object):
         raise NotImplementedError
 
     def predict(self, teams: Tuple[str, str],
-                rosters: Tuple[Roster, Roster],
-                drawable: bool) -> Tuple[float, float]:
+                rosters: Tuple[Roster, Roster] = None,
+                drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         raise NotImplementedError
 
@@ -72,7 +72,7 @@ class Predictor(object):
 
     def predict_match_score(
             self, teams: Tuple[str, str],
-            rosters: Tuple[Roster, Roster],
+            rosters: Tuple[Roster, Roster] = None,
             match_format: str = 'regular') -> PScores:
         """Predict the scores of a given match."""
         if match_format == 'regular':
@@ -88,7 +88,7 @@ class Predictor(object):
 
     def predict_match(
             self, teams: Tuple[str, str],
-            rosters: Tuple[Roster, Roster],
+            rosters: Tuple[Roster, Roster] = None,
             match_format: str = 'regular') -> float:
         """Predict the win probability & diff expectation of a given match."""
         p_scores = self.predict_match_score(teams, rosters,
@@ -177,8 +177,8 @@ class SimplePredictor(Predictor):
             self.records[(team1, team2)] -= 1
 
     def predict(self, teams: Tuple[str, str],
-                rosters: Tuple[Roster, Roster],
-                drawable: bool) -> Tuple[float, float]:
+                rosters: Tuple[Roster, Roster] = None,
+                drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         team1, team2 = teams
         wins1 = self.wins[team1]
@@ -231,8 +231,8 @@ class TrueSkillPredictor(Predictor):
         self._update_teams_ratings(game.teams, game.rosters, teams_ratings)
 
     def predict(self, teams: Tuple[str, str],
-                rosters: Tuple[Roster, Roster],
-                drawable: bool) -> Tuple[float, float]:
+                rosters: Tuple[Roster, Roster] = None,
+                drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         env = self.env_drawable if drawable else self.env_undrawable
 
