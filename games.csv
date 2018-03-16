@@ -1,4 +1,4 @@
-match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map,score1,score2,team1_p1,team1_p2,team1_p3,team1_p4,team1_p5,team1_p6,team2_p1,team2_p2,team2_p3,team2_p4,team2_p5,team2_p6
+match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,score1,score2,team1_p1,team1_p2,team1_p3,team1_p4,team1_p5,team1_p6,team2_p1,team2_p2,team2_p3,team2_p4,team2_p5,team2_p6
 10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,4759,1,dorado,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
 10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5576,2,temple-of-anubis,3,4,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,iddqd,dhaK,sleepy,BABYBAY,Nomy,Nevix
 10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5577,3,oasis,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,iddqd,dhaK,sleepy,BABYBAY,Nomy,Nevix
@@ -478,9 +478,19 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map,score
 10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6073,2,lijiang,2,0,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
 10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6074,3,hollywood,3,1,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
 10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6075,4,route-66,3,0,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
-10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,,,,,,,,,,,,,,,,,
-10318,Stage 2,2018-03-15 18:00:00,FLA,VAL,regular,,,,,,,,,,,,,,,,,
-10319,Stage 2,2018-03-15 20:00:00,HOU,GLA,regular,,,,,,,,,,,,,,,,,
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6076,1,hanamura,0,1,Undead,MG,Xushu,Freefeel,Altering,Fiveking,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6077,2,nepal,0,2,Undead,MG,Xushu,Freefeel,Altering,Fiveking,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6078,3,hollywood,1,2,Undead,MG,Roshan,Xushu,Freefeel,Fiveking,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6079,4,route-66,2,3,Undead,MG,Roshan,Xushu,Freefeel,Fiveking,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6080,1,hanamura,2,1,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Unkoe,Soon,Agilities,Envy,Kariv,Fate
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6081,2,nepal,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Unkoe,Soon,Agilities,Verbo,Envy,Fate
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6082,3,hollywood,0,1,zappis,Zebbosai,TviQ,Zuppeh,Manneten,CWoosH,Unkoe,Soon,Agilities,Verbo,Envy,Fate
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6083,4,route-66,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Unkoe,Soon,Verbo,Envy,Kariv,Fate
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6084,1,volskaya,4,3,Rawkus,Coolmatt,Muma,Boink,Clockwork,LiNkzr,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6085,2,lijiang,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6949,3,kings-row,0,1,SPREE,Rawkus,Jake,Muma,Boink,LiNkzr,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6086,4,gibraltar,3,0,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,7866,5,ilios,0,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
 10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,,,,,,,,,,,,,,,,,
 10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,,,,,,,,,,,,,,,,,
 10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,,,,,,,,,,,,,,,,,

@@ -1,6 +1,8 @@
-from csv import DictWriter
+from csv import reader as csv_reader, writer as csv_writer
 from datetime import datetime
-from typing import Dict, List
+from typing import Dict, List, NamedTuple, Tuple
+
+from game import Game, MatchFormat
 
 import requests
 
@@ -8,7 +10,35 @@ GAMES_CSV = 'games.csv'
 BASE_URL = 'https://api.overwatchleague.com/'
 
 
-def fetch_games() -> List[Dict]:
+class CSVGame(NamedTuple):
+    """Describe a single game in a CSV file."""
+    match_id: int
+    stage: str
+    start_time: datetime
+    team1: str
+    team2: str
+    match_format: str
+
+    game_id: int = None
+    game_number: int = None
+    map_name: str = None
+    score1: int = None
+    score2: int = None
+    team1_p1: str = None
+    team1_p2: str = None
+    team1_p3: str = None
+    team1_p4: str = None
+    team1_p5: str = None
+    team1_p6: str = None
+    team2_p1: str = None
+    team2_p2: str = None
+    team2_p3: str = None
+    team2_p4: str = None
+    team2_p5: str = None
+    team2_p6: str = None
+
+
+def fetch_games() -> List[CSVGame]:
     url = BASE_URL + 'matches'
     params = {'size': 1000}
     result = requests.get(url, params).json()
@@ -16,12 +46,12 @@ def fetch_games() -> List[Dict]:
     games = []
     for raw_match in result['content']:
         games += parse_match(raw_match)
-    games.sort(key=lambda game: game['start_time'])
+    games.sort(key=lambda game: game.start_time)
 
     return games
 
 
-def parse_match(raw_match) -> List[Dict]:
+def parse_match(raw_match) -> List[CSVGame]:
     if None in raw_match['competitors']:
         return []  # The competitors have not been decided, don't parse it.
 
@@ -42,14 +72,9 @@ def parse_match(raw_match) -> List[Dict]:
     else:
         match_format = 'regular'
 
-    base_game = {
-        'match_id': match_id,
-        'stage': stage,
-        'start_time': start_time,
-        'team1': team1_abbr,
-        'team2': team2_abbr,
-        'match_format': match_format
-    }
+    base_game = CSVGame(match_id=match_id, stage=stage, start_time=start_time,
+                        team1=team1_abbr, team2=team2_abbr,
+                        match_format=match_format)
 
     if raw_match['state'] != 'CONCLUDED':
         return [base_game]  # This a unfinished match.
@@ -63,7 +88,8 @@ def parse_match(raw_match) -> List[Dict]:
     return games
 
 
-def parse_game(raw_game, base_game: Dict, team1_id: str, team2_id: str):
+def parse_game(raw_game, base_game: CSVGame, team1_id: int,
+               team2_id: int) -> CSVGame:
     if raw_game['state'] != 'CONCLUDED':
         return None  # This is an unfinished match, don't parse it.
 
@@ -72,17 +98,10 @@ def parse_game(raw_game, base_game: Dict, team1_id: str, team2_id: str):
     map_name = raw_game['attributes']['map']
     score = raw_game['points']
 
-    game = base_game.copy()
-    game.update({
-        'game_id': game_id,
-        'game_number': game_number,
-        'map': map_name,
-        'score1': score[0],
-        'score2': score[1]
-    })
-
     n_team1 = 0
     n_team2 = 0
+    names = {}
+
     for raw_player in raw_game['players']:
         team_id = raw_player['team']['id']
         name = raw_player['player']['name']
@@ -97,27 +116,67 @@ def parse_game(raw_game, base_game: Dict, team1_id: str, team2_id: str):
             print(f'{game_id}: Invalid team id ({name}, {team_id}), skipping.')
             continue
 
-        game[name_key] = name
+        names[name_key] = name
 
     if n_team1 != 6 or n_team2 != 6:
         print(f'{game_id}: Invalid player numbers, skipping.')
         return None
 
+    game = base_game._replace(game_id=game_id, game_number=game_number,
+                              map_name=map_name,
+                              score1=score[0], score2=score[1], **names)
     return game
 
 
-def save_games(games: List[Dict], csv_filename: str=GAMES_CSV) -> None:
-    fieldnames = [
-        'match_id', 'stage', 'start_time', 'team1', 'team2', 'match_format',
-        'game_id', 'game_number', 'map', 'score1', 'score2',
-        'team1_p1', 'team1_p2', 'team1_p3', 'team1_p4', 'team1_p5', 'team1_p6',
-        'team2_p1', 'team2_p2', 'team2_p3', 'team2_p4', 'team2_p5', 'team2_p6',
-    ]
-
-    with open(csv_filename, 'w', newline='') as csvfile:
-        writer = DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
+def save_games(games: List[CSVGame], csv_filename: str=GAMES_CSV) -> None:
+    with open(csv_filename, 'w', newline='') as csv_file:
+        writer = csv_writer(csv_file)
+        writer.writerow(CSVGame._fields)  # Write headers.
         writer.writerows(games)
+
+
+def load_games(csv_filename: str=GAMES_CSV) -> Tuple[List[Game], List[Game]]:
+    """Load past & future games from a csv file."""
+    past_games = []
+    future_games = []
+
+    with open(csv_filename, newline='') as csv_file:
+        reader = csv_reader(csv_file)
+        next(reader, None)  # Skip the header line.
+
+        for csv_game in map(CSVGame._make, reader):
+            match_id = int(csv_game.match_id)
+            stage = csv_game.stage
+            start_time = datetime.strptime(csv_game.start_time,
+                                           '%Y-%m-%d %H:%M:%S')
+            teams = (csv_game.team1, csv_game.team2)
+            match_format = MatchFormat[csv_game.match_format.upper()]
+
+            if csv_game.game_id:
+                game_id = int(csv_game.game_id)
+                game_number = int(csv_game.game_number)
+                map_name = csv_game.map_name
+                score = (csv_game.score1, csv_game.score2)
+                rosters = (
+                    (csv_game.team1_p1, csv_game.team1_p2, csv_game.team1_p3,
+                     csv_game.team1_p4, csv_game.team1_p5, csv_game.team1_p6),
+                    (csv_game.team2_p1, csv_game.team2_p2, csv_game.team2_p3,
+                     csv_game.team2_p4, csv_game.team2_p5, csv_game.team2_p6)
+                )
+
+                game = Game(match_id=match_id, stage=stage,
+                            start_time=start_time, teams=teams,
+                            match_format=match_format, game_id=game_id,
+                            game_number=game_number, map_name=map_name,
+                            score=score, rosters=rosters)
+                past_games.append(game)
+            else:
+                game = Game(match_id=match_id, stage=stage,
+                            start_time=start_time, teams=teams,
+                            match_format=match_format)
+                future_games.append(game)
+
+    return past_games, future_games
 
 
 if __name__ == '__main__':

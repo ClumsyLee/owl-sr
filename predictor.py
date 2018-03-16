@@ -1,24 +1,16 @@
 from collections import defaultdict
 from csv import DictReader
-from enum import Enum
 from itertools import chain
 from math import sqrt
-from typing import Dict, List, Tuple
+from typing import Dict, List, Sequence, Tuple
 
 from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
-from fetcher import GAMES_CSV
+from game import DRAWABLE_MAPS, Team, MatchFormat, Roster, Game
+from fetcher import load_games
 
-MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
-Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
-Roster = Tuple[str, str, str, str, str, str]
 PScores = Dict[Tuple[int, int], float]
-
-DRAWABLE_MAPS = set([
-    'hanamura', 'horizon-lunar-colony', 'temple-of-anubis', 'volskaya',
-    'eichenwalde', 'hollywood', 'kings-row', 'numbani'
-])
 
 
 class Predictor(object):
@@ -76,29 +68,15 @@ class Predictor(object):
         win = score[0] > score[1]
         return 0.25 - (p_win - win)**2
 
-    def train_all(self, csv_filename=GAMES_CSV) -> float:
-        """Given a csv file containing matches, train the underlying model.
-        Return the prediction point for all the matches."""
+    def train_games(self, games: Sequence[Game]) -> float:
+        """Given a sequence of games, train the underlying model.
+        Return the prediction point for all the games."""
         total_point = 0.0
 
-        with open(csv_filename, newline='') as csv_file:
-            reader = DictReader(csv_file)
-
-            for row in reader:
-                if not row['game_id']:
-                    continue  # This is a future match.
-
-                teams = (Team[row['team1']], Team[row['team2']])
-                rosters = ((row['team1_p1'], row['team1_p2'], row['team1_p3'],
-                            row['team1_p4'], row['team1_p5'], row['team1_p6']),
-                           (row['team2_p1'], row['team2_p2'], row['team2_p3'],
-                            row['team2_p4'], row['team2_p5'], row['team2_p6']))
-                score = (int(row['score1']), int(row['score2']))
-                drawable = row['map'] in DRAWABLE_MAPS
-
-                point = self.train(teams, rosters, score, drawable=drawable)
-                # print(point)
-                total_point += point
+        for game in games:
+            point = self.train(game.teams, game.rosters, game.score,
+                               drawable=game.map_name in DRAWABLE_MAPS)
+            total_point += point
 
         return total_point
 
@@ -318,16 +296,16 @@ class TeamTrueSkillPredictor(TrueSkillPredictor):
         self.ratings[team] = team_ratings[0]
 
 
-def optimize_beta(maxfun=100):
+def optimize_beta(games: Sequence[Game], maxfun=100) -> None:
     def f(x):
         beta = 2500.0 / 6.0 * x[0]
-        return -TrueSkillPredictor(beta=beta).train_all()
+        return -TrueSkillPredictor(beta=beta).train_games(games)
 
     args = fmin(f, [3.7], maxfun=maxfun)
     print(args, f(args))
 
 
-def compare_methods():
+def compare_methods(games: Sequence[Game]) -> None:
     classes = [
         SimplePredictor,
         TrueSkillPredictor,
@@ -336,12 +314,14 @@ def compare_methods():
 
     for class_ in classes:
         predictor = class_()
-        print(class_.__name__, predictor.train_all())
+        print(class_.__name__, predictor.train_games(games))
 
 
 if __name__ == '__main__':
+    past_games, future_games = load_games()
+
     predictor = TrueSkillPredictor()
-    predictor.train_all()
+    predictor.train_games(past_games)
 
     teams = ('NYE', 'SEO')
     rosters = (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
