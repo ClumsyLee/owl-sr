@@ -1,5 +1,4 @@
 from datetime import datetime
-from enum import Enum
 from typing import NamedTuple, Tuple
 
 DRAWABLE_MAPS = set([
@@ -7,9 +6,6 @@ DRAWABLE_MAPS = set([
     'eichenwalde', 'hollywood', 'kings-row', 'numbani'
 ])
 
-
-Team = Enum('Team', 'BOS DAL FLA GLA HOU LDN NYE PHI SEO SFS SHD VAL')
-MatchFormat = Enum('MatchFormat', 'REGULAR TITLE')
 Roster = Tuple[str, str, str, str, str, str]
 
 
@@ -18,8 +14,8 @@ class Game(NamedTuple):
     match_id: int
     stage: str
     start_time: datetime
-    teams: Tuple[Team, Team]
-    match_format: MatchFormat
+    teams: Tuple[str, str]
+    match_format: str
 
     game_id: int = None
     game_number: int = None

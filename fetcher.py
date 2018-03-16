@@ -2,7 +2,7 @@ from csv import reader as csv_reader, writer as csv_writer
 from datetime import datetime
 from typing import Dict, List, NamedTuple, Tuple
 
-from game import Game, MatchFormat
+from game import Game
 
 import requests
 
@@ -150,7 +150,7 @@ def load_games(csv_filename: str=GAMES_CSV) -> Tuple[List[Game], List[Game]]:
             start_time = datetime.strptime(csv_game.start_time,
                                            '%Y-%m-%d %H:%M:%S')
             teams = (csv_game.team1, csv_game.team2)
-            match_format = MatchFormat[csv_game.match_format.upper()]
+            match_format = csv_game.match_format
 
             if csv_game.game_id:
                 game_id = int(csv_game.game_id)
