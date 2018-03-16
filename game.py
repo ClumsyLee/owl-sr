@@ -22,3 +22,7 @@ class Game(NamedTuple):
     map_name: str = None
     score: Tuple[int, int] = None
     rosters: Tuple[Roster, Roster] = None
+
+    @property
+    def drawable(self):
+        return self.map_name in DRAWABLE_MAPS
