@@ -1,7 +1,9 @@
 from collections import defaultdict, deque, OrderedDict
+from functools import cmp_to_key
 from itertools import chain
 from math import sqrt
 from pprint import pprint
+from random import choices, random
 from typing import Dict, List, Sequence, Set, Tuple
 
 from scipy.optimize import fmin
@@ -136,6 +138,58 @@ class Predictor(object):
 
         return p_win, e_diff
 
+    def predict_stage(self, games: Sequence[Game], iters=100000):
+        games = [game for game in games if game.stage == self.stage]
+        teams = self._stage_teams()
+
+        scores_list, cum_weights_list = self._games_scores_cum_weights(games)
+        p_wins_regular = self._p_wins(teams, match_format='regular')
+        p_wins_title = self._p_wins(teams, match_format='title')
+
+        top3_count = {team: 0 for team in teams}
+        top1_count = {team: 0 for team in teams}
+
+        for i in range(iters):
+            wins = self.stage_wins.copy()
+            map_diffs = self.stage_map_diffs.copy()
+            head_to_head_map_diffs = self.stage_head_to_head_map_diffs.copy()
+
+            for game, scores, cum_weights in zip(games,
+                                                 scores_list,
+                                                 cum_weights_list):
+                team1, team2 = game.teams
+                score1, score2 = choices(scores, cum_weights=cum_weights)[0]
+
+                if score1 > score2:
+                    wins[team1] += 1
+                elif score1 < score2:
+                    wins[team2] += 1
+
+                map_diff = score1 - score2
+                map_diffs[team1] += map_diff
+                map_diffs[team2] -= map_diff
+
+                head_to_head_map_diffs[(team1, team2)] += map_diff
+                head_to_head_map_diffs[(team2, team1)] -= map_diff
+
+            # Determine top 3 teams.
+            top3 = self._top3_teams(teams, wins, map_diffs,
+                                    head_to_head_map_diffs, p_wins_regular)
+            for team in top3:
+                top3_count[team] += 1
+
+            # Determine top 1 teams.
+            first, second, third = top3
+            if random() < p_wins_title[(third, second)]:
+                second = third
+            if random() < p_wins_title[(second, first)]:
+                first = second
+
+            top1_count[first] += 1
+
+        return {team: (top3_count[team] / iters, top1_count[team] / iters)
+                for team in teams}
+
     def _predict_bo_match_score(self, teams: Tuple[str, str],
                                 rosters: Tuple[Roster, Roster],
                                 drawables: List[bool]) -> PScores:
@@ -230,6 +284,73 @@ class Predictor(object):
             self.expected_draws += p_draw
         if game.score[0] == game.score[1]:
             self.real_draws += 1.0
+
+    def _stage_teams(self) -> Set[str]:
+        teams = set()
+        for (stage, _), team_members in self.availabilities.items():
+            if stage != self.stage:
+                continue
+            teams.update(team_members.keys())
+
+        return teams
+
+    def _games_scores_cum_weights(self, games: Sequence[Game]):
+        scores_list = []
+        cum_weights_list = []
+
+        for game in games:
+            if game.stage != self.stage:
+                continue
+
+            p_scores = self.predict_match_score(game.teams)
+            scores = []
+            cum_weights = []
+            cum_weight = 0.0
+
+            for score, p in p_scores.items():
+                scores.append(score)
+                cum_weight += p
+                cum_weights.append(cum_weight)
+
+            scores_list.append(scores)
+            cum_weights_list.append(cum_weights)
+
+        return scores_list, cum_weights_list
+
+    def _p_wins(self, teams: Sequence[str], match_format: str):
+        p_wins = {}
+
+        for team1 in teams:
+            for team2 in teams:
+                team_pair = (team1, team2)
+                p_win, _ = self.predict_match(team_pair,
+                                              match_format=match_format)
+                p_wins[team_pair] = p_win
+
+        return p_wins
+
+    def _top3_teams(self, teams, wins, map_diffs, head_to_head_map_diffs,
+                    p_wins_regular):
+        def cmp_team(team1, team2):
+            if wins[team1] < wins[team2]:
+                return -1
+            elif wins[team1] > wins[team2]:
+                return 1
+            elif map_diffs[team1] < map_diffs[team2]:
+                return -1
+            elif map_diffs[team1] > map_diffs[team2]:
+                return 1
+            elif head_to_head_map_diffs[(team1, team2)] < 0:
+                return -1
+            elif head_to_head_map_diffs[(team1, team2)] > 0:
+                return 1
+            elif random() < p_wins_regular[(team1, team2)]:
+                return 1
+            else:
+                return -1
+
+        teams = list(sorted(teams, key=cmp_to_key(cmp_team), reverse=True))
+        return teams[:3]
 
 
 class SimplePredictor(Predictor):
@@ -423,7 +544,9 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
         return rating.mu - 3.0 * rating.sigma
 
 
-def optimize_beta(games: Sequence[Game], maxfun=100) -> None:
+def optimize_beta(maxfun=100) -> None:
+    games, _ = load_games()
+
     def f(x):
         beta = 2500.0 / 6.0 * x[0]
         return -TrueSkillPredictor(beta=beta).train_games(games)
@@ -432,7 +555,8 @@ def optimize_beta(games: Sequence[Game], maxfun=100) -> None:
     print(args, f(args))
 
 
-def compare_methods(games: Sequence[Game]) -> None:
+def compare_methods() -> None:
+    games, _ = load_games()
     classes = [
         SimplePredictor,
         TrueSkillPredictor,
@@ -444,23 +568,24 @@ def compare_methods(games: Sequence[Game]) -> None:
         print(class_.__name__, predictor.train_games(games))
 
 
-def predict_stage(past_games: Sequence[Game],
-                  future_games: Sequence[Game]) -> None:
-    for game in games:
-        pass
-
-
-if __name__ == '__main__':
+def predict_stage():
     past_games, future_games = load_games()
-
-    compare_methods(past_games)
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
-    pprint(predictor.best_rosters)
 
-    teams = ('VAL', 'BOS')
+    p_stage = predictor.predict_stage(future_games)
+    teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
+                   reverse=True)
 
-    p_win, e_diff = predictor.predict_match(teams)
-    win_percentage = round(p_win * 100.0)
-    print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
+    print(f'      top3 top1')
+    for team in teams:
+        p_top3, p_top1 = p_stage[team]
+        top3 = round(p_top3 * 100)
+        top1 = round(p_top1 * 100)
+
+        print(f'{team:4}: {top3:3}% {top1:3}%')
+
+
+if __name__ == '__main__':
+    predict_stage()
