@@ -1,6 +1,7 @@
 from collections import defaultdict, deque, OrderedDict
 from itertools import chain
 from math import sqrt
+from pprint import pprint
 from typing import Dict, List, Sequence, Set, Tuple
 
 from scipy.optimize import fmin
@@ -19,12 +20,28 @@ PScores = Dict[Tuple[int, int], float]
 class Predictor(object):
     """Base class for all OWL predictors."""
 
-    def __init__(self) -> None:
+    def __init__(self, availabilities: Availabilities = None,
+                 roster_queue_size: int = 10) -> None:
         super().__init__()
 
+        # Players availabilities.
+        if availabilities is None:
+            availabilities = load_availabilities()
+        self.availabilities = availabilities
+
+        # Track recent used rosters.
+        self.roster_queues = defaultdict(
+            lambda: deque(maxlen=roster_queue_size))
+
+        # Stage info.
+        self.stage = None
+        self.match_ids = defaultdict(set)
+
+        # Draw counts, used to adjust parameters related to draws.
         self.expected_draws = 0.0
         self.real_draws = 0.0
 
+        # Points history, used to judge the performance of a predictor.
         self.points = []
 
     def _train(self, game: Game) -> None:
@@ -40,15 +57,13 @@ class Predictor(object):
     def train(self, game: Game) -> float:
         """Given a game result, train the underlying model.
         Return the prediction point for this game before training."""
-        # Count draws.
-        if game.drawable:
-            _, p_draw = self.predict(game.teams, game.rosters, drawable=True)
-            self.expected_draws += p_draw
-        if game.score[0] == game.score[1]:
-            self.real_draws += 1.0
+        self._update_rosters(game)
+        self._update_stage_info(game)
+        self._update_draws(game)
 
         point = self.evaluate(game)
         self.points.append(point)
+
         self._train(game)
 
         return point
@@ -145,12 +160,31 @@ class Predictor(object):
 
         return p_scores
 
+    def _update_rosters(self, game: Game) -> None:
+        for team, roster in zip(game.teams, game.rosters):
+            self.roster_queues[team].appendleft(roster)
+
+    def _update_stage_info(self, game: Game) -> None:
+        if game.stage != self.stage:
+            self.stage = game.stage
+            self.match_ids.clear()
+
+        for team, roster in zip(game.teams, game.rosters):
+            self.match_ids[team].add(game.match_id)
+
+    def _update_draws(self, game: Game) -> None:
+        if game.drawable:
+            _, p_draw = self.predict(game.teams, game.rosters, drawable=True)
+            self.expected_draws += p_draw
+        if game.score[0] == game.score[1]:
+            self.real_draws += 1.0
+
 
 class SimplePredictor(Predictor):
     """A simple predictor based on map differentials."""
 
-    def __init__(self, alpha: float = 0.2, beta: float = 0.0) -> None:
-        super().__init__()
+    def __init__(self, alpha: float = 0.2, beta: float = 0.0, **kws) -> None:
+        super().__init__(**kws)
 
         self.alpha = alpha
         self.beta = beta
@@ -209,8 +243,8 @@ class TrueSkillPredictor(Predictor):
 
     def __init__(self, mu: float = 2500.0, sigma: float = 2500.0 / 3.0,
                  beta: float = 2500.0 / 2.0, tau: float = 25.0 / 3.0,
-                 draw_probability: float = 0.06) -> None:
-        super().__init__()
+                 draw_probability: float = 0.06, **kws) -> None:
+        super().__init__(**kws)
 
         self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
                                       draw_probability=draw_probability)
@@ -271,56 +305,34 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
     """Player-based TrueSkill predictor. Guess the rosters based on history
     when the rosters are not provided."""
 
-    def __init__(self, availabilities: Availabilities = None,
-                 roster_queue_size=10,
-                 **kws):
+    def __init__(self, **kws):
         super().__init__(**kws)
 
-        if availabilities is None:
-            availabilities = load_availabilities()
-
-        self.availabilities = availabilities
-        self.stage = None
-        self.match_ids = defaultdict(set)
-
-        self.roster_queues = defaultdict(
-            lambda: deque(maxlen=roster_queue_size))
         self.best_rosters = {}
-
         self.ratings_history = OrderedDict()
 
-    def save_history(self):
+    def save_ratings_history(self):
         save_ratings_history(self.ratings_history,
                              mu=self.env_drawable.mu,
                              sigma=self.env_drawable.sigma)
 
     def _teams_ratings(self, teams: Tuple[str, str],
                        rosters: Tuple[Roster, Roster]):
+        if rosters is None:
+            # No rosters provided, use the best roster.
+            rosters = (self.best_rosters[teams[0]],
+                       self.best_rosters[teams[1]])
+
         return ([self.ratings[name] for name in rosters[0]],
                 [self.ratings[name] for name in rosters[1]])
 
     def _update_teams_ratings(self, game: Game, teams_ratings) -> None:
-        self._record_game(game)
-
         for team, roster, ratings in zip(game.teams, game.rosters,
                                          teams_ratings):
             for name, rating in zip(roster, ratings):
                 self.ratings[name] = rating
 
             self._record_team_ratings(team)
-
-    def _record_game(self, game: Game) -> None:
-        # Update stage if needed.
-        if game.stage != self.stage:
-            self.stage = game.stage
-            self.match_ids.clear()
-
-        for team, roster in zip(game.teams, game.rosters):
-            # Record the match ids for the teams.
-            self.match_ids[team].add(game.match_id)
-
-            # Push the new roster to the queue.
-            self.roster_queues[team].appendleft(roster)
 
     def _record_team_ratings(self, team: str) -> None:
         match_number = len(self.match_ids[team])
@@ -400,7 +412,8 @@ def compare_methods(games: Sequence[Game]) -> None:
         print(class_.__name__, predictor.train_games(games))
 
 
-def predict_upcoming_matches(games: Sequence[Game], limit=6):
+def predict_stage(past_games: Sequence[Game],
+                  future_games: Sequence[Game]) -> None:
     for game in games:
         pass
 
@@ -408,16 +421,12 @@ def predict_upcoming_matches(games: Sequence[Game], limit=6):
 if __name__ == '__main__':
     past_games, future_games = load_games()
 
-    # compare_methods(past_games)
-
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
-    predictor.save_history()
+    pprint(predictor.best_rosters)
 
-    # teams = ('NYE', 'SEO')
-    # rosters = (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
-    #            ('Miro', 'Munchkin', 'tobi', 'ryujehong', 'ZUNBA', 'FLETA'))
+    teams = ('VAL', 'BOS')
 
-    # p_win, e_diff = predictor.predict_match(teams, rosters)
-    # win_percentage = round(p_win * 100.0)
-    # print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
+    p_win, e_diff = predictor.predict_match(teams)
+    win_percentage = round(p_win * 100.0)
+    print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
