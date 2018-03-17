@@ -45,6 +45,10 @@ class Predictor(object):
         self.stage_map_diffs = defaultdict(int)
         self.stage_head_to_head_map_diffs = defaultdict(int)
 
+        # Match standings.
+        self.match_id = None
+        self.score = {}
+
         # Draw counts, used to adjust parameters related to draws.
         self.expected_draws = 0.0
         self.real_draws = 0.0
@@ -183,6 +187,10 @@ class Predictor(object):
             self.stage_map_diffs.clear()
             self.stage_head_to_head_map_diffs.clear()
 
+        if game.match_id != self.match_id:
+            self.match_id = game.match_id
+            self.score = {team: 0 for team in game.teams}
+
         for team, roster in zip(game.teams, game.rosters):
             self.stage_team_match_ids[team].add(game.match_id)
 
@@ -205,6 +213,16 @@ class Predictor(object):
             self.head_to_head_map_diffs[(loser, winner)] -= 1
             self.stage_head_to_head_map_diffs[(winner, loser)] += 1
             self.stage_head_to_head_map_diffs[(loser, winner)] -= 1
+
+            # Handle the match result.
+            if self.score[winner] == self.score[loser]:
+                # The winner won the match.
+                self.stage_wins[winner] += 1
+            elif self.score[winner] == self.score[loser] - 1:
+                # The winner avoided the loss.
+                self.stage_wins[loser] -= 1
+
+            self.score[winner] += 1
 
     def _update_draws(self, game: Game) -> None:
         if game.drawable:
