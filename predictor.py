@@ -6,7 +6,7 @@ from typing import Dict, List, Sequence, Tuple
 from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
-from game import DRAWABLE_MAPS, Roster, Game
+from game import Roster, Game
 from fetcher import load_games
 
 PScores = Dict[Tuple[int, int], float]
@@ -201,7 +201,7 @@ class SimplePredictor(Predictor):
 
 
 class TrueSkillPredictor(Predictor):
-    """TrueSkill predictor."""
+    """Team-based TrueSkill predictor."""
 
     def __init__(self, mu: float = 2500.0, sigma: float = 2500.0 / 3.0,
                  beta: float = 2500.0 / 2.0, tau: float = 25.0 / 3.0,
@@ -228,7 +228,7 @@ class TrueSkillPredictor(Predictor):
         env = self.env_drawable if game.drawable else self.env_undrawable
         teams_ratings = env.rate(self._teams_ratings(game.teams, game.rosters),
                                  ranks=ranks)
-        self._update_teams_ratings(game.teams, game.rosters, teams_ratings)
+        self._update_teams_ratings(game, teams_ratings)
 
     def predict(self, teams: Tuple[str, str],
                 rosters: Tuple[Roster, Roster] = None,
@@ -253,31 +253,25 @@ class TrueSkillPredictor(Predictor):
 
     def _teams_ratings(self, teams: Tuple[str, str],
                        rosters: Tuple[Roster, Roster]):
-        return [self._team_ratings(team, roster)
-                for team, roster in zip(teams, rosters)]
+        return [self.ratings[teams[0]]], [self.ratings[teams[1]]]
 
-    def _update_teams_ratings(self, teams: Tuple[str, str],
-                              rosters: Tuple[Roster, Roster],
-                              teams_ratings):
-        for team, roster, ratings in zip(teams, rosters, teams_ratings):
-            self._update_team_ratings(team, roster, ratings)
-
-    def _team_ratings(self, team: str, roster: Roster):
-        return [self.ratings[name] for name in roster]
-
-    def _update_team_ratings(self, team: str, roster: Roster, team_ratings):
-        for name, rating in zip(roster, team_ratings):
-            self.ratings[name] = rating
+    def _update_teams_ratings(self, game: Game, teams_ratings):
+        for team, ratings in zip(game.teams, teams_ratings):
+            self.ratings[team] = ratings[0]
 
 
-class TeamTrueSkillPredictor(TrueSkillPredictor):
-    """Team-based TrueSkill predictor."""
+class PlayerTrueSkillPredictor(TrueSkillPredictor):
+    """Player-based TrueSkill predictor."""
 
-    def _team_ratings(self, team: str, roster: Roster):
-        return [self.ratings[team]]
+    def _teams_ratings(self, teams: Tuple[str, str],
+                       rosters: Tuple[Roster, Roster]):
+        return ([self.ratings[name] for name in rosters[0]],
+                [self.ratings[name] for name in rosters[1]])
 
-    def _update_team_ratings(self, team: str, roster: Roster, team_ratings):
-        self.ratings[team] = team_ratings[0]
+    def _update_teams_ratings(self, game: Game, teams_ratings):
+        for roster, ratings in zip(game.rosters, teams_ratings):
+            for name, rating in zip(roster, ratings):
+                self.ratings[name] = rating
 
 
 def optimize_beta(games: Sequence[Game], maxfun=100) -> None:
@@ -293,7 +287,7 @@ def compare_methods(games: Sequence[Game]) -> None:
     classes = [
         SimplePredictor,
         TrueSkillPredictor,
-        TeamTrueSkillPredictor
+        PlayerTrueSkillPredictor
     ]
 
     for class_ in classes:
@@ -302,12 +296,16 @@ def compare_methods(games: Sequence[Game]) -> None:
 
 
 def predict_upcoming_matches(games: Sequence[Game], limit=6):
-    pass
+    for game in games:
+        pass
 
 
 if __name__ == '__main__':
     past_games, future_games = load_games()
-    predictor = TrueSkillPredictor()
+
+    compare_methods(past_games)
+
+    predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
 
     teams = ('NYE', 'SEO')
