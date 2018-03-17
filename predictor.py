@@ -33,7 +33,11 @@ class Predictor(object):
         self.roster_queues = defaultdict(
             lambda: deque(maxlen=roster_queue_size))
 
-        # Stage info.
+        # Global standings.
+        self.map_diffs = defaultdict(int)
+        self.head_to_head_map_diffs = defaultdict(int)
+
+        # Stage standings.
         self.stage = None
         self.stage_team_match_ids = defaultdict(set)
 
@@ -65,7 +69,7 @@ class Predictor(object):
         self.points.append(point)
 
         self._update_rosters(game)
-        self._update_stage_info(game)
+        self._update_standings(game)
         self._update_draws(game)
 
         self._train(game)
@@ -170,7 +174,7 @@ class Predictor(object):
         for team, roster in zip(game.teams, game.rosters):
             self.roster_queues[team].appendleft(roster)
 
-    def _update_stage_info(self, game: Game) -> None:
+    def _update_standings(self, game: Game) -> None:
         if game.stage != self.stage:
             self.stage = game.stage
             self.stage_team_match_ids.clear()
@@ -186,21 +190,21 @@ class Predictor(object):
         team1, team2 = game.teams
         score1, score2 = game.score
 
-        if score1 > score2:
-            # Team 1 wins.
-            self.stage_map_diffs[team1] += 1
-            self.stage_map_diffs[team2] -= 1
-            self.stage_head_to_head_map_diffs[(team1, team2)] += 1
-            self.stage_head_to_head_map_diffs[(team2, team1)] -= 1
-        elif score1 == score2:
-            # Draw.
-            pass
-        else:
-            # Team 2 wins.
-            self.stage_map_diffs[team2] += 1
-            self.stage_map_diffs[team1] -= 1
-            self.stage_head_to_head_map_diffs[(team2, team1)] += 1
-            self.stage_head_to_head_map_diffs[(team1, team2)] -= 1
+        if game.score[0] != game.score[1]:
+            if game.score[0] > game.score[1]:
+                winner, loser = game.teams
+            else:
+                loser, winner = game.teams
+
+            self.map_diffs[winner] += 1
+            self.map_diffs[loser] -= 1
+            self.stage_map_diffs[winner] += 1
+            self.stage_map_diffs[loser] -= 1
+
+            self.head_to_head_map_diffs[(winner, loser)] += 1
+            self.head_to_head_map_diffs[(loser, winner)] -= 1
+            self.stage_head_to_head_map_diffs[(winner, loser)] += 1
+            self.stage_head_to_head_map_diffs[(loser, winner)] -= 1
 
     def _update_draws(self, game: Game) -> None:
         if game.drawable:
@@ -229,13 +233,13 @@ class SimplePredictor(Predictor):
                 drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         team1, team2 = teams
-        diff1 = self.stage_map_diffs[team1]
-        diff2 = self.stage_map_diffs[team2]
+        diff1 = self.map_diffs[team1]
+        diff2 = self.map_diffs[team2]
 
         if diff1 > diff2:
             p_win = 0.5 + self.alpha
         elif diff1 == diff2:
-            record = self.stage_head_to_head_map_diffs[teams]
+            record = self.head_to_head_map_diffs[teams]
             if record > 0:
                 p_win = 0.5 + self.beta
             elif record == 0:
