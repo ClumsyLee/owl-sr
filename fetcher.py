@@ -1,5 +1,8 @@
 from collections import defaultdict
-from csv import reader as csv_reader, writer as csv_writer, DictReader
+from csv import (reader as csv_reader,
+                 writer as csv_writer,
+                 DictReader,
+                 DictWriter)
 from datetime import datetime
 from typing import Dict, List, NamedTuple, Set, Tuple
 
@@ -9,6 +12,7 @@ import requests
 
 GAMES_CSV = 'games.csv'
 AVAILABILITIES_CSV = 'availabilities.csv'
+RATINGS_CSV = 'ratings.csv'
 BASE_URL = 'https://api.overwatchleague.com/'
 
 
@@ -185,7 +189,7 @@ def load_games(csv_filename: str = GAMES_CSV) -> Tuple[List[Game], List[Game]]:
 
 
 def load_availabilities(
-        csv_filename: str = AVAILABILITIES_CSV) -> AVAILABILITIES:
+        csv_filename: str = AVAILABILITIES_CSV) -> Availabilities:
     availabilities = {}
 
     with open(csv_filename, newline='') as csv_file:
@@ -202,6 +206,32 @@ def load_availabilities(
             availabilities[(stage, match_number)] = team_members
 
     return availabilities
+
+
+def save_ratings_history(history, mu, sigma, csv_filename: str = RATINGS_CSV):
+    # Collect all unique names.
+    names = set(name for ratings in history.values()
+                for name in ratings.keys())
+
+    row = {}
+    for name in names:
+        row[f'{name}.mu'] = round(mu)
+        row[f'{name}.sigma'] = round(sigma)
+    fieldnames = ['stage', 'match_number'] + sorted(row.keys())
+
+    with open(csv_filename, 'w', newline='') as csv_file:
+        writer = DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for (stage, match_number), ratings in history.items():
+            row['stage'] = stage
+            row['match_number'] = match_number
+
+            for name, rating in ratings.items():
+                row[f'{name}.mu'] = round(rating.mu)
+                row[f'{name}.sigma'] = round(rating.sigma)
+
+            writer.writerow(row)
 
 
 if __name__ == '__main__':

@@ -1,13 +1,17 @@
-from collections import defaultdict
+from collections import defaultdict, deque, OrderedDict
 from itertools import chain
 from math import sqrt
-from typing import Dict, List, Sequence, Tuple
+from typing import Dict, List, Sequence, Set, Tuple
 
 from scipy.optimize import fmin
-from trueskill import TrueSkill, calc_draw_margin
+from trueskill import calc_draw_margin, Rating, TrueSkill
 
 from game import Roster, Game
-from fetcher import Availabilities, load_availabilities, load_games
+from fetcher import (Availabilities,
+                     load_availabilities,
+                     load_games,
+                     save_ratings_history)
+
 
 PScores = Dict[Tuple[int, int], float]
 
@@ -212,7 +216,7 @@ class TrueSkillPredictor(Predictor):
                                       draw_probability=draw_probability)
         self.env_undrawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
                                         draw_probability=0.0)
-        self.ratings = defaultdict(lambda: self.env_drawable.create_rating())
+        self.ratings = self._create_rating_jar()
 
     def _train(self, game: Game) -> None:
         """Given a game result, train the underlying model.
@@ -259,19 +263,120 @@ class TrueSkillPredictor(Predictor):
         for team, ratings in zip(game.teams, teams_ratings):
             self.ratings[team] = ratings[0]
 
+    def _create_rating_jar(self):
+        return defaultdict(lambda: self.env_drawable.create_rating())
+
 
 class PlayerTrueSkillPredictor(TrueSkillPredictor):
-    """Player-based TrueSkill predictor."""
+    """Player-based TrueSkill predictor. Guess the rosters based on history
+    when the rosters are not provided."""
+
+    def __init__(self, availabilities: Availabilities = None,
+                 roster_queue_size=10,
+                 **kws):
+        super().__init__(**kws)
+
+        if availabilities is None:
+            availabilities = load_availabilities()
+
+        self.availabilities = availabilities
+        self.stage = None
+        self.match_ids = defaultdict(set)
+
+        self.roster_queues = defaultdict(
+            lambda: deque(maxlen=roster_queue_size))
+        self.best_rosters = {}
+
+        self.ratings_history = OrderedDict()
+
+    def save_history(self):
+        save_ratings_history(self.ratings_history,
+                             mu=self.env_drawable.mu,
+                             sigma=self.env_drawable.sigma)
 
     def _teams_ratings(self, teams: Tuple[str, str],
                        rosters: Tuple[Roster, Roster]):
         return ([self.ratings[name] for name in rosters[0]],
                 [self.ratings[name] for name in rosters[1]])
 
-    def _update_teams_ratings(self, game: Game, teams_ratings):
-        for roster, ratings in zip(game.rosters, teams_ratings):
+    def _update_teams_ratings(self, game: Game, teams_ratings) -> None:
+        self._record_game(game)
+
+        for team, roster, ratings in zip(game.teams, game.rosters,
+                                         teams_ratings):
             for name, rating in zip(roster, ratings):
                 self.ratings[name] = rating
+
+            self._record_team_ratings(team)
+
+    def _record_game(self, game: Game) -> None:
+        # Update stage if needed.
+        if game.stage != self.stage:
+            self.stage = game.stage
+            self.match_ids.clear()
+
+        for team, roster in zip(game.teams, game.rosters):
+            # Record the match ids for the teams.
+            self.match_ids[team].add(game.match_id)
+
+            # Push the new roster to the queue.
+            self.roster_queues[team].appendleft(roster)
+
+    def _record_team_ratings(self, team: str) -> None:
+        match_number = len(self.match_ids[team])
+        match_key = (self.stage, match_number)
+
+        members = self.availabilities[match_key][team]
+        if match_key not in self.ratings_history:
+            self.ratings_history[match_key] = {}
+        ratings = self.ratings_history[match_key]
+
+        # Record player ratings.
+        for name in members:
+            ratings[name] = self.ratings[name]
+
+        # Update the best roster.
+        best_roster = self._update_best_roster(team, members)
+
+        # Record the team rating.
+        ratings[team] = self._roster_rating(best_roster)
+
+    def _update_best_roster(self, team: str, members: Set[str]):
+        rosters = sorted(self.roster_queues[team],
+                         key=lambda roster: self._min_roster_rating(roster),
+                         reverse=True)
+        best_roster = None
+
+        for roster in rosters:
+            if all(name in members for name in roster):
+                best_roster = roster
+                break
+
+        if best_roster is None:
+            # Just pick the best 6.
+            sorted_members = sorted(members,
+                                    key=lambda name: self._min_rating(name),
+                                    reverse=True)
+            best_roster = tuple(sorted_members[:6])
+
+        self.best_rosters[team] = best_roster
+        return best_roster
+
+    def _roster_rating(self, roster: Roster) -> Tuple[float, float]:
+        sum_mu = sum(self.ratings[name].mu for name in roster)
+        sum_sigma = sqrt(sum(self.ratings[name].sigma**2 for name in roster))
+
+        mu = sum_mu / 6.0
+        sigma = sum_sigma / 6.0
+        return Rating(mu=mu, sigma=sigma)
+
+    def _min_roster_rating(self, roster: Roster) -> float:
+        rating = self._roster_rating(roster)
+        return rating.mu - 3.0 * rating.sigma
+
+    def _min_rating(self, name: str) -> float:
+        rating = self.ratings[name]
+        return rating.mu - 3.0 * rating.sigma
 
 
 def optimize_beta(games: Sequence[Game], maxfun=100) -> None:
@@ -303,15 +408,16 @@ def predict_upcoming_matches(games: Sequence[Game], limit=6):
 if __name__ == '__main__':
     past_games, future_games = load_games()
 
-    compare_methods(past_games)
+    # compare_methods(past_games)
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
+    predictor.save_history()
 
-    teams = ('NYE', 'SEO')
-    rosters = (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
-               ('Miro', 'Munchkin', 'tobi', 'ryujehong', 'ZUNBA', 'FLETA'))
+    # teams = ('NYE', 'SEO')
+    # rosters = (('Saebyeolbe', 'Meko', 'Jjonak', 'Ark', 'Libero', 'Mano'),
+    #            ('Miro', 'Munchkin', 'tobi', 'ryujehong', 'ZUNBA', 'FLETA'))
 
-    p_win, e_diff = predictor.predict_match(teams, rosters)
-    win_percentage = round(p_win * 100.0)
-    print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
+    # p_win, e_diff = predictor.predict_match(teams, rosters)
+    # win_percentage = round(p_win * 100.0)
+    # print(f'{teams[0]} vs. {teams[1]} ({win_percentage}%, {e_diff:+.1f})')
