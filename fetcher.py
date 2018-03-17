@@ -165,7 +165,7 @@ def load_games(csv_filename: str = GAMES_CSV) -> Tuple[List[Game], List[Game]]:
                 game_id = int(csv_game.game_id)
                 game_number = int(csv_game.game_number)
                 map_name = csv_game.map_name
-                score = (csv_game.score1, csv_game.score2)
+                score = (int(csv_game.score1), int(csv_game.score2))
                 rosters = (
                     (csv_game.team1_p1, csv_game.team1_p2, csv_game.team1_p3,
                      csv_game.team1_p4, csv_game.team1_p5, csv_game.team1_p6),
