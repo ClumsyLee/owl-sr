@@ -35,11 +35,11 @@ class Predictor(object):
 
         # Stage info.
         self.stage = None
-        self.stage_match_ids = defaultdict(set)
+        self.stage_team_match_ids = defaultdict(set)
 
         self.stage_wins = defaultdict(int)
         self.stage_map_diffs = defaultdict(int)
-        self.stage_head_to_head_win_diffs = defaultdict(int)
+        self.stage_head_to_head_map_diffs = defaultdict(int)
 
         # Draw counts, used to adjust parameters related to draws.
         self.expected_draws = 0.0
@@ -61,12 +61,12 @@ class Predictor(object):
     def train(self, game: Game) -> float:
         """Given a game result, train the underlying model.
         Return the prediction point for this game before training."""
+        point = self.evaluate(game)
+        self.points.append(point)
+
         self._update_rosters(game)
         self._update_stage_info(game)
         self._update_draws(game)
-
-        point = self.evaluate(game)
-        self.points.append(point)
 
         self._train(game)
 
@@ -78,9 +78,11 @@ class Predictor(object):
         if game.score[0] == game.score[1]:
             return 0.0
 
-        p_win, _ = self.predict(game.teams, game.rosters, drawable=False)
         win = game.score[0] > game.score[1]
-        return 0.25 - (p_win - win)**2
+        p_win, _ = self.predict(game.teams, game.rosters, drawable=False)
+        p_win = max(0.0, min(p_win, 1.0))
+
+        return 0.25 - (win - p_win)**2
 
     def train_games(self, games: Sequence[Game]) -> float:
         """Given a sequence of games, train the underlying model.
@@ -171,32 +173,34 @@ class Predictor(object):
     def _update_stage_info(self, game: Game) -> None:
         if game.stage != self.stage:
             self.stage = game.stage
-            self.stage_match_ids.clear()
+            self.stage_team_match_ids.clear()
+
+            self.stage_wins.clear()
+            self.stage_map_diffs.clear()
+            self.stage_head_to_head_map_diffs.clear()
 
         for team, roster in zip(game.teams, game.rosters):
-            self.stage_match_ids[team].add(game.match_id)
+            self.stage_team_match_ids[team].add(game.match_id)
 
         # Wins & map diffs.
         team1, team2 = game.teams
         score1, score2 = game.score
 
-        map_diff = score1 - score2
-        self.stage_map_diffs[team1] += map_diff
-        self.stage_map_diffs[team2] -= map_diff
-
         if score1 > score2:
             # Team 1 wins.
-            self.stage_wins[team1] += 1
-            self.stage_head_to_head_win_diffs[(team1, team2)] += 1
-            self.stage_head_to_head_win_diffs[(team2, team1)] -= 1
+            self.stage_map_diffs[team1] += 1
+            self.stage_map_diffs[team2] -= 1
+            self.stage_head_to_head_map_diffs[(team1, team2)] += 1
+            self.stage_head_to_head_map_diffs[(team2, team1)] -= 1
         elif score1 == score2:
             # Draw.
             pass
         else:
             # Team 2 wins.
-            self.stage_wins[team2] += 1
-            self.stage_head_to_head_win_diffs[(team2, team1)] += 1
-            self.stage_head_to_head_win_diffs[(team1, team2)] -= 1
+            self.stage_map_diffs[team2] += 1
+            self.stage_map_diffs[team1] -= 1
+            self.stage_head_to_head_map_diffs[(team2, team1)] += 1
+            self.stage_head_to_head_map_diffs[(team1, team2)] -= 1
 
     def _update_draws(self, game: Game) -> None:
         if game.drawable:
@@ -225,13 +229,13 @@ class SimplePredictor(Predictor):
                 drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         team1, team2 = teams
-        wins1 = self.stage_wins[team1]
-        wins2 = self.stage_wins[team2]
+        diff1 = self.stage_map_diffs[team1]
+        diff2 = self.stage_map_diffs[team2]
 
-        if wins1 > wins2:
+        if diff1 > diff2:
             p_win = 0.5 + self.alpha
-        elif wins1 == wins2:
-            record = self.stage_head_to_head_win_diffs[teams]
+        elif diff1 == diff2:
+            record = self.stage_head_to_head_map_diffs[teams]
             if record > 0:
                 p_win = 0.5 + self.beta
             elif record == 0:
@@ -341,7 +345,7 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
             self._record_team_ratings(team)
 
     def _record_team_ratings(self, team: str) -> None:
-        match_number = len(self.stage_match_ids[team])
+        match_number = len(self.stage_team_match_ids[team])
         match_key = (self.stage, match_number)
 
         members = self.availabilities[match_key][team]
