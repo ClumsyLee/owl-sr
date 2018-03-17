@@ -1,13 +1,18 @@
-from csv import reader as csv_reader, writer as csv_writer
+from collections import defaultdict
+from csv import reader as csv_reader, writer as csv_writer, DictReader
 from datetime import datetime
-from typing import Dict, List, NamedTuple, Tuple
+from typing import Dict, List, NamedTuple, Set, Tuple
 
 from game import Game
 
 import requests
 
 GAMES_CSV = 'games.csv'
+AVAILABILITIES_CSV = 'availabilities.csv'
 BASE_URL = 'https://api.overwatchleague.com/'
+
+
+Availabilities = Dict[Tuple[str, int], Dict[str, Set[str]]]
 
 
 class CSVGame(NamedTuple):
@@ -128,14 +133,14 @@ def parse_game(raw_game, base_game: CSVGame, team1_id: int,
     return game
 
 
-def save_games(games: List[CSVGame], csv_filename: str=GAMES_CSV) -> None:
+def save_games(games: List[CSVGame], csv_filename: str = GAMES_CSV) -> None:
     with open(csv_filename, 'w', newline='') as csv_file:
         writer = csv_writer(csv_file)
         writer.writerow(CSVGame._fields)  # Write headers.
         writer.writerows(games)
 
 
-def load_games(csv_filename: str=GAMES_CSV) -> Tuple[List[Game], List[Game]]:
+def load_games(csv_filename: str = GAMES_CSV) -> Tuple[List[Game], List[Game]]:
     """Load past & future games from a csv file."""
     past_games = []
     future_games = []
@@ -177,6 +182,26 @@ def load_games(csv_filename: str=GAMES_CSV) -> Tuple[List[Game], List[Game]]:
                 future_games.append(game)
 
     return past_games, future_games
+
+
+def load_availabilities(
+        csv_filename: str = AVAILABILITIES_CSV) -> AVAILABILITIES:
+    availabilities = {}
+
+    with open(csv_filename, newline='') as csv_file:
+        for row in DictReader(csv_file):
+            stage = row.pop('stage')
+            match_number = int(row.pop('match_number'))
+            team_members = defaultdict(set)
+
+            for name, team in row.items():
+                if not team:
+                    continue
+                team_members[team].add(name)
+
+            availabilities[(stage, match_number)] = team_members
+
+    return availabilities
 
 
 if __name__ == '__main__':

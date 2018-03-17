@@ -7,7 +7,7 @@ from scipy.optimize import fmin
 from trueskill import TrueSkill, calc_draw_margin
 
 from game import Roster, Game
-from fetcher import load_games
+from fetcher import Availabilities, load_availabilities, load_games
 
 PScores = Dict[Tuple[int, int], float]
 
