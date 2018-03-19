@@ -1,0 +1,17 @@
+table {
+    box-shadow: 1.5px 1.5px 5px 1px rgba(0, 0, 0, .2);
+}
+thead th {
+    font-size: 0.7em;
+    padding: 1px !important;
+    height: 15px;
+}
+tr.win {
+  font-weight: bolder;
+}
+tr.lose {
+  font-weight: lighter;
+}
+tr.lost {
+  opacity: 0.2;
+}
