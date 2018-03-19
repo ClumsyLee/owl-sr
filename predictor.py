@@ -2,7 +2,6 @@ from collections import defaultdict, deque, OrderedDict
 from functools import cmp_to_key
 from itertools import chain
 from math import sqrt
-from pprint import pprint
 from random import choices, random
 from typing import Dict, List, Sequence, Set, Tuple
 
