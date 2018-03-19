@@ -20,7 +20,7 @@ TEAM_NAMES = {
 
 def percentage_str(percent):
     if percent == 0:
-        return '<1%'
+        return '&lt;1%'
     elif percent == 100:
         return '>99%'
     else:
@@ -90,6 +90,8 @@ def render_index(predictor, future_games) -> None:
     losses = predictor.stage_losses
     map_diffs = predictor.stage_map_diffs
 
+    min_win = list(sorted(wins.values(), reverse=True))[2]
+
     teams = sorted(p_stage.keys(),
                    key=lambda team: (round(p_stage[team][0] * 100),
                                      round(p_stage[team][1] * 100),
@@ -123,14 +125,22 @@ def render_index(predictor, future_games) -> None:
         top3 = round(p_top3 * 100)
         top1 = round(p_top1 * 100)
 
+        max_win = win + sum(int(team in game.teams) for game in future_games)
+        if max_win < min_win:
+            top3_str = '-'
+            top1_str = '-'
+        else:
+            top3_str = percentage_str(top3)
+            top1_str = percentage_str(top1)
+
         content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
   <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
   <td>{name}</td>
   <td class="text-center">{win}</td>
   <td class="text-center">{loss}</td>
   <td class="text-center">{map_diff:+}</td>
-  <td class="text-center{' low-chance' if top3 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top3 / 100});">{percentage_str(top3)}</td>
-  <td class="text-center{' low-chance' if top1 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top1 / 100});">{percentage_str(top1)}</td>
+  <td class="text-center{' low-chance' if top3 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top3 / 100});">{top3_str}</td>
+  <td class="text-center{' low-chance' if top1 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top1 / 100});">{top1_str}</td>
 </tr>"""
 
     content += """</tbody>
