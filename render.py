@@ -282,7 +282,7 @@ def render_teams(predictor):
         full_name = TEAM_FULL_NAMES[team]
         color = TEAM_COLORS[team]
 
-        content = f"""<h3 class="py-3 text-center">{full_name}</h5>
+        content = f"""<h4 class="py-3 text-center">{full_name}</h5>
       <div class="row">
         <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
           <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
@@ -290,7 +290,7 @@ def render_teams(predictor):
 
           <script>
             var ctx = document.getElementById('myChart');
-            ctx.height = 300;
+            ctx.height = 280;
             var chart = new Chart(ctx.getContext('2d'), {{
               // The type of chart we want to create
               type: 'line',
