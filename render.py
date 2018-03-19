@@ -18,6 +18,22 @@ TEAM_NAMES = {
 }
 
 
+TEAM_FULL_NAMES = {
+    'SHD': 'Shanghai Dragons',
+    'SEO': 'Seoul Dynasty',
+    'NYE': 'New York Excelsior',
+    'DAL': 'Dallas Fuel',
+    'PHI': 'Philadelphia Fusion',
+    'GLA': 'Los Angeles Gladiators',
+    'FLA': 'Florida Mayhem',
+    'HOU': 'Houston Outlaws',
+    'SFS': 'San Francisco Shock',
+    'LDN': 'London Spitfire',
+    'BOS': 'Boston Uprising',
+    'VAL': 'Los Angeles Valiant'
+}
+
+
 def percentage_str(percent):
     if percent == 0:
         return '&lt;1%'
@@ -135,7 +151,7 @@ def render_index(predictor, future_games) -> None:
 
         content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
   <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
-  <td>{name}</td>
+  <td><a href="/{name}" class="team">{name}</a></td>
   <td class="text-center">{win}</td>
   <td class="text-center">{loss}</td>
   <td class="text-center">{map_diff:+}</td>
@@ -195,14 +211,14 @@ def render_matches(predictor, future_games) -> None:
             <tbody>
               <tr scope="row" class="{'win' if win > 50 else 'loss'}">
                 <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
-                <td>{name1}</td>
+                <td><a href="/{name1}" class="team">{name1}</a></td>
                 <td></td>
                 <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
                 <td class="text-center">{e_diff:+.1f}</td>
               </tr>
               <tr scope="row" class="{'win' if win < 50 else 'loss'}">
                 <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
-                <td>{name2}</td>
+                <td><a href="/{name2}" class="team">{name2}</a></td>
                 <td></td>
                 <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
                 <td class="text-center">{-e_diff:+.1f}</td>
@@ -215,6 +231,14 @@ def render_matches(predictor, future_games) -> None:
         content += '</div>'  # Ending tag for the last row.
 
     render_page('matches', f'OWL {predictor.stage} Matches', content)
+
+
+def render_teams(predictor):
+    for team, name in TEAM_NAMES.items():
+        full_name = TEAM_FULL_NAMES[team]
+        content = ''
+
+        render_page(name, full_name, content)
 
 
 def render_about(predictor):
@@ -234,6 +258,7 @@ def render_all():
 
     render_index(predictor, future_games)
     render_matches(predictor, future_games)
+    render_teams(predictor)
     render_about(predictor)
 
 
