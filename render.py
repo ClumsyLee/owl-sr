@@ -217,6 +217,11 @@ def render_matches(predictor, future_games) -> None:
     render_page('matches', f'OWL {predictor.stage} Matches', content)
 
 
+def render_about(predictor):
+    content = ''
+    render_page('about', f'About', content)
+
+
 def render_all():
     past_games, future_games = load_games()
 
@@ -229,6 +234,7 @@ def render_all():
 
     render_index(predictor, future_games)
     render_matches(predictor, future_games)
+    render_about(predictor)
 
 
 if __name__ == '__main__':
