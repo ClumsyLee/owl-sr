@@ -346,7 +346,7 @@ def render_teams(predictor):
 def render_about(predictor):
     content = """<div class="row pt-4">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
-    <h3>What Did You Compute These Numbers?</h3>
+    <h3>How Did You Compute These Numbers?</h3>
     <p>I used <a href="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">TrueSkill</a> to keep track of skill ratings of individual players and estimate the win probabilities based on the ratings.</p>
 
     <h3>What Is TrueSkill?</h3>
