@@ -18,6 +18,15 @@ TEAM_NAMES = {
 }
 
 
+def percentage_str(percent):
+    if percent == 0:
+        return '<1%'
+    elif percent == 100:
+        return '>99%'
+    else:
+        return f'{percent}%'
+
+
 def render_page(endpoint: str, title: str, content: str):
     html = f"""<!doctype html>
 <html lang="en">
@@ -32,7 +41,7 @@ def render_page(endpoint: str, title: str, content: str):
     <!-- Custom CSS -->
     <link rel="stylesheet" href="owl.css">
 
-    <title>{title}</title>
+    <title>{title} | OWL Ratings</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,7 +52,7 @@ def render_page(endpoint: str, title: str, content: str):
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link{' active' if endpoint == '' else ''}" href="/">Teams</a>
+            <a class="nav-link{' active' if endpoint == 'index' else ''}" href="/">Standings</a>
           </li>
           <li class="nav-item">
             <a class="nav-link{' active' if endpoint == 'matches' else ''}" href="/matches">Matches</a>
@@ -69,26 +78,73 @@ def render_page(endpoint: str, title: str, content: str):
   </body>
 </html>"""
 
-    if endpoint == '':
-        endpoint = 'index'
     with open(f'docs/{endpoint}.html', 'w') as file:
         print(html, file=file)
 
 
-def render_matches():
-    past_games, future_games = load_games()
+def render_index(predictor, future_games) -> None:
+    content = ''
 
-    predictor = PlayerTrueSkillPredictor()
-    predictor.train_games(past_games)
+    p_stage = predictor.predict_stage(future_games)
+    wins = predictor.stage_wins
+    losses = predictor.stage_losses
+    map_diffs = predictor.stage_map_diffs
 
+    teams = sorted(p_stage.keys(),
+                   key=lambda team: (round(p_stage[team][0] * 100),
+                                     round(p_stage[team][1] * 100),
+                                     wins[team],
+                                     map_diffs[team]),
+                   reverse=True)
+
+    content += """<div class="row pt-4">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <table class="table">
+      <thead>
+        <tr class="text-center">
+          <th scope="col" class="compact"></th>
+          <th scope="col"></th>
+          <th scope="col" class="compacter">win</th>
+          <th scope="col" class="compacter">loss</th>
+          <th scope="col" class="compact">map +/-</th>
+          <th scope="col" class="compact">top 3<br>prob.</th>
+          <th scope="col" class="compact">top 1<br>prob.</th>
+        </tr>
+      </thead>
+      <tbody>"""
+
+    for i, team in enumerate(teams):
+        name = TEAM_NAMES[team]
+        win = wins[team]
+        loss = losses[team]
+        map_diff = map_diffs[team]
+
+        p_top3, p_top1 = p_stage[team]
+        top3 = round(p_top3 * 100)
+        top1 = round(p_top1 * 100)
+
+        content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
+  <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
+  <td>{name}</td>
+  <td class="text-center">{win}</td>
+  <td class="text-center">{loss}</td>
+  <td class="text-center">{map_diff:+}</td>
+  <td class="text-center{' low-chance' if top3 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top3 / 100});">{percentage_str(top3)}</td>
+  <td class="text-center{' low-chance' if top1 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top1 / 100});">{percentage_str(top1)}</td>
+</tr>"""
+
+    content += """</tbody>
+    </table>
+  </div>
+</div>"""
+    render_page('index', f'OWL {predictor.stage} Standings', content)
+
+
+def render_matches(predictor, future_games) -> None:
     content = ''
     last_date = None
 
     for game in future_games:
-        # Only predict the current stage (including title matches).
-        if predictor.stage not in game.stage:
-            break
-
         # Add a separator if needed.
         date = (game.start_time.year,
                 game.start_time.month,
@@ -112,33 +168,33 @@ def render_matches():
         win = round(p_win * 100.0)
         loss = 100 - win
 
-        team1 = TEAM_NAMES[game.teams[0]]
-        team2 = TEAM_NAMES[game.teams[1]]
+        name1 = TEAM_NAMES[game.teams[0]]
+        name2 = TEAM_NAMES[game.teams[1]]
 
         content += f"""<div class="col-lg-4 col-md-6">
           <table class="table">
             <thead>
               <tr class="text-center">
-                <th scope="col" class="font-weight-light text-muted" style="width: 5%">{time_str}</th>
+                <th scope="col" class="text-muted compact">{time_str}</th>
                 <th scope="col"></th>
-                <th scope="col" style="width: 5%"></th>
-                <th scope="col" class="font-weight-light" style="width: 5%">win<br>prob.</th>
-                <th scope="col" class="font-weight-light" style="width: 5%">map<br>+/-</th>
+                <th scope="col" class="compact"></th>
+                <th scope="col" class="compact">win<br>prob.</th>
+                <th scope="col" class="compact">map<br>+/-</th>
               </tr>
             </thead>
             <tbody>
               <tr scope="row" class="{'win' if win > 50 else 'loss'}">
-                <th class="text-right"><img src="imgs/{team1}.png" alt="{team1} Logo" width="30"></th>
-                <td>{team1}</td>
+                <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
+                <td>{name1}</td>
                 <td></td>
-                <td class="text-center" style="background-color: rgba(255, 137, 0, {win / 100});">{win}%</td>
+                <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
                 <td class="text-center">{e_diff:+.1f}</td>
               </tr>
               <tr scope="row" class="{'win' if win < 50 else 'loss'}">
-                <th class="text-right"><img src="imgs/{team2}.png" alt="{team2} Logo" width="30"></th>
-                <td>{team2}</td>
+                <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
+                <td>{name2}</td>
                 <td></td>
-                <td class="text-center" style="background-color: rgba(255, 137, 0, {loss / 100});">{loss}%</td>
+                <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
                 <td class="text-center">{-e_diff:+.1f}</td>
               </tr>
             </tbody>
@@ -148,11 +204,21 @@ def render_matches():
     if last_date is not None:
         content += '</div>'  # Ending tag for the last row.
 
-    render_page('matches', f'{predictor.stage} Matches | OWL Ratings', content)
+    render_page('matches', f'OWL {predictor.stage} Matches', content)
 
 
 def render_all():
-    render_matches()
+    past_games, future_games = load_games()
+
+    predictor = PlayerTrueSkillPredictor()
+    predictor.train_games(past_games)
+
+    # Only predict the current stage (including title matches).
+    future_games = [game for game in future_games
+                    if predictor.stage in game.stage]
+
+    render_index(predictor, future_games)
+    render_matches(predictor, future_games)
 
 
 if __name__ == '__main__':

@@ -44,6 +44,7 @@ class Predictor(object):
         self.stage_team_match_ids = defaultdict(set)
 
         self.stage_wins = defaultdict(int)
+        self.stage_losses = defaultdict(int)
         self.stage_map_diffs = defaultdict(int)
         self.stage_head_to_head_map_diffs = defaultdict(int)
 
@@ -238,6 +239,7 @@ class Predictor(object):
             self.stage_team_match_ids.clear()
 
             self.stage_wins.clear()
+            self.stage_losses.clear()
             self.stage_map_diffs.clear()
             self.stage_head_to_head_map_diffs.clear()
 
@@ -272,9 +274,11 @@ class Predictor(object):
             if self.score[winner] == self.score[loser]:
                 # The winner won the match.
                 self.stage_wins[winner] += 1
+                self.stage_losses[loser] += 1
             elif self.score[winner] == self.score[loser] - 1:
                 # The winner avoided the loss.
                 self.stage_wins[loser] -= 1
+                self.stage_losses[winner] -= 1
 
             self.score[winner] += 1
 
@@ -578,13 +582,13 @@ def predict_stage():
     teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
                    reverse=True)
 
-    print(f'      top3 top1')
+    print(f'             top3        top1')
     for team in teams:
         p_top3, p_top1 = p_stage[team]
-        top3 = round(p_top3 * 100)
-        top1 = round(p_top1 * 100)
+        top3 = p_top3 * 100
+        top1 = p_top1 * 100
 
-        print(f'{team:4}: {top3:3}% {top1:3}%')
+        print(f'{team:4}: {top3:10.6}% {top1:10.6}%')
 
 
 if __name__ == '__main__':
