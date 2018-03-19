@@ -34,7 +34,63 @@
       </div>
     </nav>
     <div class="container">
-      
+      <h3 class="py-3 text-center">Florida Mayhem</h5>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+          <canvas id="myChart"></canvas>
+
+          <script>
+            var ctx = document.getElementById('myChart');
+            ctx.height = 300;
+            var chart = new Chart(ctx.getContext('2d'), {
+              // The type of chart we want to create
+              type: 'line',
+
+              // The data for our dataset
+              data: {
+                labels: ['Preseason', '', '', 'Stage 1', '', '', '', '', '', '', '', '', '', 'Stage 1 - Title Matches', '', 'Stage 2', '', '', '', '', '', '', ''],
+                datasets: [{
+                  borderColor: '#FEDA00',
+                  data: [2393, 2252, 2252, 2165, 1912, 1835, 2094, 1961, 2041, 1986, 1775, 1851, 1922, 1922, 1922, 1982, 1894, 1923, 1794, 1897, 2041, 2246, 2304],
+                  fill: false
+                }, {
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  borderColor: 'rgba(0, 0, 0, 0)',
+                  data: [2235, 2231, 2195, 2036, 1899, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575],
+                  pointRadius: 0,
+                  pointHoverRadius: 0,
+                  pointBorderWidth: 0,
+                  fill: '+1'
+                }, {
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  borderColor: 'rgba(0, 0, 0, 0)',
+                  data: [2758, 2881, 2892, 2977, 3130, 3177, 3289, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346],
+                  pointRadius: 0,
+                  pointHoverRadius: 0,
+                  pointBorderWidth: 0,
+                  fill: false
+                }]
+              },
+
+              // Configuration options go here
+              options: {
+                animation: false,
+                legend: {
+                  display: false
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      stepSize: 500
+                    }
+                  }]
+                }
+              }
+            });
+          </script>
+        </div>
+      </div>
     </div>
 
     <hr class="mt-4 mb-2">

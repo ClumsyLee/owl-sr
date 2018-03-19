@@ -17,7 +17,6 @@ TEAM_NAMES = {
     'VAL': 'Valiant'
 }
 
-
 TEAM_FULL_NAMES = {
     'SHD': 'Shanghai Dragons',
     'SEO': 'Seoul Dynasty',
@@ -31,6 +30,21 @@ TEAM_FULL_NAMES = {
     'LDN': 'London Spitfire',
     'BOS': 'Boston Uprising',
     'VAL': 'Los Angeles Valiant'
+}
+
+TEAM_COLORS = {
+    'SHD': '#D22630',
+    'SEO': '#AA8A00',
+    'NYE': '#0F57EA',
+    'DAL': '#0072CE',
+    'PHI': '#FF9E1B',
+    'GLA': '#3C1053',
+    'FLA': '#FEDA00',
+    'HOU': '#97D700',
+    'SFS': '#FC4C02',
+    'LDN': '#59CBE8',
+    'BOS': '#174B97',
+    'VAL': '#4A7729'
 }
 
 
@@ -234,9 +248,97 @@ def render_matches(predictor, future_games) -> None:
 
 
 def render_teams(predictor):
+    ratings = predictor._create_rating_jar()
+
+    last_stage = None
+    stages = []
+    mus = {team: [] for team in TEAM_NAMES}
+    lower_bounds = []
+    upper_bounds = []
+
+    for (stage, match_number), row in predictor.ratings_history.items():
+        if stage != last_stage:
+            stages.append(stage)
+            last_stage = stage
+        else:
+            stages.append('')
+
+        lower_bound = 5000
+        upper_bound = 0
+
+        for team in TEAM_NAMES:
+            if team in row:
+                ratings[team] = row[team]
+            mu = round(ratings[team].mu)
+
+            mus[team].append(mu)
+            lower_bound = min(lower_bound, mu)
+            upper_bound = max(upper_bound, mu)
+
+        lower_bounds.append(lower_bound)
+        upper_bounds.append(upper_bound)
+
     for team, name in TEAM_NAMES.items():
         full_name = TEAM_FULL_NAMES[team]
-        content = ''
+        color = TEAM_COLORS[team]
+
+        content = f"""<h3 class="py-3 text-center">{full_name}</h5>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+          <canvas id="myChart"></canvas>
+
+          <script>
+            var ctx = document.getElementById('myChart');
+            ctx.height = 300;
+            var chart = new Chart(ctx.getContext('2d'), {{
+              // The type of chart we want to create
+              type: 'line',
+
+              // The data for our dataset
+              data: {{
+                labels: {stages},
+                datasets: [{{
+                  borderColor: '{color}',
+                  data: {mus[team]},
+                  fill: false
+                }}, {{
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  borderColor: 'rgba(0, 0, 0, 0)',
+                  data: {lower_bounds},
+                  pointRadius: 0,
+                  pointHoverRadius: 0,
+                  pointBorderWidth: 0,
+                  fill: '+1'
+                }}, {{
+                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                  borderColor: 'rgba(0, 0, 0, 0)',
+                  data: {upper_bounds},
+                  pointRadius: 0,
+                  pointHoverRadius: 0,
+                  pointBorderWidth: 0,
+                  fill: false
+                }}]
+              }},
+
+              // Configuration options go here
+              options: {{
+                animation: false,
+                legend: {{
+                  display: false
+                }},
+                scales: {{
+                  yAxes: [{{
+                    ticks: {{
+                      stepSize: 500
+                    }}
+                  }}]
+                }}
+              }}
+            }});
+          </script>
+        </div>
+      </div>"""
 
         render_page(name, full_name, content)
 
