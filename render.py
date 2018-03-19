@@ -75,7 +75,7 @@ def render_page(endpoint: str, title: str, content: str):
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Overwatch League Ratings</a>
+      <a class="navbar-brand" href="/">Overwatch League Ratings</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -137,8 +137,8 @@ def render_index(predictor, future_games) -> None:
           <th scope="col" class="compact"></th>
           <th scope="col"></th>
           <th scope="col" class="compacter">win</th>
-          <th scope="col" class="compacter">loss</th>
-          <th scope="col" class="compact">map +/-</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
           <th scope="col" class="compact">top 3<br>prob.</th>
           <th scope="col" class="compact">top 1<br>prob.</th>
         </tr>
@@ -167,8 +167,8 @@ def render_index(predictor, future_games) -> None:
   <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
   <td><a href="/{name}" class="team">{name}</a></td>
   <td class="text-center">{win}</td>
-  <td class="text-center">{loss}</td>
-  <td class="text-center">{map_diff:+}</td>
+  <td class="text-center d-none d-sm-table-cell">{loss}</td>
+  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
   <td class="text-center{' low-chance' if top3 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top3 / 100});">{top3_str}</td>
   <td class="text-center{' low-chance' if top1 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top1 / 100});">{top1_str}</td>
 </tr>"""
@@ -217,7 +217,7 @@ def render_matches(predictor, future_games) -> None:
               <tr class="text-center">
                 <th scope="col" class="text-muted compact">{time_str}</th>
                 <th scope="col"></th>
-                <th scope="col" class="compact"></th>
+                <th scope="col" class="compactr d-none d-sm-table-cell"></th>
                 <th scope="col" class="compact">win<br>prob.</th>
                 <th scope="col" class="compact">map<br>+/-</th>
               </tr>
@@ -226,14 +226,14 @@ def render_matches(predictor, future_games) -> None:
               <tr scope="row" class="{'win' if win > 50 else 'loss'}">
                 <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
                 <td><a href="/{name1}" class="team">{name1}</a></td>
-                <td></td>
+                <td class="d-none d-sm-table-cell"></td>
                 <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
                 <td class="text-center">{e_diff:+.1f}</td>
               </tr>
               <tr scope="row" class="{'win' if win < 50 else 'loss'}">
                 <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
                 <td><a href="/{name2}" class="team">{name2}</a></td>
-                <td></td>
+                <td class="d-none d-sm-table-cell"></td>
                 <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
                 <td class="text-center">{-e_diff:+.1f}</td>
               </tr>
