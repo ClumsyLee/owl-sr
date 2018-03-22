@@ -199,9 +199,15 @@ def render_matches(predictor, future_games) -> None:
             last_date = date
 
         # Add the current match.
-        if game.start_time.hour <= 12 or game.start_time.minute != 0:
-            raise RuntimeError(f'Cannot handle {game.start_time}.')
-        time_str = f'{game.start_time.hour - 12} p.m.'
+        hour = game.start_time.hour
+        if game.start_time.minute >= 30:
+            hour += 1
+
+        suffix = 'a.m.' if hour < 12 else 'p.m.'
+        if hour > 12:
+            hour -= 12
+
+        time_str = f'{hour} {suffix}'
 
         p_win, e_diff = predictor.predict_match(game.teams)
 

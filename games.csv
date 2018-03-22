@@ -516,8 +516,11 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6106,2,lijiang,0,2,Taimou,Custa,Mickie,Chipshajen,EFFECT,Rascal,fragi,Neptuno,Boombox,Eqo,Snillo,Poko
 10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6952,3,kings-row,1,2,Taimou,Custa,Mickie,Chipshajen,EFFECT,Rascal,fragi,Neptuno,Boombox,Eqo,Snillo,Poko
 10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6107,4,gibraltar,2,3,Taimou,Custa,Mickie,aKm,Chipshajen,EFFECT,fragi,Neptuno,Boombox,Eqo,Snillo,Poko
-10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,,,,,,,,,,,,,,,,,
-10577,Stage 2,2018-03-21 18:00:00,FLA,SFS,regular,,,,,,,,,,,,,,,,,
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6108,1,hanamura,1,2,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,fragi,Neptuno,Boombox,Eqo,Carpe,Poko
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6109,2,nepal,2,0,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,fragi,Neptuno,Boombox,Eqo,Carpe,Poko
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6110,3,hollywood,1,2,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure,fragi,Neptuno,Boombox,Snillo,Carpe,Poko
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6111,4,route-66,0,1,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,fragi,Neptuno,Boombox,Snillo,Carpe,Poko
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,,,,,,,,,,,,,,,,,
 10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,,,,,,,,,,,,,,,,,
 10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,,,,,,,,,,,,,,,,,
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,,,,,,,,,,,,,,,,,
