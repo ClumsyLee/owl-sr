@@ -223,7 +223,7 @@ def render_matches(predictor, future_games) -> None:
               <tr class="text-center">
                 <th scope="col" class="text-muted compact">{time_str}</th>
                 <th scope="col"></th>
-                <th scope="col" class="compactr d-none d-sm-table-cell"></th>
+                <th scope="col" class="compact d-none d-sm-table-cell"></th>
                 <th scope="col" class="compact">win<br>prob.</th>
                 <th scope="col" class="compact">map<br>+/-</th>
               </tr>
