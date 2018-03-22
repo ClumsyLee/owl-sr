@@ -36,28 +36,28 @@
     <div class="container">
       <div class="row pt-4">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
-    <h3>How Did You Compute These Numbers?</h3>
+    <h4 class="pt-4">How Did You Compute These Numbers?</h4>
     <p>I used <a href="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">TrueSkill</a> to keep track of skill ratings of individual players and estimate the win probabilities based on the ratings.</p>
 
-    <h3>What Is TrueSkill?</h3>
+    <h4 class="pt-4">What Is TrueSkill?</h4>
     <p>It is a ranking system designed by <a href="https://www.microsoft.com/en-us/research">Microsoft Research</a>:</p>
     <blockquote cite="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">
       <p>"The TrueSkill ranking system is a skill based ranking system for Xbox Live developed at Microsoft Research. The purpose of a ranking system is to both identify and track the skills of gamers in a game (mode) in order to be able to match them into competitive matches. The TrueSkill ranking system only uses the final standings of all teams in a game in order to update the skill estimates (ranks) of all gamers playing in this game. Ranking systems have been proposed for many sports but possibly the most prominent ranking system in use today is ELO."</p>
     </blockquote>
 
-    <h3>Why Not ELO/Glicko?</h3>
+    <h4 class="pt-4">Why Not ELO/Glicko?</h4>
     <p>ELO and Glicko are designed for single-player games, which means every team will have a single rating. As a result, benching/transferring will not be handled properly.</p>
 
-    <h3>Did You Consider Draws/Bans/Transfers/Underages?</h3>
+    <h4 class="pt-4">Did You Consider Draws/Bans/Transfers/Underages?</h4>
     <p>Yes.</p>
 
-    <h3>Did You Consider Tie-breakers/BO5 for the Title Matches?</h3>
+    <h4 class="pt-4">Did You Consider Tie-breakers/BO5 for the Title Matches?</h4>
     <p>Yes.</p>
 
-    <h3>But How Did You Determine the Rosters?</h3>
+    <h4 class="pt-4">But How Did You Determine the Rosters?</h4>
     <p>For a given team, sort all the rosters of it during its last 10 games based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
 
-    <h3>What Parameters Did You Use?</h3>
+    <h4 class="pt-4">What Parameters Did You Use?</h4>
     <ul>
       <li><var>mu</var> = 2500</li>
       <li><var>sigma</var> = 2500 / 3</li>
@@ -67,7 +67,7 @@
     </ul>
     <p>All these parameters are tuned on matches from preseason, stage 1, and stage 2.</p>
 
-    <h3>May I See Your Source Code?</h3>
+    <h4 class="pt-4">May I See Your Source Code?</h4>
     <p><a href="https://github.com/ThomasLee969/owl-sr">Sure</a>.</p>
   </div>
 </div>
