@@ -5,6 +5,7 @@ from math import sqrt
 from random import choices, random
 from typing import Dict, List, Sequence, Set, Tuple
 
+import numpy as np
 from scipy.optimize import fmin
 from trueskill import calc_draw_margin, Rating, TrueSkill
 
@@ -124,7 +125,7 @@ class Predictor(object):
     def predict_match(
             self, teams: Tuple[str, str],
             rosters: Tuple[Roster, Roster] = None,
-            match_format: str = 'regular') -> float:
+            match_format: str = 'regular') -> Tuple[float, float]:
         """Predict the win probability & diff expectation of a given match."""
         p_scores = self.predict_match_score(teams, rosters,
                                             match_format=match_format)
@@ -475,9 +476,8 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
     def _teams_ratings(self, teams: Tuple[str, str],
                        rosters: Tuple[Roster, Roster]):
         if rosters is None:
-            # No rosters provided, use the best roster.
-            rosters = (self.best_rosters[teams[0]],
-                       self.best_rosters[teams[1]])
+            # No rosters provided, use the best rosters if possible.
+            rosters = [self.best_rosters.get(team, [''] * 6) for team in teams]
 
         return ([self.ratings[name] for name in rosters[0]],
                 [self.ratings[name] for name in rosters[1]])
@@ -568,7 +568,9 @@ def compare_methods() -> None:
 
     for class_ in classes:
         predictor = class_()
-        print(class_.__name__, predictor.train_games(games))
+        print(class_.__name__,
+              predictor.train_games(games) / len(games),
+              np.sum(np.array(predictor.points) > 0) / len(games))
 
 
 def predict_stage():
@@ -576,6 +578,7 @@ def predict_stage():
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
+    print(predictor.best_rosters)
 
     p_stage = predictor.predict_stage(future_games)
     teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
@@ -588,6 +591,14 @@ def predict_stage():
         top1 = p_top1 * 100
 
         print(f'{team:4}: {top3:10.6}% {top1:10.6}%')
+
+
+def save_ratings():
+    past_games, future_games = load_games()
+
+    predictor = PlayerTrueSkillPredictor()
+    predictor.train_games(past_games)
+    predictor.save_ratings_history()
 
 
 if __name__ == '__main__':
