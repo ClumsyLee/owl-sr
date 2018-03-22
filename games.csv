@@ -525,7 +525,10 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6953,3,kings-row,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth
 10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6114,4,route-66,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth
 10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,8069,5,ilios,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,BABYBAY,Nomy,Nevix,Moth
-10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,,,,,,,,,,,,,,,,,
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6115,1,volskaya,0,1,MG,Xushu,Freefeel,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6116,2,lijiang,0,2,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6954,3,kings-row,1,2,MG,Xushu,Altering,Fiveking,Ado,Fearless,SPREE,Rawkus,Coolmatt,Jake,Muma,Boink
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6117,4,gibraltar,0,1,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
 10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,,,,,,,,,,,,,,,,,
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,,,,,,,,,,,,,,,,,
 10581,Stage 2,2018-03-22 20:00:00,SFS,BOS,regular,,,,,,,,,,,,,,,,,
