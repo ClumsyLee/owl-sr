@@ -139,8 +139,39 @@ class Predictor(object):
 
         return p_win, e_diff
 
-    def predict_stage(self, games: Sequence[Game], iters=100000):
+    def predict_stage(self, games: Sequence[Game]):
         games = [game for game in games if game.stage == self.stage]
+        prediction = self._predict_stage(games)
+        teams = list(prediction.keys())
+
+        wins = {team: (self.stage_wins[team], self.stage_map_diffs[team])
+                for team in teams}
+        min_wins = wins.copy()
+        max_wins = wins.copy()
+
+        for game in games:
+            for team in game.teams:
+                win, map_diff = min_wins[team]
+                min_wins[team] = (win, map_diff - 4)
+
+                win, map_diff = max_wins[team]
+                max_wins[team] = (win + 1, map_diff + 4)
+
+        min_3rd_wins = list(sorted(min_wins.values()))[-3]
+        max_4th_wins = list(sorted(max_wins.values()))[-4]
+
+        for team, (p_top3, p_top1) in prediction.items():
+            if max_wins[team] < min_3rd_wins:
+                p_top3 = False
+                p_top1 = False
+            elif min_wins[team] > max_4th_wins:
+                p_top3 = True
+
+            prediction[team] = (p_top3, p_top1)
+
+        return prediction
+
+    def _predict_stage(self, games: Sequence[Game], iters=100000):
         teams = self._stage_teams()
 
         scores_list, cum_weights_list = self._games_scores_cum_weights(games)
@@ -578,19 +609,23 @@ def predict_stage():
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
-    print(predictor.best_rosters)
 
     p_stage = predictor.predict_stage(future_games)
     teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
                    reverse=True)
 
-    print(f'             top3        top1')
+    print(f'       Top3  Top1  Roster')
     for team in teams:
         p_top3, p_top1 = p_stage[team]
-        top3 = p_top3 * 100
-        top1 = p_top1 * 100
 
-        print(f'{team:4}: {top3:10.6}% {top1:10.6}%')
+        if isinstance(p_top3, bool):
+            top3 = str(p_top3)
+        else:
+            top3 = f'{round(p_top3 * 100)}%'
+        top1 = f'{round(p_top1 * 100)}%'
+        roster = ' '.join(predictor.best_rosters[team])
+
+        print(f'{team:>4}  {top3:>5} {top1:>5}  {roster}')
 
 
 def save_ratings():
