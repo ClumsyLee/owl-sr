@@ -602,4 +602,4 @@ def save_ratings():
 
 
 if __name__ == '__main__':
-    predict_stage()
+    save_ratings()

@@ -529,7 +529,10 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6116,2,lijiang,0,2,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
 10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6954,3,kings-row,1,2,MG,Xushu,Altering,Fiveking,Ado,Fearless,SPREE,Rawkus,Coolmatt,Jake,Muma,Boink
 10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6117,4,gibraltar,0,1,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,,,,,,,,,,,,,,,,,
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6118,1,hanamura,2,1,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,ZUNBA,tobi,ryujehong,Wekeed,Munchkin,KuKi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6119,2,nepal,0,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ZUNBA,tobi,ryujehong,Wekeed,Munchkin,KuKi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6955,3,kings-row,4,3,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ZUNBA,tobi,ryujehong,Wekeed,Munchkin,KuKi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6120,4,gibraltar,3,2,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,ZUNBA,tobi,ryujehong,FLETA,Munchkin,KuKi
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,,,,,,,,,,,,,,,,,
 10581,Stage 2,2018-03-22 20:00:00,SFS,BOS,regular,,,,,,,,,,,,,,,,,
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,,,,,,,,,,,,,,,,,
