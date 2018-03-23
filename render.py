@@ -54,8 +54,9 @@ RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
 
 
 class MatchCard(object):
-    def __init__(self, predictor, stage, start_time, teams, score=None,
+    def __init__(self, predictor, match_id, stage, start_time, teams, score=None,
                  use_date=False, first_team=None) -> None:
+        self.match_id = match_id
         self.stage = stage
         self.start_time = start_time
         self.teams = teams
@@ -113,7 +114,7 @@ class MatchCard(object):
 </tr>"""]
 
         self.html_template = f"""<div class="col-lg-4 col-md-6">
-  <table class="table">
+  <table class="table" id="{self.match_id}">
     <thead>
       <tr class="text-center">
         <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">{{0.header}}</th>
@@ -337,6 +338,7 @@ def render_match_cards(past_games, future_games):
     match_cards = []
 
     for match_id, games in past_matches.items():
+        match_id = games[0].match_id
         stage = games[0].stage
         start_time = games[0].start_time
         teams = games[0].teams
@@ -349,6 +351,7 @@ def render_match_cards(past_games, future_games):
                 score[1] += 1
 
         match_cards.append(MatchCard(predictor=predictor,
+                                     match_id=match_id,
                                      stage=stage,
                                      start_time=start_time,
                                      teams=teams,
@@ -357,6 +360,7 @@ def render_match_cards(past_games, future_games):
 
     for game in future_games:
         match_cards.append(MatchCard(predictor=predictor,
+                                     match_id=game.match_id,
                                      stage=game.stage,
                                      start_time=game.start_time,
                                      teams=game.teams))
@@ -406,7 +410,8 @@ def render_past_matches(past_cards) -> str:
     return ''.join(sections)
 
 
-def render_team(team, labels, mus, lower_bounds, upper_bounds, cards) -> None:
+def render_team(team, labels, match_info, mus, lower_bounds, upper_bounds,
+                cards) -> None:
     name = TEAM_NAMES[team]
     full_name = TEAM_FULL_NAMES[team]
     color = TEAM_COLORS[team]
@@ -433,6 +438,19 @@ def render_team(team, labels, mus, lower_bounds, upper_bounds, cards) -> None:
 {render_past_matches(past_cards)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
+var match_ids = {['' if info is None else info[0] for info in match_info]};
+var opponents = {['' if info is None else TEAM_NAMES[info[1]] for info in match_info]};
+var scores1 = {['' if info is None else info[2][0] for info in match_info]};
+var scores2 = {['' if info is None else info[2][1] for info in match_info]};
+
+function gotoHash(hash) {{
+    window.location.hash = '#';
+    window.location.hash = hash;
+
+    $('tr').removeClass('highlight');
+    $(hash + ' tr').addClass('highlight');
+}}
+
 var ctx = document.getElementById('myChart');
 ctx.height = 280;
 var chart = new Chart(ctx.getContext('2d'), {{
@@ -446,13 +464,16 @@ var chart = new Chart(ctx.getContext('2d'), {{
       backgroundColor: '{color[1]}',
       borderColor: '{color[0]}',
       data: {mus},
-      pointRadius: 4,
+      pointRadius: {[0 if info is None else 4 for info in match_info]},
+      pointHitRadius: {[0 if info is None else 6 for info in match_info]},
+      pointHoverRadius: {[0 if info is None else 6 for info in match_info]},
       fill: false
     }}, {{
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
       data: {lower_bounds},
       pointRadius: 0,
+      pointHitRadius: 0,
       pointHoverRadius: 0,
       pointBorderWidth: 0,
       fill: '+1'
@@ -461,6 +482,7 @@ var chart = new Chart(ctx.getContext('2d'), {{
       borderColor: 'rgba(0, 0, 0, 0)',
       data: {upper_bounds},
       pointRadius: 0,
+      pointHitRadius: 0,
       pointHoverRadius: 0,
       pointBorderWidth: 0,
       fill: false
@@ -479,9 +501,24 @@ var chart = new Chart(ctx.getContext('2d'), {{
           stepSize: 500
         }}
       }}]
+    }},
+    tooltips: {{
+      callbacks: {{
+        footer: function(tooltipItems) {{
+          var i = tooltipItems[0].index;
+          if (opponents[i] != '') {{
+            return scores1[i] + ':' + scores2[i] + ' ' + opponents[i];
+          }}
+        }}
+      }}
     }}
   }}
 }});
+
+ctx.onclick = function(event) {{
+  var match_id = match_ids[chart.getElementAtEvent(event)[0]._index];
+  gotoHash('#' + match_id);
+}};
 </script>"""
 
     render_page(name, full_name, content)
@@ -491,23 +528,37 @@ def render_teams(predictor, match_cards) -> None:
     # Prepare the data for plots.
     ratings = predictor._create_rating_jar()
 
-    last_stage = None
-    stages = []
-    mus = {team: [] for team in TEAM_NAMES}
+    labels = []
+    match_infos = defaultdict(list)
+    mus = defaultdict(list)
     lower_bounds = []
     upper_bounds = []
 
     for (stage, match_number), row in predictor.ratings_history.items():
-        if stage != last_stage:
-            stages.append(stage)
-            last_stage = stage
-        else:
-            stages.append('')
+        labels.append(f'{stage}, Match {match_number}')
 
         lower_bound = 5000
         upper_bound = 0
 
         for team in TEAM_NAMES:
+            ids = predictor.match_history[stage][team]
+
+            if match_number <= len(ids):
+                match_id = ids[match_number - 1]
+                score = [0, 0]
+                for t, s in predictor.scores[match_id].items():
+                    if t == team:
+                        score[0] = s
+                    else:
+                        opponent = t
+                        score[1] = s
+
+                info = (match_id, opponent, score)
+            else:
+                info = None
+
+            match_infos[team].append(info)
+
             if team in row:
                 ratings[team] = row[team]
             mu = round(ratings[team].mu)
@@ -524,8 +575,9 @@ def render_teams(predictor, match_cards) -> None:
 
     # Render the team pages.
     for team in TEAM_NAMES.keys():
-        render_team(team, stages, mus[team], lower_bounds, upper_bounds,
-                    card_groups[team])
+
+        render_team(team, labels, match_infos[team], mus[team], lower_bounds,
+                    upper_bounds, card_groups[team])
 
 
 def render_about():

@@ -50,7 +50,10 @@ class Predictor(object):
 
         # Match standings.
         self.match_id = None
-        self.score = {}
+        self.score = None
+        self.scores = defaultdict(dict)
+        # stage => {team: [match_id]}
+        self.match_history = defaultdict(lambda: defaultdict(list))
 
         # Draw counts, used to adjust parameters related to draws.
         self.expected_draws = 0.0
@@ -266,6 +269,7 @@ class Predictor(object):
 
     def _update_standings(self, game: Game) -> None:
         if game.stage != self.stage:
+            # Record a new stage.
             self.stage = game.stage
             self.stage_team_match_ids.clear()
 
@@ -275,8 +279,12 @@ class Predictor(object):
             self.stage_head_to_head_map_diffs.clear()
 
         if game.match_id != self.match_id:
+            # Record a new match.
             self.match_id = game.match_id
             self.score = {team: 0 for team in game.teams}
+            self.scores[game.match_id] = self.score
+            for team in game.teams:
+                self.match_history[game.stage][team].append(game.match_id)
 
         for team, roster in zip(game.teams, game.rosters):
             self.stage_team_match_ids[team].add(game.match_id)
