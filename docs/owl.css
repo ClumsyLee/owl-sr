@@ -36,3 +36,7 @@ tr.lost {
 .low-chance {
     color: #ccc;
 }
+
+.tooltip {
+  margin-left: 5px;
+}

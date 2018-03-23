@@ -50,6 +50,8 @@ TEAM_COLORS = {
     'VAL': '#4A7729'
 }
 
+RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
+
 
 class MatchCard(object):
     def __init__(self, predictor, start_time, teams, score=None,
@@ -76,9 +78,6 @@ class MatchCard(object):
         p_win, e_diff = predictor.predict_match(teams)
         win = round(p_win * 100.0)
         loss = 100 - win
-
-        name1 = TEAM_NAMES[teams[0]]
-        name2 = TEAM_NAMES[teams[1]]
 
         classes1 = ['win' if win > 50 else 'loss']
         classes2 = ['win' if win < 50 else 'loss']
@@ -107,15 +106,15 @@ class MatchCard(object):
     </thead>
     <tbody>
       <tr scope="row" class="{' '.join(classes1)}">
-        <th class="text-right compact"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
-        <td><a href="/{name1}" class="team">{name1}</a></td>
+        <th class="text-right compact">{render_team_logo(teams[0])}</th>
+        <td>{render_team_link(predictor, teams[0])}</td>
         <td class="d-none d-sm-table-cell">{score1}</td>
         <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
         <td class="text-center">{e_diff:+.1f}</td>
       </tr>
       <tr scope="row" class="{' '.join(classes2)}">
-        <th class="text-right compact"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
-        <td><a href="/{name2}" class="team">{name2}</a></td>
+        <th class="text-right compact">{render_team_logo(teams[1])}</th>
+        <td>{render_team_link(predictor, teams[1])}</td>
         <td class="d-none d-sm-table-cell">{score2}</td>
         <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
         <td class="text-center">{-e_diff:+.1f}</td>
@@ -154,6 +153,19 @@ class MatchCard(object):
         return card_groups
 
 
+def render_team_logo(team, width=30) -> str:
+    name = TEAM_NAMES[team]
+    return f'<img src="imgs/{name}.png" alt="{name} Logo" width="{width}">'
+
+
+def render_team_link(predictor, team) -> str:
+    name = TEAM_NAMES[team]
+    rating = predictor.ratings[team]
+    title = f'{round(rating.mu)} ± {round(rating.sigma * RATING_CONFIDENCE)}'
+
+    return f'<a href="/{name}" class="team" data-toggle="tooltip" data-placement="right" title="{title}">{name}</a>'
+
+
 def percentage_str(percent):
     if percent == 0:
         return '&lt;1%'
@@ -163,7 +175,7 @@ def percentage_str(percent):
         return f'{percent}%'
 
 
-def render_page(endpoint: str, title: str, content: str):
+def render_page(endpoint: str, title: str, content: str) -> None:
     html = f"""<!doctype html>
 <html lang="en">
   <head>
@@ -211,6 +223,11 @@ def render_page(endpoint: str, title: str, content: str):
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(function () {{
+        $('[data-toggle="tooltip"]').tooltip()
+      }})
+    </script>
   </body>
 </html>"""
 
@@ -250,7 +267,6 @@ def render_index(predictor, future_games) -> None:
       <tbody>"""
 
     for i, team in enumerate(teams):
-        name = TEAM_NAMES[team]
         win = wins[team]
         loss = losses[team]
         map_diff = map_diffs[team]
@@ -270,8 +286,8 @@ def render_index(predictor, future_games) -> None:
             top3_str = percentage_str(top3)
 
         content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
-  <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
-  <td><a href="/{name}" class="team">{name}</a></td>
+  <th class="text-right">{render_team_logo(team)}</th>
+  <td>{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>
   <td class="text-center d-none d-sm-table-cell">{loss}</td>
   <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
@@ -381,7 +397,7 @@ def render_teams(predictor, match_cards):
         full_name = TEAM_FULL_NAMES[team]
         color = TEAM_COLORS[team]
 
-        content = f"""<h4 class="py-3 text-center"><img src="imgs/{name}.png" alt="{name} Logo" width="40"> {full_name}</h5>
+        content = f"""<h4 class="py-3 text-center">{render_team_logo(team, 40)} {full_name}</h5>
 <div class="row">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>

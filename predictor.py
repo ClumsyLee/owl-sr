@@ -519,9 +519,9 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
             for name, rating in zip(roster, ratings):
                 self.ratings[name] = rating
 
-            self._record_team_ratings(team)
+            self.ratings[team] = self._record_team_ratings(team)
 
-    def _record_team_ratings(self, team: str) -> None:
+    def _record_team_ratings(self, team: str) -> Rating:
         match_number = len(self.stage_team_match_ids[team])
         match_key = (self.stage, match_number)
 
@@ -538,7 +538,9 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
         best_roster = self._update_best_roster(team, members)
 
         # Record the team rating.
-        ratings[team] = self._roster_rating(best_roster)
+        rating = self._roster_rating(best_roster)
+        ratings[team] = rating
+        return rating
 
     def _update_best_roster(self, team: str, members: Set[str]):
         rosters = sorted(self.roster_queues[team],

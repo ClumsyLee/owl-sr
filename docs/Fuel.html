@@ -57,14 +57,14 @@
     <tbody>
       <tr scope="row" class="win">
         <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
-        <td><a href="/Excelsior" class="team">Excelsior</a></td>
+        <td><a href="/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3248 ± 374">Excelsior</a></td>
         <td class="d-none d-sm-table-cell">3</td>
         <td class="text-center" style="background-color: rgba(255, 137, 0, 1.0);">>99%</td>
         <td class="text-center">+3.6</td>
       </tr>
       <tr scope="row" class="loss lost">
         <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
-        <td><a href="/Fuel" class="team">Fuel</a></td>
+        <td><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="1972 ± 403">Fuel</a></td>
         <td class="d-none d-sm-table-cell">2</td>
         <td class="text-center low-chance" style="background-color: rgba(255, 137, 0, 0.0);">&lt;1%</td>
         <td class="text-center">-3.6</td>
@@ -84,14 +84,14 @@
     <tbody>
       <tr scope="row" class="loss">
         <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
-        <td><a href="/Fuel" class="team">Fuel</a></td>
+        <td><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2332 ± 403">Fuel</a></td>
         <td class="d-none d-sm-table-cell"></td>
         <td class="text-center" style="background-color: rgba(255, 137, 0, 0.01);">1%</td>
         <td class="text-center">-3.2</td>
       </tr>
       <tr scope="row" class="win">
         <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
-        <td><a href="/Spitfire" class="team">Spitfire</a></td>
+        <td><a href="/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="3346 ± 376">Spitfire</a></td>
         <td class="d-none d-sm-table-cell"></td>
         <td class="text-center" style="background-color: rgba(255, 137, 0, 0.99);">99%</td>
         <td class="text-center">+3.2</td>
@@ -159,5 +159,10 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </body>
 </html>
