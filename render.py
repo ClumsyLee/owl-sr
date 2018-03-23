@@ -36,18 +36,18 @@ TEAM_FULL_NAMES = {
 }
 
 TEAM_COLORS = {
-    'SHD': '#D22630',
-    'SEO': '#AA8A00',
-    'NYE': '#0F57EA',
-    'DAL': '#0072CE',
-    'PHI': '#FF9E1B',
-    'GLA': '#3C1053',
-    'FLA': '#FEDA00',
-    'HOU': '#97D700',
-    'SFS': '#FC4C02',
-    'LDN': '#59CBE8',
-    'BOS': '#174B97',
-    'VAL': '#4A7729'
+    'SHD': ('#D22630', '#000000'),
+    'SEO': ('#AA8A00', '#000000'),
+    'NYE': ('#0F57EA', '#171C38'),
+    'DAL': ('#0072CE', '#0C2340'),
+    'PHI': ('#FF9E1B', '#000000'),
+    'GLA': ('#3C1053', '#000000'),
+    'FLA': ('#FEDA00', '#AF272F'),
+    'HOU': ('#97D700', '#000000'),
+    'SFS': ('#FC4C02', '#75787B'),
+    'LDN': ('#59CBE8', '#FF8200'),
+    'BOS': ('#174B97', '#F2DF00'),
+    'VAL': ('#4A7729', '#E5D660')
 }
 
 RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
@@ -420,8 +420,10 @@ def render_teams(predictor, match_cards):
     data: {{
       labels: {stages},
       datasets: [{{
-        borderColor: '{color}',
+        backgroundColor: '{color[1]}',
+        borderColor: '{color[0]}',
         data: {mus[team]},
+        pointRadius: 4,
         fill: false
       }}, {{
         backgroundColor: 'rgba(0, 0, 0, 0.1)',
