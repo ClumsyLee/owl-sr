@@ -538,7 +538,11 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6123,3,hollywood,3,2,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6124,4,gibraltar,2,3,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
 10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,8087,5,ilios,2,0,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,,,,,,,,,,,,,,,,,
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6125,1,hanamura,4,3,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6126,2,nepal,0,2,sinatraa,sleepy,BABYBAY,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6127,3,hollywood,1,2,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6128,4,route-66,3,2,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,8088,5,ilios,1,2,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,,,,,,,,,,,,,,,,,
 10583,Stage 2,2018-03-23 18:00:00,PHI,VAL,regular,,,,,,,,,,,,,,,,,
 10584,Stage 2,2018-03-23 20:00:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
