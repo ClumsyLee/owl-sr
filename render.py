@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from datetime import datetime
 
 from fetcher import load_games
@@ -54,11 +54,15 @@ RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
 
 
 class MatchCard(object):
-    def __init__(self, predictor, start_time, teams, score=None,
-                 use_date=False) -> None:
+    def __init__(self, predictor, stage, start_time, teams, score=None,
+                 use_date=False, first_team=None) -> None:
+        self.stage = stage
         self.start_time = start_time
         self.teams = teams
         self.score = score
+
+        self.use_date = use_date
+        self.first_team = teams[0] if first_team is None else first_team
 
         # Render the HTML.
         hour = start_time.hour
@@ -73,11 +77,9 @@ class MatchCard(object):
 
         self.time_str = f'{hour}{minute} {suffix}'
         self.date_str = self.start_time.strftime('%A, %B %d').replace('0', '')
-        self.use_date = use_date
 
         p_win, e_diff = predictor.predict_match(teams)
-        win = round(p_win * 100.0)
-        loss = 100 - win
+        win = round(p_win * 100)
 
         classes1 = ['win' if win > 50 else 'loss']
         classes2 = ['win' if win < 50 else 'loss']
@@ -94,6 +96,22 @@ class MatchCard(object):
             score1 = ''
             score2 = ''
 
+        self.rows = [
+            f"""<tr scope="row" class="{' '.join(classes1)}">
+  <th class="text-right compact">{render_team_logo(teams[0])}</th>
+  <td>{render_team_link(predictor, teams[0])}</td>
+  <td class="d-none d-sm-table-cell">{score1}</td>
+  {render_chance_cell(p_win)}
+  <td class="text-center">{e_diff:+.1f}</td>
+</tr>""",
+            f"""<tr scope="row" class="{' '.join(classes2)}">
+  <th class="text-right compact">{render_team_logo(teams[1])}</th>
+  <td>{render_team_link(predictor, teams[1])}</td>
+  <td class="d-none d-sm-table-cell">{score2}</td>
+  {render_chance_cell(1 - p_win)}
+  <td class="text-center">{-e_diff:+.1f}</td>
+</tr>"""]
+
         self.html_template = f"""<div class="col-lg-4 col-md-6">
   <table class="table">
     <thead>
@@ -105,20 +123,8 @@ class MatchCard(object):
       </tr>
     </thead>
     <tbody>
-      <tr scope="row" class="{' '.join(classes1)}">
-        <th class="text-right compact">{render_team_logo(teams[0])}</th>
-        <td>{render_team_link(predictor, teams[0])}</td>
-        <td class="d-none d-sm-table-cell">{score1}</td>
-        <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
-        <td class="text-center">{e_diff:+.1f}</td>
-      </tr>
-      <tr scope="row" class="{' '.join(classes2)}">
-        <th class="text-right compact">{render_team_logo(teams[1])}</th>
-        <td>{render_team_link(predictor, teams[1])}</td>
-        <td class="d-none d-sm-table-cell">{score2}</td>
-        <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
-        <td class="text-center">{-e_diff:+.1f}</td>
-      </tr>
+      {{0.row1}}
+      {{0.row2}}
     </tbody>
   </table>
 </div>"""
@@ -126,6 +132,14 @@ class MatchCard(object):
     @property
     def header(self):
         return self.date_str if self.use_date else self.time_str
+
+    @property
+    def row1(self):
+        return self.rows[0 if self.teams[0] == self.first_team else 1]
+
+    @property
+    def row2(self):
+        return self.rows[1 if self.teams[0] == self.first_team else 0]
 
     @property
     def html(self):
@@ -152,6 +166,17 @@ class MatchCard(object):
 
         return card_groups
 
+    @staticmethod
+    def group_by_stage(cards):
+        card_groups = OrderedDict()
+
+        for card in cards:
+            if card.stage not in card_groups:
+                card_groups[card.stage] = []
+            card_groups[card.stage].append(card)
+
+        return card_groups
+
 
 def render_team_logo(team, width=30) -> str:
     name = TEAM_NAMES[team]
@@ -166,13 +191,24 @@ def render_team_link(predictor, team) -> str:
     return f'<a href="/{name}" class="team" data-toggle="tooltip" data-placement="right" title="{title}">{name}</a>'
 
 
-def percentage_str(percent):
-    if percent == 0:
-        return '&lt;1%'
-    elif percent == 100:
-        return '>99%'
+def render_chance_cell(p_win):
+    percent = round(p_win * 100)
+
+    if isinstance(p_win, bool):
+        p_str = '✓' if p_win else '-'
     else:
-        return f'{percent}%'
+        if percent == 0:
+            p_str = '&lt;1%'
+        elif percent == 100:
+            p_str = '>99%'
+        else:
+            p_str = f'{percent}%'
+
+    classes = ['text-center']
+    if percent == 0:
+        classes.append('low-chance')
+
+    return f'<td class="{" ".join(classes)}" style="background-color: rgba(255, 137, 0, {percent / 100});">{p_str}</td>'
 
 
 def render_page(endpoint: str, title: str, content: str) -> None:
@@ -272,18 +308,6 @@ def render_index(predictor, future_games) -> None:
         map_diff = map_diffs[team]
 
         p_top3, p_top1 = p_stage[team]
-        top3 = round(p_top3 * 100)
-        top1 = round(p_top1 * 100)
-
-        top1_str = percentage_str(top1)
-        if isinstance(p_top3, bool):
-            if p_top3:
-                top3_str = '✓'
-            else:
-                top3_str = '-'
-                top1_str = '-'
-        else:
-            top3_str = percentage_str(top3)
 
         content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
   <th class="text-right">{render_team_logo(team)}</th>
@@ -291,8 +315,8 @@ def render_index(predictor, future_games) -> None:
   <td class="text-center">{win}</td>
   <td class="text-center d-none d-sm-table-cell">{loss}</td>
   <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
-  <td class="text-center{' low-chance' if top3 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top3 / 100});">{top3_str}</td>
-  <td class="text-center{' low-chance' if top1 == 0 else ''}" style="background-color: rgba(255, 137, 0, {top1 / 100});">{top1_str}</td>
+  {render_chance_cell(p_top3)}
+  {render_chance_cell(p_top1)}
 </tr>"""
 
     content += """</tbody>
@@ -302,21 +326,18 @@ def render_index(predictor, future_games) -> None:
     render_page('index', f'OWL {predictor.stage} Standings', content)
 
 
-def render_matches(past_games, future_games):
+def render_match_cards(past_games, future_games):
     predictor = PlayerTrueSkillPredictor()
-    now = datetime.now()
-    recent_matches = defaultdict(list)
+    past_matches = defaultdict(list)
 
     for game in past_games:
-        if (now - game.start_time).days >= 1:
-            predictor.train(game)
-        else:
-            recent_matches[game.match_id].append(game)
+        past_matches[game.match_id].append(game)
 
     # Render match cards.
     match_cards = []
 
-    for match_id, games in recent_matches.items():
+    for match_id, games in past_matches.items():
+        stage = games[0].stage
         start_time = games[0].start_time
         teams = games[0].teams
         score = [0, 0]
@@ -328,6 +349,7 @@ def render_matches(past_games, future_games):
                 score[1] += 1
 
         match_cards.append(MatchCard(predictor=predictor,
+                                     stage=stage,
                                      start_time=start_time,
                                      teams=teams,
                                      score=score))
@@ -335,26 +357,137 @@ def render_matches(past_games, future_games):
 
     for game in future_games:
         match_cards.append(MatchCard(predictor=predictor,
+                                     stage=game.stage,
                                      start_time=game.start_time,
                                      teams=game.teams))
 
-    content = ''
-    card_groups = MatchCard.group_by_date(match_cards)
+    return match_cards
+
+
+def render_matches(match_cards):
+    now = datetime.now()
+    cards = [card for card in match_cards if (now - card.start_time).days < 1]
+    card_groups = MatchCard.group_by_date(cards)
+    sections = []
 
     for date, cards in card_groups.items():
         date_str = cards[0].date_str
 
-        content += f"""<h6 class="pt-4">{date_str}</h6>
+        sections += f"""<h6 class="pt-4">{date_str}</h6>
 <hr>
 <div class="row">
   {''.join([card.html for card in cards])}
 </div>"""
 
-    render_page('matches', f'OWL {predictor.stage} Matches', content)
+    content = ''.join(sections)
+    render_page('matches', 'Matches', content)
     return match_cards
 
 
-def render_teams(predictor, match_cards):
+def render_future_matches(future_cards) -> str:
+    return f"""<h5 class="pt-4">Upcoming Matches</h5>
+<hr>
+<div class="row">
+  {''.join([card.html for card in future_cards])}
+</div>"""
+
+
+def render_past_matches(past_cards) -> str:
+    card_groups = MatchCard.group_by_stage(reversed(past_cards))
+    sections = []
+
+    for stage, cards in card_groups.items():
+        sections += f"""<h5 class="pt-4">{stage}</h5>
+<hr>
+<div class="row">
+  {''.join([card.html for card in cards])}
+</div>"""
+
+    return ''.join(sections)
+
+
+def render_team(team, labels, mus, lower_bounds, upper_bounds, cards) -> None:
+    name = TEAM_NAMES[team]
+    full_name = TEAM_FULL_NAMES[team]
+    color = TEAM_COLORS[team]
+
+    past_cards = []
+    future_cards = []
+
+    for card in cards:
+        card.use_date = True
+        card.first_team = team
+
+        if card.score is None:
+            future_cards.append(card)
+        else:
+            past_cards.append(card)
+
+    content = f"""<h4 class="py-3 text-center">{render_team_logo(team, 40)} {full_name}</h5>
+<div class="row">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+{render_future_matches(future_cards)}
+{render_past_matches(past_cards)}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
+var ctx = document.getElementById('myChart');
+ctx.height = 280;
+var chart = new Chart(ctx.getContext('2d'), {{
+  // The type of chart we want to create
+  type: 'line',
+
+  // The data for our dataset
+  data: {{
+    labels: {labels},
+    datasets: [{{
+      backgroundColor: '{color[1]}',
+      borderColor: '{color[0]}',
+      data: {mus},
+      pointRadius: 4,
+      fill: false
+    }}, {{
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+      borderColor: 'rgba(0, 0, 0, 0)',
+      data: {lower_bounds},
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      pointBorderWidth: 0,
+      fill: '+1'
+    }}, {{
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+      borderColor: 'rgba(0, 0, 0, 0)',
+      data: {upper_bounds},
+      pointRadius: 0,
+      pointHoverRadius: 0,
+      pointBorderWidth: 0,
+      fill: false
+    }}]
+  }},
+
+  // Configuration options go here
+  options: {{
+    animation: false,
+    legend: {{
+      display: false
+    }},
+    scales: {{
+      yAxes: [{{
+        ticks: {{
+          stepSize: 500
+        }}
+      }}]
+    }}
+  }}
+}});
+</script>"""
+
+    render_page(name, full_name, content)
+
+
+def render_teams(predictor, match_cards) -> None:
     # Prepare the data for plots.
     ratings = predictor._create_rating_jar()
 
@@ -386,82 +519,13 @@ def render_teams(predictor, match_cards):
         lower_bounds.append(lower_bound)
         upper_bounds.append(upper_bound)
 
-    # Prepare match cards.
+    # Render the match cards.
     card_groups = MatchCard.group_by_team(match_cards)
-    for cards in card_groups.values():
-        for card in cards:
-            card.use_date = True
 
     # Render the team pages.
-    for team, name in TEAM_NAMES.items():
-        full_name = TEAM_FULL_NAMES[team]
-        color = TEAM_COLORS[team]
-
-        content = f"""<h4 class="py-3 text-center">{render_team_logo(team, 40)} {full_name}</h5>
-<div class="row">
-  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-    <canvas id="myChart"></canvas>
-  </div>
-</div>
-<h5 class="pt-4">Upcoming Matches</h5>
-<hr>
-<div class="row">
-  {''.join([card.html for card in card_groups[team]])}
-</div>
-<script>
-  var ctx = document.getElementById('myChart');
-  ctx.height = 280;
-  var chart = new Chart(ctx.getContext('2d'), {{
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {{
-      labels: {stages},
-      datasets: [{{
-        backgroundColor: '{color[1]}',
-        borderColor: '{color[0]}',
-        data: {mus[team]},
-        pointRadius: 4,
-        fill: false
-      }}, {{
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        borderColor: 'rgba(0, 0, 0, 0)',
-        data: {lower_bounds},
-        pointRadius: 0,
-        pointHoverRadius: 0,
-        pointBorderWidth: 0,
-        fill: '+1'
-      }}, {{
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        borderColor: 'rgba(0, 0, 0, 0)',
-        data: {upper_bounds},
-        pointRadius: 0,
-        pointHoverRadius: 0,
-        pointBorderWidth: 0,
-        fill: false
-      }}]
-    }},
-
-    // Configuration options go here
-    options: {{
-      animation: false,
-      legend: {{
-        display: false
-      }},
-      scales: {{
-        yAxes: [{{
-          ticks: {{
-            stepSize: 500
-          }}
-        }}]
-      }}
-    }}
-  }});
-</script>"""
-
-        render_page(name, full_name, content)
+    for team in TEAM_NAMES.keys():
+        render_team(team, stages, mus[team], lower_bounds, upper_bounds,
+                    card_groups[team])
 
 
 def render_about():
@@ -516,8 +580,10 @@ def render_all():
     future_games = [game for game in future_games
                     if predictor.stage in game.stage]
 
+    match_cards = render_match_cards(past_games, future_games)
+
     render_index(predictor, future_games)
-    match_cards = render_matches(past_games, future_games)
+    render_matches(match_cards)
     render_teams(predictor, match_cards)
     render_about()
 
