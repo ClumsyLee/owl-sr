@@ -533,8 +533,12 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6119,2,nepal,0,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ZUNBA,tobi,ryujehong,Wekeed,Munchkin,KuKi
 10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6955,3,kings-row,4,3,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ZUNBA,tobi,ryujehong,Wekeed,Munchkin,KuKi
 10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6120,4,gibraltar,3,2,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,ZUNBA,tobi,ryujehong,FLETA,Munchkin,KuKi
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,,,,,,,,,,,,,,,,,
-10581,Stage 2,2018-03-22 20:00:00,SFS,BOS,regular,,,,,,,,,,,,,,,,,
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6121,1,hanamura,4,3,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6122,2,lijiang,0,2,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6123,3,hollywood,3,2,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6124,4,gibraltar,2,3,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,8087,5,ilios,2,0,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero,Custa,Mickie,Chipshajen,Seagull,EFFECT,Rascal
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,,,,,,,,,,,,,,,,,
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,,,,,,,,,,,,,,,,,
 10583,Stage 2,2018-03-23 18:00:00,PHI,VAL,regular,,,,,,,,,,,,,,,,,
 10584,Stage 2,2018-03-23 20:00:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
