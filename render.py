@@ -1,3 +1,6 @@
+from collections import defaultdict
+from datetime import datetime
+
 from fetcher import load_games
 from predictor import PlayerTrueSkillPredictor
 
@@ -46,6 +49,87 @@ TEAM_COLORS = {
     'BOS': '#174B97',
     'VAL': '#4A7729'
 }
+
+
+class MatchCard(object):
+    def __init__(self, predictor, start_time, teams, score=None) -> None:
+        self.start_time = start_time
+        self.teams = teams
+        self.score = score
+
+        # Render the HTML.
+        hour = start_time.hour
+        if start_time.minute >= 30:
+            hour += 1
+
+        suffix = 'a.m.' if hour < 12 else 'p.m.'
+        if hour > 12:
+            hour -= 12
+
+        time_str = f'{hour} {suffix}'
+
+        p_win, e_diff = predictor.predict_match(teams)
+        win = round(p_win * 100.0)
+        loss = 100 - win
+
+        name1 = TEAM_NAMES[teams[0]]
+        name2 = TEAM_NAMES[teams[1]]
+
+        classes1 = ['win' if win > 50 else 'loss']
+        classes2 = ['win' if win < 50 else 'loss']
+
+        if score is not None:
+            if score[0] < score[1]:
+                classes1.append('lost')
+            elif score[1] < score[0]:
+                classes2.append('lost')
+
+            score1 = str(score[0])
+            score2 = str(score[1])
+        else:
+            score1 = ''
+            score2 = ''
+
+        self.html = f"""<div class="col-lg-4 col-md-6">
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="text-muted compact">{time_str}</th>
+        <th scope="col"></th>
+        <th scope="col" class="compact d-none d-sm-table-cell"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compact">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="{' '.join(classes1)}">
+        <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
+        <td><a href="/{name1}" class="team">{name1}</a></td>
+        <td class="d-none d-sm-table-cell">{score1}</td>
+        <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
+        <td class="text-center">{e_diff:+.1f}</td>
+      </tr>
+      <tr scope="row" class="{' '.join(classes2)}">
+        <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
+        <td><a href="/{name2}" class="team">{name2}</a></td>
+        <td class="d-none d-sm-table-cell">{score2}</td>
+        <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
+        <td class="text-center">{-e_diff:+.1f}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>"""
+
+    @staticmethod
+    def group_by_date(cards):
+        card_groups = defaultdict(list)
+
+        for card in cards:
+            date = card.start_time.replace(hour=0, minute=0, second=0,
+                                           microsecond=0)
+            card_groups[date].append(card)
+
+        return card_groups
 
 
 def percentage_str(percent):
@@ -180,75 +264,53 @@ def render_index(predictor, future_games) -> None:
     render_page('index', f'OWL {predictor.stage} Standings', content)
 
 
-def render_matches(predictor, future_games) -> None:
-    content = ''
-    last_date = None
+def render_matches(past_games, future_games):
+    predictor = PlayerTrueSkillPredictor()
+    now = datetime.now()
+    recent_matches = defaultdict(list)
+
+    for game in past_games:
+        if (now - game.start_time).days >= 1:
+            predictor.train(game)
+        else:
+            recent_matches[game.match_id].append(game)
+
+    # Render match cards.
+    match_cards = []
+
+    for match_id, games in recent_matches.items():
+        start_time = games[0].start_time
+        teams = games[0].teams
+        score = [0, 0]
+
+        for game in games:
+            if game.score[0] > game.score[1]:
+                score[0] += 1
+            elif game.score[1] > game.score[0]:
+                score[1] += 1
+
+        match_cards.append(MatchCard(predictor=predictor,
+                                     start_time=start_time,
+                                     teams=teams,
+                                     score=score))
+        predictor.train_games(games)
 
     for game in future_games:
-        # Add a separator if needed.
-        date = (game.start_time.year,
-                game.start_time.month,
-                game.start_time.day)
-        if date != last_date:
-            if last_date is not None:
-                content += '</div>'  # Ending tag for the last row.
+        match_cards.append(MatchCard(predictor=predictor,
+                                     start_time=game.start_time,
+                                     teams=game.teams))
 
-            date_str = game.start_time.strftime('%A, %B %d').replace('0', '')
-            content += f'<h6 class="pt-4">{date_str}</h6><hr><div class="row">'
+    content = ''
+    card_groups = MatchCard.group_by_date(match_cards)
 
-            last_date = date
+    for date, cards in card_groups.items():
+        date_str = date.strftime('%A, %B %d').replace('0', '')
 
-        # Add the current match.
-        hour = game.start_time.hour
-        if game.start_time.minute >= 30:
-            hour += 1
-
-        suffix = 'a.m.' if hour < 12 else 'p.m.'
-        if hour > 12:
-            hour -= 12
-
-        time_str = f'{hour} {suffix}'
-
-        p_win, e_diff = predictor.predict_match(game.teams)
-
-        win = round(p_win * 100.0)
-        loss = 100 - win
-
-        name1 = TEAM_NAMES[game.teams[0]]
-        name2 = TEAM_NAMES[game.teams[1]]
-
-        content += f"""<div class="col-lg-4 col-md-6">
-          <table class="table">
-            <thead>
-              <tr class="text-center">
-                <th scope="col" class="text-muted compact">{time_str}</th>
-                <th scope="col"></th>
-                <th scope="col" class="compact d-none d-sm-table-cell"></th>
-                <th scope="col" class="compact">win<br>prob.</th>
-                <th scope="col" class="compact">map<br>+/-</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr scope="row" class="{'win' if win > 50 else 'loss'}">
-                <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
-                <td><a href="/{name1}" class="team">{name1}</a></td>
-                <td class="d-none d-sm-table-cell"></td>
-                <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
-                <td class="text-center">{e_diff:+.1f}</td>
-              </tr>
-              <tr scope="row" class="{'win' if win < 50 else 'loss'}">
-                <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
-                <td><a href="/{name2}" class="team">{name2}</a></td>
-                <td class="d-none d-sm-table-cell"></td>
-                <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
-                <td class="text-center">{-e_diff:+.1f}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>"""
-
-    if last_date is not None:
-        content += '</div>'  # Ending tag for the last row.
+        content += f"""<h6 class="pt-4">{date_str}</h6>
+<hr>
+<div class="row">
+  {''.join([card.html for card in cards])}
+</div>"""
 
     render_page('matches', f'OWL {predictor.stage} Matches', content)
 
@@ -349,7 +411,7 @@ def render_teams(predictor):
         render_page(name, full_name, content)
 
 
-def render_about(predictor):
+def render_about():
     content = """<div class="row pt-4">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
     <h4 class="pt-4">How Did You Compute These Numbers?</h4>
@@ -402,9 +464,9 @@ def render_all():
                     if predictor.stage in game.stage]
 
     render_index(predictor, future_games)
-    render_matches(predictor, future_games)
+    render_matches(past_games, future_games)
     render_teams(predictor)
-    render_about(predictor)
+    render_about()
 
 
 if __name__ == '__main__':
