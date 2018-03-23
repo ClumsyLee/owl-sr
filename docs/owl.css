@@ -13,11 +13,11 @@ thead th {
     height: 15px;
 }
 
-thead th.compact {
+.compact {
   width: 10%;
 }
 
-thead th.compacter {
+.compacter {
   width: 5%;
 }
 

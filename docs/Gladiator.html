@@ -35,62 +35,93 @@
     </nav>
     <div class="container">
       <h4 class="py-3 text-center"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="40"> Los Angeles Gladiators</h5>
-      <div class="row">
-        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-          <canvas id="myChart"></canvas>
+<div class="row">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+<h5 class="pt-4">Upcoming Matches</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 24</th>
+        <th scope="col" class="compact d-none d-sm-table-cell"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compact">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+        <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
+        <td><a href="/Uprising" class="team">Uprising</a></td>
+        <td class="d-none d-sm-table-cell"></td>
+        <td class="text-center" style="background-color: rgba(255, 137, 0, 0.41);">41%</td>
+        <td class="text-center">-0.4</td>
+      </tr>
+      <tr scope="row" class="win">
+        <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+        <td><a href="/Gladiator" class="team">Gladiator</a></td>
+        <td class="d-none d-sm-table-cell"></td>
+        <td class="text-center" style="background-color: rgba(255, 137, 0, 0.59);">59%</td>
+        <td class="text-center">+0.4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<script>
+  var ctx = document.getElementById('myChart');
+  ctx.height = 280;
+  var chart = new Chart(ctx.getContext('2d'), {
+    // The type of chart we want to create
+    type: 'line',
 
-          <script>
-            var ctx = document.getElementById('myChart');
-            ctx.height = 280;
-            var chart = new Chart(ctx.getContext('2d'), {
-              // The type of chart we want to create
-              type: 'line',
+    // The data for our dataset
+    data: {
+      labels: ['Preseason', '', '', 'Stage 1', '', '', '', '', '', '', '', '', '', 'Stage 1 - Title Matches', '', 'Stage 2', '', '', '', '', '', '', '', '', ''],
+      datasets: [{
+        borderColor: '#3C1053',
+        data: [2606, 2476, 2476, 2675, 2459, 2565, 2413, 2423, 2298, 2348, 2180, 2338, 2226, 2226, 2226, 2540, 2411, 2514, 2467, 2717, 2873, 2851, 2789, 2722, 2722],
+        fill: false
+      }, {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderColor: 'rgba(0, 0, 0, 0)',
+        data: [2235, 2231, 2195, 2036, 1899, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1759],
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        pointBorderWidth: 0,
+        fill: '+1'
+      }, {
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderColor: 'rgba(0, 0, 0, 0)',
+        data: [2758, 2881, 2892, 2977, 3130, 3177, 3289, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3346, 3346],
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        pointBorderWidth: 0,
+        fill: false
+      }]
+    },
 
-              // The data for our dataset
-              data: {
-                labels: ['Preseason', '', '', 'Stage 1', '', '', '', '', '', '', '', '', '', 'Stage 1 - Title Matches', '', 'Stage 2', '', '', '', '', '', '', '', '', ''],
-                datasets: [{
-                  borderColor: '#3C1053',
-                  data: [2606, 2476, 2476, 2675, 2459, 2565, 2413, 2423, 2298, 2348, 2180, 2338, 2226, 2226, 2226, 2540, 2411, 2514, 2467, 2717, 2873, 2851, 2789, 2722, 2722],
-                  fill: false
-                }, {
-                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                  borderColor: 'rgba(0, 0, 0, 0)',
-                  data: [2235, 2231, 2195, 2036, 1899, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1759],
-                  pointRadius: 0,
-                  pointHoverRadius: 0,
-                  pointBorderWidth: 0,
-                  fill: '+1'
-                }, {
-                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                  borderColor: 'rgba(0, 0, 0, 0)',
-                  data: [2758, 2881, 2892, 2977, 3130, 3177, 3289, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3346, 3346],
-                  pointRadius: 0,
-                  pointHoverRadius: 0,
-                  pointBorderWidth: 0,
-                  fill: false
-                }]
-              },
-
-              // Configuration options go here
-              options: {
-                animation: false,
-                legend: {
-                  display: false
-                },
-                scales: {
-                  yAxes: [{
-                    ticks: {
-                      stepSize: 500
-                    }
-                  }]
-                }
-              }
-            });
-          </script>
-        </div>
-      </div>
+    // Configuration options go here
+    options: {
+      animation: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            stepSize: 500
+          }
+        }]
+      }
+    }
+  });
+</script>
     </div>
 
     <hr class="mt-4 mb-2">

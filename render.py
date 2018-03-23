@@ -52,13 +52,16 @@ TEAM_COLORS = {
 
 
 class MatchCard(object):
-    def __init__(self, predictor, start_time, teams, score=None) -> None:
+    def __init__(self, predictor, start_time, teams, score=None,
+                 use_date=False) -> None:
         self.start_time = start_time
         self.teams = teams
         self.score = score
 
         # Render the HTML.
         hour = start_time.hour
+        minute = '' if start_time.minute == 0 else f':{start_time.minute:02}'
+
         if start_time.minute >= 30:
             hour += 1
 
@@ -66,7 +69,9 @@ class MatchCard(object):
         if hour > 12:
             hour -= 12
 
-        time_str = f'{hour} {suffix}'
+        self.time_str = f'{hour}{minute} {suffix}'
+        self.date_str = self.start_time.strftime('%A, %B %d').replace('0', '')
+        self.use_date = use_date
 
         p_win, e_diff = predictor.predict_match(teams)
         win = round(p_win * 100.0)
@@ -90,12 +95,11 @@ class MatchCard(object):
             score1 = ''
             score2 = ''
 
-        self.html = f"""<div class="col-lg-4 col-md-6">
+        self.html_template = f"""<div class="col-lg-4 col-md-6">
   <table class="table">
     <thead>
       <tr class="text-center">
-        <th scope="col" class="text-muted compact">{time_str}</th>
-        <th scope="col"></th>
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">{{0.header}}</th>
         <th scope="col" class="compact d-none d-sm-table-cell"></th>
         <th scope="col" class="compact">win<br>prob.</th>
         <th scope="col" class="compact">map<br>+/-</th>
@@ -103,14 +107,14 @@ class MatchCard(object):
     </thead>
     <tbody>
       <tr scope="row" class="{' '.join(classes1)}">
-        <th class="text-right"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
+        <th class="text-right compact"><img src="imgs/{name1}.png" alt="{name1} Logo" width="30"></th>
         <td><a href="/{name1}" class="team">{name1}</a></td>
         <td class="d-none d-sm-table-cell">{score1}</td>
         <td class="text-center{' low-chance' if win == 0 else ''}" style="background-color: rgba(255, 137, 0, {win / 100});">{percentage_str(win)}</td>
         <td class="text-center">{e_diff:+.1f}</td>
       </tr>
       <tr scope="row" class="{' '.join(classes2)}">
-        <th class="text-right"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
+        <th class="text-right compact"><img src="imgs/{name2}.png" alt="{name2} Logo" width="30"></th>
         <td><a href="/{name2}" class="team">{name2}</a></td>
         <td class="d-none d-sm-table-cell">{score2}</td>
         <td class="text-center{' low-chance' if loss == 0 else ''}" style="background-color: rgba(255, 137, 0, {loss / 100});">{percentage_str(loss)}</td>
@@ -120,6 +124,14 @@ class MatchCard(object):
   </table>
 </div>"""
 
+    @property
+    def header(self):
+        return self.date_str if self.use_date else self.time_str
+
+    @property
+    def html(self):
+        return self.html_template.format(self)
+
     @staticmethod
     def group_by_date(cards):
         card_groups = defaultdict(list)
@@ -128,6 +140,16 @@ class MatchCard(object):
             date = card.start_time.replace(hour=0, minute=0, second=0,
                                            microsecond=0)
             card_groups[date].append(card)
+
+        return card_groups
+
+    @staticmethod
+    def group_by_team(cards):
+        card_groups = defaultdict(list)
+
+        for card in cards:
+            for team in card.teams:
+                card_groups[team].append(card)
 
         return card_groups
 
@@ -304,7 +326,7 @@ def render_matches(past_games, future_games):
     card_groups = MatchCard.group_by_date(match_cards)
 
     for date, cards in card_groups.items():
-        date_str = date.strftime('%A, %B %d').replace('0', '')
+        date_str = cards[0].date_str
 
         content += f"""<h6 class="pt-4">{date_str}</h6>
 <hr>
@@ -313,9 +335,11 @@ def render_matches(past_games, future_games):
 </div>"""
 
     render_page('matches', f'OWL {predictor.stage} Matches', content)
+    return match_cards
 
 
-def render_teams(predictor):
+def render_teams(predictor, match_cards):
+    # Prepare the data for plots.
     ratings = predictor._create_rating_jar()
 
     last_stage = None
@@ -346,67 +370,78 @@ def render_teams(predictor):
         lower_bounds.append(lower_bound)
         upper_bounds.append(upper_bound)
 
+    # Prepare match cards.
+    card_groups = MatchCard.group_by_team(match_cards)
+    for cards in card_groups.values():
+        for card in cards:
+            card.use_date = True
+
+    # Render the team pages.
     for team, name in TEAM_NAMES.items():
         full_name = TEAM_FULL_NAMES[team]
         color = TEAM_COLORS[team]
 
         content = f"""<h4 class="py-3 text-center"><img src="imgs/{name}.png" alt="{name} Logo" width="40"> {full_name}</h5>
-      <div class="row">
-        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-          <canvas id="myChart"></canvas>
+<div class="row">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+<h5 class="pt-4">Upcoming Matches</h5>
+<hr>
+<div class="row">
+  {''.join([card.html for card in card_groups[team]])}
+</div>
+<script>
+  var ctx = document.getElementById('myChart');
+  ctx.height = 280;
+  var chart = new Chart(ctx.getContext('2d'), {{
+    // The type of chart we want to create
+    type: 'line',
 
-          <script>
-            var ctx = document.getElementById('myChart');
-            ctx.height = 280;
-            var chart = new Chart(ctx.getContext('2d'), {{
-              // The type of chart we want to create
-              type: 'line',
+    // The data for our dataset
+    data: {{
+      labels: {stages},
+      datasets: [{{
+        borderColor: '{color}',
+        data: {mus[team]},
+        fill: false
+      }}, {{
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderColor: 'rgba(0, 0, 0, 0)',
+        data: {lower_bounds},
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        pointBorderWidth: 0,
+        fill: '+1'
+      }}, {{
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        borderColor: 'rgba(0, 0, 0, 0)',
+        data: {upper_bounds},
+        pointRadius: 0,
+        pointHoverRadius: 0,
+        pointBorderWidth: 0,
+        fill: false
+      }}]
+    }},
 
-              // The data for our dataset
-              data: {{
-                labels: {stages},
-                datasets: [{{
-                  borderColor: '{color}',
-                  data: {mus[team]},
-                  fill: false
-                }}, {{
-                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                  borderColor: 'rgba(0, 0, 0, 0)',
-                  data: {lower_bounds},
-                  pointRadius: 0,
-                  pointHoverRadius: 0,
-                  pointBorderWidth: 0,
-                  fill: '+1'
-                }}, {{
-                  backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                  borderColor: 'rgba(0, 0, 0, 0)',
-                  data: {upper_bounds},
-                  pointRadius: 0,
-                  pointHoverRadius: 0,
-                  pointBorderWidth: 0,
-                  fill: false
-                }}]
-              }},
-
-              // Configuration options go here
-              options: {{
-                animation: false,
-                legend: {{
-                  display: false
-                }},
-                scales: {{
-                  yAxes: [{{
-                    ticks: {{
-                      stepSize: 500
-                    }}
-                  }}]
-                }}
-              }}
-            }});
-          </script>
-        </div>
-      </div>"""
+    // Configuration options go here
+    options: {{
+      animation: false,
+      legend: {{
+        display: false
+      }},
+      scales: {{
+        yAxes: [{{
+          ticks: {{
+            stepSize: 500
+          }}
+        }}]
+      }}
+    }}
+  }});
+</script>"""
 
         render_page(name, full_name, content)
 
@@ -464,8 +499,8 @@ def render_all():
                     if predictor.stage in game.stage]
 
     render_index(predictor, future_games)
-    render_matches(past_games, future_games)
-    render_teams(predictor)
+    match_cards = render_matches(past_games, future_games)
+    render_teams(predictor, match_cards)
     render_about()
 
 
