@@ -654,12 +654,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var match_ids = [10526, 10534, '', 10223, 10229, 10239, 10244, 10249, 10257, 10259, 10270, 10566, 10572, '', '', 10278, 10289, 10291, 10298, 10304, 10306, 10318, 10322, '', ''];
+var matchIds = [10526, 10534, '', 10223, 10229, 10239, 10244, 10249, 10257, 10259, 10270, 10566, 10572, '', '', 10278, 10289, 10291, 10298, 10304, 10306, 10318, 10322, '', ''];
 var opponents = ['Shock', 'Gladiator', '', 'Shock', 'Fuel', 'Excelsior', 'Spitfire', 'Gladiator', 'Mayhem', 'Fusion', 'Uprising', 'Dynasty', 'Dragons', '', '', 'Dynasty', 'Dragons', 'Shock', 'Fuel', 'Gladiator', 'Outlaws', 'Mayhem', 'Uprising', '', ''];
 var scores1 = [3, 3, '', 4, 3, 0, 2, 3, 3, 4, 0, 3, 4, '', '', 0, 3, 3, 3, 0, 4, 1, 2, '', ''];
 var scores2 = [2, 1, '', 0, 0, 3, 3, 2, 1, 0, 4, 0, 0, '', '', 4, 0, 1, 1, 4, 0, 3, 3, '', ''];
-
-var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -736,11 +734,24 @@ var chart = new Chart(ctx.getContext('2d'), {
   }
 });
 
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+var lastMatchId = null;
+
 ctx.onclick = function(event) {
-  if (!isTouchDevice) {
-    var match_id = match_ids[chart.getElementAtEvent(event)[0]._index];
-    gotoHash('#' + match_id);
+  var elements = chart.getElementAtEvent(event);
+  if (elements.length == 0) {
+    lastMatchId = null;
+    return;
   }
+
+  var match_id = matchIds[chart.getElementAtEvent(event)[0]._index];
+  if (isTouchDevice && match_id != lastMatchId) {
+    lastMatchId = match_id;
+    return;
+  }
+
+  lastMatchId = match_id;
+  gotoHash('#' + match_id);
 };
 </script>
     </div>

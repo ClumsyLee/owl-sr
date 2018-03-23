@@ -438,12 +438,10 @@ def render_team(team, labels, match_info, mus, lower_bounds, upper_bounds,
 {render_past_matches(past_cards)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var match_ids = {['' if info is None else info[0] for info in match_info]};
+var matchIds = {['' if info is None else info[0] for info in match_info]};
 var opponents = {['' if info is None else TEAM_NAMES[info[1]] for info in match_info]};
 var scores1 = {['' if info is None else info[2][0] for info in match_info]};
 var scores2 = {['' if info is None else info[2][1] for info in match_info]};
-
-var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
 
 function gotoHash(hash) {{
     window.location.hash = '#';
@@ -520,11 +518,24 @@ var chart = new Chart(ctx.getContext('2d'), {{
   }}
 }});
 
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+var lastMatchId = null;
+
 ctx.onclick = function(event) {{
-  if (!isTouchDevice) {{
-    var match_id = match_ids[chart.getElementAtEvent(event)[0]._index];
-    gotoHash('#' + match_id);
+  var elements = chart.getElementAtEvent(event);
+  if (elements.length == 0) {{
+    lastMatchId = null;
+    return;
   }}
+
+  var match_id = matchIds[chart.getElementAtEvent(event)[0]._index];
+  if (isTouchDevice && match_id != lastMatchId) {{
+    lastMatchId = match_id;
+    return;
+  }}
+
+  lastMatchId = match_id;
+  gotoHash('#' + match_id);
 }};
 </script>"""
 
