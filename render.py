@@ -120,8 +120,6 @@ def render_index(predictor, future_games) -> None:
     losses = predictor.stage_losses
     map_diffs = predictor.stage_map_diffs
 
-    min_win = list(sorted(wins.values(), reverse=True))[2]
-
     teams = sorted(p_stage.keys(),
                    key=lambda team: (round(p_stage[team][0] * 100),
                                      round(p_stage[team][1] * 100),
@@ -155,13 +153,15 @@ def render_index(predictor, future_games) -> None:
         top3 = round(p_top3 * 100)
         top1 = round(p_top1 * 100)
 
-        max_win = win + sum(int(team in game.teams) for game in future_games)
-        if max_win < min_win:
-            top3_str = '-'
-            top1_str = '-'
+        top1_str = percentage_str(top1)
+        if isinstance(p_top3, bool):
+            if p_top3:
+                top3_str = '✓'
+            else:
+                top3_str = '-'
+                top1_str = '-'
         else:
             top3_str = percentage_str(top3)
-            top1_str = percentage_str(top1)
 
         content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
   <th class="text-right"><img src="imgs/{name}.png" alt="{name} Logo" width="30"></th>
