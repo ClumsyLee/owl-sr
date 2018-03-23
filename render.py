@@ -443,6 +443,8 @@ var opponents = {['' if info is None else TEAM_NAMES[info[1]] for info in match_
 var scores1 = {['' if info is None else info[2][0] for info in match_info]};
 var scores2 = {['' if info is None else info[2][1] for info in match_info]};
 
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+
 function gotoHash(hash) {{
     window.location.hash = '#';
     window.location.hash = hash;
@@ -452,7 +454,7 @@ function gotoHash(hash) {{
 }}
 
 var ctx = document.getElementById('myChart');
-ctx.height = 280;
+ctx.height = 240;
 var chart = new Chart(ctx.getContext('2d'), {{
   // The type of chart we want to create
   type: 'line',
@@ -496,6 +498,9 @@ var chart = new Chart(ctx.getContext('2d'), {{
       display: false
     }},
     scales: {{
+      xAxes: [{{
+        display: false
+      }}],
       yAxes: [{{
         ticks: {{
           stepSize: 500
@@ -516,8 +521,10 @@ var chart = new Chart(ctx.getContext('2d'), {{
 }});
 
 ctx.onclick = function(event) {{
-  var match_id = match_ids[chart.getElementAtEvent(event)[0]._index];
-  gotoHash('#' + match_id);
+  if (!isTouchDevice) {{
+    var match_id = match_ids[chart.getElementAtEvent(event)[0]._index];
+    gotoHash('#' + match_id);
+  }}
 }};
 </script>"""
 
