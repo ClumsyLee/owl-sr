@@ -425,7 +425,10 @@ def render_team(team, labels, match_info, mus, lower_bounds, upper_bounds,
         else:
             past_cards.append(card)
 
-    content = f"""<h4 class="py-3 text-center">{render_team_logo(team, 40)} {full_name}</h5>
+    content = f"""<h4 class="py-3 text-center">
+  {render_team_logo(team, 40)}
+  <span class="align-middle pl-1">{full_name}</span>
+</h4>
 <div class="row">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
     <canvas id="myChart"></canvas>
