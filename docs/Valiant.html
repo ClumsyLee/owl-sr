@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 2</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10586">
     <thead>
@@ -57,28 +62,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
   <td><a href="/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2565 ± 369">Valiant</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">0</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.12);">12%</td>
   <td class="text-center">-2.0</td>
 </tr>
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
   <td><a href="/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3068 ± 368">Excelsior</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">4</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.88);">88%</td>
   <td class="text-center">+2.0</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 2</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10583">
     <thead>
       <tr class="text-center">
@@ -657,10 +657,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [10526, 10534, '', 10223, 10229, 10239, 10244, 10249, 10257, 10259, 10270, 10566, 10572, '', '', 10278, 10289, 10291, 10298, 10304, 10306, 10318, 10322, 10583, ''];
-var opponents = ['Shock', 'Gladiator', '', 'Shock', 'Fuel', 'Excelsior', 'Spitfire', 'Gladiator', 'Mayhem', 'Fusion', 'Uprising', 'Dynasty', 'Dragons', '', '', 'Dynasty', 'Dragons', 'Shock', 'Fuel', 'Gladiator', 'Outlaws', 'Mayhem', 'Uprising', 'Fusion', ''];
-var scores1 = [3, 3, '', 4, 3, 0, 2, 3, 3, 4, 0, 3, 4, '', '', 0, 3, 3, 3, 0, 4, 1, 2, 2, ''];
-var scores2 = [2, 1, '', 0, 0, 3, 3, 2, 1, 0, 4, 0, 0, '', '', 4, 0, 1, 1, 4, 0, 3, 3, 3, ''];
+var matchIds = [10526, 10534, '', 10223, 10229, 10239, 10244, 10249, 10257, 10259, 10270, 10566, 10572, '', '', 10278, 10289, 10291, 10298, 10304, 10306, 10318, 10322, 10583, 10586];
+var opponents = ['Shock', 'Gladiator', '', 'Shock', 'Fuel', 'Excelsior', 'Spitfire', 'Gladiator', 'Mayhem', 'Fusion', 'Uprising', 'Dynasty', 'Dragons', '', '', 'Dynasty', 'Dragons', 'Shock', 'Fuel', 'Gladiator', 'Outlaws', 'Mayhem', 'Uprising', 'Fusion', 'Excelsior'];
+var scores1 = [3, 3, '', 4, 3, 0, 2, 3, 3, 4, 0, 3, 4, '', '', 0, 3, 3, 3, 0, 4, 1, 2, 2, 0];
+var scores2 = [2, 1, '', 0, 0, 3, 3, 2, 1, 0, 4, 0, 0, '', '', 4, 0, 1, 1, 4, 0, 3, 3, 3, 4];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -682,10 +682,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#E5D660',
       borderColor: '#4A7729',
-      data: [2661, 2825, 2825, 2977, 3093, 2827, 2839, 2834, 2776, 2920, 2759, 2917, 2971, 2971, 2971, 2804, 2791, 2608, 2670, 2425, 2668, 2518, 2503, 2565, 2565],
-      pointRadius: [4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2661, 2825, 2825, 2977, 3093, 2827, 2839, 2834, 2776, 2920, 2759, 2917, 2971, 2971, 2971, 2804, 2791, 2608, 2670, 2425, 2668, 2518, 2503, 2565, 2495],
+      pointRadius: [4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
@@ -699,7 +699,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2758, 2881, 2892, 2977, 3130, 3177, 3304, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3256, 3256],
+      data: [2758, 2881, 2892, 2977, 3130, 3177, 3304, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3256, 3189],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
