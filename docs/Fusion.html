@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 2</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10583">
     <thead>
@@ -60,25 +65,20 @@
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
   <td><a href="/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2958 ± 393">Fusion</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">3</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.86);">86%</td>
   <td class="text-center">+1.8</td>
 </tr>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
   <td><a href="/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2503 ± 376">Valiant</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">2</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.14);">14%</td>
   <td class="text-center">-1.8</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 2</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10576">
     <thead>
       <tr class="text-center">
@@ -599,10 +599,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = ['', '', '', 10227, 10232, 10235, 10240, 10251, 10254, 10259, 10262, 10567, 10575, '', '', 10283, 10287, 10294, 10299, 10305, 10309, 10316, 10325, 10576, ''];
-var opponents = ['', '', '', 'Outlaws', 'Spitfire', 'Shock', 'Gladiator', 'Excelsior', 'Dragons', 'Valiant', 'Fuel', 'Uprising', 'Mayhem', '', '', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Dynasty', 'Excelsior', 'Dragons', 'Fuel', 'Gladiator', ''];
-var scores1 = ['', '', '', 3, 0, 2, 2, 3, 3, 0, 4, 0, 3, '', '', 4, 4, 3, 0, 1, 1, 4, 4, 3, ''];
-var scores2 = ['', '', '', 2, 4, 1, 3, 2, 2, 4, 0, 4, 2, '', '', 0, 0, 2, 4, 3, 3, 0, 0, 1, ''];
+var matchIds = ['', '', '', 10227, 10232, 10235, 10240, 10251, 10254, 10259, 10262, 10567, 10575, '', '', 10283, 10287, 10294, 10299, 10305, 10309, 10316, 10325, 10576, 10583];
+var opponents = ['', '', '', 'Outlaws', 'Spitfire', 'Shock', 'Gladiator', 'Excelsior', 'Dragons', 'Valiant', 'Fuel', 'Uprising', 'Mayhem', '', '', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Dynasty', 'Excelsior', 'Dragons', 'Fuel', 'Gladiator', 'Valiant'];
+var scores1 = ['', '', '', 3, 0, 2, 2, 3, 3, 0, 4, 0, 3, '', '', 4, 4, 3, 0, 1, 1, 4, 4, 3, 3];
+var scores2 = ['', '', '', 2, 4, 1, 3, 2, 2, 4, 0, 4, 2, '', '', 0, 0, 2, 4, 3, 3, 0, 0, 1, 2];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -624,10 +624,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#FF9E1B',
-      data: [2500, 2500, 2500, 2559, 2337, 2368, 2270, 2629, 2499, 2320, 2501, 2390, 2318, 2318, 2318, 2777, 2874, 3011, 2862, 2771, 2781, 2822, 2920, 2958, 2958],
-      pointRadius: [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2500, 2500, 2500, 2559, 2337, 2368, 2270, 2629, 2499, 2320, 2501, 2390, 2318, 2318, 2318, 2777, 2874, 3011, 2862, 2771, 2781, 2822, 2920, 2958, 2947],
+      pointRadius: [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',

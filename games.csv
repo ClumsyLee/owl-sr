@@ -547,8 +547,12 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6130,2,nepal,2,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6131,3,hollywood,0,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
 10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6132,4,route-66,3,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,,,,,,,,,,,,,,,,,
-10584,Stage 2,2018-03-23 20:00:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6133,1,hanamura,3,2,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Agilities,Envy,Kariv,Fate
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6134,2,nepal,0,2,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Soon,Agilities,Verbo,Envy,Kariv,Fate
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6956,3,kings-row,3,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Soon,Agilities,Verbo,Envy,Kariv,Fate
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6135,4,gibraltar,2,3,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Agilities,Envy,Kariv,Fate
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,8168,5,ilios,2,1,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Verbo,Envy,Kariv,Fate
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
 10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,,,,,,,,,,,,,,,,,
 10586,Stage 2,2018-03-24 15:00:00,VAL,NYE,regular,,,,,,,,,,,,,,,,,
 10587,Stage 2,2018-03-24 17:00:00,BOS,GLA,regular,,,,,,,,,,,,,,,,,
