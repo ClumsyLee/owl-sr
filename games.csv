@@ -552,7 +552,10 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6956,3,kings-row,3,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Soon,Agilities,Verbo,Envy,Kariv,Fate
 10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6135,4,gibraltar,2,3,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Agilities,Envy,Kariv,Fate
 10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,8168,5,ilios,2,1,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Verbo,Envy,Kariv,Fate
-10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6136,1,hanamura,2,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Freefeel,Fiveking,Ado,Fearless
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6137,2,lijiang,2,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Altering,Fiveking,Ado,Fearless
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6138,3,hollywood,3,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Freefeel,Fiveking,Ado,Fearless
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6139,4,gibraltar,3,1,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Freefeel,Fiveking,Ado,Fearless
 10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,,,,,,,,,,,,,,,,,
 10586,Stage 2,2018-03-24 15:00:00,VAL,NYE,regular,,,,,,,,,,,,,,,,,
 10587,Stage 2,2018-03-24 17:00:00,BOS,GLA,regular,,,,,,,,,,,,,,,,,
