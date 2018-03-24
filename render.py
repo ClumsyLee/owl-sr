@@ -69,9 +69,6 @@ class MatchCard(object):
         hour = start_time.hour
         minute = '' if start_time.minute == 0 else f':{start_time.minute:02}'
 
-        if start_time.minute >= 30:
-            hour += 1
-
         suffix = 'a.m.' if hour < 12 else 'p.m.'
         if hour > 12:
             hour -= 12
