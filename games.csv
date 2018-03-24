@@ -543,8 +543,11 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6127,3,hollywood,1,2,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
 10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6128,4,route-66,3,2,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
 10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,8088,5,ilios,1,2,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,,,,,,,,,,,,,,,,,
-10583,Stage 2,2018-03-23 18:00:00,PHI,VAL,regular,,,,,,,,,,,,,,,,,
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6129,1,volskaya,4,3,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6130,2,nepal,2,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6131,3,hollywood,0,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6132,4,route-66,3,1,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,,,,,,,,,,,,,,,,,
 10584,Stage 2,2018-03-23 20:00:00,LDN,SHD,regular,,,,,,,,,,,,,,,,,
 10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,,,,,,,,,,,,,,,,,
 10586,Stage 2,2018-03-24 15:00:00,VAL,NYE,regular,,,,,,,,,,,,,,,,,
