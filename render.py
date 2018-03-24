@@ -620,7 +620,7 @@ def render_about():
     <p>Yes.</p>
 
     <h4 class="pt-4">But How Did You Determine the Rosters?</h4>
-    <p>For a given team, sort all the rosters of it during its last 10 games based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
+    <p>For a given team, sort all the rosters of it during its last 12 games (maps) based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
 
     <h4 class="pt-4">What Parameters Did You Use?</h4>
     <ul>

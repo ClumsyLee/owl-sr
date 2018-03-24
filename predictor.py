@@ -23,7 +23,7 @@ class Predictor(object):
     """Base class for all OWL predictors."""
 
     def __init__(self, availabilities: Availabilities = None,
-                 roster_queue_size: int = 10) -> None:
+                 roster_queue_size: int = 12) -> None:
         super().__init__()
 
         # Players availabilities.
@@ -609,9 +609,9 @@ def compare_methods() -> None:
 
     for class_ in classes:
         predictor = class_()
-        print(class_.__name__,
-              predictor.train_games(games) / len(games),
-              np.sum(np.array(predictor.points) > 0) / len(games))
+        avg_point = predictor.train_games(games) / len(games)
+        avg_accuracy = np.sum(np.array(predictor.points) > 0) / len(games)
+        print(f'{class_.__name__:>30} {avg_point:8.4f} {avg_accuracy:7.3f}')
 
 
 def predict_stage():
