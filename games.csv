@@ -564,7 +564,12 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6145,2,nepal,0,2,Unkoe,Soon,Agilities,Verbo,Envy,Fate,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
 10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6146,3,hollywood,0,1,Unkoe,Soon,Agilities,Verbo,Envy,Fate,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero
 10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6147,4,route-66,2,3,Unkoe,Soon,Agilities,Verbo,Envy,Fate,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,,,,,,,,,,,,,,,,,
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6148,1,volskaya,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6149,2,lijiang,2,0,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6150,3,hollywood,3,4,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6151,4,route-66,4,5,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,8214,5,ilios,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,,,,,,,,,,,,,,,,,
 10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,,,,,,,,,,,,,,,,,
 10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,,,,,,,,,,,,,,,,,
 10335,Stage 3,2018-04-04 20:00:00,SFS,GLA,regular,,,,,,,,,,,,,,,,,

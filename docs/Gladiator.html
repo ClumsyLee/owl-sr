@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 2</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10587">
     <thead>
@@ -57,28 +62,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr scope="row" class="win">
+      <tr scope="row" class="win lost">
   <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
   <td><a href="/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2722 ± 378">Gladiator</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">2</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.59);">59%</td>
   <td class="text-center">+0.4</td>
 </tr>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
   <td><a href="/Uprising" class="team" data-toggle="tooltip" data-placement="right" title="2624 ± 363">Uprising</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">3</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.41);">41%</td>
   <td class="text-center">-0.4</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 2</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10576">
     <thead>
       <tr class="text-center">
@@ -657,10 +657,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [10528, 10534, '', 10224, 10234, 10240, 10245, 10249, 10258, 10260, 10267, 10565, 10570, '', '', 10280, 10285, 10292, 10297, 10304, 10311, 10319, 10320, 10576, ''];
-var opponents = ['Spitfire', 'Valiant', '', 'Dragons', 'Dynasty', 'Fusion', 'Excelsior', 'Valiant', 'Outlaws', 'Mayhem', 'Uprising', 'Shock', 'Fuel', '', '', 'Shock', 'Fuel', 'Dragons', 'Dynasty', 'Valiant', 'Spitfire', 'Outlaws', 'Mayhem', 'Fusion', ''];
-var scores1 = [3, 1, '', 4, 0, 3, 0, 2, 0, 3, 0, 3, 1, '', '', 4, 1, 4, 1, 4, 3, 3, 2, 1, ''];
-var scores2 = [2, 3, '', 0, 4, 2, 4, 3, 4, 1, 4, 1, 3, '', '', 0, 3, 0, 3, 0, 1, 2, 1, 3, ''];
+var matchIds = [10528, 10534, '', 10224, 10234, 10240, 10245, 10249, 10258, 10260, 10267, 10565, 10570, '', '', 10280, 10285, 10292, 10297, 10304, 10311, 10319, 10320, 10576, 10587];
+var opponents = ['Spitfire', 'Valiant', '', 'Dragons', 'Dynasty', 'Fusion', 'Excelsior', 'Valiant', 'Outlaws', 'Mayhem', 'Uprising', 'Shock', 'Fuel', '', '', 'Shock', 'Fuel', 'Dragons', 'Dynasty', 'Valiant', 'Spitfire', 'Outlaws', 'Mayhem', 'Fusion', 'Uprising'];
+var scores1 = [3, 1, '', 4, 0, 3, 0, 2, 0, 3, 0, 3, 1, '', '', 4, 1, 4, 1, 4, 3, 3, 2, 1, 2];
+var scores2 = [2, 3, '', 0, 4, 2, 4, 3, 4, 1, 4, 1, 3, '', '', 0, 3, 0, 3, 0, 1, 2, 1, 3, 3];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -682,10 +682,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#3C1053',
-      data: [2606, 2476, 2476, 2675, 2471, 2565, 2413, 2423, 2298, 2348, 2180, 2338, 2226, 2226, 2226, 2540, 2411, 2514, 2467, 2717, 2873, 2851, 2789, 2722, 2722],
-      pointRadius: [4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2606, 2476, 2476, 2675, 2471, 2565, 2413, 2423, 2298, 2348, 2180, 2338, 2226, 2226, 2226, 2540, 2411, 2514, 2467, 2717, 2873, 2851, 2789, 2722, 2663],
+      pointRadius: [4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
