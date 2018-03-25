@@ -1,5 +1,4 @@
 from collections import defaultdict, OrderedDict
-from datetime import datetime
 
 from fetcher import load_games
 from predictor import PlayerTrueSkillPredictor
@@ -54,8 +53,8 @@ RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
 
 
 class MatchCard(object):
-    def __init__(self, predictor, match_id, stage, start_time, teams, score=None,
-                 use_date=False, first_team=None) -> None:
+    def __init__(self, predictor, match_id, stage, start_time, teams,
+                 score=None, use_date=False, first_team=None) -> None:
         self.match_id = match_id
         self.stage = stage
         self.start_time = start_time
@@ -369,12 +368,12 @@ def render_match_cards(past_games, future_games):
 
 
 def render_matches(match_cards):
-    now = datetime.now()
-    cards = [card for card in match_cards if (now - card.start_time).days < 1]
-    card_groups = MatchCard.group_by_date(cards)
+    card_groups = MatchCard.group_by_date(match_cards)
+    dates = list(card_groups.keys())
     sections = []
 
-    for date, cards in card_groups.items():
+    for date in reversed(dates):
+        cards = card_groups[date]
         date_str = cards[0].date_str
 
         sections += f"""<h6 class="pt-4">{date_str}</h6>
