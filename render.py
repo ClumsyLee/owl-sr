@@ -283,8 +283,28 @@ def render_index(predictor, future_games) -> None:
                                      wins[team],
                                      map_diffs[team]),
                    reverse=True)
+    rows = []
 
-    content += """<div class="row pt-4">
+    for i, team in enumerate(teams):
+        win = wins[team]
+        loss = losses[team]
+        map_diff = map_diffs[team]
+
+        p_top3, p_top1 = p_stage[team]
+
+        rows.append(f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
+  <th class="text-right">{render_team_logo(team)}</th>
+  <td>{render_team_link(predictor, team)}</td>
+  <td class="text-center">{win}</td>
+  <td class="text-center d-none d-sm-table-cell">{loss}</td>
+  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
+  {render_chance_cell(p_top3)}
+  {render_chance_cell(p_top1)}
+</tr>""")
+
+    title = f'{predictor.stage} Standings'
+    content = f"""<h4 class="py-3 text-center">{title}</h4>
+<div class="row">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
     <table class="table">
       <thead>
@@ -298,30 +318,13 @@ def render_index(predictor, future_games) -> None:
           <th scope="col" class="compact">top 1<br>prob.</th>
         </tr>
       </thead>
-      <tbody>"""
-
-    for i, team in enumerate(teams):
-        win = wins[team]
-        loss = losses[team]
-        map_diff = map_diffs[team]
-
-        p_top3, p_top1 = p_stage[team]
-
-        content += f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
-  <th class="text-right">{render_team_logo(team)}</th>
-  <td>{render_team_link(predictor, team)}</td>
-  <td class="text-center">{win}</td>
-  <td class="text-center d-none d-sm-table-cell">{loss}</td>
-  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
-  {render_chance_cell(p_top3)}
-  {render_chance_cell(p_top1)}
-</tr>"""
-
-    content += """</tbody>
+      <tbody>
+        {''.join(rows)}
+      </tbody>
     </table>
   </div>
 </div>"""
-    render_page('index', f'OWL {predictor.stage} Standings', content)
+    render_page('index', title, content)
 
 
 def render_match_cards(past_games, future_games):
