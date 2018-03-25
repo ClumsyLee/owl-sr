@@ -645,6 +645,7 @@ def render_all():
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
+    predictor.save_ratings_history()
 
     # Only predict the current stage (including title matches).
     future_games = [game for game in future_games
