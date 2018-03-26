@@ -1,9 +1,8 @@
 from collections import defaultdict, deque, OrderedDict
 from functools import cmp_to_key
 from itertools import chain
-from math import sqrt
+from math import log, sqrt
 from random import choices, random
-import re
 from typing import Dict, List, Sequence, Set, Tuple
 
 import numpy as np
@@ -62,8 +61,9 @@ class Predictor(object):
         self.expected_draws = 0.0
         self.real_draws = 0.0
 
-        # Points history, used to judge the performance of a predictor.
+        # Evaluation history, used to judge the performance of a predictor.
         self.points = []
+        self.corrects = []
 
     @property
     def stage_finished(self):
@@ -82,8 +82,9 @@ class Predictor(object):
     def train(self, game: Game) -> float:
         """Given a game result, train the underlying model.
         Return the prediction point for this game before training."""
-        point = self.evaluate(game)
+        point, correct = self.evaluate(game)
         self.points.append(point)
+        self.corrects.append(correct)
 
         self._update_rosters(game)
         self._update_standings(game)
@@ -93,17 +94,25 @@ class Predictor(object):
 
         return point
 
-    def evaluate(self, game: Game) -> float:
+    def evaluate(self, game: Game) -> Tuple[float, bool]:
         """Return the prediction point for this game.
         Assume it will not draw."""
         if game.score[0] == game.score[1]:
-            return 0.0
+            return 0.0, False
 
-        win = game.score[0] > game.score[1]
-        p_win, _ = self.predict(game.teams, game.rosters, drawable=False)
+        p_win, p_draw = self.predict(game.teams, game.rosters, drawable=False)
         p_win = max(0.0, min(p_win, 1.0))
+        p_draw = max(0.0, min(p_draw, 1.0))
+        p_loss = 1.0 - p_win - p_draw
 
-        return 0.25 - (win - p_win)**2
+        if game.score[0] > game.score[1]:
+            p = p_win
+            correct = p_win > p_loss
+        else:
+            p = p_loss
+            correct = p_win < p_loss
+
+        return log(2.0 * p), correct
 
     def train_games(self, games: Sequence[Game]) -> float:
         """Given a sequence of games, train the underlying model.
@@ -632,15 +641,29 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
         return rating.mu - 3.0 * rating.sigma
 
 
-def optimize_beta(maxfun=100) -> None:
+def optimize_beta(class_=PlayerTrueSkillPredictor, maxfun=100) -> None:
     games, _ = load_games()
 
     def f(x):
-        beta = 2500.0 / 6.0 * x[0]
-        return -TrueSkillPredictor(beta=beta).train_games(games)
+        predictor = class_(beta=x[0])
+        return -predictor.train_games(games)
 
-    args = fmin(f, [3.7], maxfun=maxfun)
-    print(args, f(args))
+    args = fmin(f, [2500.0 / 6.0], maxfun=maxfun)
+    avg_point = -f(args) / len(games)
+    print(f'beta = {args[0]:.0f}, avg(point) = {avg_point:.4f}')
+
+
+def optimize_draw_probability(class_=PlayerTrueSkillPredictor,
+                              maxfun=100) -> None:
+    games, _ = load_games()
+
+    def f(x):
+        predictor = class_(draw_probability=x[0])
+        predictor.train_games(games)
+        return (predictor.expected_draws - predictor.real_draws)**2
+
+    args = fmin(f, [0.06], maxfun=maxfun)
+    print(f'draw_probability = {args[0]:.3f}')
 
 
 def compare_methods() -> None:
@@ -654,7 +677,7 @@ def compare_methods() -> None:
     for class_ in classes:
         predictor = class_()
         avg_point = predictor.train_games(games) / len(games)
-        avg_accuracy = np.sum(np.array(predictor.points) > 0) / len(games)
+        avg_accuracy = np.sum(np.array(predictor.corrects)) / len(games)
         print(f'{class_.__name__:>30} {avg_point:8.4f} {avg_accuracy:7.3f}')
 
 
