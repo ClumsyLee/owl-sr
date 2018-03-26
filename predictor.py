@@ -3,6 +3,7 @@ from functools import cmp_to_key
 from itertools import chain
 from math import sqrt
 from random import choices, random
+import re
 from typing import Dict, List, Sequence, Set, Tuple
 
 import numpy as np
@@ -41,12 +42,14 @@ class Predictor(object):
 
         # Stage standings.
         self.stage = None
-        self.stage_team_match_ids = defaultdict(set)
+        self.base_stage = None
 
         self.stage_wins = defaultdict(int)
         self.stage_losses = defaultdict(int)
         self.stage_map_diffs = defaultdict(int)
         self.stage_head_to_head_map_diffs = defaultdict(int)
+        self.stage_title_wins = defaultdict(int)
+        self.stage_title_losses = defaultdict(int)
 
         # Match standings.
         self.match_id = None
@@ -143,10 +146,12 @@ class Predictor(object):
         return p_win, e_diff
 
     def predict_stage(self, games: Sequence[Game]):
-        games = [game for game in games if game.stage == self.stage]
+        games = [game for game in games if game.stage == self.stage and
+                 game.match_format == 'regular']
         prediction = self._predict_stage(games)
         teams = list(prediction.keys())
 
+        # Normalize 0% and 100% for predictions.
         wins = {team: (self.stage_wins[team], self.stage_map_diffs[team])
                 for team in teams}
         min_wins = wins.copy()
@@ -162,6 +167,7 @@ class Predictor(object):
 
         min_3rd_wins = list(sorted(min_wins.values()))[-3]
         max_4th_wins = list(sorted(max_wins.values()))[-4]
+        finished = sum(self.stage_title_losses[team] for team in teams) == 2
 
         for team, (p_top3, p_top1) in prediction.items():
             if max_wins[team] < min_3rd_wins:
@@ -169,6 +175,11 @@ class Predictor(object):
                 p_top1 = False
             elif min_wins[team] > max_4th_wins:
                 p_top3 = True
+
+                if self.stage_title_losses[team] > 0:
+                    p_top1 = False
+                elif finished:
+                    p_top1 = True
 
             prediction[team] = (p_top3, p_top1)
 
@@ -215,9 +226,19 @@ class Predictor(object):
 
             # Determine top 1 teams.
             first, second, third = top3
-            if random() < p_wins_title[(third, second)]:
+
+            if self.stage_title_wins[second] > 0:
+                pass
+            elif self.stage_title_wins[third] > 0:
                 second = third
-            if random() < p_wins_title[(second, first)]:
+            elif random() < p_wins_title[(third, second)]:
+                second = third
+
+            if self.stage_title_wins[first] > 0:
+                pass
+            elif self.stage_title_wins[second] > 1:
+                first = second
+            elif random() < p_wins_title[(second, first)]:
                 first = second
 
             top1_count[first] += 1
@@ -267,31 +288,42 @@ class Predictor(object):
         for team, roster in zip(game.teams, game.rosters):
             self.roster_queues[team].appendleft(roster)
 
-    def _update_standings(self, game: Game) -> None:
-        if game.stage != self.stage:
-            # Record a new stage.
-            self.stage = game.stage
-            self.stage_team_match_ids.clear()
+    def _update_stage(self, stage: str) -> None:
+        if stage != self.stage:
+            if self.stage is not None and stage.startswith(self.stage):
+                # Entering the title matches.
+                self.base_stage = self.stage
+                self.stage = stage
+            else:
+                # Entering a new stage.
+                self.base_stage = stage
+                self.stage = stage
 
-            self.stage_wins.clear()
-            self.stage_losses.clear()
-            self.stage_map_diffs.clear()
-            self.stage_head_to_head_map_diffs.clear()
+                self.stage_wins.clear()
+                self.stage_losses.clear()
+                self.stage_map_diffs.clear()
+                self.stage_head_to_head_map_diffs.clear()
+                self.stage_title_wins.clear()
+                self.stage_title_losses.clear()
 
-        if game.match_id != self.match_id:
+    def _update_match_ids(self, match_id: int, teams: Tuple[str, str]) -> None:
+        if match_id != self.match_id:
             # Record a new match.
-            self.match_id = game.match_id
-            self.score = {team: 0 for team in game.teams}
-            self.scores[game.match_id] = self.score
-            for team in game.teams:
-                self.match_history[game.stage][team].append(game.match_id)
+            self.match_id = match_id
+            self.score = {team: 0 for team in teams}
+            self.scores[match_id] = self.score
 
-        for team, roster in zip(game.teams, game.rosters):
-            self.stage_team_match_ids[team].add(game.match_id)
+            for team in teams:
+                self.match_history[self.stage][team].append(match_id)
+
+    def _update_standings(self, game: Game) -> None:
+        self._update_stage(game.stage)
+        self._update_match_ids(game.match_id, game.teams)
 
         # Wins & map diffs.
         team1, team2 = game.teams
         score1, score2 = game.score
+        is_title = game.match_format == 'title'
 
         if game.score[0] != game.score[1]:
             if game.score[0] > game.score[1]:
@@ -301,23 +333,32 @@ class Predictor(object):
 
             self.map_diffs[winner] += 1
             self.map_diffs[loser] -= 1
-            self.stage_map_diffs[winner] += 1
-            self.stage_map_diffs[loser] -= 1
-
             self.head_to_head_map_diffs[(winner, loser)] += 1
             self.head_to_head_map_diffs[(loser, winner)] -= 1
-            self.stage_head_to_head_map_diffs[(winner, loser)] += 1
-            self.stage_head_to_head_map_diffs[(loser, winner)] -= 1
+
+            if not is_title:
+                self.stage_map_diffs[winner] += 1
+                self.stage_map_diffs[loser] -= 1
+                self.stage_head_to_head_map_diffs[(winner, loser)] += 1
+                self.stage_head_to_head_map_diffs[(loser, winner)] -= 1
 
             # Handle the match result.
             if self.score[winner] == self.score[loser]:
                 # The winner won the match.
-                self.stage_wins[winner] += 1
-                self.stage_losses[loser] += 1
+                if is_title:
+                    self.stage_title_wins[winner] += 1
+                    self.stage_title_losses[loser] += 1
+                else:
+                    self.stage_wins[winner] += 1
+                    self.stage_losses[loser] += 1
             elif self.score[winner] == self.score[loser] - 1:
                 # The winner avoided the loss.
-                self.stage_wins[loser] -= 1
-                self.stage_losses[winner] -= 1
+                if is_title:
+                    self.stage_title_wins[loser] -= 1
+                    self.stage_title_losses[winner] -= 1
+                else:
+                    self.stage_wins[loser] -= 1
+                    self.stage_losses[winner] -= 1
 
             self.score[winner] += 1
 
@@ -530,7 +571,7 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
             self.ratings[team] = self._record_team_ratings(team)
 
     def _record_team_ratings(self, team: str) -> Rating:
-        match_number = len(self.stage_team_match_ids[team])
+        match_number = len(self.match_history[self.stage][team])
         match_key = (self.stage, match_number)
 
         members = self.availabilities[match_key][team]
@@ -624,7 +665,8 @@ def predict_stage():
     teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
                    reverse=True)
 
-    print(f'       Top3  Top1  Roster')
+    print(predictor.base_stage)
+    print(f'       Top3   Top1  Roster')
     for team in teams:
         p_top3, p_top1 = p_stage[team]
 
@@ -632,10 +674,15 @@ def predict_stage():
             top3 = str(p_top3)
         else:
             top3 = f'{round(p_top3 * 100)}%'
-        top1 = f'{round(p_top1 * 100)}%'
+
+        if isinstance(p_top1, bool):
+            top1 = str(p_top1)
+        else:
+            top1 = f'{round(p_top1 * 100)}%'
+
         roster = ' '.join(predictor.best_rosters[team])
 
-        print(f'{team:>4}  {top3:>5} {top1:>5}  {roster}')
+        print(f'{team:>4}  {top3:>5}  {top1:>5}  {roster}')
 
 
 def save_ratings():

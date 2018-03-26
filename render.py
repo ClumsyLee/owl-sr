@@ -301,7 +301,7 @@ def render_index(predictor, future_games) -> None:
   {render_chance_cell(p_top1)}
 </tr>""")
 
-    title = f'{predictor.stage} Standings'
+    title = f'{predictor.base_stage} Standings'
     content = f"""<h4 class="py-3 text-center">{title}</h4>
 <div class="row">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
