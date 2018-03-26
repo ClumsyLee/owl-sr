@@ -147,8 +147,7 @@ class MatchCard(object):
         card_groups = defaultdict(list)
 
         for card in cards:
-            date = card.start_time.replace(hour=0, minute=0, second=0,
-                                           microsecond=0)
+            date = without_time(card.start_time)
             card_groups[date].append(card)
 
         return card_groups
@@ -173,6 +172,10 @@ class MatchCard(object):
             card_groups[card.stage].append(card)
 
         return card_groups
+
+
+def without_time(date):
+    return date.replace(hour=0, minute=0, second=0, microsecond=0)
 
 
 def render_team_logo(team, width=30) -> str:
@@ -326,7 +329,13 @@ def render_index(predictor, future_games) -> None:
     render_page('index', title, content)
 
 
-def render_match_cards(past_games, future_games):
+def render_match_cards(past_games, future_games, day_limit=2):
+    # Only predict the upcoming matches.
+    if len(future_games) > 0:
+        first_date = without_time(future_games[0].start_time)
+        future_games = [game for game in future_games
+                        if (game.start_time - first_date).days < day_limit]
+
     predictor = PlayerTrueSkillPredictor()
     past_matches = defaultdict(list)
 
@@ -648,10 +657,6 @@ def render_all():
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
     predictor.save_ratings_history()
-
-    # Only predict the current stage (including title matches).
-    future_games = [game for game in future_games
-                    if predictor.stage in game.stage]
 
     match_cards = render_match_cards(past_games, future_games)
 
