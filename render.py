@@ -282,19 +282,24 @@ def render_index(predictor, future_games) -> None:
     teams = sorted(p_stage.keys(),
                    key=lambda team: (round(p_stage[team][0] * 100),
                                      round(p_stage[team][1] * 100),
+                                     predictor.stage_title_wins[team],
                                      wins[team],
                                      map_diffs[team]),
                    reverse=True)
+    stage_finished = predictor.stage_finished
     rows = []
 
     for i, team in enumerate(teams):
         win = wins[team]
         loss = losses[team]
         map_diff = map_diffs[team]
-
         p_top3, p_top1 = p_stage[team]
 
-        rows.append(f"""<tr scope="row" class="{'win' if i < 3 else 'loss'}">
+        classes = ['win' if i < 3 else 'loss']
+        if i < 2 and stage_finished:
+            classes.append('highlight')
+
+        rows.append(f"""<tr scope="row" class="{' '.join(classes)}">
   <th class="text-right">{render_team_logo(team)}</th>
   <td>{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>

@@ -46,7 +46,34 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
-  
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10335">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, April 4</th>
+        <th scope="col" class="compact d-none d-sm-table-cell"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compact">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
+  <td><a href="/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2375 ± 371">Shock</a></td>
+  <td class="d-none d-sm-table-cell"></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.25);">25%</td>
+  <td class="text-center">-1.2</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+  <td><a href="/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2663 ± 371">Gladiator</a></td>
+  <td class="d-none d-sm-table-cell"></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.75);">75%</td>
+  <td class="text-center">+1.2</td>
+</tr>
+    </tbody>
+  </table>
+</div>
 </div>
 <h5 class="pt-4">Stage 2</h5>
 <hr>
@@ -684,10 +711,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [10525, 10526, 10531, 10223, 10231, 10235, 10246, 10247, 10255, 10261, 10265, 10565, 10571, '', '', 10280, 10286, 10291, 10301, 10303, 10312, 10321, 10324, 10577, 10581, ''];
-var opponents = ['Mayhem', 'Valiant', 'Spitfire', 'Valiant', 'Dragons', 'Fusion', 'Uprising', 'Spitfire', 'Fuel', 'Outlaws', 'Mayhem', 'Gladiator', 'Dynasty', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', 'Uprising', ''];
-var scores1 = [3, 2, 0, 0, 3, 1, 3, 1, 0, 1, 4, 1, 2, '', '', 0, 1, 1, 4, 3, 0, 1, 3, 2, 2, ''];
-var scores2 = [1, 3, 4, 4, 1, 2, 2, 3, 3, 3, 0, 3, 3, '', '', 4, 3, 3, 0, 0, 4, 3, 1, 3, 3, ''];
+var matchIds = [10525, 10526, 10531, 10223, 10231, 10235, 10246, 10247, 10255, 10261, 10265, 10565, 10571, '', '', 10280, 10286, 10291, 10301, 10303, 10312, 10321, 10324, 10577, 10581, '', ''];
+var opponents = ['Mayhem', 'Valiant', 'Spitfire', 'Valiant', 'Dragons', 'Fusion', 'Uprising', 'Spitfire', 'Fuel', 'Outlaws', 'Mayhem', 'Gladiator', 'Dynasty', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', 'Uprising', '', ''];
+var scores1 = [3, 2, 0, 0, 3, 1, 3, 1, 0, 1, 4, 1, 2, '', '', 0, 1, 1, 4, 3, 0, 1, 3, 2, 2, '', ''];
+var scores2 = [1, 3, 4, 4, 1, 2, 2, 3, 3, 3, 0, 3, 3, '', '', 4, 3, 3, 0, 0, 4, 3, 1, 3, 3, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -705,19 +732,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Preseason, Match 1', 'Preseason, Match 2', 'Preseason, Match 3', 'Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1, Match 8', 'Stage 1, Match 9', 'Stage 1, Match 10', 'Stage 1 - Title Matches, Match 1', 'Stage 1 - Title Matches, Match 2', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2, Match 8', 'Stage 2, Match 9', 'Stage 2, Match 10', 'Stage 2 Title Matches, Match 1'],
+    labels: ['Preseason, Match 1', 'Preseason, Match 2', 'Preseason, Match 3', 'Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1, Match 8', 'Stage 1, Match 9', 'Stage 1, Match 10', 'Stage 1 - Title Matches, Match 1', 'Stage 1 - Title Matches, Match 2', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2, Match 8', 'Stage 2, Match 9', 'Stage 2, Match 10', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2'],
     datasets: [{
       backgroundColor: '#75787B',
       borderColor: '#FC4C02',
-      data: [2617, 2516, 2298, 2036, 2170, 2144, 2271, 2309, 2120, 2163, 2352, 2180, 2215, 2215, 2215, 2027, 2063, 2048, 2168, 2346, 2273, 2280, 2457, 2381, 2375, 2375],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2617, 2516, 2298, 2036, 2170, 2144, 2271, 2309, 2120, 2163, 2352, 2180, 2215, 2215, 2215, 2027, 2063, 2048, 2168, 2346, 2273, 2280, 2457, 2381, 2375, 2375, 2375],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2235, 2231, 2231, 2036, 1912, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1683, 1683],
+      data: [2235, 2231, 2231, 2036, 1912, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1683, 1683, 1683],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -726,7 +753,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2758, 2881, 2892, 2977, 3130, 3177, 3304, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3256, 3189, 3175],
+      data: [2758, 2881, 2892, 2977, 3130, 3177, 3304, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3256, 3189, 3180, 3180],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,

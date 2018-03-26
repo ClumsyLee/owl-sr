@@ -574,7 +574,11 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8203,3,hanamura,2,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
 10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8204,4,kings-row,3,4,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
 10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8205,5,route-66,3,2,fragi,Neptuno,Boombox,Snillo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,,,,,,,,,,,,,,,,,
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8206,1,route-66,2,1,fragi,Neptuno,Boombox,Snillo,Carpe,Poko,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8207,2,lijiang,2,1,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8208,3,volskaya,0,1,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8209,4,hollywood,1,2,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8210,5,gibraltar,2,3,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero
 10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,,,,,,,,,,,,,,,,,
 10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,,,,,,,,,,,,,,,,,
 10335,Stage 3,2018-04-04 20:00:00,SFS,GLA,regular,,,,,,,,,,,,,,,,,

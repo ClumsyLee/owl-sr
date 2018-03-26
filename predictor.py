@@ -65,6 +65,10 @@ class Predictor(object):
         # Points history, used to judge the performance of a predictor.
         self.points = []
 
+    @property
+    def stage_finished(self):
+        return sum(self.stage_title_losses.values()) == 2
+
     def _train(self, game: Game) -> None:
         """Given a game result, train the underlying model."""
         raise NotImplementedError
@@ -167,7 +171,6 @@ class Predictor(object):
 
         min_3rd_wins = list(sorted(min_wins.values()))[-3]
         max_4th_wins = list(sorted(max_wins.values()))[-4]
-        finished = sum(self.stage_title_losses[team] for team in teams) == 2
 
         for team, (p_top3, p_top1) in prediction.items():
             if max_wins[team] < min_3rd_wins:
@@ -178,7 +181,7 @@ class Predictor(object):
 
                 if self.stage_title_losses[team] > 0:
                     p_top1 = False
-                elif finished:
+                elif self.stage_finished:
                     p_top1 = True
 
             prediction[team] = (p_top3, p_top1)
