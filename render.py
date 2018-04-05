@@ -342,6 +342,10 @@ def render_match_cards(past_games, future_games):
     for game in past_games:
         past_matches[game.match_id].append(game)
 
+    # Only predict the current stage and its title matches.
+    next_stage = None if len(future_games) == 0 else future_games[0].stage
+    future_games = [game for game in future_games if next_stage in game.stage]
+
     # Render match cards.
     match_cards = []
 
