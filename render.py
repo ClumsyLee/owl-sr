@@ -72,7 +72,8 @@ class MatchCard(object):
             hour -= 12
 
         self.time_str = f'{hour}{minute} {suffix}'
-        self.date_str = match.start_time.strftime('%A, %B %d').replace('0', '')
+        self.date_str = match.start_time.strftime('%A, %B %d').replace(' 0',
+                                                                       ' ')
 
         p_win, e_diff = predictor.predict_match(match)
         win = round(p_win * 100)
