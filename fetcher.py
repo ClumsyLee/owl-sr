@@ -44,7 +44,7 @@ def join_names(names: List[str]) -> str:
 
 
 def split_names(names_str: str) -> List[str]:
-    return names_str.split('|')
+    return set(names_str.split('|'))
 
 
 def fetch_games() -> List[CSVGame]:

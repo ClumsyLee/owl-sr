@@ -9,10 +9,8 @@ import numpy as np
 from scipy.optimize import fmin
 from trueskill import calc_draw_margin, Rating, TrueSkill
 
-from game import Roster, Game
-from fetcher import (Availabilities,
-                     load_availabilities,
-                     load_games,
+from game import FullRoster, Game, Roster, TEAMS
+from fetcher import (load_games,
                      save_ratings_history)
 
 
@@ -22,18 +20,13 @@ PScores = Dict[Tuple[int, int], float]
 class Predictor(object):
     """Base class for all OWL predictors."""
 
-    def __init__(self, availabilities: Availabilities = None,
-                 roster_queue_size: int = 12) -> None:
+    def __init__(self, roster_queue_size: int = 12) -> None:
         super().__init__()
-
-        # Players availabilities.
-        if availabilities is None:
-            availabilities = load_availabilities()
-        self.availabilities = availabilities
 
         # Track recent used rosters.
         self.roster_queues = defaultdict(
             lambda: deque(maxlen=roster_queue_size))
+        self.last_full_rosters = defaultdict(set)
 
         # Global standings.
         self.map_diffs = defaultdict(int)
@@ -67,7 +60,7 @@ class Predictor(object):
 
     @property
     def stage_finished(self):
-        return sum(self.stage_title_losses.values()) == 2
+        return sum(self.stage_title_losses.values()) == 3
 
     def _train(self, game: Game) -> None:
         """Given a game result, train the underlying model."""
@@ -75,6 +68,7 @@ class Predictor(object):
 
     def predict(self, teams: Tuple[str, str],
                 rosters: Tuple[Roster, Roster] = None,
+                full_rosters: Tuple[FullRoster, FullRoster] = None,
                 drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         raise NotImplementedError
@@ -100,7 +94,8 @@ class Predictor(object):
         if game.score[0] == game.score[1]:
             return 0.0, False
 
-        p_win, p_draw = self.predict(game.teams, game.rosters, drawable=False)
+        p_win, p_draw = self.predict(game.teams, rosters=game.rosters,
+                                     drawable=False)
         p_win = max(0.0, min(p_win, 1.0))
         p_draw = max(0.0, min(p_draw, 1.0))
         p_loss = 1.0 - p_win - p_draw
@@ -125,29 +120,24 @@ class Predictor(object):
 
         return total_point
 
-    def predict_match_score(
-            self, teams: Tuple[str, str],
-            rosters: Tuple[Roster, Roster] = None,
-            match_format: str = 'regular') -> PScores:
+    def predict_match_score(self, match: Game) -> PScores:
         """Predict the scores of a given match."""
-        if match_format == 'regular':
+        if match.match_format == 'regular':
             drawables = [True, False, True, False]
-            return self._predict_bo_match_score(teams, rosters,
-                                                drawables=drawables)
-        elif match_format == 'title':
+            return self._predict_bo_score(match.teams, rosters=match.rosters,
+                                          full_rosters=match.full_rosters,
+                                          drawables=drawables)
+        elif match.match_format == 'title':
             drawables = [False, False, True, True, False]
-            return self._predict_bo_match_score(teams, rosters,
-                                                drawables=drawables)
+            return self._predict_bo_score(match.teams, rosters=match.rosters,
+                                          full_rosters=match.full_rosters,
+                                          drawables=drawables)
         else:
             raise NotImplementedError
 
-    def predict_match(
-            self, teams: Tuple[str, str],
-            rosters: Tuple[Roster, Roster] = None,
-            match_format: str = 'regular') -> Tuple[float, float]:
+    def predict_match(self, match: Game) -> Tuple[float, float]:
         """Predict the win probability & diff expectation of a given match."""
-        p_scores = self.predict_match_score(teams, rosters,
-                                            match_format=match_format)
+        p_scores = self.predict_match_score(match)
         p_win = 0.0
         e_diff = 0.0
 
@@ -158,10 +148,10 @@ class Predictor(object):
 
         return p_win, e_diff
 
-    def predict_stage(self, games: Sequence[Game]):
-        games = [game for game in games if game.stage == self.stage and
-                 game.match_format == 'regular']
-        prediction = self._predict_stage(games)
+    def predict_stage(self, matches: Sequence[Game]):
+        matches = [match for match in matches if match.stage == self.stage and
+                   match.match_format == 'regular']
+        prediction = self._predict_stage(matches)
         teams = list(prediction.keys())
 
         # Normalize 0% and 100% for predictions.
@@ -170,8 +160,8 @@ class Predictor(object):
         min_wins = wins.copy()
         max_wins = wins.copy()
 
-        for game in games:
-            for team in game.teams:
+        for match in matches:
+            for team in match.teams:
                 win, map_diff = min_wins[team]
                 min_wins[team] = (win, map_diff - 4)
 
@@ -197,25 +187,30 @@ class Predictor(object):
 
         return prediction
 
-    def _predict_stage(self, games: Sequence[Game], iters=100000):
-        teams = self._stage_teams()
+    def _predict_stage(self, matches: Sequence[Game], iters=100000):
+        full_rosters = self.last_full_rosters.copy()
+        for match in matches:
+            for team, full_roster in zip(match.teams, match.full_rosters):
+                full_rosters[team] = full_roster
 
-        scores_list, cum_weights_list = self._games_scores_cum_weights(games)
-        p_wins_regular = self._p_wins(teams, match_format='regular')
-        p_wins_title = self._p_wins(teams, match_format='title')
+        scores_list, cum_weights_list = self._match_scores_cum_weights(matches)
+        p_wins_regular = self._p_wins(full_rosters=full_rosters,
+                                      match_format='regular')
+        p_wins_title = self._p_wins(full_rosters=full_rosters,
+                                    match_format='title')
 
-        top4_count = {team: 0 for team in teams}
-        top1_count = {team: 0 for team in teams}
+        top4_count = {team: 0 for team in TEAMS}
+        top1_count = {team: 0 for team in TEAMS}
 
         for i in range(iters):
             wins = self.stage_wins.copy()
             map_diffs = self.stage_map_diffs.copy()
             head_to_head_map_diffs = self.stage_head_to_head_map_diffs.copy()
 
-            for game, scores, cum_weights in zip(games,
-                                                 scores_list,
-                                                 cum_weights_list):
-                team1, team2 = game.teams
+            for match, scores, cum_weights in zip(matches,
+                                                  scores_list,
+                                                  cum_weights_list):
+                team1, team2 = match.teams
                 score1, score2 = choices(scores, cum_weights=cum_weights)[0]
 
                 if score1 > score2:
@@ -231,8 +226,8 @@ class Predictor(object):
                 head_to_head_map_diffs[(team2, team1)] -= map_diff
 
             # Determine top 4 teams.
-            top4 = self._top4_teams(teams, wins, map_diffs,
-                                    head_to_head_map_diffs, p_wins_regular)
+            top4 = self._top4_teams(wins, map_diffs, head_to_head_map_diffs,
+                                    p_wins_regular)
             for team in top4:
                 top4_count[team] += 1
 
@@ -277,17 +272,20 @@ class Predictor(object):
             top1_count[t1] += 1
 
         return {team: (top4_count[team] / iters, top1_count[team] / iters)
-                for team in teams}
+                for team in TEAMS}
 
-    def _predict_bo_match_score(self, teams: Tuple[str, str],
-                                rosters: Tuple[Roster, Roster],
-                                drawables: List[bool]) -> PScores:
+    def _predict_bo_score(self, teams: Tuple[str, str],
+                          rosters: Tuple[Roster, Roster],
+                          full_rosters: Tuple[FullRoster, FullRoster],
+                          drawables: List[bool]) -> PScores:
         """Predict the scores of a given BO match."""
         p_scores = defaultdict(float)
         p_scores[(0, 0)] = 1.0
 
-        p_undrawable = self.predict(teams, rosters, drawable=False)
-        p_drawable = self.predict(teams, rosters, drawable=True)
+        p_undrawable = self.predict(teams, rosters=rosters,
+                                    full_rosters=full_rosters, drawable=False)
+        p_drawable = self.predict(teams, rosters=rosters,
+                                  full_rosters=full_rosters, drawable=True)
 
         for drawable in drawables:
             p_win, p_draw = p_drawable if drawable else p_undrawable
@@ -318,8 +316,10 @@ class Predictor(object):
         return p_scores
 
     def _update_rosters(self, game: Game) -> None:
-        for team, roster in zip(game.teams, game.rosters):
+        for team, roster, full_roster in zip(game.teams, game.rosters,
+                                             game.full_rosters):
             self.roster_queues[team].appendleft(roster)
+            self.last_full_rosters[team] = full_roster
 
     def _update_stage(self, stage: str) -> None:
         if stage != self.stage:
@@ -397,29 +397,18 @@ class Predictor(object):
 
     def _update_draws(self, game: Game) -> None:
         if game.drawable:
-            _, p_draw = self.predict(game.teams, game.rosters, drawable=True)
+            _, p_draw = self.predict(game.teams, rosters=game.rosters,
+                                     drawable=True)
             self.expected_draws += p_draw
         if game.score[0] == game.score[1]:
             self.real_draws += 1.0
 
-    def _stage_teams(self) -> Set[str]:
-        teams = set()
-        for (stage, _), team_members in self.availabilities.items():
-            if stage != self.stage:
-                continue
-            teams.update(team_members.keys())
-
-        return teams
-
-    def _games_scores_cum_weights(self, games: Sequence[Game]):
+    def _match_scores_cum_weights(self, matches: Sequence[Game]):
         scores_list = []
         cum_weights_list = []
 
-        for game in games:
-            if game.stage != self.stage:
-                continue
-
-            p_scores = self.predict_match_score(game.teams)
+        for match in matches:
+            p_scores = self.predict_match_score(match)
             scores = []
             cum_weights = []
             cum_weight = 0.0
@@ -434,19 +423,21 @@ class Predictor(object):
 
         return scores_list, cum_weights_list
 
-    def _p_wins(self, teams: Sequence[str], match_format: str):
+    def _p_wins(self, full_rosters: Dict[str, FullRoster], match_format: str):
         p_wins = {}
 
-        for team1 in teams:
-            for team2 in teams:
+        for team1 in TEAMS:
+            for team2 in TEAMS:
                 team_pair = (team1, team2)
-                p_win, _ = self.predict_match(team_pair,
-                                              match_format=match_format)
+
+                match = Game(teams=team_pair, match_format='title',
+                             full_rosters=full_rosters)
+                p_win, _ = self.predict_match(match)
                 p_wins[team_pair] = p_win
 
         return p_wins
 
-    def _top4_teams(self, teams, wins, map_diffs, head_to_head_map_diffs,
+    def _top4_teams(self, wins, map_diffs, head_to_head_map_diffs,
                     p_wins_regular):
         def cmp_team(team1, team2):
             if wins[team1] < wins[team2]:
@@ -466,7 +457,7 @@ class Predictor(object):
             else:
                 return -1
 
-        teams = list(sorted(teams, key=cmp_to_key(cmp_team), reverse=True))
+        teams = list(sorted(TEAMS, key=cmp_to_key(cmp_team), reverse=True))
         return teams[:4]
 
 
@@ -486,6 +477,7 @@ class SimplePredictor(Predictor):
 
     def predict(self, teams: Tuple[str, str],
                 rosters: Tuple[Roster, Roster] = None,
+                full_rosters: Tuple[FullRoster, FullRoster] = None,
                 drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         team1, team2 = teams
@@ -534,17 +526,20 @@ class TrueSkillPredictor(Predictor):
             ranks = [1, 0]  # Team 2 wins.
 
         env = self.env_drawable if game.drawable else self.env_undrawable
-        teams_ratings = env.rate(self._teams_ratings(game.teams, game.rosters),
+        teams_ratings = env.rate(self._teams_ratings(game.teams,
+                                                     rosters=game.rosters),
                                  ranks=ranks)
         self._update_teams_ratings(game, teams_ratings)
 
     def predict(self, teams: Tuple[str, str],
                 rosters: Tuple[Roster, Roster] = None,
+                full_rosters: Tuple[FullRoster, FullRoster] = None,
                 drawable: bool = False) -> Tuple[float, float]:
         """Given two teams, return win/draw probabilities of them."""
         env = self.env_drawable if drawable else self.env_undrawable
 
-        team1_ratings, team2_ratings = self._teams_ratings(teams, rosters)
+        team1_ratings, team2_ratings = self._teams_ratings(
+            teams, rosters=rosters, full_rosters=full_rosters)
         size = len(team1_ratings) + len(team2_ratings)
 
         delta_mu = (sum(r.mu for r in team1_ratings) -
@@ -560,7 +555,8 @@ class TrueSkillPredictor(Predictor):
         return p_win, p_not_loss - p_win
 
     def _teams_ratings(self, teams: Tuple[str, str],
-                       rosters: Tuple[Roster, Roster]):
+                       rosters: Tuple[Roster, Roster] = None,
+                       full_rosters: Tuple[FullRoster, FullRoster] = None):
         return [self.ratings[teams[0]]], [self.ratings[teams[1]]]
 
     def _update_teams_ratings(self, game: Game, teams_ratings):
@@ -587,62 +583,66 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
                              sigma=self.env_drawable.sigma)
 
     def _teams_ratings(self, teams: Tuple[str, str],
-                       rosters: Tuple[Roster, Roster]):
+                       rosters: Tuple[Roster, Roster] = None,
+                       full_rosters: Tuple[FullRoster, FullRoster] = None):
         if rosters is None:
-            # No rosters provided, use the best rosters if possible.
-            rosters = [self.best_rosters.get(team, [''] * 6) for team in teams]
+            # No rosters provided, use the best rosters.
+            rosters = [self._best_roster(team, full_roster)
+                       for team, full_roster in zip(teams, full_rosters)]
 
         return ([self.ratings[name] for name in rosters[0]],
                 [self.ratings[name] for name in rosters[1]])
 
     def _update_teams_ratings(self, game: Game, teams_ratings) -> None:
-        for team, roster, ratings in zip(game.teams, game.rosters,
-                                         teams_ratings):
+        for team, roster, full_roster, ratings in zip(game.teams, game.rosters,
+                                                      game.full_rosters,
+                                                      teams_ratings):
             for name, rating in zip(roster, ratings):
                 self.ratings[name] = rating
 
-            self.ratings[team] = self._record_team_ratings(team)
+            self.ratings[team] = self._record_team_ratings(
+                team, full_roster=full_roster)
 
-    def _record_team_ratings(self, team: str) -> Rating:
+    def _record_team_ratings(self, team: str,
+                             full_roster: FullRoster) -> Rating:
         match_number = len(self.match_history[self.stage][team])
         match_key = (self.stage, match_number)
 
-        members = self.availabilities[match_key][team]
         if match_key not in self.ratings_history:
             self.ratings_history[match_key] = {}
         ratings = self.ratings_history[match_key]
 
         # Record player ratings.
-        for name in members:
+        for name in full_roster:
             ratings[name] = self.ratings[name]
 
         # Update the best roster.
-        best_roster = self._update_best_roster(team, members)
+        best_roster = self._best_roster(team, full_roster)
+        self.best_rosters[team] = best_roster
 
         # Record the team rating.
         rating = self._roster_rating(best_roster)
         ratings[team] = rating
         return rating
 
-    def _update_best_roster(self, team: str, members: Set[str]):
+    def _best_roster(self, team: str, full_roster: Set[str]):
         rosters = sorted(self.roster_queues[team],
                          key=lambda roster: self._min_roster_rating(roster),
                          reverse=True)
         best_roster = None
 
         for roster in rosters:
-            if all(name in members for name in roster):
+            if all(name in full_roster for name in roster):
                 best_roster = roster
                 break
 
         if best_roster is None:
             # Just pick the best 6.
-            sorted_members = sorted(members,
+            sorted_members = sorted(full_roster,
                                     key=lambda name: self._min_rating(name),
                                     reverse=True)
             best_roster = tuple(sorted_members[:6])
 
-        self.best_rosters[team] = best_roster
         return best_roster
 
     def _roster_rating(self, roster: Roster) -> Tuple[float, float]:

@@ -2,7 +2,8 @@ from collections import defaultdict, OrderedDict
 from datetime import datetime
 
 from fetcher import load_games
-from predictor import PlayerTrueSkillPredictor
+from game import Game
+from predictor import PlayerTrueSkillPredictor, Predictor
 
 
 TEAM_NAMES = {
@@ -54,64 +55,61 @@ RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
 
 
 class MatchCard(object):
-    def __init__(self, predictor, match_id, stage, start_time, teams,
-                 score=None, use_date=False, first_team=None) -> None:
-        self.match_id = match_id
-        self.stage = stage
-        self.start_time = start_time
-        self.teams = teams
-        self.score = score
+    def __init__(self, predictor: Predictor, match: Game, use_date=False,
+                 first_team=None) -> None:
 
+        self.match = match
         self.use_date = use_date
-        self.first_team = teams[0] if first_team is None else first_team
+        self.first_team = match.teams[0] if first_team is None else first_team
 
         # Render the HTML.
-        hour = start_time.hour
-        minute = '' if start_time.minute == 0 else f':{start_time.minute:02}'
+        hour = match.start_time.hour
+        minute = ('' if match.start_time.minute == 0
+                  else f':{match.start_time.minute:02}')
 
         suffix = 'a.m.' if hour < 12 else 'p.m.'
         if hour > 12:
             hour -= 12
 
         self.time_str = f'{hour}{minute} {suffix}'
-        self.date_str = self.start_time.strftime('%A, %B %d').replace('0', '')
+        self.date_str = match.start_time.strftime('%A, %B %d').replace('0', '')
 
-        p_win, e_diff = predictor.predict_match(teams)
+        p_win, e_diff = predictor.predict_match(match)
         win = round(p_win * 100)
 
         classes1 = ['win' if win > 50 else 'loss']
         classes2 = ['win' if win < 50 else 'loss']
 
-        if score is not None:
-            if score[0] < score[1]:
+        if match.score is not None:
+            if match.score[0] < match.score[1]:
                 classes1.append('lost')
-            elif score[1] < score[0]:
+            elif match.score[1] < match.score[0]:
                 classes2.append('lost')
 
-            score1 = str(score[0])
-            score2 = str(score[1])
+            score1 = str(match.score[0])
+            score2 = str(match.score[1])
         else:
             score1 = ''
             score2 = ''
 
         self.rows = [
             f"""<tr scope="row" class="{' '.join(classes1)}">
-  <th class="text-right compact">{render_team_logo(teams[0])}</th>
-  <td>{render_team_link(predictor, teams[0])}</td>
+  <th class="text-right compact">{render_team_logo(match.teams[0])}</th>
+  <td>{render_team_link(predictor, match.teams[0])}</td>
   <td class="d-none d-sm-table-cell">{score1}</td>
   {render_chance_cell(p_win)}
   <td class="text-center">{e_diff:+.1f}</td>
 </tr>""",
             f"""<tr scope="row" class="{' '.join(classes2)}">
-  <th class="text-right compact">{render_team_logo(teams[1])}</th>
-  <td>{render_team_link(predictor, teams[1])}</td>
+  <th class="text-right compact">{render_team_logo(match.teams[1])}</th>
+  <td>{render_team_link(predictor, match.teams[1])}</td>
   <td class="d-none d-sm-table-cell">{score2}</td>
   {render_chance_cell(1 - p_win)}
   <td class="text-center">{-e_diff:+.1f}</td>
 </tr>"""]
 
         self.html_template = f"""<div class="col-lg-4 col-md-6">
-  <table class="table" id="{self.match_id}">
+  <table class="table" id="{match.match_id}">
     <thead>
       <tr class="text-center">
         <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">{{0.header}}</th>
@@ -133,11 +131,11 @@ class MatchCard(object):
 
     @property
     def row1(self):
-        return self.rows[0 if self.teams[0] == self.first_team else 1]
+        return self.rows[0 if self.match.teams[0] == self.first_team else 1]
 
     @property
     def row2(self):
-        return self.rows[1 if self.teams[0] == self.first_team else 0]
+        return self.rows[1 if self.match.teams[0] == self.first_team else 0]
 
     @property
     def html(self):
@@ -148,7 +146,7 @@ class MatchCard(object):
         card_groups = defaultdict(list)
 
         for card in cards:
-            date = without_time(card.start_time)
+            date = without_time(card.match.start_time)
             card_groups[date].append(card)
 
         return card_groups
@@ -158,7 +156,7 @@ class MatchCard(object):
         card_groups = defaultdict(list)
 
         for card in cards:
-            for team in card.teams:
+            for team in card.match.teams:
                 card_groups[team].append(card)
 
         return card_groups
@@ -168,9 +166,9 @@ class MatchCard(object):
         card_groups = OrderedDict()
 
         for card in cards:
-            if card.stage not in card_groups:
-                card_groups[card.stage] = []
-            card_groups[card.stage].append(card)
+            if card.match.stage not in card_groups:
+                card_groups[card.match.stage] = []
+            card_groups[card.match.stage].append(card)
 
         return card_groups
 
@@ -272,10 +270,10 @@ def render_page(endpoint: str, title: str, content: str) -> None:
         print(html, file=file)
 
 
-def render_index(predictor, future_games) -> None:
+def render_index(predictor, future_matches) -> None:
     content = ''
 
-    p_stage = predictor.predict_stage(future_games)
+    p_stage = predictor.predict_stage(future_matches)
     wins = predictor.stage_wins
     losses = predictor.stage_losses
     map_diffs = predictor.stage_map_diffs
@@ -335,7 +333,7 @@ def render_index(predictor, future_games) -> None:
     render_page('index', title, content)
 
 
-def render_match_cards(past_games, future_games):
+def render_match_cards(past_games, future_matches):
     predictor = PlayerTrueSkillPredictor()
     past_matches = defaultdict(list)
 
@@ -343,39 +341,30 @@ def render_match_cards(past_games, future_games):
         past_matches[game.match_id].append(game)
 
     # Only predict the current stage and its title matches.
-    next_stage = None if len(future_games) == 0 else future_games[0].stage
-    future_games = [game for game in future_games if next_stage in game.stage]
+    next_stage = None if len(future_matches) == 0 else future_matches[0].stage
+    future_matches = [game for game in future_matches
+                      if next_stage in game.stage]
 
     # Render match cards.
     match_cards = []
 
     for match_id, games in past_matches.items():
-        match_id = games[0].match_id
-        stage = games[0].stage
-        start_time = games[0].start_time
-        teams = games[0].teams
         score = [0, 0]
-
         for game in games:
             if game.score[0] > game.score[1]:
                 score[0] += 1
             elif game.score[1] > game.score[0]:
                 score[1] += 1
+        # Add score and hide roster to simulate predictions beforehand.
+        match = games[0]._replace(score=score, rosters=None)
 
         match_cards.append(MatchCard(predictor=predictor,
-                                     match_id=match_id,
-                                     stage=stage,
-                                     start_time=start_time,
-                                     teams=teams,
-                                     score=score))
+                                     match=match))
         predictor.train_games(games)
 
-    for game in future_games:
+    for match in future_matches:
         match_cards.append(MatchCard(predictor=predictor,
-                                     match_id=game.match_id,
-                                     stage=game.stage,
-                                     start_time=game.start_time,
-                                     teams=game.teams))
+                                     match=match))
 
     return match_cards
 
@@ -436,7 +425,7 @@ def render_team(team, labels, match_info, mus, lower_bounds, upper_bounds,
         card.use_date = True
         card.first_team = team
 
-        if card.score is None:
+        if card.match.score is None:
             future_cards.append(card)
         else:
             past_cards.append(card)
@@ -657,15 +646,15 @@ def render_about():
 
 
 def render_all():
-    past_games, future_games = load_games()
+    past_games, future_matches = load_games()
 
     predictor = PlayerTrueSkillPredictor()
     predictor.train_games(past_games)
     predictor.save_ratings_history()
 
-    match_cards = render_match_cards(past_games, future_games)
+    match_cards = render_match_cards(past_games, future_matches)
 
-    render_index(predictor, future_games)
+    render_index(predictor, future_matches)
     render_matches(match_cards)
     render_teams(predictor, match_cards)
     render_about()
