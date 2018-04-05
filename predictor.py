@@ -601,31 +601,30 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
             for name, rating in zip(roster, ratings):
                 self.ratings[name] = rating
 
-            self.ratings[team] = self._record_team_ratings(team, roster)
+            self.ratings[team] = self._record_team_ratings(team)
 
-    def _record_team_ratings(self, team: str, roster: Roster) -> Rating:
+    def _record_team_ratings(self, team: str) -> Rating:
         match_number = len(self.match_history[self.stage][team])
         match_key = (self.stage, match_number)
 
+        members = self.availabilities[match_key][team]
         if match_key not in self.ratings_history:
             self.ratings_history[match_key] = {}
         ratings = self.ratings_history[match_key]
 
         # Record player ratings.
-        for name in roster:
+        for name in members:
             ratings[name] = self.ratings[name]
 
-        # Update the best roster for the next match.
-        members = self.availabilities[match_key][team]
-        best_roster = self._best_roster(team, members)
-        self.best_rosters[team] = best_roster
+        # Update the best roster.
+        best_roster = self._update_best_roster(team, members)
 
         # Record the team rating.
         rating = self._roster_rating(best_roster)
         ratings[team] = rating
         return rating
 
-    def _best_roster(self, team: str, members: Set[str]):
+    def _update_best_roster(self, team: str, members: Set[str]):
         rosters = sorted(self.roster_queues[team],
                          key=lambda roster: self._min_roster_rating(roster),
                          reverse=True)
@@ -643,6 +642,7 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
                                     reverse=True)
             best_roster = tuple(sorted_members[:6])
 
+        self.best_rosters[team] = best_roster
         return best_roster
 
     def _roster_rating(self, roster: Roster) -> Tuple[float, float]:
