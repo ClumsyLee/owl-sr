@@ -1,704 +1,710 @@
-match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,score1,score2,team1_p1,team1_p2,team1_p3,team1_p4,team1_p5,team1_p6,team2_p1,team2_p2,team2_p3,team2_p4,team2_p5,team2_p6
-10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,4759,1,dorado,1,2,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5576,2,temple-of-anubis,3,4,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,iddqd,dhaK,sleepy,BABYBAY,Nomy,Nevix
-10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5577,3,oasis,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,iddqd,dhaK,sleepy,BABYBAY,Nomy,Nevix
-10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5578,4,eichenwalde,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Nevix,dhaK,sleepy,Danteh,BABYBAY,Nomy
-10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5579,1,junkertown,3,2,Unkoe,silkthread,Envy,Kariv,Fate,Soon,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5580,2,horizon-lunar-colony,2,3,Unkoe,Soon,silkthread,Envy,Kariv,Fate,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5581,3,ilios,1,2,Unkoe,Grimreality,silkthread,Verbo,Envy,Fate,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5582,4,numbani,5,4,Unkoe,Soon,silkthread,Envy,Kariv,Fate,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5841,5,lijiang,2,0,Fate,Unkoe,Soon,silkthread,Envy,Kariv,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5583,1,dorado,3,2,Wekeed,Bunny,ryujehong,tobi,Miro,ZUNBA,MG,Diya,Xushu,Altering,Fiveking,Roshan
-10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5584,2,temple-of-anubis,4,3,KuKi,Bunny,ryujehong,XepheR,tobi,FLETA,MG,Diya,Undead,Freefeel,Roshan,Altering
-10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5585,3,oasis,2,0,Munchkin,tobi,KuKi,ryujehong,ZUNBA,FLETA,Altering,Diya,Undead,Freefeel,MG,Roshan
-10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5586,4,eichenwalde,3,1,Miro,Munchkin,ZUNBA,ryujehong,tobi,Wekeed,Diya,Fiveking,Freefeel,Undead,Xushu,Roshan
-10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5587,1,junkertown,3,1,Surefour,iRemiix,BigGoose,Shaz,Hydration,Asher,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5588,2,horizon-lunar-colony,1,2,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,birdring,Fissure,Rascal,Fury,NUS,HaGoPeun
-10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5589,3,ilios,0,2,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5590,4,numbani,5,4,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5842,5,lijiang,2,0,Surefour,iRemiix,BigGoose,Shaz,Hydration,Asher,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5591,1,dorado,1,2,Taimou,Chipshajen,Custa,Mickie,EFFECT,cocco,Jake,Coolmatt,Muma,Boink,LiNkzr,Rawkus
-10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5592,2,temple-of-anubis,4,3,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,xQc,Jake,Bani,LiNkzr,Boink,Coolmatt,Muma
-10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5593,3,oasis,2,1,Seagull,Taimou,Mickie,EFFECT,Custa,Chipshajen,Clockwork,Coolmatt,Muma,LiNkzr,Rawkus,Boink
-10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5594,4,eichenwalde,2,3,Taimou,Mickie,EFFECT,HarryHook,cocco,Chipshajen,Clockwork,SPREE,Muma,Jake,Rawkus,Bani
-10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5843,5,lijiang,2,1,Seagull,Taimou,Mickie,EFFECT,Chipshajen,Custa,LiNkzr,Coolmatt,Muma,Jake,Rawkus,Boink
-10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5595,1,dorado,3,0,Saebyeolbe,Ark,Janus,Meko,Libero,Pine,DreamKazper,STRIKER,Gamsu,NotE,Neko,Kellex
-10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5596,2,temple-of-anubis,4,3,Saebyeolbe,Ark,Janus,Libero,Meko,Pine,DreamKazper,STRIKER,Neko,Kellex,NotE,Gamsu
-10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5597,3,oasis,0,2,Saebyeolbe,Ark,Meko,Pine,Janus,Libero,Gamsu,NotE,DreamKazper,STRIKER,Neko,Kellex
-10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5598,4,eichenwalde,3,1,Mano,Saebyeolbe,Ark,Libero,Pine,Meko,DreamKazper,STRIKER,NotE,Gamsu,Kellex,Neko
-10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5844,1,dorado,2,3,dhaK,Danteh,BABYBAY,Nomy,Nevix,sleepy,birdring,Fissure,Rascal,Fury,NUS,HaGoPeun
-10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5847,2,temple-of-anubis,2,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,birdring,Fissure,Rascal,Fury,NUS,HaGoPeun
-10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5848,3,oasis,0,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,birdring,Fissure,Rascal,Fury,NUS,HaGoPeun
-10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5849,4,eichenwalde,2,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,HaGoPeun,birdring,Fissure,Rascal,Fury,NUS
-10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5845,1,junkertown,3,2,KuKi,FLETA,XepheR,ryujehong,tobi,Wekeed,Jake,Coolmatt,Muma,LiNkzr,Rawkus,Bani
-10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5850,2,horizon-lunar-colony,1,2,Miro,FLETA,ZUNBA,ryujehong,tobi,Munchkin,Jake,Coolmatt,Muma,LiNkzr,Rawkus,Bani
-10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5851,3,ilios,2,0,KuKi,FLETA,ZUNBA,ryujehong,tobi,Munchkin,Mendokusaii,SPREE,Muma,Clockwork,Rawkus,Bani
-10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5852,4,numbani,3,3,Miro,FLETA,ZUNBA,ryujehong,tobi,Wekeed,Jake,Coolmatt,Muma,Clockwork,Rawkus,Bani
-10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5846,1,junkertown,2,3,Undead,Roshan,Diya,Xushu,Freefeel,Fiveking,Gamsu,NotE,Snow,STRIKER,Neko,DreamKazper
-10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5853,2,horizon-lunar-colony,2,0,Undead,Roshan,Diya,Xushu,Freefeel,Fiveking,DreamKazper,Gamsu,NotE,Snow,STRIKER,Neko
-10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5854,3,ilios,2,1,Undead,MG,Roshan,Diya,Freefeel,Altering,Mistakes,DreamKazper,Gamsu,Kalios,Neko,Avast
-10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5855,4,numbani,0,1,Undead,MG,Roshan,Diya,Freefeel,Altering,DreamKazper,Gamsu,Snow,STRIKER,Kalios,Avast
-10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5868,5,lijiang,1,2,Altering,Undead,MG,Roshan,Diya,Freefeel,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko
-10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5856,1,dorado,2,0,Unkoe,silkthread,Envy,Kariv,Fate,Soon,Surefour,iRemiix,BigGoose,Shaz,Hydration,Asher
-10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5857,2,temple-of-anubis,2,0,Unkoe,Soon,silkthread,Envy,Kariv,Fate,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5858,3,oasis,0,2,Grimreality,silkthread,Verbo,Envy,Kariv,Fate,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5859,4,eichenwalde,2,1,Numlocked,Unkoe,Soon,silkthread,Envy,Kariv,Asher,Surefour,Bischu,iRemiix,BigGoose,Shaz
-10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5860,1,junkertown,3,0,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Custa,Mickie,EFFECT,cocco,Chipshajen,HarryHook
-10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5861,2,horizon-lunar-colony,1,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Seagull,Chipshajen,xQc,EFFECT,Mickie,HarryHook
-10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5862,3,ilios,1,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Taimou,Chipshajen,Custa,Mickie,EFFECT,xQc
-10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5863,4,numbani,0,1,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Taimou,Chipshajen,Mickie,EFFECT,xQc,Custa
-10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5864,1,junkertown,2,3,KuKi,FLETA,ZUNBA,ryujehong,tobi,Wekeed,Saebyeolbe,Mano,Meko,Libero,Ark,Pine
-10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5865,2,horizon-lunar-colony,2,1,FLETA,KuKi,ryujehong,ZUNBA,tobi,Munchkin,Saebyeolbe,Janus,Libero,Meko,Ark,Pine
-10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5866,3,ilios,2,1,KuKi,FLETA,ZUNBA,ryujehong,tobi,Munchkin,Saebyeolbe,Janus,Libero,Meko,Ark,Pine
-10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5867,4,numbani,3,0,Miro,ZUNBA,FLETA,ryujehong,tobi,Bunny,Saebyeolbe,Mano,Meko,Libero,Ark,Pine
-10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5599,1,dorado,2,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Unkoe,Agilities,Envy,Kariv,Fate,Soon
-10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5600,2,temple-of-anubis,3,4,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5601,3,ilios,1,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Unkoe,Soon,silkthread,Envy,Kariv,Fate
-10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5602,4,numbani,1,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Fate,Unkoe,Soon,silkthread,Envy,Kariv
-10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5603,1,dorado,0,1,Undead,Roshan,Diya,Xushu,Freefeel,Altering,Bischu,iRemiix,BigGoose,Shaz,Hydration,Surefour
-10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5604,2,temple-of-anubis,1,2,Undead,MG,Roshan,Diya,Freefeel,Altering,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5605,3,ilios,0,2,Undead,MG,Roshan,Diya,Freefeel,Altering,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher
-10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5606,4,eichenwalde,0,1,Undead,MG,Roshan,Diya,Freefeel,Fiveking,Asher,Surefour,Bischu,iRemiix,BigGoose,Shaz
-10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5607,1,junkertown,3,2,Seagull,Taimou,Custa,Mickie,HarryHook,EFFECT,Munchkin,FLETA,tobi,ryujehong,Miro,ZUNBA
-10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5608,2,temple-of-anubis,5,6,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,xQc,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5609,3,ilios,0,2,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,xQc,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5610,4,numbani,3,3,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,xQc,Munchkin,ZUNBA,Miro,tobi,ryujehong,FLETA
-10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5611,1,dorado,1,2,Bdosin,birdring,Fury,NUS,Profit,Gesture,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5612,2,temple-of-anubis,2,1,Bdosin,birdring,Fury,NUS,Profit,Gesture,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5613,3,oasis,2,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5614,4,numbani,3,0,Gesture,Bdosin,birdring,Fury,NUS,Profit,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5615,1,dorado,3,2,ShaDowBurn,Neptuno,Boombox,Carpe,Poko,fragi,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5616,2,horizon-lunar-colony,1,2,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5617,3,oasis,2,0,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Rawkus,Coolmatt,Jake,Muma,Boink,Clockwork
-10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5618,4,eichenwalde,3,4,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5919,5,lijiang,2,0,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,SPREE,Rawkus,Jake,Muma,Boink,LiNkzr
-10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5619,1,junkertown,2,3,DreamKazper,Kellex,STRIKER,Kalios,Neko,Gamsu,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5620,2,horizon-lunar-colony,4,3,Gamsu,DreamKazper,STRIKER,Kalios,Neko,Kellex,Jjonak,Ark,Libero,Meko,Mano,Saebyeolbe
-10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5621,3,ilios,0,2,Gamsu,NotE,DreamKazper,STRIKER,Kellex,Neko,Saebyeolbe,Janus,Meko,Jjonak,Ark,Pine
-10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5622,4,numbani,1,2,DreamKazper,STRIKER,Gamsu,NotE,Kellex,Neko,Saebyeolbe,Libero,Janus,Meko,Jjonak,Ark
-10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5623,1,junkertown,8,7,Envy,Fate,Soon,Agilities,Kariv,Unkoe,Seagull,Taimou,Custa,Mickie,HarryHook,EFFECT
-10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5624,2,horizon-lunar-colony,5,5,silkthread,Fate,Soon,Kariv,Unkoe,Envy,cocco,Taimou,EFFECT,Custa,HarryHook,Mickie
-10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5625,3,ilios,2,0,Fate,Soon,Envy,silkthread,Kariv,Unkoe,Seagull,xQc,Chipshajen,Mickie,EFFECT,HarryHook
-10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5626,4,numbani,3,0,Soon,Envy,Fate,silkthread,Kariv,Unkoe,Taimou,Mickie,EFFECT,xQc,Chipshajen,HarryHook
-10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5627,1,dorado,2,3,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko
-10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5628,2,temple-of-anubis,2,3,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko
-10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5629,3,oasis,0,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko
-10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5630,4,eichenwalde,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Neko,Kellex,DreamKazper,Gamsu,STRIKER,Kalios
-10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5631,1,junkertown,2,1,sleepy,Danteh,BABYBAY,Nomy,Nevix,dhaK,Undead,Roshan,Diya,Xushu,Freefeel,Altering
-10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5632,2,horizon-lunar-colony,0,1,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Undead,Roshan,Diya,Xushu,Freefeel,Altering
-10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5633,3,ilios,2,0,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Undead,Roshan,Diya,Xushu,Freefeel,Altering
-10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5634,4,numbani,3,2,Nevix,dhaK,sleepy,Danteh,BABYBAY,Nomy,Undead,Roshan,Diya,Xushu,Freefeel,Altering
-10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5635,1,junkertown,3,2,Bdosin,birdring,Fury,NUS,Profit,Gesture,ShaDowBurn,Boombox,Carpe,Poko,DayFly,fragi
-10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5636,2,horizon-lunar-colony,2,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,ShaDowBurn,fragi,Boombox,Carpe,Poko,DayFly
-10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5637,3,ilios,2,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,ShaDowBurn,fragi,Boombox,Carpe,Poko,DayFly
-10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5638,4,numbani,3,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,DayFly,ShaDowBurn,fragi,Boombox,Carpe,Poko
-10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5639,1,junkertown,2,3,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,Muma,Coolmatt,Rawkus,Jake,Bani,LiNkzr
-10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5640,2,temple-of-anubis,2,1,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,Muma,Coolmatt,Jake,Rawkus,Bani,LiNkzr
-10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5641,3,ilios,2,0,Saebyeolbe,Ark,Janus,Pine,Meko,Jjonak,Clockwork,Coolmatt,Rawkus,Muma,LiNkzr,Bani
-10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5642,4,numbani,3,1,Saebyeolbe,Jjonak,Janus,Meko,Libero,Ark,Clockwork,Rawkus,Coolmatt,Muma,Jake,Bani
-10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5643,1,junkertown,4,3,Wekeed,FLETA,ryujehong,tobi,ZUNBA,KuKi,Asher,Bischu,iRemiix,Hydration,BigGoose,Shaz
-10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5644,2,horizon-lunar-colony,3,2,Bunny,KuKi,tobi,ryujehong,ZUNBA,FLETA,BigGoose,Shaz,Hydration,Bischu,Surefour,iRemiix
-10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5645,3,ilios,2,0,Wekeed,FLETA,ryujehong,ZUNBA,Bunny,KuKi,BigGoose,Shaz,Asher,Bischu,Surefour,iRemiix
-10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5646,4,numbani,3,0,Wekeed,KuKi,FLETA,ryujehong,ZUNBA,tobi,BigGoose,Shaz,Hydration,Bischu,Surefour,iRemiix
-10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5647,1,dorado,1,0,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,ShaDowBurn,Neptuno,Boombox,Carpe,Poko,fragi
-10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5648,2,temple-of-anubis,1,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5649,3,oasis,1,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5650,4,eichenwalde,3,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe
-10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5651,1,dorado,1,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,KuKi,Munchkin,FLETA,XepheR,ryujehong,gido
-10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5652,2,horizon-lunar-colony,1,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,FLETA,Munchkin,KuKi,XepheR,ryujehong,tobi
-10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5653,3,oasis,0,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Munchkin,KuKi,FLETA,XepheR,ryujehong,tobi
-10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5654,4,eichenwalde,2,3,Logix,Zebbosai,Manneten,CWoosH,TviQ,Zuppeh,Munchkin,KuKi,FLETA,XepheR,ryujehong,tobi
-10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5655,1,junkertown,3,0,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Undead,Roshan,Diya,Freefeel,Altering,MG
-10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5656,2,horizon-lunar-colony,2,1,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Undead,MG,Roshan,Diya,Freefeel,Altering
-10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5657,3,oasis,2,0,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Undead,MG,Roshan,Diya,Freefeel,Altering
-10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5658,4,numbani,3,1,LiNkzr,Rawkus,Coolmatt,Jake,Muma,Bani,Undead,MG,Roshan,Diya,Freefeel,Altering
-10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5659,1,junkertown,0,1,Seagull,Mickie,EFFECT,cocco,Chipshajen,Custa,Coolmatt,Jake,Rawkus,Muma,Bani,LiNkzr
-10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5660,2,horizon-lunar-colony,1,2,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Muma,Coolmatt,LiNkzr,Jake,Rawkus,Bani
-10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5661,3,oasis,0,2,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Muma,Coolmatt,Boink,LiNkzr,Jake,Rawkus
-10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5662,4,eichenwalde,1,2,Taimou,Chipshajen,Custa,Mickie,EFFECT,cocco,Muma,Bani,Rawkus,Jake,Coolmatt,LiNkzr
-10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5663,1,junkertown,3,1,Saebyeolbe,Mano,Meko,Jjonak,Libero,Ark,Fate,Soon,Envy,Agilities,Kariv,Unkoe
-10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5664,2,horizon-lunar-colony,1,0,Janus,Saebyeolbe,Meko,Libero,Jjonak,Ark,Kariv,Envy,silkthread,Unkoe,Fate,Soon
-10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5665,3,oasis,2,1,Pine,Mano,Meko,Jjonak,Ark,Libero,Fate,Soon,silkthread,Kariv,Envy,Unkoe
-10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5666,4,numbani,3,3,Meko,Janus,Saebyeolbe,Libero,Ark,Jjonak,Unkoe,Envy,Kariv,silkthread,Soon,Fate
-10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5667,1,junkertown,2,1,ShaDowBurn,Neptuno,Boombox,Carpe,Poko,fragi,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher
-10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5668,2,temple-of-anubis,3,2,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5669,3,ilios,1,2,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher
-10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5670,4,numbani,2,3,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,6192,5,lijiang,0,2,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Surefour,iRemiix,BigGoose,Shaz,Hydration,Asher
-10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5671,1,junkertown,3,2,Wekeed,Miro,tobi,ryujehong,ZUNBA,FLETA,Kalios,Neko,Kellex,STRIKER,DreamKazper,Gamsu
-10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5672,2,horizon-lunar-colony,2,1,FLETA,Bunny,ryujehong,tobi,Miro,ZUNBA,Gamsu,DreamKazper,Kellex,STRIKER,Kalios,Neko
-10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5673,3,oasis,2,0,Wekeed,tobi,Bunny,ryujehong,FLETA,ZUNBA,Gamsu,DreamKazper,Kellex,Kalios,STRIKER,Neko
-10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5674,4,numbani,3,2,Wekeed,FLETA,ryujehong,tobi,Miro,ZUNBA,Gamsu,DreamKazper,Kellex,STRIKER,Kalios,Neko
-10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5675,1,dorado,1,2,Undead,MG,Diya,Xushu,Freefeel,Altering,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5676,2,temple-of-anubis,1,2,Undead,MG,Diya,Xushu,Freefeel,Altering,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5677,3,ilios,0,2,Undead,MG,Diya,Xushu,Freefeel,Altering,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5678,4,numbani,2,3,Fiveking,Undead,MG,Roshan,Diya,Freefeel,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5679,1,junkertown,3,2,Bdosin,birdring,NUS,Gesture,Profit,Fury,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,cocco
-10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5680,2,horizon-lunar-colony,2,0,Bdosin,birdring,Rascal,Fury,NUS,Gesture,Taimou,Mickie,Chipshajen,EFFECT,cocco,HarryHook
-10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5681,3,oasis,0,2,Bdosin,Fury,Gesture,NUS,Profit,birdring,Seagull,Taimou,Chipshajen,cocco,EFFECT,HarryHook
-10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5682,4,numbani,4,3,Bdosin,birdring,Profit,Gesture,NUS,Fury,Taimou,Chipshajen,cocco,HarryHook,Mickie,EFFECT
-10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5683,1,dorado,1,2,Unkoe,silkthread,Envy,Kariv,Fate,Soon,Bdosin,birdring,Fissure,Fury,NUS,Profit
-10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5684,2,horizon-lunar-colony,2,3,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Bdosin,birdring,Fissure,Rascal,Fury,NUS
-10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5685,3,oasis,2,0,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Bdosin,birdring,Fissure,Rascal,Fury,NUS
-10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5686,4,eichenwalde,3,1,Unkoe,Soon,silkthread,Envy,Kariv,Fate,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,6308,5,lijiang,0,2,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Gesture,Bdosin,birdring,Fury,NUS,Profit
-10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5687,1,dorado,0,1,BigGoose,Hydration,Shaz,Bischu,Surefour,iRemiix,Pine,Jjonak,Meko,Janus,Libero,Ark
-10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5688,2,horizon-lunar-colony,1,2,BigGoose,Shaz,Hydration,Bischu,Surefour,iRemiix,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero
-10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5689,3,oasis,0,2,BigGoose,Shaz,Hydration,Surefour,Bischu,iRemiix,Ark,Jjonak,Mano,Meko,Pine,Libero
-10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5690,4,eichenwalde,1,2,Asher,Shaz,BigGoose,Bischu,Surefour,iRemiix,Saebyeolbe,Mano,Meko,Jjonak,Libero,Ark
-10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5691,1,dorado,2,3,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,sleepy,Danteh,BABYBAY,Nomy,Nevix,dhaK
-10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5692,2,horizon-lunar-colony,2,0,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5693,3,oasis,0,2,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5694,4,eichenwalde,3,1,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Avast,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,6315,5,lijiang,1,2,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,Nevix,dhaK,sleepy,Danteh,BABYBAY,Nomy
-10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5695,1,eichenwalde,0,1,dhaK,Danteh,BABYBAY,Nomy,Nevix,sleepy,Bdosin,birdring,Fissure,Fury,NUS,Hooreg
-10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5696,2,horizon-lunar-colony,0,1,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Bdosin,birdring,Fissure,Fury,NUS,Profit
-10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5697,3,oasis,2,1,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Bdosin,birdring,Fissure,Fury,NUS,Profit
-10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5698,4,junkertown,1,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Profit,Bdosin,birdring,Fissure,Fury,NUS
-10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5699,1,numbani,2,3,Freefeel,Xushu,Diya,Undead,Roshan,Altering,Wekeed,Miro,ryujehong,tobi,XepheR,Bunny
-10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5700,2,temple-of-anubis,1,2,Diya,Undead,Freefeel,Xushu,Altering,Roshan,Bunny,ryujehong,Miro,tobi,Wekeed,XepheR
-10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5701,3,oasis,1,2,Diya,Undead,Xushu,Freefeel,Altering,Roshan,Wekeed,Miro,tobi,ryujehong,XepheR,Bunny
-10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5702,4,dorado,2,1,Diya,Undead,Xushu,Freefeel,Altering,Roshan,Wekeed,XepheR,Bunny,ryujehong,tobi,Miro
-10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5703,1,eichenwalde,3,1,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher,Unkoe,Agilities,Envy,Kariv,Fate,Soon
-10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5704,2,horizon-lunar-colony,2,0,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5705,3,ilios,1,2,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher,Unkoe,Soon,silkthread,Envy,Kariv,Fate
-10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5706,4,junkertown,3,4,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,6418,5,lijiang,1,2,Asher,Surefour,iRemiix,BigGoose,Shaz,Hydration,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5707,1,numbani,4,5,Kellex,Gamsu,NotE,STRIKER,Neko,DreamKazper,Bdosin,birdring,Fury,NUS,Hooreg,Gesture
-10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5708,2,temple-of-anubis,3,2,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bdosin,birdring,Rascal,Fury,NUS,Gesture
-10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5709,3,ilios,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bdosin,birdring,Fury,NUS,Hooreg,Gesture
-10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5710,4,junkertown,2,3,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,6424,5,lijiang,2,0,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Gesture,Bdosin,birdring,Fury,NUS,Profit
-10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5711,1,numbani,1,2,Poko,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero
-10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5712,2,temple-of-anubis,2,1,Poko,ShaDowBurn,Neptuno,Boombox,fragi,Carpe,Saebyeolbe,Ark,Mano,Meko,Libero,Jjonak
-10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5713,3,ilios,1,2,Poko,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Pine,Saebyeolbe,Ark,Jjonak,Janus,Meko
-10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5714,4,dorado,2,1,Poko,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Libero,Janus,Meko,Jjonak,Ark,Saebyeolbe
-10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,6441,5,lijiang,2,0,ShaDowBurn,Neptuno,Boombox,Carpe,Poko,fragi,Saebyeolbe,Janus,Meko,Ark,Jjonak,Libero
-10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5715,1,numbani,2,1,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5716,2,horizon-lunar-colony,2,0,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5717,3,ilios,2,0,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5718,4,junkertown,3,0,LiNkzr,Rawkus,Coolmatt,Jake,Muma,Bani,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5719,1,eichenwalde,1,2,KuKi,Munchkin,tobi,ryujehong,ZUNBA,FLETA,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero
-10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5720,2,horizon-lunar-colony,5,4,ZUNBA,FLETA,ryujehong,tobi,Munchkin,KuKi,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5721,3,oasis,1,2,Munchkin,KuKi,FLETA,ryujehong,tobi,ZUNBA,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5722,4,junkertown,1,0,Wekeed,KuKi,FLETA,ZUNBA,tobi,ryujehong,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,6779,5,lijiang,0,2,KuKi,FLETA,Bunny,ryujehong,tobi,ZUNBA,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5723,1,eichenwalde,0,1,MG,Roshan,Diya,Freefeel,Altering,Undead,ShaDowBurn,fragi,Neptuno,Carpe,DayFly,Hotba
-10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5724,2,horizon-lunar-colony,2,3,Undead,Roshan,Diya,Xushu,Freefeel,Altering,ShaDowBurn,fragi,Neptuno,Carpe,DayFly,Hotba
-10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5725,3,oasis,2,1,Undead,Roshan,Diya,Xushu,Freefeel,Altering,ShaDowBurn,fragi,Neptuno,Carpe,DayFly,Hotba
-10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5726,4,junkertown,3,2,Undead,MG,Roshan,Diya,Freefeel,Fiveking,ShaDowBurn,fragi,Neptuno,Carpe,DayFly,Hotba
-10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,6784,5,lijiang,0,2,Undead,MG,Roshan,Diya,Freefeel,Altering,Hotba,ShaDowBurn,fragi,Neptuno,Carpe,DayFly
-10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5727,1,eichenwalde,3,3,Seagull,EFFECT,Mickie,Custa,Chipshajen,cocco,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5728,2,horizon-lunar-colony,3,2,Seagull,cocco,EFFECT,Mickie,Custa,Chipshajen,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5729,3,ilios,2,0,Seagull,EFFECT,Mickie,cocco,Chipshajen,Custa,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5730,4,junkertown,3,1,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,BABYBAY,Danteh,sleepy,dhaK,Nomy,Nevix
-10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5731,1,numbani,6,4,Seagull,EFFECT,Mickie,cocco,Chipshajen,Custa,DreamKazper,STRIKER,Gamsu,NotE,Neko,Kellex
-10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5732,2,temple-of-anubis,2,3,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Gamsu,Neko,NotE,DreamKazper,STRIKER,Kellex
-10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5733,3,ilios,1,2,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Gamsu,NotE,DreamKazper,Kellex,STRIKER,Neko
-10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5734,4,dorado,3,0,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Gamsu,NotE,DreamKazper,Kellex,STRIKER,Neko
-10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,6855,5,lijiang,0,2,Seagull,Chipshajen,Custa,Mickie,EFFECT,cocco,Gamsu,DreamKazper,Kellex,STRIKER,Kalios,Neko
-10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5735,1,eichenwalde,3,2,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5736,2,temple-of-anubis,2,0,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5737,3,ilios,2,0,Unkoe,Soon,silkthread,Envy,Kariv,Fate,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5738,4,dorado,2,3,Fate,Unkoe,Soon,Agilities,Envy,Kariv,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5739,1,numbani,3,4,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,Rawkus,Jake,Muma,Bani,LiNkzr,Coolmatt
-10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5740,2,temple-of-anubis,0,1,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5741,3,ilios,0,2,Bischu,iRemiix,BigGoose,Shaz,Hydration,Asher,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5742,4,dorado,0,1,Hydration,Surefour,Bischu,iRemiix,BigGoose,Shaz,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5743,1,numbani,3,2,silkthread,Verbo,Envy,Kariv,Fate,Soon,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Hotba
-10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5744,2,temple-of-anubis,5,4,Soon,Agilities,Verbo,Envy,Kariv,Fate,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Hotba
-10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5745,3,oasis,2,0,Soon,Agilities,Verbo,Envy,Kariv,Fate,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Hotba
-10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5746,4,dorado,3,2,Soon,Agilities,Verbo,Envy,Kariv,Fate,Hotba,ShaDowBurn,fragi,Neptuno,Boombox,Carpe
-10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5747,1,eichenwalde,1,2,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration
-10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5748,2,horizon-lunar-colony,0,1,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration
-10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5749,3,oasis,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5750,4,junkertown,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Asher,Bischu,iRemiix,BigGoose,Shaz,Hydration
-10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5751,1,numbani,3,2,Coolmatt,Jake,Muma,Bani,Clockwork,Rawkus,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5752,2,temple-of-anubis,2,1,Rawkus,Coolmatt,Jake,Muma,Bani,Clockwork,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5753,3,oasis,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,Clockwork,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5754,4,dorado,2,0,Clockwork,Rawkus,Coolmatt,Jake,Muma,Bani,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5755,1,eichenwalde,1,0,Carpe,fragi,ShaDowBurn,Hotba,Neptuno,Boombox,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,cocco
-10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5756,2,temple-of-anubis,3,2,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Hotba,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,cocco
-10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5757,3,ilios,2,0,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Hotba,Taimou,Chipshajen,Mickie,EFFECT,cocco,HarryHook
-10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5758,4,dorado,3,2,fragi,Boombox,Carpe,Neptuno,ShaDowBurn,Hotba,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,cocco
-10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5759,1,eichenwalde,3,1,Pine,Mano,Meko,Ark,Jjonak,Libero,Freefeel,Undead,Fiveking,MG,Diya,Roshan
-10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5760,2,temple-of-anubis,2,1,Libero,Ark,Pine,Meko,Mano,Jjonak,MG,Diya,Undead,Freefeel,Fiveking,Roshan
-10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5761,3,oasis,2,1,Ark,Jjonak,Mano,Meko,Pine,Libero,MG,Diya,Undead,Freefeel,Roshan,Fiveking
-10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5762,4,dorado,3,0,Ark,Jjonak,Mano,Meko,Pine,Libero,MG,Diya,Undead,Freefeel,Fiveking,Roshan
-10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5763,1,numbani,2,0,Closer,HaGoPeun,Rascal,birdring,WooHyaL,Gesture,FLETA,Bunny,tobi,Miro,ZUNBA,gido
-10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5764,2,temple-of-anubis,2,0,HaGoPeun,WooHyaL,Gesture,Closer,Profit,birdring,FLETA,Bunny,tobi,Miro,ZUNBA,gido
-10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5765,3,ilios,2,0,Bdosin,NUS,Fury,Hooreg,Gesture,Profit,Miro,Bunny,gido,tobi,ZUNBA,FLETA
-10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5766,4,dorado,3,2,HaGoPeun,Closer,WooHyaL,birdring,Profit,Gesture,Miro,ZUNBA,Bunny,tobi,gido,FLETA
-10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5767,1,numbani,4,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5768,2,temple-of-anubis,2,1,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5769,3,ilios,2,0,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5770,4,junkertown,3,2,Nevix,dhaK,sleepy,Danteh,BABYBAY,Nomy,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5771,1,eichenwalde,2,3,Wekeed,FLETA,tobi,ryujehong,ZUNBA,Miro,Muma,Coolmatt,Jake,Rawkus,Clockwork,Bani
-10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5772,2,horizon-lunar-colony,2,1,Wekeed,Miro,tobi,ryujehong,ZUNBA,FLETA,Muma,Coolmatt,Clockwork,Bani,Jake,Rawkus
-10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5773,3,ilios,2,0,Munchkin,FLETA,ZUNBA,Miro,ryujehong,tobi,Jake,Rawkus,Coolmatt,Muma,Boink,Clockwork
-10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5774,4,junkertown,2,3,Wekeed,FLETA,ZUNBA,Miro,tobi,ryujehong,Muma,Coolmatt,Clockwork,Jake,Rawkus,Bani
-10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,6970,5,lijiang,2,1,Munchkin,FLETA,ZUNBA,Miro,ryujehong,tobi,Boink,Coolmatt,Muma,Clockwork,Jake,Rawkus
-10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5775,1,numbani,1,2,Bischu,iRemiix,BigGoose,Shaz,Hydration,Surefour,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5776,2,temple-of-anubis,1,2,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5777,3,oasis,0,2,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5778,4,dorado,2,3,Hydration,Surefour,Bischu,iRemiix,BigGoose,Shaz,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5779,1,eichenwalde,0,1,Undead,Diya,Xushu,Freefeel,Fiveking,Roshan,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5780,2,horizon-lunar-colony,0,1,Undead,Roshan,Diya,Xushu,Freefeel,Fiveking,birdring,Fury,Profit,Closer,HaGoPeun,Gesture
-10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5781,3,ilios,0,2,Undead,Roshan,Diya,Xushu,Freefeel,Altering,Bdosin,NUS,Hooreg,Profit,Closer,Gesture
-10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5782,4,junkertown,0,1,Undead,Roshan,Diya,Xushu,Freefeel,Fiveking,Gesture,Bdosin,birdring,NUS,Profit,WooHyaL
-10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5783,1,numbani,0,1,Taimou,EFFECT,Mickie,Chipshajen,cocco,HarryHook,Libero,Janus,Jjonak,Ark,Saebyeolbe,Meko
-10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5784,2,temple-of-anubis,4,6,Chipshajen,Taimou,Mickie,HarryHook,EFFECT,cocco,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5785,3,oasis,2,1,Taimou,Chipshajen,Mickie,EFFECT,cocco,HarryHook,Pine,Meko,Mano,Jjonak,Ark,Libero
-10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5786,4,dorado,1,2,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,cocco,Ark,Jjonak,Mano,Meko,Pine,Libero
-10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5787,1,eichenwalde,6,4,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Agilities,Verbo,Envy,Kariv,Fate,Soon
-10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5788,2,horizon-lunar-colony,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Soon,Agilities,Verbo,Envy,Kariv,Fate
-10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5789,3,oasis,2,0,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Soon,Agilities,Verbo,Envy,Kariv,Fate
-10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5790,4,junkertown,3,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Fate,Soon,Agilities,Verbo,Envy,Kariv
-10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5791,1,eichenwalde,4,3,MG,Diya,Undead,Freefeel,Altering,Roshan,Seagull,Taimou,Chipshajen,Mickie,HarryHook,cocco
-10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5792,2,horizon-lunar-colony,2,3,MG,Diya,Undead,Freefeel,Altering,Roshan,Seagull,Taimou,Chipshajen,Mickie,cocco,HarryHook
-10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5793,3,oasis,0,2,MG,Diya,Undead,Freefeel,Altering,Roshan,Seagull,Taimou,Chipshajen,Mickie,HarryHook,cocco
-10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5794,4,dorado,4,3,MG,Diya,Undead,Freefeel,Altering,Roshan,Seagull,Taimou,Mickie,HarryHook,cocco,Chipshajen
-10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,7072,5,lijiang,1,2,MG,Diya,Undead,Freefeel,Altering,Roshan,Seagull,Taimou,Chipshajen,Mickie,HarryHook,cocco
-10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5795,1,numbani,3,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Bischu,iRemiix,BigGoose,Shaz,Asher,Surefour
-10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5796,2,horizon-lunar-colony,0,1,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration
-10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5797,3,oasis,0,2,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Surefour,Bischu,iRemiix,BigGoose,Shaz,Asher
-10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5798,4,junkertown,2,3,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix,Asher,Bischu,iRemiix,BigGoose,Shaz,Hydration
-10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5799,1,eichenwalde,3,1,Envy,Soon,Unkoe,Fate,Kariv,silkthread,FLETA,Bunny,ryujehong,Miro,ZUNBA,gido
-10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5800,2,temple-of-anubis,3,3,Envy,Kariv,Agilities,Soon,Unkoe,Fate,Wekeed,Munchkin,ryujehong,Miro,ZUNBA,gido
-10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5801,3,oasis,2,0,Envy,Kariv,Agilities,Soon,Unkoe,Fate,ZUNBA,ryujehong,FLETA,Miro,Bunny,tobi
-10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5802,4,dorado,3,2,Envy,Kariv,Agilities,Soon,Unkoe,Fate,Miro,Bunny,ryujehong,tobi,ZUNBA,FLETA
-10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5803,1,eichenwalde,0,1,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,DreamKazper,Gamsu,NotE,STRIKER,Neko,Kellex
-10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5804,2,horizon-lunar-colony,3,4,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5805,3,ilios,0,2,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5806,4,junkertown,3,4,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5807,1,eichenwalde,1,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Pine,Libero,Meko,Mano,Jjonak,Ark
-10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5808,2,horizon-lunar-colony,2,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Ark,Jjonak,Mano,Meko,Pine,Libero
-10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5809,3,ilios,0,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Janus,Pine,Meko,Jjonak,Ark,Libero
-10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5810,4,junkertown,2,3,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Ark,Jjonak,Mano,Meko,Pine,Libero
-10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5811,1,eichenwalde,1,2,birdring,Profit,Closer,HaGoPeun,WooHyaL,Gesture,Rawkus,Jake,Muma,Bani,LiNkzr,Coolmatt
-10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5812,2,temple-of-anubis,1,2,birdring,Fury,Profit,Closer,HaGoPeun,Gesture,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5813,3,oasis,0,2,Bdosin,birdring,Fury,NUS,Profit,Gesture,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5814,4,dorado,2,1,Gesture,Bdosin,birdring,NUS,Profit,WooHyaL,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5815,1,eichenwalde,0,1,Surefour,Bischu,iRemiix,BigGoose,Shaz,Hydration,Taimou,HarryHook,Mickie,Chipshajen,Seagull,cocco
-10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5816,2,temple-of-anubis,2,3,BigGoose,Shaz,Hydration,Bischu,Surefour,iRemiix,Seagull,Taimou,Chipshajen,Mickie,HarryHook,cocco
-10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5817,3,oasis,0,2,BigGoose,Shaz,Asher,Bischu,Surefour,iRemiix,Seagull,Taimou,Chipshajen,Mickie,HarryHook,cocco
-10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5818,4,dorado,3,0,Hydration,Shaz,BigGoose,Bischu,Surefour,iRemiix,Seagull,Taimou,Chipshajen,HarryHook,cocco,Mickie
-10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5819,1,eichenwalde,4,3,Miro,Bunny,tobi,ryujehong,ZUNBA,FLETA,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5820,2,temple-of-anubis,0,1,Munchkin,Wekeed,ryujehong,tobi,Miro,ZUNBA,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5821,3,ilios,1,2,Miro,ZUNBA,ryujehong,Bunny,tobi,FLETA,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5822,4,dorado,3,2,Miro,Bunny,tobi,ryujehong,ZUNBA,FLETA,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,7094,5,lijiang,2,0,ZUNBA,Miro,tobi,ryujehong,Bunny,FLETA,BABYBAY,sleepy,Danteh,Nomy,dhaK,Nevix
-10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5823,1,numbani,5,3,Unkoe,silkthread,Envy,Kariv,Fate,Soon,Undead,MG,Roshan,Diya,Freefeel,Altering
-10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5824,2,temple-of-anubis,2,1,Unkoe,Soon,Agilities,Envy,Kariv,Fate,Undead,MG,Roshan,Diya,Freefeel,Altering
-10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5825,3,ilios,2,0,Unkoe,Soon,silkthread,Envy,Kariv,Fate,Undead,MG,Roshan,Diya,Freefeel,Fiveking
-10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5826,4,junkertown,3,0,Fate,Unkoe,Soon,Agilities,Envy,Kariv,Undead,Roshan,Diya,Xushu,Freefeel,Fiveking
-10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5827,1,eichenwalde,2,3,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,Bdosin,NUS,Gesture,Profit,WooHyaL,birdring
-10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5828,2,temple-of-anubis,2,1,Saebyeolbe,Ark,Libero,Meko,Mano,Jjonak,Fury,birdring,Bdosin,NUS,Profit,Gesture
-10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5829,3,ilios,2,0,Pine,Janus,Meko,Jjonak,Ark,Saebyeolbe,Bdosin,NUS,Gesture,Profit,Fury,birdring
-10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5830,4,dorado,2,3,Libero,Janus,Meko,Jjonak,Ark,Saebyeolbe,WooHyaL,Bdosin,NUS,Profit,Gesture,birdring
-10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,7123,5,lijiang,2,0,Mano,Saebyeolbe,Meko,Ark,Jjonak,Libero,Bdosin,birdring,NUS,Profit,WooHyaL,Gesture
-10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5831,1,eichenwalde,3,2,Coolmatt,Jake,Muma,Bani,LiNkzr,Rawkus,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5832,2,temple-of-anubis,1,2,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5833,3,ilios,0,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5834,4,dorado,3,2,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,7127,5,lijiang,2,1,LiNkzr,Rawkus,Coolmatt,Jake,Muma,Bani,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5835,1,numbani,2,3,TviQ,Zuppeh,Logix,Manneten,CWoosH,Zebbosai,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5836,2,horizon-lunar-colony,2,1,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5837,3,oasis,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5838,4,junkertown,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,7131,5,lijiang,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe
-10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7062,1,dorado,1,2,Bdosin,birdring,NUS,Profit,WooHyaL,Gesture,Rawkus,Jake,Muma,Bani,LiNkzr,Coolmatt
-10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7063,2,ilios,2,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7064,3,temple-of-anubis,2,0,Bdosin,birdring,Fury,NUS,Profit,Gesture,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7065,4,eichenwalde,1,0,Gesture,Bdosin,birdring,Fury,NUS,Profit,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7067,1,junkertown,3,4,Bdosin,NUS,Gesture,Profit,WooHyaL,birdring,Pine,Mano,Meko,Jjonak,Libero,Ark
-10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7068,2,oasis,0,2,Bdosin,NUS,Fury,Gesture,Profit,birdring,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7069,3,horizon-lunar-colony,3,2,Bdosin,NUS,Gesture,Profit,Fury,birdring,Saebyeolbe,Janus,Jjonak,Meko,Libero,Ark
-10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7070,4,numbani,1,0,Bdosin,NUS,Gesture,Rascal,Fury,birdring,Saebyeolbe,Janus,Meko,Jjonak,Ark,Libero
-10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7071,5,dorado,2,1,Bdosin,NUS,Profit,Fury,birdring,Gesture,Saebyeolbe,Janus,Meko,Jjonak,Ark,Libero
-10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5942,1,volskaya,2,0,Miro,Bunny,tobi,ryujehong,ZUNBA,FLETA,Verbo,Agilities,Envy,Soon,Unkoe,Fate
-10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5943,2,nepal,2,0,ZUNBA,Miro,tobi,ryujehong,Bunny,FLETA,Unkoe,Fate,Envy,Soon,Agilities,Verbo
-10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,6927,3,kings-row,3,2,FLETA,Bunny,Miro,ZUNBA,ryujehong,tobi,Verbo,Unkoe,Soon,Agilities,Fate,Envy
-10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5944,4,route-66,2,0,Bunny,tobi,ryujehong,ZUNBA,FLETA,Miro,Verbo,Unkoe,Agilities,Envy,Soon,Fate
-10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5945,1,volskaya,2,0,Taimou,Custa,Mickie,HarryHook,EFFECT,aKm,MG,Diya,Undead,Xushu,Fiveking,Roshan
-10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5946,2,nepal,2,0,Taimou,Custa,Mickie,HarryHook,EFFECT,aKm,Altering,Fiveking,Roshan,Undead,Diya,Xushu
-10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5947,3,hollywood,3,4,Taimou,Custa,HarryHook,Mickie,EFFECT,aKm,Diya,Undead,Xushu,Altering,Fiveking,Roshan
-10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5948,4,route-66,3,1,Taimou,Mickie,EFFECT,HarryHook,Custa,Rascal,Undead,Diya,Fiveking,Altering,Xushu,Roshan
-10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5949,1,hanamura,4,3,Bischu,BigGoose,Shaz,Hydration,Fissure,Surefour,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5950,2,nepal,2,1,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,6928,3,kings-row,3,1,Fissure,Surefour,Bischu,BigGoose,Shaz,Hydration,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5951,4,gibraltar,2,1,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5952,1,volskaya,3,4,Coolmatt,Bani,Boink,Clockwork,LiNkzr,Muma,birdring,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5953,2,nepal,2,1,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,birdring,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,6929,3,kings-row,4,3,SPREE,Rawkus,Jake,Muma,Boink,LiNkzr,birdring,Fury,Profit,Closer,HaGoPeun,Gesture
-10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5954,4,route-66,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,birdring,Fury,Profit,Closer,HaGoPeun,Gesture
-10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,7329,5,ilios,2,0,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Gesture,birdring,Fury,Profit,Closer,HaGoPeun
-10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5955,1,hanamura,5,4,Saebyeolbe,Mano,Meko,Jjonak,Pine,Janus,CWoosH,Manneten,Logix,Zuppeh,TviQ,Zebbosai
-10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5956,2,lijiang,1,2,Mano,Saebyeolbe,Janus,Meko,Libero,Jjonak,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,6930,3,kings-row,3,2,Saebyeolbe,Janus,Meko,Jjonak,Mano,Libero,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5957,4,gibraltar,3,1,Jjonak,Pine,Meko,Janus,Saebyeolbe,Mano,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5958,1,hanamura,1,2,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Neptuno,Boombox,Eqo,Carpe,Poko,fragi
-10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5959,2,lijiang,1,2,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,fragi,Neptuno,Boombox,Eqo,Carpe,Poko
-10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5960,3,hollywood,3,4,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,fragi,Neptuno,Boombox,Eqo,Carpe,Poko
-10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5961,4,gibraltar,4,5,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Poko,fragi,Neptuno,Boombox,Eqo,Carpe
-10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5962,1,volskaya,2,0,HaGoPeun,Closer,Gesture,Profit,WooHyaL,birdring,Saebyeolbe,Janus,Meko,Jjonak,Mano,Pine
-10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5963,2,lijiang,0,2,Bdosin,Closer,Gesture,Profit,birdring,WooHyaL,Libero,Jjonak,Meko,Janus,Saebyeolbe,Mano
-10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,6931,3,kings-row,1,2,HaGoPeun,Closer,Profit,Gesture,Fury,birdring,Saebyeolbe,Mano,Janus,Meko,Libero,Jjonak
-10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5964,4,gibraltar,3,2,HaGoPeun,Closer,Gesture,Profit,Fury,birdring,Pine,Jjonak,Meko,Janus,Saebyeolbe,Mano
-10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,7354,5,ilios,2,0,Gesture,birdring,Fury,Profit,Closer,HaGoPeun,Mano,Saebyeolbe,Janus,Meko,Pine,Jjonak
-10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5965,1,hanamura,2,1,xQc,EFFECT,Mickie,aKm,Custa,HarryHook,Surefour,Fissure,Bischu,Hydration,BigGoose,Shaz
-10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5966,2,lijiang,1,2,xQc,Mickie,EFFECT,Rascal,Custa,HarryHook,Asher,Fissure,Bischu,Hydration,BigGoose,Shaz
-10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,6932,3,kings-row,4,3,xQc,Mickie,aKm,Rascal,Custa,HarryHook,Surefour,Fissure,Hydration,Bischu,BigGoose,Shaz
-10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5967,4,gibraltar,3,0,xQc,Mickie,aKm,EFFECT,Custa,HarryHook,Surefour,Fissure,Bischu,Asher,BigGoose,Shaz
-10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5968,1,hanamura,2,1,Danteh,BABYBAY,sleepy,dhaK,Nomy,Nevix,Miro,tobi,ryujehong,ZUNBA,FLETA,Munchkin
-10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5969,2,lijiang,1,2,Danteh,sleepy,BABYBAY,dhaK,Nomy,Nevix,Munchkin,Miro,ryujehong,FLETA,ZUNBA,tobi
-10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5970,3,hollywood,2,3,Danteh,Nomy,Nevix,BABYBAY,sleepy,dhaK,Miro,Munchkin,tobi,ryujehong,FLETA,ZUNBA
-10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5971,4,gibraltar,2,3,BABYBAY,sleepy,Danteh,Nomy,dhaK,Nevix,Munchkin,FLETA,ryujehong,tobi,ZUNBA,Miro
-10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5972,1,hanamura,2,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5973,2,nepal,2,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5974,3,hollywood,3,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5975,4,gibraltar,3,1,Poko,fragi,Neptuno,Boombox,Eqo,Carpe,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5976,1,hanamura,3,4,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,Coolmatt,Muma,Bani,Clockwork,LiNkzr,Rawkus
-10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5977,2,lijiang,0,2,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,6933,3,kings-row,4,5,Kellex,DreamKazper,Gamsu,NotE,Kalios,Neko,LiNkzr,SPREE,Rawkus,Jake,Muma,Boink
-10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5978,4,gibraltar,0,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5979,1,hanamura,3,3,Undead,MG,Roshan,Diya,Freefeel,Altering,Unkoe,Verbo,Envy,Kariv,Fate,Soon
-10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5980,2,lijiang,1,2,Undead,MG,Roshan,Diya,Altering,Fiveking,Unkoe,Soon,Agilities,Verbo,Envy,Fate
-10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,6934,3,kings-row,2,3,Undead,MG,Roshan,Diya,Altering,Fiveking,Fate,Unkoe,Soon,Verbo,Envy,Kariv
-10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5981,4,gibraltar,0,1,Undead,MG,Roshan,Diya,Freefeel,Altering,Unkoe,Soon,Agilities,Verbo,Envy,Fate
-10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5982,1,hanamura,4,3,Miro,Munchkin,tobi,ryujehong,ZUNBA,FLETA,xQc,Mickie,Custa,HarryHook,EFFECT,aKm
-10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5983,2,nepal,2,1,Miro,Munchkin,tobi,ryujehong,ZUNBA,FLETA,xQc,Mickie,EFFECT,aKm,Custa,HarryHook
-10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5984,3,hollywood,2,3,Wekeed,FLETA,Miro,ZUNBA,ryujehong,tobi,xQc,EFFECT,Mickie,HarryHook,Custa,aKm
-10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5985,4,route-66,3,2,Munchkin,FLETA,ryujehong,tobi,ZUNBA,Miro,Mickie,Custa,HarryHook,EFFECT,xQc,Rascal
-10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5986,1,volskaya,2,3,Unkoe,Verbo,Envy,Kariv,Fate,Soon,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5987,2,lijiang,2,0,Unkoe,Soon,Verbo,Envy,Kariv,Fate,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,6935,3,kings-row,4,3,Fate,Unkoe,Soon,Verbo,Envy,Kariv,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5988,4,gibraltar,5,4,Unkoe,Soon,Verbo,Envy,Kariv,Fate,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5989,1,volskaya,2,0,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,Undead,Roshan,Diya,Xushu,Fiveking,MG
-10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5990,2,nepal,2,0,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,Undead,MG,Roshan,Diya,Freefeel,Altering
-10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,6936,3,kings-row,3,2,Fissure,Surefour,Bischu,BigGoose,Shaz,Hydration,Undead,MG,Roshan,Diya,Altering,Fiveking
-10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5991,4,route-66,3,0,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,Undead,MG,Roshan,Diya,Freefeel,Altering
-10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5992,1,volskaya,4,3,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5993,2,lijiang,0,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,6937,3,kings-row,0,1,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Gesture,Hooreg,Profit,Closer,HaGoPeun,WooHyaL
-10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5994,4,route-66,2,3,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture
-10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5995,1,volskaya,3,2,Rawkus,Coolmatt,Muma,Boink,Clockwork,LiNkzr,ShaDowBurn,Neptuno,Carpe,Poko,DayFly,fragi
-10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5996,2,nepal,2,0,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5997,3,hollywood,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5998,4,route-66,0,1,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko
-10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,7530,5,ilios,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe
-10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,5999,1,hanamura,2,1,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,Gamsu,NotE,Neko,Kellex,DreamKazper,STRIKER
-10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6000,2,nepal,2,1,Saebyeolbe,Mano,Meko,Libero,Jjonak,Ark,Gamsu,NotE,DreamKazper,STRIKER,Neko,Kellex
-10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6938,3,kings-row,3,2,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero,Kellex,Kalios,Neko,NotE,Gamsu,STRIKER
-10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6001,4,gibraltar,3,0,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,DreamKazper,STRIKER,Gamsu,NotE,Kellex,Neko
-10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6002,1,volskaya,2,0,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6003,2,lijiang,2,1,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6004,3,hollywood,3,1,Kellex,Mistakes,NotE,STRIKER,Kalios,Neko,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6005,4,route-66,3,0,Neko,Kellex,Mistakes,NotE,STRIKER,Kalios,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6006,1,hanamura,1,2,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin
-10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6007,2,nepal,2,0,BigGoose,Shaz,Hydration,Asher,Bischu,Fissure,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6008,3,hollywood,1,2,BigGoose,Shaz,Asher,Bischu,Surefour,Fissure,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6009,4,gibraltar,0,1,Asher,Bischu,Surefour,Fissure,Shaz,BigGoose,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6010,1,hanamura,1,2,xQc,Mickie,EFFECT,aKm,Custa,HarryHook,Unkoe,Verbo,Kariv,Envy,Soon,Fate
-10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6011,2,nepal,1,2,Custa,Mickie,HarryHook,EFFECT,xQc,aKm,Verbo,Unkoe,Soon,Kariv,Fate,Envy
-10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6012,3,hollywood,1,2,Custa,Mickie,HarryHook,EFFECT,xQc,aKm,Verbo,Envy,Soon,Unkoe,Fate,Kariv
-10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6013,4,gibraltar,3,2,Custa,Mickie,HarryHook,EFFECT,xQc,aKm,Verbo,Envy,Kariv,Soon,Unkoe,Fate
-10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6014,1,hanamura,0,1,ShaDowBurn,Neptuno,Boombox,Carpe,Poko,fragi,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6015,2,nepal,0,2,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6016,3,hollywood,0,1,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6017,4,route-66,1,2,Poko,ShaDowBurn,fragi,Neptuno,Boombox,Carpe,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6018,1,volskaya,0,1,LiNkzr,Muma,Boink,Coolmatt,Rawkus,Clockwork,Saebyeolbe,Ark,Mano,Meko,Libero,Jjonak
-10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6019,2,lijiang,1,2,Jake,Muma,Coolmatt,Boink,Rawkus,LiNkzr,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6939,3,kings-row,5,6,SPREE,Rawkus,Jake,LiNkzr,Muma,Boink,Janus,Meko,Jjonak,Ark,Saebyeolbe,Libero
-10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6020,4,route-66,1,2,Muma,Coolmatt,Boink,LiNkzr,Jake,Rawkus,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6021,1,hanamura,0,1,Undead,Roshan,Diya,Altering,Fiveking,MG,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6022,2,nepal,1,2,Undead,MG,Roshan,Diya,Freefeel,Altering,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6940,3,kings-row,2,3,Undead,MG,Roshan,Diya,Altering,Fiveking,Nevix,dhaK,sleepy,Danteh,BABYBAY,Nomy
-10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6023,4,gibraltar,4,5,Undead,MG,Roshan,Diya,Freefeel,Altering,dhaK,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6024,1,volskaya,2,1,KuKi,tobi,Bunny,XepheR,Wekeed,gido,MG,Altering,Undead,Xushu,Fiveking,Roshan
-10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6025,2,lijiang,2,0,Wekeed,KuKi,XepheR,Bunny,tobi,gido,MG,Roshan,Fiveking,Xushu,Undead,Altering
-10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6941,3,kings-row,0,1,Wekeed,tobi,gido,XepheR,KuKi,Bunny,MG,Undead,Xushu,Altering,Fiveking,Roshan
-10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6026,4,route-66,3,2,Wekeed,XepheR,gido,tobi,Bunny,KuKi,MG,Xushu,Undead,Freefeel,Altering,Roshan
-10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6027,1,volskaya,4,4,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix,Taimou,Mickie,EFFECT,HarryHook,Chipshajen,aKm
-10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6028,2,lijiang,2,1,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix,Chipshajen,Mickie,HarryHook,EFFECT,xQc,aKm
-10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6942,3,kings-row,3,1,BABYBAY,sleepy,Danteh,Nevix,Nomy,dhaK,xQc,Mickie,HarryHook,EFFECT,aKm,Chipshajen
-10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6029,4,route-66,3,1,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix,Taimou,Chipshajen,Rascal,EFFECT,HarryHook,Mickie
-10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6030,1,hanamura,4,5,Unkoe,Verbo,Envy,Kariv,Fate,Soon,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6031,2,lijiang,0,2,Unkoe,Soon,Verbo,Envy,Kariv,Fate,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6032,3,hollywood,1,2,Unkoe,Soon,Verbo,Envy,Kariv,Fate,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6033,4,gibraltar,5,6,Unkoe,Soon,Verbo,Envy,Kariv,Fate,Fissure,Surefour,Bischu,BigGoose,Shaz,Asher
-10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6034,1,volskaya,3,4,Poko,fragi,Neptuno,Boombox,Eqo,Carpe,ZUNBA,tobi,ryujehong,Miro,FLETA,Munchkin
-10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6035,2,lijiang,0,2,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,ZUNBA,FLETA,Miro,Munchkin,tobi,ryujehong
-10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6943,3,kings-row,5,3,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6036,4,gibraltar,0,1,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA
-10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6037,1,volskaya,1,2,Rawkus,Coolmatt,Muma,Boink,Clockwork,LiNkzr,Unkoe,Verbo,Envy,Kariv,Fate,Soon
-10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6038,2,lijiang,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Unkoe,Soon,Verbo,Envy,Kariv,Fate
-10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6039,3,hollywood,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Unkoe,Soon,Verbo,Envy,Kariv,Fate
-10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6040,4,route-66,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Fate,Unkoe,Soon,Verbo,Envy,Kariv
-10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6041,1,volskaya,3,2,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko,MG,Roshan,Xushu,Altering,Fiveking,Undead
-10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6042,2,nepal,2,0,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko,Undead,MG,Roshan,Xushu,Altering,Fiveking
-10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6944,3,kings-row,1,0,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko,Fiveking,Undead,MG,Roshan,Xushu,Altering
-10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6043,4,route-66,3,1,Kellex,Mistakes,NotE,STRIKER,Kalios,Neko,Undead,MG,Roshan,Xushu,Altering,Fiveking
-10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6044,1,hanamura,3,2,Bdosin,birdring,Fury,NUS,Profit,Gesture,Kellex,NotE,STRIKER,Kalios,Neko,DreamKazper
-10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6045,2,nepal,2,1,Bdosin,birdring,Fury,NUS,Profit,Gesture,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko
-10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6046,3,hollywood,4,3,Bdosin,birdring,Fury,NUS,Profit,Gesture,Kellex,Mistakes,NotE,STRIKER,Kalios,Neko
-10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6047,4,gibraltar,3,2,Gesture,Bdosin,birdring,Fury,NUS,Profit,Kellex,DreamKazper,NotE,STRIKER,Kalios,Neko
-10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6048,1,volskaya,4,3,Saebyeolbe,Meko,Mano,Jjonak,Ark,Libero,Carpe,Eqo,fragi,Poko,DayFly,Neptuno
-10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6049,2,nepal,2,1,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,Carpe,fragi,Poko,Neptuno,Eqo,DayFly
-10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6945,3,kings-row,5,4,Meko,Janus,Saebyeolbe,Ark,Jjonak,Libero,Poko,fragi,Carpe,Neptuno,Eqo,DayFly
-10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6050,4,route-66,3,4,Mano,Meko,Libero,Jjonak,Ark,Saebyeolbe,Poko,fragi,Carpe,Neptuno,Eqo,DayFly
-10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6051,1,hanamura,4,3,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,Rawkus,Coolmatt,Muma,Bani,Clockwork,LiNkzr
-10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6052,2,lijiang,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6053,3,hollywood,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6054,4,gibraltar,2,3,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,7767,5,ilios,0,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,LiNkzr,Rawkus,Coolmatt,Jake,Muma,Boink
-10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6055,1,volskaya,2,3,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture,Surefour,BigGoose,Shaz,Asher,Fissure,Bischu
-10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6056,2,lijiang,0,2,Hooreg,Profit,Closer,HaGoPeun,WooHyaL,Gesture,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6946,3,kings-row,2,3,Gesture,Bdosin,birdring,Fury,NUS,Profit,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure
-10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6057,4,route-66,3,2,Bdosin,birdring,Fury,NUS,Profit,Gesture,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
-10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6058,1,volskaya,3,2,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6059,2,lijiang,2,0,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6060,3,hollywood,3,1,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6061,4,route-66,3,1,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,BABYBAY,sleepy,Danteh,dhaK,Nomy,Nevix
-10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6062,1,hanamura,1,2,TviQ,CWoosH,Zebbosai,Manneten,Logix,Zuppeh,EFFECT,HarryHook,Mickie,Taimou,Chipshajen,Rascal
-10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6063,2,nepal,0,2,Logix,Manneten,Zuppeh,TviQ,CWoosH,Zebbosai,aKm,Taimou,Chipshajen,Mickie,EFFECT,HarryHook
-10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6947,3,kings-row,2,0,Manneten,Logix,Zebbosai,CWoosH,TviQ,Zuppeh,Taimou,Chipshajen,Mickie,HarryHook,aKm,Rascal
-10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6064,4,gibraltar,3,2,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Taimou,Chipshajen,Mickie,HarryHook,aKm,Rascal
-10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,7776,5,ilios,2,0,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh,Taimou,Chipshajen,Mickie,HarryHook,EFFECT,Rascal
-10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6065,1,volskaya,2,1,DreamKazper,STRIKER,Neko,NotE,Kellex,Gamsu,Chipshajen,Taimou,EFFECT,Custa,Mickie,aKm
-10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6066,2,lijiang,2,0,Gamsu,NotE,DreamKazper,Kellex,STRIKER,Neko,Mickie,Custa,Chipshajen,EFFECT,aKm,Taimou
-10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6948,3,kings-row,3,0,Neko,STRIKER,Kellex,DreamKazper,Gamsu,Kalios,Taimou,Chipshajen,Custa,Mickie,EFFECT,aKm
-10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6067,4,gibraltar,3,0,Gamsu,DreamKazper,Kellex,STRIKER,Neko,NotE,Taimou,Chipshajen,Custa,Mickie,aKm,EFFECT
-10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6068,1,hanamura,6,4,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,Miro,ZUNBA,FLETA,ryujehong,tobi,Munchkin
-10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6069,2,nepal,1,2,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,Miro,ZUNBA,ryujehong,FLETA,Munchkin,tobi
-10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6070,3,hollywood,1,2,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero,Munchkin,FLETA,ryujehong,tobi,ZUNBA,Miro
-10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6071,4,gibraltar,3,2,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,FLETA,Munchkin,ryujehong,tobi,Miro,ZUNBA
-10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,7865,5,ilios,2,0,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,tobi,ZUNBA,FLETA,Munchkin,ryujehong,Miro
-10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6072,1,volskaya,2,0,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,Roshan,Xushu,Freefeel,Fiveking,MG
-10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6073,2,lijiang,2,0,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
-10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6074,3,hollywood,3,1,fragi,Neptuno,Boombox,Eqo,Snillo,Poko,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
-10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6075,4,route-66,3,0,Poko,fragi,Neptuno,Boombox,Eqo,Snillo,Undead,MG,Roshan,Xushu,Freefeel,Fiveking
-10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6076,1,hanamura,0,1,MG,Freefeel,Xushu,Undead,Altering,Fiveking,Saebyeolbe,Meko,Mano,Jjonak,Ark,Libero
-10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6077,2,nepal,0,2,MG,Undead,Freefeel,Fiveking,Altering,Xushu,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6078,3,hollywood,1,2,Roshan,MG,Undead,Xushu,Freefeel,Fiveking,Janus,Libero,Meko,Jjonak,Ark,Saebyeolbe
-10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6079,4,route-66,2,3,MG,Undead,Xushu,Freefeel,Fiveking,Roshan,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6080,1,hanamura,2,1,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6081,2,nepal,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Unkoe,Soon,Agilities,Verbo,Envy,Fate
-10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6082,3,hollywood,0,1,zappis,Zebbosai,TviQ,Zuppeh,Manneten,CWoosH,Unkoe,Soon,Agilities,Verbo,Envy,Fate
-10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6083,4,route-66,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Fate,Unkoe,Soon,Verbo,Envy,Kariv
-10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6084,1,volskaya,4,3,Rawkus,Muma,Boink,Clockwork,LiNkzr,Coolmatt,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
-10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6085,2,lijiang,1,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6949,3,kings-row,0,1,SPREE,Rawkus,Jake,Muma,Boink,LiNkzr,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure
-10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6086,4,gibraltar,3,0,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
-10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,7866,5,ilios,0,2,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr,Fissure,Bischu,BigGoose,Shaz,Hydration,Asher
-10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6087,1,volskaya,3,3,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ
-10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6088,2,nepal,0,2,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6089,3,hollywood,3,1,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure,zappis,Zebbosai,TviQ,Zuppeh,Manneten,CWoosH
-10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6090,4,route-66,2,1,Fissure,Surefour,Bischu,BigGoose,Shaz,Asher,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH
-10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6091,1,volskaya,1,0,Bdosin,NUS,Hooreg,Profit,WooHyaL,Gesture,sleepy,BABYBAY,Nomy,Nevix,Moth,Danteh
-10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6092,2,nepal,2,0,Bdosin,NUS,Hooreg,Profit,WooHyaL,Gesture,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth
-10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6093,3,hollywood,0,1,Bdosin,NUS,Hooreg,Profit,WooHyaL,Gesture,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth
-10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6094,4,route-66,2,1,Bdosin,NUS,Hooreg,Profit,WooHyaL,Gesture,Moth,sleepy,Danteh,BABYBAY,Nomy,Nevix
-10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6095,1,volskaya,2,3,Soon,Verbo,Envy,Kariv,Fate,Unkoe,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6096,2,lijiang,2,1,Unkoe,Soon,Verbo,Envy,Kariv,Fate,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6950,3,kings-row,3,4,Unkoe,Soon,Agilities,Verbo,Envy,Fate,Kellex,DreamKazper,Gamsu,STRIKER,Kalios,Neko
-10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6097,4,route-66,2,1,Unkoe,Soon,Verbo,Envy,Kariv,Fate,Kellex,Mistakes,Gamsu,NotE,STRIKER,Neko
-10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,7892,5,ilios,1,2,Fate,Unkoe,Soon,Agilities,Verbo,Envy,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6098,1,hanamura,3,4,Miro,Munchkin,tobi,ryujehong,ZUNBA,FLETA,Bdosin,NUS,Gesture,Profit,WooHyaL,birdring
-10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6099,2,lijiang,0,2,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA,Bdosin,NUS,birdring,WooHyaL,Gesture,Profit
-10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6951,3,kings-row,2,3,Munchkin,Miro,ryujehong,ZUNBA,FLETA,tobi,Bdosin,WooHyaL,birdring,NUS,Gesture,Profit
-10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6100,4,gibraltar,2,3,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA,Bdosin,WooHyaL,birdring,NUS,Profit,Gesture
-10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6101,1,hanamura,2,1,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Rawkus,Muma,Bani,Clockwork,LiNkzr,Coolmatt
-10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6102,2,nepal,2,0,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6103,3,hollywood,1,2,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6104,4,gibraltar,3,2,Moth,sleepy,Danteh,BABYBAY,Nomy,Nevix,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6105,1,hanamura,1,2,EFFECT,Mickie,Rascal,Chipshajen,Custa,Taimou,Snillo,Eqo,fragi,Poko,Boombox,Neptuno
-10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6106,2,lijiang,0,2,Taimou,Chipshajen,Custa,Mickie,EFFECT,Rascal,Poko,Snillo,fragi,Boombox,Neptuno,Eqo
-10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6952,3,kings-row,1,2,Taimou,Chipshajen,Custa,Mickie,EFFECT,Rascal,Poko,Snillo,fragi,Boombox,Neptuno,Eqo
-10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6107,4,gibraltar,2,3,Taimou,Chipshajen,Custa,Mickie,EFFECT,aKm,Poko,Snillo,fragi,Boombox,Neptuno,Eqo
-10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6108,1,hanamura,1,2,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,fragi,Boombox,Eqo,Carpe,Poko,Neptuno
-10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6109,2,nepal,2,0,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure,fragi,Neptuno,Boombox,Eqo,Carpe,Poko
-10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6110,3,hollywood,1,2,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure,fragi,Neptuno,Boombox,Snillo,Carpe,Poko
-10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6111,4,route-66,0,1,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure,Poko,fragi,Neptuno,Boombox,Snillo,Carpe
-10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6112,1,volskaya,1,0,Zebbosai,Zuppeh,Logix,Manneten,CWoosH,TviQ,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth
-10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6113,2,nepal,0,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,BABYBAY,Nomy,Nevix,Moth
-10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6953,3,kings-row,3,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth
-10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6114,4,route-66,1,2,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth
-10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,8069,5,ilios,2,0,Zebbosai,TviQ,Zuppeh,Logix,Manneten,CWoosH,Moth,sinatraa,sleepy,BABYBAY,Nomy,Nevix
-10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6115,1,volskaya,0,1,MG,Xushu,Freefeel,Fiveking,Ado,Fearless,Coolmatt,Jake,Muma,Boink,LiNkzr,Rawkus
-10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6116,2,lijiang,0,2,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Boink,LiNkzr
-10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6954,3,kings-row,1,2,Fearless,MG,Xushu,Altering,Fiveking,Ado,SPREE,Rawkus,Coolmatt,Jake,Muma,Boink
-10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6117,4,gibraltar,0,1,MG,Xushu,Altering,Fiveking,Ado,Fearless,Rawkus,Coolmatt,Jake,Muma,Bani,LiNkzr
-10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6118,1,hanamura,2,1,Bani,Rawkus,Coolmatt,Muma,LiNkzr,Jake,KuKi,Munchkin,tobi,ryujehong,ZUNBA,Wekeed
-10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6119,2,nepal,0,2,Muma,Rawkus,Jake,LiNkzr,Boink,Coolmatt,Wekeed,KuKi,Munchkin,tobi,ryujehong,ZUNBA
-10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6955,3,kings-row,4,3,Muma,Boink,LiNkzr,Jake,Rawkus,Coolmatt,Wekeed,KuKi,ryujehong,tobi,ZUNBA,Munchkin
-10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6120,4,gibraltar,3,2,Muma,Coolmatt,LiNkzr,Jake,Rawkus,Bani,Munchkin,KuKi,FLETA,ryujehong,tobi,ZUNBA
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6121,1,hanamura,4,3,Saebyeolbe,Mano,Meko,Jjonak,Ark,Libero,Seagull,EFFECT,Mickie,Chipshajen,Custa,Rascal
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6122,2,lijiang,0,2,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6123,3,hollywood,3,2,Janus,Libero,Meko,Jjonak,Ark,Saebyeolbe,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6124,4,gibraltar,2,3,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal
-10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,8087,5,ilios,2,0,Saebyeolbe,Ark,Jjonak,Meko,Libero,Janus,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6125,1,hanamura,4,3,sleepy,Danteh,Nomy,Nevix,Moth,sinatraa,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6126,2,nepal,0,2,sinatraa,sleepy,BABYBAY,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6127,3,hollywood,1,2,sleepy,Danteh,BABYBAY,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6128,4,route-66,3,2,sinatraa,sleepy,Danteh,Nomy,Nevix,Moth,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,8088,5,ilios,1,2,Moth,sinatraa,sleepy,Danteh,Nomy,Nevix,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko
-10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6129,1,volskaya,4,3,Miro,Munchkin,tobi,ryujehong,ZUNBA,FLETA,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh
-10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6130,2,nepal,2,1,Munchkin,Miro,ZUNBA,ryujehong,tobi,FLETA,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh
-10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6131,3,hollywood,0,1,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA,Logix,Manneten,Zebbosai,CWoosH,TviQ,Zuppeh
-10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6132,4,route-66,3,1,Munchkin,FLETA,ryujehong,tobi,Miro,ZUNBA,Zuppeh,Logix,Manneten,Zebbosai,CWoosH,TviQ
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6133,1,hanamura,3,2,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Agilities,Envy,Kariv,Fate,Soon
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6134,2,nepal,0,2,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Soon,Agilities,Verbo,Envy,Kariv,Fate
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6956,3,kings-row,3,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Soon,Agilities,Verbo,Envy,Kariv,Fate
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6135,4,gibraltar,2,3,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Unkoe,Soon,Agilities,Envy,Kariv,Fate
-10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,8168,5,ilios,2,1,Poko,fragi,Neptuno,Boombox,Eqo,Carpe,Unkoe,Soon,Verbo,Envy,Kariv,Fate
-10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6136,1,hanamura,2,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Freefeel,Fiveking,Ado,Fearless,Xushu
-10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6137,2,lijiang,2,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Altering,Fiveking,Ado,Fearless
-10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6138,3,hollywood,3,0,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,MG,Xushu,Freefeel,Fiveking,Ado,Fearless
-10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6139,4,gibraltar,3,1,Fury,Hooreg,Profit,Closer,HaGoPeun,Gesture,Fearless,MG,Xushu,Freefeel,Fiveking,Ado
-10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6140,1,volskaya,0,1,Custa,Chipshajen,Rascal,Seagull,EFFECT,Mickie,birdring,WooHyaL,Profit,Gesture,NUS,Bdosin
-10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6141,2,lijiang,1,2,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal,NUS,Bdosin,WooHyaL,birdring,Profit,Gesture
-10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6142,3,hollywood,4,3,Seagull,Chipshajen,Custa,Mickie,EFFECT,Rascal,Bdosin,WooHyaL,birdring,NUS,Profit,Gesture
-10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6143,4,route-66,2,3,Rascal,Seagull,Chipshajen,Custa,Mickie,EFFECT,Bdosin,WooHyaL,birdring,NUS,Profit,Gesture
-10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6144,1,volskaya,3,4,Fate,Soon,Envy,Agilities,Verbo,Unkoe,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6145,2,nepal,0,2,Verbo,Envy,Unkoe,Fate,Soon,Agilities,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6146,3,hollywood,0,1,Verbo,Envy,Agilities,Soon,Unkoe,Fate,Saebyeolbe,Ark,Jjonak,Meko,Janus,Libero
-10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6147,4,route-66,2,3,Verbo,Agilities,Soon,Unkoe,Fate,Envy,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6148,1,volskaya,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bischu,BigGoose,Shaz,Asher,Fissure,Surefour
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6149,2,lijiang,2,0,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Bischu,BigGoose,Shaz,Hydration,Asher,Fissure
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6150,3,hollywood,3,4,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Surefour,Bischu,BigGoose,Shaz,Hydration,Fissure
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6151,4,route-66,4,5,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Surefour,Bischu,BigGoose,Shaz,Asher,Fissure
-10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,8214,5,ilios,2,1,Kellex,DreamKazper,Gamsu,NotE,STRIKER,Neko,Fissure,Bischu,BigGoose,Shaz,Hydration,Asher
-10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8201,1,gibraltar,0,1,fragi,Boombox,Eqo,Carpe,Poko,Neptuno,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8202,2,nepal,2,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8203,3,hanamura,2,0,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8204,4,kings-row,3,4,fragi,Neptuno,Boombox,Eqo,Carpe,Poko,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8205,5,route-66,3,2,Poko,fragi,Neptuno,Boombox,Snillo,Carpe,Bdosin,birdring,Fury,NUS,Profit,Gesture
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8206,1,route-66,2,1,Poko,Snillo,fragi,Boombox,Carpe,Neptuno,Saebyeolbe,Meko,Mano,Jjonak,Ark,Libero
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8207,2,lijiang,2,1,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8208,3,volskaya,0,1,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8209,4,hollywood,1,2,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Saebyeolbe,Jjonak,Ark,Meko,Libero,Janus
-10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8210,5,gibraltar,2,3,Poko,fragi,Boombox,Carpe,Neptuno,Eqo,Saebyeolbe,Ark,Jjonak,Mano,Meko,Libero
-10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8337,1,volskaya,1,2,Ado,Fearless,Daemin,Geguri,Sky,Altering,HarryHook,Unkoe,aKm,Seagull,Mickie,EFFECT
-10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8338,2,numbani,1,2,Ado,Fearless,Daemin,Geguri,Sky,Altering,HarryHook,Unkoe,aKm,Mickie,EFFECT,Seagull
-10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8339,3,ilios,0,2,Ado,Fearless,Daemin,Geguri,Sky,Altering,HarryHook,Unkoe,aKm,Seagull,Mickie,EFFECT
-10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8340,4,junkertown,2,1,Ado,Fearless,Daemin,Geguri,Sky,Altering,HarryHook,Unkoe,aKm,Seagull,Mickie,EFFECT
-10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,,,,,,,,,,,,,,,,,
-10335,Stage 3,2018-04-04 20:00:00,SFS,GLA,regular,,,,,,,,,,,,,,,,,
-10336,Stage 3,2018-04-05 16:00:00,FLA,NYE,regular,,,,,,,,,,,,,,,,,
-10337,Stage 3,2018-04-05 18:00:00,PHI,BOS,regular,,,,,,,,,,,,,,,,,
-10338,Stage 3,2018-04-05 20:00:00,LDN,HOU,regular,,,,,,,,,,,,,,,,,
-10339,Stage 3,2018-04-06 16:00:00,GLA,DAL,regular,,,,,,,,,,,,,,,,,
-10340,Stage 3,2018-04-06 18:00:00,VAL,SHD,regular,,,,,,,,,,,,,,,,,
-10341,Stage 3,2018-04-06 20:00:00,SEO,SFS,regular,,,,,,,,,,,,,,,,,
-10342,Stage 3,2018-04-07 13:00:00,FLA,PHI,regular,,,,,,,,,,,,,,,,,
-10343,Stage 3,2018-04-07 15:00:00,HOU,BOS,regular,,,,,,,,,,,,,,,,,
-10344,Stage 3,2018-04-07 17:00:00,NYE,LDN,regular,,,,,,,,,,,,,,,,,
-10345,Stage 3,2018-04-11 16:00:00,SHD,GLA,regular,,,,,,,,,,,,,,,,,
-10346,Stage 3,2018-04-11 18:00:00,SFS,VAL,regular,,,,,,,,,,,,,,,,,
-10347,Stage 3,2018-04-11 20:00:00,DAL,SEO,regular,,,,,,,,,,,,,,,,,
-10348,Stage 3,2018-04-12 16:00:00,BOS,NYE,regular,,,,,,,,,,,,,,,,,
-10349,Stage 3,2018-04-12 18:00:00,LDN,FLA,regular,,,,,,,,,,,,,,,,,
-10350,Stage 3,2018-04-12 20:00:00,PHI,HOU,regular,,,,,,,,,,,,,,,,,
-10351,Stage 3,2018-04-13 16:00:00,VAL,DAL,regular,,,,,,,,,,,,,,,,,
-10352,Stage 3,2018-04-13 18:00:00,SFS,SHD,regular,,,,,,,,,,,,,,,,,
-10353,Stage 3,2018-04-13 20:00:00,SEO,GLA,regular,,,,,,,,,,,,,,,,,
-10354,Stage 3,2018-04-14 13:00:00,LDN,PHI,regular,,,,,,,,,,,,,,,,,
-10355,Stage 3,2018-04-14 15:00:00,NYE,HOU,regular,,,,,,,,,,,,,,,,,
-10356,Stage 3,2018-04-14 17:00:00,FLA,BOS,regular,,,,,,,,,,,,,,,,,
-10357,Stage 3,2018-04-18 16:00:00,GLA,VAL,regular,,,,,,,,,,,,,,,,,
-10358,Stage 3,2018-04-18 18:00:00,DAL,SFS,regular,,,,,,,,,,,,,,,,,
-10359,Stage 3,2018-04-18 20:00:00,SHD,SEO,regular,,,,,,,,,,,,,,,,,
-10360,Stage 3,2018-04-19 16:00:00,HOU,FLA,regular,,,,,,,,,,,,,,,,,
-10361,Stage 3,2018-04-19 18:00:00,BOS,LDN,regular,,,,,,,,,,,,,,,,,
-10362,Stage 3,2018-04-19 20:00:00,PHI,NYE,regular,,,,,,,,,,,,,,,,,
-10363,Stage 3,2018-04-20 16:00:00,PHI,SFS,regular,,,,,,,,,,,,,,,,,
-10364,Stage 3,2018-04-20 18:00:00,FLA,SHD,regular,,,,,,,,,,,,,,,,,
-10365,Stage 3,2018-04-20 20:00:00,BOS,SEO,regular,,,,,,,,,,,,,,,,,
-10366,Stage 3,2018-04-21 13:00:00,LDN,VAL,regular,,,,,,,,,,,,,,,,,
-10367,Stage 3,2018-04-21 15:00:00,NYE,GLA,regular,,,,,,,,,,,,,,,,,
-10368,Stage 3,2018-04-21 17:00:00,HOU,DAL,regular,,,,,,,,,,,,,,,,,
-10369,Stage 3,2018-04-25 16:00:00,SHD,BOS,regular,,,,,,,,,,,,,,,,,
-10370,Stage 3,2018-04-25 18:00:00,VAL,HOU,regular,,,,,,,,,,,,,,,,,
-10371,Stage 3,2018-04-25 20:00:00,DAL,FLA,regular,,,,,,,,,,,,,,,,,
-10372,Stage 3,2018-04-26 16:00:00,GLA,LDN,regular,,,,,,,,,,,,,,,,,
-10373,Stage 3,2018-04-26 18:00:00,SFS,NYE,regular,,,,,,,,,,,,,,,,,
-10374,Stage 3,2018-04-26 20:00:00,SEO,PHI,regular,,,,,,,,,,,,,,,,,
-10375,Stage 3,2018-04-27 16:00:00,DAL,BOS,regular,,,,,,,,,,,,,,,,,
-10376,Stage 3,2018-04-27 18:00:00,GLA,HOU,regular,,,,,,,,,,,,,,,,,
-10377,Stage 3,2018-04-27 20:00:00,VAL,FLA,regular,,,,,,,,,,,,,,,,,
-10378,Stage 3,2018-04-28 13:00:00,SFS,LDN,regular,,,,,,,,,,,,,,,,,
-10379,Stage 3,2018-04-28 15:00:00,SEO,NYE,regular,,,,,,,,,,,,,,,,,
-10380,Stage 3,2018-04-28 17:00:00,SHD,PHI,regular,,,,,,,,,,,,,,,,,
-10588,Stage 3,2018-05-02 16:00:00,PHI,DAL,regular,,,,,,,,,,,,,,,,,
-10589,Stage 3,2018-05-02 18:00:00,FLA,GLA,regular,,,,,,,,,,,,,,,,,
-10590,Stage 3,2018-05-02 20:00:00,HOU,SFS,regular,,,,,,,,,,,,,,,,,
-10591,Stage 3,2018-05-03 16:00:00,SFS,FLA,regular,,,,,,,,,,,,,,,,,
-10592,Stage 3,2018-05-03 18:00:00,BOS,VAL,regular,,,,,,,,,,,,,,,,,
-10593,Stage 3,2018-05-03 20:00:00,DAL,NYE,regular,,,,,,,,,,,,,,,,,
-10594,Stage 3,2018-05-04 16:00:00,GLA,BOS,regular,,,,,,,,,,,,,,,,,
-10595,Stage 3,2018-05-04 18:00:00,NYE,SHD,regular,,,,,,,,,,,,,,,,,
-10596,Stage 3,2018-05-04 20:00:00,LDN,SEO,regular,,,,,,,,,,,,,,,,,
-10597,Stage 3,2018-05-05 13:00:00,SHD,LDN,regular,,,,,,,,,,,,,,,,,
-10598,Stage 3,2018-05-05 15:00:00,SEO,HOU,regular,,,,,,,,,,,,,,,,,
-10599,Stage 3,2018-05-05 17:00:00,VAL,PHI,regular,,,,,,,,,,,,,,,,,
-10443,Stage 4,2018-05-16 16:00:00,GLA,SFS,regular,,,,,,,,,,,,,,,,,
-10444,Stage 4,2018-05-16 18:00:00,SEO,VAL,regular,,,,,,,,,,,,,,,,,
-10445,Stage 4,2018-05-16 20:00:00,DAL,SHD,regular,,,,,,,,,,,,,,,,,
-10446,Stage 4,2018-05-17 16:00:00,BOS,PHI,regular,,,,,,,,,,,,,,,,,
-10447,Stage 4,2018-05-17 18:00:00,NYE,FLA,regular,,,,,,,,,,,,,,,,,
-10448,Stage 4,2018-05-17 20:00:00,HOU,LDN,regular,,,,,,,,,,,,,,,,,
-10449,Stage 4,2018-05-18 16:00:00,DAL,GLA,regular,,,,,,,,,,,,,,,,,
-10450,Stage 4,2018-05-18 18:00:00,BOS,HOU,regular,,,,,,,,,,,,,,,,,
-10451,Stage 4,2018-05-18 20:00:00,SFS,SEO,regular,,,,,,,,,,,,,,,,,
-10452,Stage 4,2018-05-19 13:00:00,PHI,FLA,regular,,,,,,,,,,,,,,,,,
-10453,Stage 4,2018-05-19 15:00:00,SHD,VAL,regular,,,,,,,,,,,,,,,,,
-10454,Stage 4,2018-05-19 17:00:00,LDN,NYE,regular,,,,,,,,,,,,,,,,,
-10455,Stage 4,2018-05-23 16:00:00,BOS,DAL,regular,,,,,,,,,,,,,,,,,
-10456,Stage 4,2018-05-23 18:00:00,FLA,VAL,regular,,,,,,,,,,,,,,,,,
-10457,Stage 4,2018-05-23 20:00:00,HOU,GLA,regular,,,,,,,,,,,,,,,,,
-10458,Stage 4,2018-05-24 16:00:00,LDN,SFS,regular,,,,,,,,,,,,,,,,,
-10459,Stage 4,2018-05-24 18:00:00,GLA,FLA,regular,,,,,,,,,,,,,,,,,
-10460,Stage 4,2018-05-24 20:00:00,PHI,SHD,regular,,,,,,,,,,,,,,,,,
-10461,Stage 4,2018-05-25 16:00:00,VAL,BOS,regular,,,,,,,,,,,,,,,,,
-10462,Stage 4,2018-05-25 18:00:00,NYE,SEO,regular,,,,,,,,,,,,,,,,,
-10463,Stage 4,2018-05-25 20:00:00,SFS,HOU,regular,,,,,,,,,,,,,,,,,
-10464,Stage 4,2018-05-26 13:00:00,SEO,LDN,regular,,,,,,,,,,,,,,,,,
-10465,Stage 4,2018-05-26 15:00:00,SHD,NYE,regular,,,,,,,,,,,,,,,,,
-10466,Stage 4,2018-05-26 17:00:00,DAL,PHI,regular,,,,,,,,,,,,,,,,,
-10467,Stage 4,2018-05-30 16:00:00,NYE,PHI,regular,,,,,,,,,,,,,,,,,
-10468,Stage 4,2018-05-30 18:00:00,SEO,SHD,regular,,,,,,,,,,,,,,,,,
-10469,Stage 4,2018-05-30 20:00:00,VAL,GLA,regular,,,,,,,,,,,,,,,,,
-10470,Stage 4,2018-05-31 16:00:00,LDN,BOS,regular,,,,,,,,,,,,,,,,,
-10471,Stage 4,2018-05-31 18:00:00,SFS,DAL,regular,,,,,,,,,,,,,,,,,
-10472,Stage 4,2018-05-31 20:00:00,PHI,GLA,regular,,,,,,,,,,,,,,,,,
-10473,Stage 4,2018-06-01 16:00:00,HOU,SHD,regular,,,,,,,,,,,,,,,,,
-10474,Stage 4,2018-06-01 18:00:00,FLA,SEO,regular,,,,,,,,,,,,,,,,,
-10475,Stage 4,2018-06-01 20:00:00,BOS,SFS,regular,,,,,,,,,,,,,,,,,
-10476,Stage 4,2018-06-02 13:00:00,LDN,DAL,regular,,,,,,,,,,,,,,,,,
-10477,Stage 4,2018-06-02 15:00:00,NYE,VAL,regular,,,,,,,,,,,,,,,,,
-10478,Stage 4,2018-06-02 17:00:00,FLA,HOU,regular,,,,,,,,,,,,,,,,,
-10479,Stage 4,2018-06-06 16:00:00,SEO,BOS,regular,,,,,,,,,,,,,,,,,
-10480,Stage 4,2018-06-06 18:00:00,SHD,FLA,regular,,,,,,,,,,,,,,,,,
-10481,Stage 4,2018-06-06 20:00:00,DAL,HOU,regular,,,,,,,,,,,,,,,,,
-10482,Stage 4,2018-06-07 16:00:00,VAL,LDN,regular,,,,,,,,,,,,,,,,,
-10483,Stage 4,2018-06-07 18:00:00,GLA,NYE,regular,,,,,,,,,,,,,,,,,
-10484,Stage 4,2018-06-07 20:00:00,SFS,PHI,regular,,,,,,,,,,,,,,,,,
-10485,Stage 4,2018-06-08 16:00:00,BOS,SHD,regular,,,,,,,,,,,,,,,,,
-10486,Stage 4,2018-06-08 18:00:00,FLA,DAL,regular,,,,,,,,,,,,,,,,,
-10487,Stage 4,2018-06-08 20:00:00,PHI,SEO,regular,,,,,,,,,,,,,,,,,
-10488,Stage 4,2018-06-09 13:00:00,LDN,GLA,regular,,,,,,,,,,,,,,,,,
-10489,Stage 4,2018-06-09 15:00:00,NYE,SFS,regular,,,,,,,,,,,,,,,,,
-10490,Stage 4,2018-06-09 17:00:00,HOU,VAL,regular,,,,,,,,,,,,,,,,,
-10621,Stage 4,2018-06-13 16:00:00,GLA,SHD,regular,,,,,,,,,,,,,,,,,
-10622,Stage 4,2018-06-13 18:00:00,VAL,SFS,regular,,,,,,,,,,,,,,,,,
-10623,Stage 4,2018-06-13 20:00:00,SEO,DAL,regular,,,,,,,,,,,,,,,,,
-10624,Stage 4,2018-06-14 16:00:00,HOU,PHI,regular,,,,,,,,,,,,,,,,,
-10625,Stage 4,2018-06-14 18:00:00,FLA,LDN,regular,,,,,,,,,,,,,,,,,
-10626,Stage 4,2018-06-14 20:00:00,NYE,BOS,regular,,,,,,,,,,,,,,,,,
-10627,Stage 4,2018-06-15 16:00:00,HOU,NYE,regular,,,,,,,,,,,,,,,,,
-10628,Stage 4,2018-06-15 18:00:00,GLA,SEO,regular,,,,,,,,,,,,,,,,,
-10629,Stage 4,2018-06-15 20:00:00,DAL,VAL,regular,,,,,,,,,,,,,,,,,
-10630,Stage 4,2018-06-16 13:00:00,PHI,LDN,regular,,,,,,,,,,,,,,,,,
-10631,Stage 4,2018-06-16 15:00:00,SHD,SFS,regular,,,,,,,,,,,,,,,,,
-10632,Stage 4,2018-06-16 17:00:00,BOS,FLA,regular,,,,,,,,,,,,,,,,,
+match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,score1,score2,roster1,roster2
+10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,4759,1,dorado,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5576,2,temple-of-anubis,3,4,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Nevix|Nomy|dhaK|iddqd|sleepy
+10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5577,3,oasis,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Nevix|Nomy|dhaK|iddqd|sleepy
+10525,Preseason,2017-12-06 16:00:00,FLA,SFS,regular,5578,4,eichenwalde,3,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5579,1,junkertown,3,2,Envy|Fate|Kariv|Soon|Unkoe|silkthread,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5580,2,horizon-lunar-colony,2,3,Envy|Fate|Kariv|Soon|Unkoe|silkthread,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5581,3,ilios,1,2,Envy|Fate|Grimreality|Unkoe|Verbo|silkthread,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5582,4,numbani,5,4,Envy|Fate|Kariv|Soon|Unkoe|silkthread,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10526,Preseason,2017-12-06 18:00:00,VAL,SFS,regular,5841,5,lijiang,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5583,1,dorado,3,2,Bunny|Miro|Wekeed|ZUNBA|ryujehong|tobi,Altering|Diya|Fiveking|MG|Roshan|Xushu
+10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5584,2,temple-of-anubis,4,3,Bunny|FLETA|KuKi|XepheR|ryujehong|tobi,Altering|Diya|Freefeel|MG|Roshan|Undead
+10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5585,3,oasis,2,0,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Altering|Diya|Freefeel|MG|Roshan|Undead
+10527,Preseason,2017-12-06 20:30:00,SEO,SHD,regular,5586,4,eichenwalde,3,1,Miro|Munchkin|Wekeed|ZUNBA|ryujehong|tobi,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu
+10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5587,1,junkertown,3,1,Asher|BigGoose|Hydration|Shaz|Surefour|iRemiix,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5588,2,horizon-lunar-colony,1,2,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Fissure|Fury|HaGoPeun|NUS|Rascal|birdring
+10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5589,3,ilios,0,2,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5590,4,numbani,5,4,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10528,Preseason,2017-12-07 14:00:00,GLA,LDN,regular,5842,5,lijiang,2,0,Asher|BigGoose|Hydration|Shaz|Surefour|iRemiix,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5591,1,dorado,1,2,Chipshajen|Custa|EFFECT|Mickie|Taimou|cocco,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5592,2,temple-of-anubis,4,3,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|xQc,Bani|Boink|Coolmatt|Jake|LiNkzr|Muma
+10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5593,3,oasis,2,1,Chipshajen|Custa|EFFECT|Mickie|Seagull|Taimou,Boink|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus
+10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5594,4,eichenwalde,2,3,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco,Bani|Clockwork|Jake|Muma|Rawkus|SPREE
+10529,Preseason,2017-12-07 16:00:00,DAL,HOU,regular,5843,5,lijiang,2,1,Chipshajen|Custa|EFFECT|Mickie|Seagull|Taimou,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5595,1,dorado,3,0,Ark|Janus|Libero|Meko|Pine|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5596,2,temple-of-anubis,4,3,Ark|Janus|Libero|Meko|Pine|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5597,3,oasis,0,2,Ark|Janus|Libero|Meko|Pine|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10530,Preseason,2017-12-07 18:20:00,NYE,BOS,regular,5598,4,eichenwalde,3,1,Ark|Libero|Mano|Meko|Pine|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5844,1,dorado,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Fissure|Fury|HaGoPeun|NUS|Rascal|birdring
+10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5847,2,temple-of-anubis,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Fissure|Fury|HaGoPeun|NUS|Rascal|birdring
+10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5848,3,oasis,0,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Fissure|Fury|HaGoPeun|NUS|Rascal|birdring
+10531,Preseason,2017-12-08 16:00:00,SFS,LDN,regular,5849,4,eichenwalde,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Fissure|Fury|HaGoPeun|NUS|Rascal|birdring
+10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5845,1,junkertown,3,2,FLETA|KuKi|Wekeed|XepheR|ryujehong|tobi,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5850,2,horizon-lunar-colony,1,2,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5851,3,ilios,2,0,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Bani|Clockwork|Mendokusaii|Muma|Rawkus|SPREE
+10532,Preseason,2017-12-08 18:00:00,SEO,HOU,regular,5852,4,numbani,3,3,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5846,1,junkertown,2,3,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu,DreamKazper|Gamsu|Neko|NotE|STRIKER|Snow
+10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5853,2,horizon-lunar-colony,2,0,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu,DreamKazper|Gamsu|Neko|NotE|STRIKER|Snow
+10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5854,3,ilios,2,1,Altering|Diya|Freefeel|MG|Roshan|Undead,Avast|DreamKazper|Gamsu|Kalios|Mistakes|Neko
+10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5855,4,numbani,0,1,Altering|Diya|Freefeel|MG|Roshan|Undead,Avast|DreamKazper|Gamsu|Kalios|STRIKER|Snow
+10533,Preseason,2017-12-08 19:35:00,SHD,BOS,regular,5868,5,lijiang,1,2,Altering|Diya|Freefeel|MG|Roshan|Undead,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5856,1,dorado,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Asher|BigGoose|Hydration|Shaz|Surefour|iRemiix
+10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5857,2,temple-of-anubis,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5858,3,oasis,0,2,Envy|Fate|Grimreality|Kariv|Verbo|silkthread,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10534,Preseason,2017-12-09 11:00:00,VAL,GLA,regular,5859,4,eichenwalde,2,1,Envy|Kariv|Numlocked|Soon|Unkoe|silkthread,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5860,1,junkertown,3,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|Custa|EFFECT|HarryHook|Mickie|cocco
+10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5861,2,horizon-lunar-colony,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|EFFECT|HarryHook|Mickie|Seagull|xQc
+10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5862,3,ilios,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|Custa|EFFECT|Mickie|Taimou|xQc
+10535,Preseason,2017-12-09 13:00:00,FLA,DAL,regular,5863,4,numbani,0,1,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|Custa|EFFECT|Mickie|Taimou|xQc
+10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5864,1,junkertown,2,3,FLETA|KuKi|Wekeed|ZUNBA|ryujehong|tobi,Ark|Libero|Mano|Meko|Pine|Saebyeolbe
+10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5865,2,horizon-lunar-colony,2,1,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Ark|Janus|Libero|Meko|Pine|Saebyeolbe
+10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5866,3,ilios,2,1,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Ark|Janus|Libero|Meko|Pine|Saebyeolbe
+10536,Preseason,2017-12-09 14:15:00,SEO,NYE,regular,5867,4,numbani,3,0,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,Ark|Libero|Mano|Meko|Pine|Saebyeolbe
+10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5599,1,dorado,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5600,2,temple-of-anubis,3,4,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5601,3,ilios,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10223,Stage 1,2018-01-10 16:00:00,SFS,VAL,regular,5602,4,numbani,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5603,1,dorado,0,1,Altering|Diya|Freefeel|Roshan|Undead|Xushu,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5604,2,temple-of-anubis,1,2,Altering|Diya|Freefeel|MG|Roshan|Undead,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5605,3,ilios,0,2,Altering|Diya|Freefeel|MG|Roshan|Undead,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10224,Stage 1,2018-01-10 18:00:00,SHD,GLA,regular,5606,4,eichenwalde,0,1,Diya|Fiveking|Freefeel|MG|Roshan|Undead,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5607,1,junkertown,3,2,Custa|EFFECT|HarryHook|Mickie|Seagull|Taimou,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5608,2,temple-of-anubis,5,6,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|xQc,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5609,3,ilios,0,2,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|xQc,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10225,Stage 1,2018-01-10 19:30:00,DAL,SEO,regular,5610,4,numbani,3,3,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|xQc,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5611,1,dorado,1,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5612,2,temple-of-anubis,2,1,Bdosin|Fury|Gesture|NUS|Profit|birdring,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5613,3,oasis,2,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10226,Stage 1,2018-01-11 14:00:00,LDN,FLA,regular,5614,4,numbani,3,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5615,1,dorado,3,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5616,2,horizon-lunar-colony,1,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5617,3,oasis,2,0,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Boink|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5618,4,eichenwalde,3,4,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10227,Stage 1,2018-01-11 15:35:00,PHI,HOU,regular,5919,5,lijiang,2,0,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Boink|Jake|LiNkzr|Muma|Rawkus|SPREE
+10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5619,1,junkertown,2,3,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5620,2,horizon-lunar-colony,4,3,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5621,3,ilios,0,2,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Ark|Janus|Jjonak|Meko|Pine|Saebyeolbe
+10228,Stage 1,2018-01-11 17:40:00,BOS,NYE,regular,5622,4,numbani,1,2,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5623,1,junkertown,8,7,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Custa|EFFECT|HarryHook|Mickie|Seagull|Taimou
+10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5624,2,horizon-lunar-colony,5,5,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Custa|EFFECT|HarryHook|Mickie|Taimou|cocco
+10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5625,3,ilios,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Chipshajen|EFFECT|HarryHook|Mickie|Seagull|xQc
+10229,Stage 1,2018-01-12 16:00:00,VAL,DAL,regular,5626,4,numbani,3,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|xQc
+10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5627,1,dorado,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5628,2,temple-of-anubis,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5629,3,oasis,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10230,Stage 1,2018-01-12 18:15:00,FLA,BOS,regular,5630,4,eichenwalde,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5631,1,junkertown,2,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Altering|Diya|Freefeel|Roshan|Undead|Xushu
+10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5632,2,horizon-lunar-colony,0,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Altering|Diya|Freefeel|Roshan|Undead|Xushu
+10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5633,3,ilios,2,0,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Altering|Diya|Freefeel|Roshan|Undead|Xushu
+10231,Stage 1,2018-01-12 20:00:00,SFS,SHD,regular,5634,4,numbani,3,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Altering|Diya|Freefeel|Roshan|Undead|Xushu
+10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5635,1,junkertown,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Boombox|Carpe|DayFly|Poko|ShaDowBurn|fragi
+10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5636,2,horizon-lunar-colony,2,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Boombox|Carpe|DayFly|Poko|ShaDowBurn|fragi
+10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5637,3,ilios,2,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Boombox|Carpe|DayFly|Poko|ShaDowBurn|fragi
+10232,Stage 1,2018-01-13 11:00:00,LDN,PHI,regular,5638,4,numbani,3,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Boombox|Carpe|DayFly|Poko|ShaDowBurn|fragi
+10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5639,1,junkertown,2,3,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5640,2,temple-of-anubis,2,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5641,3,ilios,2,0,Ark|Janus|Jjonak|Meko|Pine|Saebyeolbe,Bani|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus
+10233,Stage 1,2018-01-13 12:45:00,NYE,HOU,regular,5642,4,numbani,3,1,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5643,1,junkertown,4,3,FLETA|KuKi|Wekeed|ZUNBA|ryujehong|tobi,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5644,2,horizon-lunar-colony,3,2,Bunny|FLETA|KuKi|ZUNBA|ryujehong|tobi,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5645,3,ilios,2,0,Bunny|FLETA|KuKi|Wekeed|ZUNBA|ryujehong,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10234,Stage 1,2018-01-13 14:35:00,SEO,GLA,regular,5646,4,numbani,3,0,FLETA|KuKi|Wekeed|ZUNBA|ryujehong|tobi,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5647,1,dorado,1,0,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5648,2,temple-of-anubis,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5649,3,oasis,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10235,Stage 1,2018-01-17 16:00:00,SFS,PHI,regular,5650,4,eichenwalde,3,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5651,1,dorado,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,FLETA|KuKi|Munchkin|XepheR|gido|ryujehong
+10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5652,2,horizon-lunar-colony,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,FLETA|KuKi|Munchkin|XepheR|ryujehong|tobi
+10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5653,3,oasis,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,FLETA|KuKi|Munchkin|XepheR|ryujehong|tobi
+10236,Stage 1,2018-01-17 17:50:00,FLA,SEO,regular,5654,4,eichenwalde,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,FLETA|KuKi|Munchkin|XepheR|ryujehong|tobi
+10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5655,1,junkertown,3,0,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Altering|Diya|Freefeel|MG|Roshan|Undead
+10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5656,2,horizon-lunar-colony,2,1,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Altering|Diya|Freefeel|MG|Roshan|Undead
+10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5657,3,oasis,2,0,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Altering|Diya|Freefeel|MG|Roshan|Undead
+10237,Stage 1,2018-01-17 19:50:00,HOU,SHD,regular,5658,4,numbani,3,1,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Altering|Diya|Freefeel|MG|Roshan|Undead
+10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5659,1,junkertown,0,1,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5660,2,horizon-lunar-colony,1,2,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5661,3,oasis,0,2,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10238,Stage 1,2018-01-18 14:00:00,DAL,HOU,regular,5662,4,eichenwalde,1,2,Chipshajen|Custa|EFFECT|Mickie|Taimou|cocco,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5663,1,junkertown,3,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5664,2,horizon-lunar-colony,1,0,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5665,3,oasis,2,1,Ark|Jjonak|Libero|Mano|Meko|Pine,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10239,Stage 1,2018-01-18 15:30:00,NYE,VAL,regular,5666,4,numbani,3,3,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5667,1,junkertown,2,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5668,2,temple-of-anubis,3,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5669,3,ilios,1,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,5670,4,numbani,2,3,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10240,Stage 1,2018-01-18 17:55:00,PHI,GLA,regular,6192,5,lijiang,0,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Asher|BigGoose|Hydration|Shaz|Surefour|iRemiix
+10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5671,1,junkertown,3,2,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5672,2,horizon-lunar-colony,2,1,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5673,3,oasis,2,0,Bunny|FLETA|Wekeed|ZUNBA|ryujehong|tobi,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10241,Stage 1,2018-01-19 16:00:00,SEO,BOS,regular,5674,4,numbani,3,2,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5675,1,dorado,1,2,Altering|Diya|Freefeel|MG|Undead|Xushu,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5676,2,temple-of-anubis,1,2,Altering|Diya|Freefeel|MG|Undead|Xushu,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5677,3,ilios,0,2,Altering|Diya|Freefeel|MG|Undead|Xushu,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10242,Stage 1,2018-01-19 17:45:00,SHD,FLA,regular,5678,4,numbani,2,3,Diya|Fiveking|Freefeel|MG|Roshan|Undead,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5679,1,junkertown,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5680,2,horizon-lunar-colony,2,0,Bdosin|Fury|Gesture|NUS|Rascal|birdring,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5681,3,oasis,0,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Chipshajen|EFFECT|HarryHook|Seagull|Taimou|cocco
+10243,Stage 1,2018-01-19 19:35:00,LDN,DAL,regular,5682,4,numbani,4,3,Bdosin|Fury|Gesture|NUS|Profit|birdring,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5683,1,dorado,1,2,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Bdosin|Fissure|Fury|NUS|Profit|birdring
+10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5684,2,horizon-lunar-colony,2,3,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Bdosin|Fissure|Fury|NUS|Rascal|birdring
+10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5685,3,oasis,2,0,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Bdosin|Fissure|Fury|NUS|Rascal|birdring
+10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,5686,4,eichenwalde,3,1,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10244,Stage 1,2018-01-20 11:00:00,VAL,LDN,regular,6308,5,lijiang,0,2,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5687,1,dorado,0,1,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Ark|Janus|Jjonak|Libero|Meko|Pine
+10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5688,2,horizon-lunar-colony,1,2,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5689,3,oasis,0,2,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Ark|Jjonak|Libero|Mano|Meko|Pine
+10245,Stage 1,2018-01-20 13:10:00,GLA,NYE,regular,5690,4,eichenwalde,1,2,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5691,1,dorado,2,3,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5692,2,horizon-lunar-colony,2,0,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5693,3,oasis,0,2,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,5694,4,eichenwalde,3,1,Avast|DreamKazper|Gamsu|Kalios|Kellex|STRIKER,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10246,Stage 1,2018-01-20 14:55:00,BOS,SFS,regular,6315,5,lijiang,1,2,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5695,1,eichenwalde,0,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Bdosin|Fissure|Fury|Hooreg|NUS|birdring
+10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5696,2,horizon-lunar-colony,0,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Bdosin|Fissure|Fury|NUS|Profit|birdring
+10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5697,3,oasis,2,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Bdosin|Fissure|Fury|NUS|Profit|birdring
+10247,Stage 1,2018-01-24 16:00:00,SFS,LDN,regular,5698,4,junkertown,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Bdosin|Fissure|Fury|NUS|Profit|birdring
+10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5699,1,numbani,2,3,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Bunny|Miro|Wekeed|XepheR|ryujehong|tobi
+10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5700,2,temple-of-anubis,1,2,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Bunny|Miro|Wekeed|XepheR|ryujehong|tobi
+10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5701,3,oasis,1,2,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Bunny|Miro|Wekeed|XepheR|ryujehong|tobi
+10248,Stage 1,2018-01-24 18:00:00,SHD,SEO,regular,5702,4,dorado,2,1,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Bunny|Miro|Wekeed|XepheR|ryujehong|tobi
+10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5703,1,eichenwalde,3,1,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5704,2,horizon-lunar-colony,2,0,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5705,3,ilios,1,2,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix,Envy|Fate|Kariv|Soon|Unkoe|silkthread
+10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,5706,4,junkertown,3,4,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10249,Stage 1,2018-01-24 19:55:00,GLA,VAL,regular,6418,5,lijiang,1,2,Asher|BigGoose|Hydration|Shaz|Surefour|iRemiix,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5707,1,numbani,4,5,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bdosin|Fury|Gesture|Hooreg|NUS|birdring
+10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5708,2,temple-of-anubis,3,2,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bdosin|Fury|Gesture|NUS|Rascal|birdring
+10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5709,3,ilios,2,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bdosin|Fury|Gesture|Hooreg|NUS|birdring
+10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,5710,4,junkertown,2,3,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10250,Stage 1,2018-01-25 14:00:00,BOS,LDN,regular,6424,5,lijiang,2,0,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5711,1,numbani,1,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5712,2,temple-of-anubis,2,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5713,3,ilios,1,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Ark|Janus|Jjonak|Meko|Pine|Saebyeolbe
+10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,5714,4,dorado,2,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10251,Stage 1,2018-01-25 16:25:00,PHI,NYE,regular,6441,5,lijiang,2,0,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5715,1,numbani,2,1,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5716,2,horizon-lunar-colony,2,0,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5717,3,ilios,2,0,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10252,Stage 1,2018-01-25 18:40:00,HOU,FLA,regular,5718,4,junkertown,3,0,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5719,1,eichenwalde,1,2,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5720,2,horizon-lunar-colony,5,4,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5721,3,oasis,1,2,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,5722,4,junkertown,1,0,FLETA|KuKi|Wekeed|ZUNBA|ryujehong|tobi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10253,Stage 1,2018-01-26 16:00:00,SEO,NYE,regular,6779,5,lijiang,0,2,Bunny|FLETA|KuKi|ZUNBA|ryujehong|tobi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5723,1,eichenwalde,0,1,Altering|Diya|Freefeel|MG|Roshan|Undead,Carpe|DayFly|Hotba|Neptuno|ShaDowBurn|fragi
+10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5724,2,horizon-lunar-colony,2,3,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Carpe|DayFly|Hotba|Neptuno|ShaDowBurn|fragi
+10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5725,3,oasis,2,1,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Carpe|DayFly|Hotba|Neptuno|ShaDowBurn|fragi
+10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,5726,4,junkertown,3,2,Diya|Fiveking|Freefeel|MG|Roshan|Undead,Carpe|DayFly|Hotba|Neptuno|ShaDowBurn|fragi
+10254,Stage 1,2018-01-26 18:15:00,SHD,PHI,regular,6784,5,lijiang,0,2,Altering|Diya|Freefeel|MG|Roshan|Undead,Carpe|DayFly|Hotba|Neptuno|ShaDowBurn|fragi
+10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5727,1,eichenwalde,3,3,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5728,2,horizon-lunar-colony,3,2,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5729,3,ilios,2,0,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10255,Stage 1,2018-01-26 20:30:00,DAL,SFS,regular,5730,4,junkertown,3,1,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5731,1,numbani,6,4,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5732,2,temple-of-anubis,2,3,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5733,3,ilios,1,2,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,5734,4,dorado,3,0,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10256,Stage 1,2018-01-27 11:00:00,DAL,BOS,regular,6855,5,lijiang,0,2,Chipshajen|Custa|EFFECT|Mickie|Seagull|cocco,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5735,1,eichenwalde,3,2,Agilities|Envy|Fate|Kariv|Soon|Unkoe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5736,2,temple-of-anubis,2,0,Agilities|Envy|Fate|Kariv|Soon|Unkoe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5737,3,ilios,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10257,Stage 1,2018-01-27 13:15:00,VAL,FLA,regular,5738,4,dorado,2,3,Agilities|Envy|Fate|Kariv|Soon|Unkoe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5739,1,numbani,3,4,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5740,2,temple-of-anubis,0,1,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5741,3,ilios,0,2,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10258,Stage 1,2018-01-27 15:00:00,GLA,HOU,regular,5742,4,dorado,0,1,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5743,1,numbani,3,2,Envy|Fate|Kariv|Soon|Verbo|silkthread,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi
+10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5744,2,temple-of-anubis,5,4,Agilities|Envy|Fate|Kariv|Soon|Verbo,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi
+10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5745,3,oasis,2,0,Agilities|Envy|Fate|Kariv|Soon|Verbo,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi
+10259,Stage 1,2018-01-31 16:00:00,VAL,PHI,regular,5746,4,dorado,3,2,Agilities|Envy|Fate|Kariv|Soon|Verbo,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi
+10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5747,1,eichenwalde,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5748,2,horizon-lunar-colony,0,1,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5749,3,oasis,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10260,Stage 1,2018-01-31 18:00:00,FLA,GLA,regular,5750,4,junkertown,3,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5751,1,numbani,3,2,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5752,2,temple-of-anubis,2,1,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5753,3,oasis,1,2,Boink|Clockwork|Coolmatt|Jake|Muma|Rawkus,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10261,Stage 1,2018-01-31 20:00:00,HOU,SFS,regular,5754,4,dorado,2,0,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5755,1,eichenwalde,1,0,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5756,2,temple-of-anubis,3,2,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5757,3,ilios,2,0,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10262,Stage 1,2018-02-01 14:00:00,PHI,DAL,regular,5758,4,dorado,3,2,Boombox|Carpe|Hotba|Neptuno|ShaDowBurn|fragi,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco
+10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5759,1,eichenwalde,3,1,Ark|Jjonak|Libero|Mano|Meko|Pine,Diya|Fiveking|Freefeel|MG|Roshan|Undead
+10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5760,2,temple-of-anubis,2,1,Ark|Jjonak|Libero|Mano|Meko|Pine,Diya|Fiveking|Freefeel|MG|Roshan|Undead
+10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5761,3,oasis,2,1,Ark|Jjonak|Libero|Mano|Meko|Pine,Diya|Fiveking|Freefeel|MG|Roshan|Undead
+10263,Stage 1,2018-02-01 15:55:00,NYE,SHD,regular,5762,4,dorado,3,0,Ark|Jjonak|Libero|Mano|Meko|Pine,Diya|Fiveking|Freefeel|MG|Roshan|Undead
+10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5763,1,numbani,2,0,Closer|Gesture|HaGoPeun|Rascal|WooHyaL|birdring,Bunny|FLETA|Miro|ZUNBA|gido|tobi
+10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5764,2,temple-of-anubis,2,0,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring,Bunny|FLETA|Miro|ZUNBA|gido|tobi
+10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5765,3,ilios,2,0,Bdosin|Fury|Gesture|Hooreg|NUS|Profit,Bunny|FLETA|Miro|ZUNBA|gido|tobi
+10264,Stage 1,2018-02-01 17:50:00,LDN,SEO,regular,5766,4,dorado,3,2,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring,Bunny|FLETA|Miro|ZUNBA|gido|tobi
+10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5767,1,numbani,4,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5768,2,temple-of-anubis,2,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5769,3,ilios,2,0,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10265,Stage 1,2018-02-02 16:00:00,SFS,FLA,regular,5770,4,junkertown,3,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5771,1,eichenwalde,2,3,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5772,2,horizon-lunar-colony,2,1,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5773,3,ilios,2,0,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Boink|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,5774,4,junkertown,2,3,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,Bani|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10266,Stage 1,2018-02-02 17:50:00,SEO,HOU,regular,6970,5,lijiang,2,1,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Boink|Clockwork|Coolmatt|Jake|Muma|Rawkus
+10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5775,1,numbani,1,2,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5776,2,temple-of-anubis,1,2,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5777,3,oasis,0,2,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10267,Stage 1,2018-02-02 20:10:00,GLA,BOS,regular,5778,4,dorado,2,3,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5779,1,eichenwalde,0,1,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5780,2,horizon-lunar-colony,0,1,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu,Closer|Fury|Gesture|HaGoPeun|Profit|birdring
+10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5781,3,ilios,0,2,Altering|Diya|Freefeel|Roshan|Undead|Xushu,Bdosin|Closer|Gesture|Hooreg|NUS|Profit
+10268,Stage 1,2018-02-03 11:00:00,SHD,LDN,regular,5782,4,junkertown,0,1,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5783,1,numbani,0,1,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5784,2,temple-of-anubis,4,6,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5785,3,oasis,2,1,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco,Ark|Jjonak|Libero|Mano|Meko|Pine
+10269,Stage 1,2018-02-03 12:25:00,DAL,NYE,regular,5786,4,dorado,1,2,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|cocco,Ark|Jjonak|Libero|Mano|Meko|Pine
+10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5787,1,eichenwalde,6,4,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5788,2,horizon-lunar-colony,2,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5789,3,oasis,2,0,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10270,Stage 1,2018-02-03 14:40:00,BOS,VAL,regular,5790,4,junkertown,3,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5791,1,eichenwalde,4,3,Altering|Diya|Freefeel|MG|Roshan|Undead,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5792,2,horizon-lunar-colony,2,3,Altering|Diya|Freefeel|MG|Roshan|Undead,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5793,3,oasis,0,2,Altering|Diya|Freefeel|MG|Roshan|Undead,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,5794,4,dorado,4,3,Altering|Diya|Freefeel|MG|Roshan|Undead,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10564,Stage 1,2018-02-07 16:00:00,SHD,DAL,regular,7072,5,lijiang,1,2,Altering|Diya|Freefeel|MG|Roshan|Undead,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5795,1,numbani,3,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5796,2,horizon-lunar-colony,0,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix
+10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5797,3,oasis,0,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix
+10565,Stage 1,2018-02-07 18:35:00,SFS,GLA,regular,5798,4,junkertown,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Asher|BigGoose|Bischu|Hydration|Shaz|iRemiix
+10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5799,1,eichenwalde,3,1,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Bunny|FLETA|Miro|ZUNBA|gido|ryujehong
+10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5800,2,temple-of-anubis,3,3,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Miro|Munchkin|Wekeed|ZUNBA|gido|ryujehong
+10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5801,3,oasis,2,0,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi
+10566,Stage 1,2018-02-07 20:25:00,VAL,SEO,regular,5802,4,dorado,3,2,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi
+10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5803,1,eichenwalde,0,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5804,2,horizon-lunar-colony,3,4,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5805,3,ilios,0,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10567,Stage 1,2018-02-08 14:00:00,PHI,BOS,regular,5806,4,junkertown,3,4,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5807,1,eichenwalde,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Ark|Jjonak|Libero|Mano|Meko|Pine
+10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5808,2,horizon-lunar-colony,2,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Ark|Jjonak|Libero|Mano|Meko|Pine
+10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5809,3,ilios,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Ark|Janus|Jjonak|Libero|Meko|Pine
+10568,Stage 1,2018-02-08 15:50:00,FLA,NYE,regular,5810,4,junkertown,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Ark|Jjonak|Libero|Mano|Meko|Pine
+10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5811,1,eichenwalde,1,2,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5812,2,temple-of-anubis,1,2,Closer|Fury|Gesture|HaGoPeun|Profit|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5813,3,oasis,0,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10569,Stage 1,2018-02-08 17:55:00,LDN,HOU,regular,5814,4,dorado,2,1,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5815,1,eichenwalde,0,1,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5816,2,temple-of-anubis,2,3,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5817,3,oasis,0,2,Asher|BigGoose|Bischu|Shaz|Surefour|iRemiix,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10570,Stage 1,2018-02-09 16:00:00,GLA,DAL,regular,5818,4,dorado,3,0,BigGoose|Bischu|Hydration|Shaz|Surefour|iRemiix,Chipshajen|HarryHook|Mickie|Seagull|Taimou|cocco
+10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5819,1,eichenwalde,4,3,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5820,2,temple-of-anubis,0,1,Miro|Munchkin|Wekeed|ZUNBA|ryujehong|tobi,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5821,3,ilios,1,2,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,5822,4,dorado,3,2,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10571,Stage 1,2018-02-09 17:40:00,SEO,SFS,regular,7094,5,lijiang,2,0,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5823,1,numbani,5,3,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Altering|Diya|Freefeel|MG|Roshan|Undead
+10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5824,2,temple-of-anubis,2,1,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Altering|Diya|Freefeel|MG|Roshan|Undead
+10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5825,3,ilios,2,0,Envy|Fate|Kariv|Soon|Unkoe|silkthread,Diya|Fiveking|Freefeel|MG|Roshan|Undead
+10572,Stage 1,2018-02-09 20:00:00,VAL,SHD,regular,5826,4,junkertown,3,0,Agilities|Envy|Fate|Kariv|Soon|Unkoe,Diya|Fiveking|Freefeel|Roshan|Undead|Xushu
+10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5827,1,eichenwalde,2,3,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5828,2,temple-of-anubis,2,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5829,3,ilios,2,0,Ark|Janus|Jjonak|Meko|Pine|Saebyeolbe,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,5830,4,dorado,2,3,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10573,Stage 1,2018-02-10 11:00:00,NYE,LDN,regular,7123,5,lijiang,2,0,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5831,1,eichenwalde,3,2,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5832,2,temple-of-anubis,1,2,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5833,3,ilios,0,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,5834,4,dorado,3,2,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10574,Stage 1,2018-02-10 13:15:00,HOU,BOS,regular,7127,5,lijiang,2,1,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5835,1,numbani,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5836,2,horizon-lunar-colony,2,1,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5837,3,oasis,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,5838,4,junkertown,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10575,Stage 1,2018-02-10 15:40:00,FLA,PHI,regular,7131,5,lijiang,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7062,1,dorado,1,2,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7063,2,ilios,2,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7064,3,temple-of-anubis,2,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10537,Stage 1 - Title Matches,2018-02-10 17:55:00,LDN,HOU,title,7065,4,eichenwalde,1,0,Bdosin|Fury|Gesture|NUS|Profit|birdring,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7067,1,junkertown,3,4,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring,Ark|Jjonak|Libero|Mano|Meko|Pine
+10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7068,2,oasis,0,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7069,3,horizon-lunar-colony,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7070,4,numbani,1,0,Bdosin|Fury|Gesture|NUS|Rascal|birdring,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10539,Stage 1 - Title Matches,2018-02-10 19:40:00,LDN,NYE,title,7071,5,dorado,2,1,Bdosin|Fury|Gesture|NUS|Profit|birdring,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5942,1,volskaya,2,0,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5943,2,nepal,2,0,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,6927,3,kings-row,3,2,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10278,Stage 2,2018-02-21 16:00:00,SEO,VAL,regular,5944,4,route-66,2,0,Bunny|FLETA|Miro|ZUNBA|ryujehong|tobi,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5945,1,volskaya,2,0,Custa|EFFECT|HarryHook|Mickie|Taimou|aKm,Diya|Fiveking|MG|Roshan|Undead|Xushu
+10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5946,2,nepal,2,0,Custa|EFFECT|HarryHook|Mickie|Taimou|aKm,Altering|Diya|Fiveking|Roshan|Undead|Xushu
+10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5947,3,hollywood,3,4,Custa|EFFECT|HarryHook|Mickie|Taimou|aKm,Altering|Diya|Fiveking|Roshan|Undead|Xushu
+10279,Stage 2,2018-02-21 17:45:00,DAL,SHD,regular,5948,4,route-66,3,1,Custa|EFFECT|HarryHook|Mickie|Rascal|Taimou,Altering|Diya|Fiveking|Roshan|Undead|Xushu
+10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5949,1,hanamura,4,3,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5950,2,nepal,2,1,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,6928,3,kings-row,3,1,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10280,Stage 2,2018-02-21 19:40:00,GLA,SFS,regular,5951,4,gibraltar,2,1,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5952,1,volskaya,3,4,Bani|Boink|Clockwork|Coolmatt|LiNkzr|Muma,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring
+10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5953,2,nepal,2,1,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring
+10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,6929,3,kings-row,4,3,Boink|Jake|LiNkzr|Muma|Rawkus|SPREE,Closer|Fury|Gesture|HaGoPeun|Profit|birdring
+10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,5954,4,route-66,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Closer|Fury|Gesture|HaGoPeun|Profit|birdring
+10281,Stage 2,2018-02-22 16:00:00,HOU,LDN,regular,7329,5,ilios,2,0,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Closer|Fury|Gesture|HaGoPeun|Profit|birdring
+10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5955,1,hanamura,5,4,Janus|Jjonak|Mano|Meko|Pine|Saebyeolbe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5956,2,lijiang,1,2,Janus|Jjonak|Libero|Mano|Meko|Saebyeolbe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,6930,3,kings-row,3,2,Janus|Jjonak|Libero|Mano|Meko|Saebyeolbe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10282,Stage 2,2018-02-22 18:15:00,NYE,FLA,regular,5957,4,gibraltar,3,1,Janus|Jjonak|Mano|Meko|Pine|Saebyeolbe,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5958,1,hanamura,1,2,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5959,2,lijiang,1,2,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5960,3,hollywood,3,4,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10283,Stage 2,2018-02-22 20:35:00,BOS,PHI,regular,5961,4,gibraltar,4,5,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5962,1,volskaya,2,0,Closer|Gesture|HaGoPeun|Profit|WooHyaL|birdring,Janus|Jjonak|Mano|Meko|Pine|Saebyeolbe
+10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5963,2,lijiang,0,2,Bdosin|Closer|Gesture|Profit|WooHyaL|birdring,Janus|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,6931,3,kings-row,1,2,Closer|Fury|Gesture|HaGoPeun|Profit|birdring,Janus|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,5964,4,gibraltar,3,2,Closer|Fury|Gesture|HaGoPeun|Profit|birdring,Janus|Jjonak|Mano|Meko|Pine|Saebyeolbe
+10284,Stage 2,2018-02-23 16:00:00,LDN,NYE,regular,7354,5,ilios,2,0,Closer|Fury|Gesture|HaGoPeun|Profit|birdring,Janus|Jjonak|Mano|Meko|Pine|Saebyeolbe
+10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5965,1,hanamura,2,1,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour
+10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5966,2,lijiang,1,2,Custa|EFFECT|HarryHook|Mickie|Rascal|xQc,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,6932,3,kings-row,4,3,Custa|HarryHook|Mickie|Rascal|aKm|xQc,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour
+10285,Stage 2,2018-02-23 18:00:00,DAL,GLA,regular,5967,4,gibraltar,3,0,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5968,1,hanamura,2,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5969,2,lijiang,1,2,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5970,3,hollywood,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10286,Stage 2,2018-02-23 20:10:00,SFS,SEO,regular,5971,4,gibraltar,2,3,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5972,1,hanamura,2,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5973,2,nepal,2,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5974,3,hollywood,3,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10287,Stage 2,2018-02-24 13:00:00,PHI,FLA,regular,5975,4,gibraltar,3,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5976,1,hanamura,3,4,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Bani|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus
+10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5977,2,lijiang,0,2,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,6933,3,kings-row,4,5,DreamKazper|Gamsu|Kalios|Kellex|Neko|NotE,Boink|Jake|LiNkzr|Muma|Rawkus|SPREE
+10288,Stage 2,2018-02-24 14:40:00,BOS,HOU,regular,5978,4,gibraltar,0,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5979,1,hanamura,3,3,Altering|Diya|Freefeel|MG|Roshan|Undead,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5980,2,lijiang,1,2,Altering|Diya|Fiveking|MG|Roshan|Undead,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,6934,3,kings-row,2,3,Altering|Diya|Fiveking|MG|Roshan|Undead,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10289,Stage 2,2018-02-24 16:45:00,SHD,VAL,regular,5981,4,gibraltar,0,1,Altering|Diya|Freefeel|MG|Roshan|Undead,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5982,1,hanamura,4,3,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Custa|EFFECT|HarryHook|Mickie|aKm|xQc
+10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5983,2,nepal,2,1,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Custa|EFFECT|HarryHook|Mickie|aKm|xQc
+10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5984,3,hollywood,2,3,FLETA|Miro|Wekeed|ZUNBA|ryujehong|tobi,Custa|EFFECT|HarryHook|Mickie|aKm|xQc
+10290,Stage 2,2018-02-28 16:00:00,SEO,DAL,regular,5985,4,route-66,3,2,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Custa|EFFECT|HarryHook|Mickie|Rascal|xQc
+10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5986,1,volskaya,2,3,Envy|Fate|Kariv|Soon|Unkoe|Verbo,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5987,2,lijiang,2,0,Envy|Fate|Kariv|Soon|Unkoe|Verbo,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,6935,3,kings-row,4,3,Envy|Fate|Kariv|Soon|Unkoe|Verbo,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10291,Stage 2,2018-02-28 18:00:00,VAL,SFS,regular,5988,4,gibraltar,5,4,Envy|Fate|Kariv|Soon|Unkoe|Verbo,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5989,1,volskaya,2,0,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,Diya|Fiveking|MG|Roshan|Undead|Xushu
+10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5990,2,nepal,2,0,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,Altering|Diya|Freefeel|MG|Roshan|Undead
+10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,6936,3,kings-row,3,2,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,Altering|Diya|Fiveking|MG|Roshan|Undead
+10292,Stage 2,2018-02-28 20:10:00,GLA,SHD,regular,5991,4,route-66,3,0,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,Altering|Diya|Freefeel|MG|Roshan|Undead
+10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5992,1,volskaya,4,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5993,2,lijiang,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,6937,3,kings-row,0,1,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10293,Stage 2,2018-03-01 16:00:00,FLA,LDN,regular,5994,4,route-66,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL
+10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5995,1,volskaya,3,2,Boink|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus,Carpe|DayFly|Neptuno|Poko|ShaDowBurn|fragi
+10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5996,2,nepal,2,0,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5997,3,hollywood,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,5998,4,route-66,0,1,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10294,Stage 2,2018-03-01 17:45:00,HOU,PHI,regular,7530,5,ilios,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi
+10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,5999,1,hanamura,2,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6000,2,nepal,2,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6938,3,kings-row,3,2,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Gamsu|Kalios|Kellex|Neko|NotE|STRIKER
+10295,Stage 2,2018-03-01 20:10:00,NYE,BOS,regular,6001,4,gibraltar,3,0,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6002,1,volskaya,2,0,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6003,2,lijiang,2,1,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6004,3,hollywood,3,1,Kalios|Kellex|Mistakes|Neko|NotE|STRIKER,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10296,Stage 2,2018-03-02 16:00:00,BOS,FLA,regular,6005,4,route-66,3,0,Kalios|Kellex|Mistakes|Neko|NotE|STRIKER,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6006,1,hanamura,1,2,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6007,2,nepal,2,0,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6008,3,hollywood,1,2,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10297,Stage 2,2018-03-02 17:45:00,GLA,SEO,regular,6009,4,gibraltar,0,1,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6010,1,hanamura,1,2,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6011,2,nepal,1,2,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6012,3,hollywood,1,2,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10298,Stage 2,2018-03-02 19:35:00,DAL,VAL,regular,6013,4,gibraltar,3,2,Custa|EFFECT|HarryHook|Mickie|aKm|xQc,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6014,1,hanamura,0,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6015,2,nepal,0,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6016,3,hollywood,0,1,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10299,Stage 2,2018-03-03 13:00:00,PHI,LDN,regular,6017,4,route-66,1,2,Boombox|Carpe|Neptuno|Poko|ShaDowBurn|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6018,1,volskaya,0,1,Boink|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6019,2,lijiang,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6939,3,kings-row,5,6,Boink|Jake|LiNkzr|Muma|Rawkus|SPREE,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10300,Stage 2,2018-03-03 14:30:00,HOU,NYE,regular,6020,4,route-66,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6021,1,hanamura,0,1,Altering|Diya|Fiveking|MG|Roshan|Undead,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6022,2,nepal,1,2,Altering|Diya|Freefeel|MG|Roshan|Undead,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6940,3,kings-row,2,3,Altering|Diya|Fiveking|MG|Roshan|Undead,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10301,Stage 2,2018-03-03 16:40:00,SHD,SFS,regular,6023,4,gibraltar,4,5,Altering|Diya|Freefeel|MG|Roshan|Undead,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6024,1,volskaya,2,1,Bunny|KuKi|Wekeed|XepheR|gido|tobi,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6025,2,lijiang,2,0,Bunny|KuKi|Wekeed|XepheR|gido|tobi,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6941,3,kings-row,0,1,Bunny|KuKi|Wekeed|XepheR|gido|tobi,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10302,Stage 2,2018-03-07 16:00:00,SEO,SHD,regular,6026,4,route-66,3,2,Bunny|KuKi|Wekeed|XepheR|gido|tobi,Altering|Freefeel|MG|Roshan|Undead|Xushu
+10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6027,1,volskaya,4,4,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|aKm
+10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6028,2,lijiang,2,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Chipshajen|EFFECT|HarryHook|Mickie|aKm|xQc
+10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6942,3,kings-row,3,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Chipshajen|EFFECT|HarryHook|Mickie|aKm|xQc
+10303,Stage 2,2018-03-07 17:50:00,SFS,DAL,regular,6029,4,route-66,3,1,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy,Chipshajen|EFFECT|HarryHook|Mickie|Rascal|Taimou
+10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6030,1,hanamura,4,5,Envy|Fate|Kariv|Soon|Unkoe|Verbo,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6031,2,lijiang,0,2,Envy|Fate|Kariv|Soon|Unkoe|Verbo,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6032,3,hollywood,1,2,Envy|Fate|Kariv|Soon|Unkoe|Verbo,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10304,Stage 2,2018-03-07 20:00:00,VAL,GLA,regular,6033,4,gibraltar,5,6,Envy|Fate|Kariv|Soon|Unkoe|Verbo,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6034,1,volskaya,3,4,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6035,2,lijiang,0,2,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6943,3,kings-row,5,3,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10305,Stage 2,2018-03-08 16:00:00,PHI,SEO,regular,6036,4,gibraltar,0,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6037,1,volskaya,1,2,Boink|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6038,2,lijiang,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6039,3,hollywood,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10306,Stage 2,2018-03-08 18:00:00,HOU,VAL,regular,6040,4,route-66,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6041,1,volskaya,3,2,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6042,2,nepal,2,0,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6944,3,kings-row,1,0,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10307,Stage 2,2018-03-08 20:00:00,BOS,SHD,regular,6043,4,route-66,3,1,Kalios|Kellex|Mistakes|Neko|NotE|STRIKER,Altering|Fiveking|MG|Roshan|Undead|Xushu
+10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6044,1,hanamura,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER
+10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6045,2,nepal,2,1,Bdosin|Fury|Gesture|NUS|Profit|birdring,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER
+10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6046,3,hollywood,4,3,Bdosin|Fury|Gesture|NUS|Profit|birdring,Kalios|Kellex|Mistakes|Neko|NotE|STRIKER
+10308,Stage 2,2018-03-09 16:00:00,LDN,BOS,regular,6047,4,gibraltar,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,DreamKazper|Kalios|Kellex|Neko|NotE|STRIKER
+10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6048,1,volskaya,4,3,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Carpe|DayFly|Eqo|Neptuno|Poko|fragi
+10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6049,2,nepal,2,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Carpe|DayFly|Eqo|Neptuno|Poko|fragi
+10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6945,3,kings-row,5,4,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Carpe|DayFly|Eqo|Neptuno|Poko|fragi
+10309,Stage 2,2018-03-09 18:00:00,NYE,PHI,regular,6050,4,route-66,3,4,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Carpe|DayFly|Eqo|Neptuno|Poko|fragi
+10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6051,1,hanamura,4,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Bani|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus
+10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6052,2,lijiang,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6053,3,hollywood,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,6054,4,gibraltar,2,3,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10310,Stage 2,2018-03-09 20:30:00,FLA,HOU,regular,7767,5,ilios,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6055,1,volskaya,2,3,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6056,2,lijiang,0,2,Closer|Gesture|HaGoPeun|Hooreg|Profit|WooHyaL,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6946,3,kings-row,2,3,Bdosin|Fury|Gesture|NUS|Profit|birdring,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour
+10311,Stage 2,2018-03-10 13:00:00,LDN,GLA,regular,6057,4,route-66,3,2,Bdosin|Fury|Gesture|NUS|Profit|birdring,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6058,1,volskaya,3,2,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6059,2,lijiang,2,0,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6060,3,hollywood,3,1,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10312,Stage 2,2018-03-10 14:50:00,NYE,SFS,regular,6061,4,route-66,3,1,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,BABYBAY|Danteh|Nevix|Nomy|dhaK|sleepy
+10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6062,1,hanamura,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|EFFECT|HarryHook|Mickie|Rascal|Taimou
+10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6063,2,nepal,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|EFFECT|HarryHook|Mickie|Taimou|aKm
+10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6947,3,kings-row,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|HarryHook|Mickie|Rascal|Taimou|aKm
+10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,6064,4,gibraltar,3,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|HarryHook|Mickie|Rascal|Taimou|aKm
+10313,Stage 2,2018-03-10 17:00:00,FLA,DAL,regular,7776,5,ilios,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Chipshajen|EFFECT|HarryHook|Mickie|Rascal|Taimou
+10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6065,1,volskaya,2,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Chipshajen|Custa|EFFECT|Mickie|Taimou|aKm
+10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6066,2,lijiang,2,0,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Chipshajen|Custa|EFFECT|Mickie|Taimou|aKm
+10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6948,3,kings-row,3,0,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER,Chipshajen|Custa|EFFECT|Mickie|Taimou|aKm
+10314,Stage 2,2018-03-14 16:00:00,BOS,DAL,regular,6067,4,gibraltar,3,0,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Chipshajen|Custa|EFFECT|Mickie|Taimou|aKm
+10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6068,1,hanamura,6,4,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6069,2,nepal,1,2,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6070,3,hollywood,1,2,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,6071,4,gibraltar,3,2,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10315,Stage 2,2018-03-14 17:40:00,NYE,SEO,regular,7865,5,ilios,2,0,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi
+10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6072,1,volskaya,2,0,Boombox|Eqo|Neptuno|Poko|Snillo|fragi,Fiveking|Freefeel|MG|Roshan|Undead|Xushu
+10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6073,2,lijiang,2,0,Boombox|Eqo|Neptuno|Poko|Snillo|fragi,Fiveking|Freefeel|MG|Roshan|Undead|Xushu
+10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6074,3,hollywood,3,1,Boombox|Eqo|Neptuno|Poko|Snillo|fragi,Fiveking|Freefeel|MG|Roshan|Undead|Xushu
+10316,Stage 2,2018-03-14 20:10:00,PHI,SHD,regular,6075,4,route-66,3,0,Boombox|Eqo|Neptuno|Poko|Snillo|fragi,Fiveking|Freefeel|MG|Roshan|Undead|Xushu
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6076,1,hanamura,0,1,Altering|Fiveking|Freefeel|MG|Undead|Xushu,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6077,2,nepal,0,2,Altering|Fiveking|Freefeel|MG|Undead|Xushu,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6078,3,hollywood,1,2,Fiveking|Freefeel|MG|Roshan|Undead|Xushu,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10317,Stage 2,2018-03-15 16:00:00,SHD,NYE,regular,6079,4,route-66,2,3,Fiveking|Freefeel|MG|Roshan|Undead|Xushu,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6080,1,hanamura,2,1,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6081,2,nepal,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6082,3,hollywood,0,1,CWoosH|Manneten|TviQ|Zebbosai|Zuppeh|zappis,Agilities|Envy|Fate|Soon|Unkoe|Verbo
+10318,Stage 2,2018-03-15 17:35:00,FLA,VAL,regular,6083,4,route-66,3,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6084,1,volskaya,4,3,Boink|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6085,2,lijiang,1,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6949,3,kings-row,0,1,Boink|Jake|LiNkzr|Muma|Rawkus|SPREE,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,6086,4,gibraltar,3,0,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10319,Stage 2,2018-03-15 19:40:00,HOU,GLA,regular,7866,5,ilios,0,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6087,1,volskaya,3,3,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6088,2,nepal,0,2,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6089,3,hollywood,3,1,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,CWoosH|Manneten|TviQ|Zebbosai|Zuppeh|zappis
+10320,Stage 2,2018-03-16 16:00:00,GLA,FLA,regular,6090,4,route-66,2,1,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6091,1,volskaya,1,0,Bdosin|Gesture|Hooreg|NUS|Profit|WooHyaL,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy
+10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6092,2,nepal,2,0,Bdosin|Gesture|Hooreg|NUS|Profit|WooHyaL,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy
+10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6093,3,hollywood,0,1,Bdosin|Gesture|Hooreg|NUS|Profit|WooHyaL,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy
+10321,Stage 2,2018-03-16 18:00:00,LDN,SFS,regular,6094,4,route-66,2,1,Bdosin|Gesture|Hooreg|NUS|Profit|WooHyaL,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy
+10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6095,1,volskaya,2,3,Envy|Fate|Kariv|Soon|Unkoe|Verbo,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6096,2,lijiang,2,1,Envy|Fate|Kariv|Soon|Unkoe|Verbo,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6950,3,kings-row,3,4,Agilities|Envy|Fate|Soon|Unkoe|Verbo,DreamKazper|Gamsu|Kalios|Kellex|Neko|STRIKER
+10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,6097,4,route-66,2,1,Envy|Fate|Kariv|Soon|Unkoe|Verbo,Gamsu|Kellex|Mistakes|Neko|NotE|STRIKER
+10322,Stage 2,2018-03-16 20:00:00,VAL,BOS,regular,7892,5,ilios,1,2,Agilities|Envy|Fate|Soon|Unkoe|Verbo,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6098,1,hanamura,3,4,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6099,2,lijiang,0,2,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6951,3,kings-row,2,3,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10323,Stage 2,2018-03-17 13:00:00,SEO,LDN,regular,6100,4,gibraltar,2,3,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6101,1,hanamura,2,1,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy,Bani|Clockwork|Coolmatt|LiNkzr|Muma|Rawkus
+10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6102,2,nepal,2,0,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6103,3,hollywood,1,2,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10324,Stage 2,2018-03-17 14:55:00,SFS,HOU,regular,6104,4,gibraltar,3,2,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6105,1,hanamura,1,2,Chipshajen|Custa|EFFECT|Mickie|Rascal|Taimou,Boombox|Eqo|Neptuno|Poko|Snillo|fragi
+10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6106,2,lijiang,0,2,Chipshajen|Custa|EFFECT|Mickie|Rascal|Taimou,Boombox|Eqo|Neptuno|Poko|Snillo|fragi
+10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6952,3,kings-row,1,2,Chipshajen|Custa|EFFECT|Mickie|Rascal|Taimou,Boombox|Eqo|Neptuno|Poko|Snillo|fragi
+10325,Stage 2,2018-03-17 16:50:00,DAL,PHI,regular,6107,4,gibraltar,2,3,Chipshajen|Custa|EFFECT|Mickie|Taimou|aKm,Boombox|Eqo|Neptuno|Poko|Snillo|fragi
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6108,1,hanamura,1,2,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6109,2,nepal,2,0,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz,Boombox|Carpe|Eqo|Neptuno|Poko|fragi
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6110,3,hollywood,1,2,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour,Boombox|Carpe|Neptuno|Poko|Snillo|fragi
+10576,Stage 2,2018-03-21 16:00:00,GLA,PHI,regular,6111,4,route-66,0,1,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour,Boombox|Carpe|Neptuno|Poko|Snillo|fragi
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6112,1,volskaya,1,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6113,2,nepal,0,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Moth|Nevix|Nomy|sinatraa|sleepy
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6953,3,kings-row,3,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,6114,4,route-66,1,2,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy
+10577,Stage 2,2018-03-21 17:45:00,FLA,SFS,regular,8069,5,ilios,2,0,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh,BABYBAY|Moth|Nevix|Nomy|sinatraa|sleepy
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6115,1,volskaya,0,1,Ado|Fearless|Fiveking|Freefeel|MG|Xushu,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6116,2,lijiang,0,2,Ado|Altering|Fearless|Fiveking|MG|Xushu,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6954,3,kings-row,1,2,Ado|Altering|Fearless|Fiveking|MG|Xushu,Boink|Coolmatt|Jake|Muma|Rawkus|SPREE
+10578,Stage 2,2018-03-21 20:00:00,SHD,HOU,regular,6117,4,gibraltar,0,1,Ado|Altering|Fearless|Fiveking|MG|Xushu,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6118,1,hanamura,2,1,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,KuKi|Munchkin|Wekeed|ZUNBA|ryujehong|tobi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6119,2,nepal,0,2,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,KuKi|Munchkin|Wekeed|ZUNBA|ryujehong|tobi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6955,3,kings-row,4,3,Boink|Coolmatt|Jake|LiNkzr|Muma|Rawkus,KuKi|Munchkin|Wekeed|ZUNBA|ryujehong|tobi
+10579,Stage 2,2018-03-22 16:00:00,HOU,SEO,regular,6120,4,gibraltar,3,2,Bani|Coolmatt|Jake|LiNkzr|Muma|Rawkus,FLETA|KuKi|Munchkin|ZUNBA|ryujehong|tobi
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6121,1,hanamura,4,3,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6122,2,lijiang,0,2,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6123,3,hollywood,3,2,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,6124,4,gibraltar,2,3,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull
+10580,Stage 2,2018-03-22 18:00:00,NYE,DAL,regular,8087,5,ilios,2,0,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6125,1,hanamura,4,3,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6126,2,nepal,0,2,BABYBAY|Moth|Nevix|Nomy|sinatraa|sleepy,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6127,3,hollywood,1,2,BABYBAY|Danteh|Moth|Nevix|Nomy|sleepy,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,6128,4,route-66,3,2,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10581,Stage 2,2018-03-22 20:25:00,SFS,BOS,regular,8088,5,ilios,1,2,Danteh|Moth|Nevix|Nomy|sinatraa|sleepy,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6129,1,volskaya,4,3,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6130,2,nepal,2,1,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6131,3,hollywood,0,1,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10582,Stage 2,2018-03-23 16:00:00,SEO,FLA,regular,6132,4,route-66,3,1,FLETA|Miro|Munchkin|ZUNBA|ryujehong|tobi,CWoosH|Logix|Manneten|TviQ|Zebbosai|Zuppeh
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6133,1,hanamura,3,2,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6134,2,nepal,0,2,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6956,3,kings-row,3,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Agilities|Envy|Fate|Kariv|Soon|Verbo
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,6135,4,gibraltar,2,3,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Agilities|Envy|Fate|Kariv|Soon|Unkoe
+10583,Stage 2,2018-03-23 17:55:00,PHI,VAL,regular,8168,5,ilios,2,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Envy|Fate|Kariv|Soon|Unkoe|Verbo
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6136,1,hanamura,2,0,Closer|Fury|Gesture|HaGoPeun|Hooreg|Profit,Ado|Fearless|Fiveking|Freefeel|MG|Xushu
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6137,2,lijiang,2,0,Closer|Fury|Gesture|HaGoPeun|Hooreg|Profit,Ado|Altering|Fearless|Fiveking|MG|Xushu
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6138,3,hollywood,3,0,Closer|Fury|Gesture|HaGoPeun|Hooreg|Profit,Ado|Fearless|Fiveking|Freefeel|MG|Xushu
+10584,Stage 2,2018-03-23 20:20:00,LDN,SHD,regular,6139,4,gibraltar,3,1,Closer|Fury|Gesture|HaGoPeun|Hooreg|Profit,Ado|Fearless|Fiveking|Freefeel|MG|Xushu
+10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6140,1,volskaya,0,1,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6141,2,lijiang,1,2,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6142,3,hollywood,4,3,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10585,Stage 2,2018-03-24 13:00:00,DAL,LDN,regular,6143,4,route-66,2,3,Chipshajen|Custa|EFFECT|Mickie|Rascal|Seagull,Bdosin|Gesture|NUS|Profit|WooHyaL|birdring
+10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6144,1,volskaya,3,4,Agilities|Envy|Fate|Soon|Unkoe|Verbo,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6145,2,nepal,0,2,Agilities|Envy|Fate|Soon|Unkoe|Verbo,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6146,3,hollywood,0,1,Agilities|Envy|Fate|Soon|Unkoe|Verbo,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10586,Stage 2,2018-03-24 14:55:00,VAL,NYE,regular,6147,4,route-66,2,3,Agilities|Envy|Fate|Soon|Unkoe|Verbo,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6148,1,volskaya,2,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6149,2,lijiang,2,0,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6150,3,hollywood,3,4,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,BigGoose|Bischu|Fissure|Hydration|Shaz|Surefour
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,6151,4,route-66,4,5,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10587,Stage 2,2018-03-24 16:40:00,BOS,GLA,regular,8214,5,ilios,2,1,DreamKazper|Gamsu|Kellex|Neko|NotE|STRIKER,Asher|BigGoose|Bischu|Fissure|Hydration|Shaz
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8201,1,gibraltar,0,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8202,2,nepal,2,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8203,3,hanamura,2,0,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8204,4,kings-row,3,4,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10540,Stage 2 Title Matches,2018-03-25 13:00:00,PHI,LDN,title,8205,5,route-66,3,2,Boombox|Carpe|Neptuno|Poko|Snillo|fragi,Bdosin|Fury|Gesture|NUS|Profit|birdring
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8206,1,route-66,2,1,Boombox|Carpe|Neptuno|Poko|Snillo|fragi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8207,2,lijiang,2,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8208,3,volskaya,0,1,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8209,4,hollywood,1,2,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Ark|Janus|Jjonak|Libero|Meko|Saebyeolbe
+10542,Stage 2 Title Matches,2018-03-25 15:05:00,PHI,NYE,title,8210,5,gibraltar,2,3,Boombox|Carpe|Eqo|Neptuno|Poko|fragi,Ark|Jjonak|Libero|Mano|Meko|Saebyeolbe
+10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8337,1,volskaya,1,2,Ado|Altering|Daemin|Fearless|Geguri|Sky,EFFECT|HarryHook|Mickie|Seagull|Unkoe|aKm
+10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8338,2,numbani,1,2,Ado|Altering|Daemin|Fearless|Geguri|Sky,EFFECT|HarryHook|Mickie|Seagull|Unkoe|aKm
+10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8339,3,ilios,0,2,Ado|Altering|Daemin|Fearless|Geguri|Sky,EFFECT|HarryHook|Mickie|Seagull|Unkoe|aKm
+10333,Stage 3,2018-04-04 16:00:00,SHD,DAL,regular,8340,4,junkertown,2,1,Ado|Altering|Daemin|Fearless|Geguri|Sky,EFFECT|HarryHook|Mickie|Seagull|Unkoe|aKm
+10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,8341,1,temple-of-anubis,2,0,Agilities|Custa|Fate|Kariv|Soon|Space,FLETA|Gambler|Miro|Munchkin|XepheR|gido
+10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,8342,2,numbani,3,2,Agilities|Custa|Fate|Kariv|Soon|Space,FLETA|Gambler|Miro|Munchkin|XepheR|gido
+10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,8343,3,nepal,2,0,Agilities|Custa|Fate|Kariv|Soon|Space,FLETA|Gambler|Miro|Munchkin|XepheR|gido
+10334,Stage 3,2018-04-04 18:00:00,VAL,SEO,regular,8344,4,junkertown,3,0,Agilities|Custa|Fate|Kariv|Soon|Space,FLETA|Gambler|Miro|Munchkin|XepheR|gido
+10335,Stage 3,2018-04-04 19:45:00,SFS,GLA,regular,8346,1,volskaya,3,4,Danteh|Moth|Nevix|sinatraa|sleepy|super,Asher|BigGoose|Bischu|Fissure|Shaz|silkthread
+10335,Stage 3,2018-04-04 19:45:00,SFS,GLA,regular,8349,2,numbani,4,3,Danteh|Moth|Nevix|sinatraa|sleepy|super,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10335,Stage 3,2018-04-04 19:45:00,SFS,GLA,regular,8351,3,ilios,2,0,Danteh|Moth|Nevix|sinatraa|sleepy|super,Asher|BigGoose|Bischu|Fissure|Shaz|Surefour
+10335,Stage 3,2018-04-04 19:45:00,SFS,GLA,regular,8352,4,junkertown,3,1,BABYBAY|Danteh|Moth|Nevix|sleepy|super,BigGoose|Bischu|Fissure|Shaz|Surefour|silkthread
+10336,Stage 3,2018-04-05 16:00:00,FLA,NYE,regular,,,,,,,
+10337,Stage 3,2018-04-05 18:00:00,PHI,BOS,regular,,,,,,,
+10338,Stage 3,2018-04-05 20:00:00,LDN,HOU,regular,,,,,,,
+10339,Stage 3,2018-04-06 16:00:00,GLA,DAL,regular,,,,,,,
+10340,Stage 3,2018-04-06 18:00:00,VAL,SHD,regular,,,,,,,
+10341,Stage 3,2018-04-06 20:00:00,SEO,SFS,regular,,,,,,,
+10342,Stage 3,2018-04-07 13:00:00,FLA,PHI,regular,,,,,,,
+10343,Stage 3,2018-04-07 15:00:00,HOU,BOS,regular,,,,,,,
+10344,Stage 3,2018-04-07 17:00:00,NYE,LDN,regular,,,,,,,
+10345,Stage 3,2018-04-11 16:00:00,SHD,GLA,regular,,,,,,,
+10346,Stage 3,2018-04-11 18:00:00,SFS,VAL,regular,,,,,,,
+10347,Stage 3,2018-04-11 20:00:00,DAL,SEO,regular,,,,,,,
+10348,Stage 3,2018-04-12 16:00:00,BOS,NYE,regular,,,,,,,
+10349,Stage 3,2018-04-12 18:00:00,LDN,FLA,regular,,,,,,,
+10350,Stage 3,2018-04-12 20:00:00,PHI,HOU,regular,,,,,,,
+10351,Stage 3,2018-04-13 16:00:00,VAL,DAL,regular,,,,,,,
+10352,Stage 3,2018-04-13 18:00:00,SFS,SHD,regular,,,,,,,
+10353,Stage 3,2018-04-13 20:00:00,SEO,GLA,regular,,,,,,,
+10354,Stage 3,2018-04-14 13:00:00,LDN,PHI,regular,,,,,,,
+10355,Stage 3,2018-04-14 15:00:00,NYE,HOU,regular,,,,,,,
+10356,Stage 3,2018-04-14 17:00:00,FLA,BOS,regular,,,,,,,
+10357,Stage 3,2018-04-18 16:00:00,GLA,VAL,regular,,,,,,,
+10358,Stage 3,2018-04-18 18:00:00,DAL,SFS,regular,,,,,,,
+10359,Stage 3,2018-04-18 20:00:00,SHD,SEO,regular,,,,,,,
+10360,Stage 3,2018-04-19 16:00:00,HOU,FLA,regular,,,,,,,
+10361,Stage 3,2018-04-19 18:00:00,BOS,LDN,regular,,,,,,,
+10362,Stage 3,2018-04-19 20:00:00,PHI,NYE,regular,,,,,,,
+10363,Stage 3,2018-04-20 16:00:00,PHI,SFS,regular,,,,,,,
+10364,Stage 3,2018-04-20 18:00:00,FLA,SHD,regular,,,,,,,
+10365,Stage 3,2018-04-20 20:00:00,BOS,SEO,regular,,,,,,,
+10366,Stage 3,2018-04-21 13:00:00,LDN,VAL,regular,,,,,,,
+10367,Stage 3,2018-04-21 15:00:00,NYE,GLA,regular,,,,,,,
+10368,Stage 3,2018-04-21 17:00:00,HOU,DAL,regular,,,,,,,
+10369,Stage 3,2018-04-25 16:00:00,SHD,BOS,regular,,,,,,,
+10370,Stage 3,2018-04-25 18:00:00,VAL,HOU,regular,,,,,,,
+10371,Stage 3,2018-04-25 20:00:00,DAL,FLA,regular,,,,,,,
+10372,Stage 3,2018-04-26 16:00:00,GLA,LDN,regular,,,,,,,
+10373,Stage 3,2018-04-26 18:00:00,SFS,NYE,regular,,,,,,,
+10374,Stage 3,2018-04-26 20:00:00,SEO,PHI,regular,,,,,,,
+10375,Stage 3,2018-04-27 16:00:00,DAL,BOS,regular,,,,,,,
+10376,Stage 3,2018-04-27 18:00:00,GLA,HOU,regular,,,,,,,
+10377,Stage 3,2018-04-27 20:00:00,VAL,FLA,regular,,,,,,,
+10378,Stage 3,2018-04-28 13:00:00,SFS,LDN,regular,,,,,,,
+10379,Stage 3,2018-04-28 15:00:00,SEO,NYE,regular,,,,,,,
+10380,Stage 3,2018-04-28 17:00:00,SHD,PHI,regular,,,,,,,
+10588,Stage 3,2018-05-02 16:00:00,PHI,DAL,regular,,,,,,,
+10589,Stage 3,2018-05-02 18:00:00,FLA,GLA,regular,,,,,,,
+10590,Stage 3,2018-05-02 20:00:00,HOU,SFS,regular,,,,,,,
+10591,Stage 3,2018-05-03 16:00:00,SFS,FLA,regular,,,,,,,
+10592,Stage 3,2018-05-03 18:00:00,BOS,VAL,regular,,,,,,,
+10593,Stage 3,2018-05-03 20:00:00,DAL,NYE,regular,,,,,,,
+10594,Stage 3,2018-05-04 16:00:00,GLA,BOS,regular,,,,,,,
+10595,Stage 3,2018-05-04 18:00:00,NYE,SHD,regular,,,,,,,
+10596,Stage 3,2018-05-04 20:00:00,LDN,SEO,regular,,,,,,,
+10597,Stage 3,2018-05-05 13:00:00,SHD,LDN,regular,,,,,,,
+10598,Stage 3,2018-05-05 15:00:00,SEO,HOU,regular,,,,,,,
+10599,Stage 3,2018-05-05 17:00:00,VAL,PHI,regular,,,,,,,
+10443,Stage 4,2018-05-16 16:00:00,GLA,SFS,regular,,,,,,,
+10444,Stage 4,2018-05-16 18:00:00,SEO,VAL,regular,,,,,,,
+10445,Stage 4,2018-05-16 20:00:00,DAL,SHD,regular,,,,,,,
+10446,Stage 4,2018-05-17 16:00:00,BOS,PHI,regular,,,,,,,
+10447,Stage 4,2018-05-17 18:00:00,NYE,FLA,regular,,,,,,,
+10448,Stage 4,2018-05-17 20:00:00,HOU,LDN,regular,,,,,,,
+10449,Stage 4,2018-05-18 16:00:00,DAL,GLA,regular,,,,,,,
+10450,Stage 4,2018-05-18 18:00:00,BOS,HOU,regular,,,,,,,
+10451,Stage 4,2018-05-18 20:00:00,SFS,SEO,regular,,,,,,,
+10452,Stage 4,2018-05-19 13:00:00,PHI,FLA,regular,,,,,,,
+10453,Stage 4,2018-05-19 15:00:00,SHD,VAL,regular,,,,,,,
+10454,Stage 4,2018-05-19 17:00:00,LDN,NYE,regular,,,,,,,
+10455,Stage 4,2018-05-23 16:00:00,BOS,DAL,regular,,,,,,,
+10456,Stage 4,2018-05-23 18:00:00,FLA,VAL,regular,,,,,,,
+10457,Stage 4,2018-05-23 20:00:00,HOU,GLA,regular,,,,,,,
+10458,Stage 4,2018-05-24 16:00:00,LDN,SFS,regular,,,,,,,
+10459,Stage 4,2018-05-24 18:00:00,GLA,FLA,regular,,,,,,,
+10460,Stage 4,2018-05-24 20:00:00,PHI,SHD,regular,,,,,,,
+10461,Stage 4,2018-05-25 16:00:00,VAL,BOS,regular,,,,,,,
+10462,Stage 4,2018-05-25 18:00:00,NYE,SEO,regular,,,,,,,
+10463,Stage 4,2018-05-25 20:00:00,SFS,HOU,regular,,,,,,,
+10464,Stage 4,2018-05-26 13:00:00,SEO,LDN,regular,,,,,,,
+10465,Stage 4,2018-05-26 15:00:00,SHD,NYE,regular,,,,,,,
+10466,Stage 4,2018-05-26 17:00:00,DAL,PHI,regular,,,,,,,
+10467,Stage 4,2018-05-30 16:00:00,NYE,PHI,regular,,,,,,,
+10468,Stage 4,2018-05-30 18:00:00,SEO,SHD,regular,,,,,,,
+10469,Stage 4,2018-05-30 20:00:00,VAL,GLA,regular,,,,,,,
+10470,Stage 4,2018-05-31 16:00:00,LDN,BOS,regular,,,,,,,
+10471,Stage 4,2018-05-31 18:00:00,SFS,DAL,regular,,,,,,,
+10472,Stage 4,2018-05-31 20:00:00,PHI,GLA,regular,,,,,,,
+10473,Stage 4,2018-06-01 16:00:00,HOU,SHD,regular,,,,,,,
+10474,Stage 4,2018-06-01 18:00:00,FLA,SEO,regular,,,,,,,
+10475,Stage 4,2018-06-01 20:00:00,BOS,SFS,regular,,,,,,,
+10476,Stage 4,2018-06-02 13:00:00,LDN,DAL,regular,,,,,,,
+10477,Stage 4,2018-06-02 15:00:00,NYE,VAL,regular,,,,,,,
+10478,Stage 4,2018-06-02 17:00:00,FLA,HOU,regular,,,,,,,
+10479,Stage 4,2018-06-06 16:00:00,SEO,BOS,regular,,,,,,,
+10480,Stage 4,2018-06-06 18:00:00,SHD,FLA,regular,,,,,,,
+10481,Stage 4,2018-06-06 20:00:00,DAL,HOU,regular,,,,,,,
+10482,Stage 4,2018-06-07 16:00:00,VAL,LDN,regular,,,,,,,
+10483,Stage 4,2018-06-07 18:00:00,GLA,NYE,regular,,,,,,,
+10484,Stage 4,2018-06-07 20:00:00,SFS,PHI,regular,,,,,,,
+10485,Stage 4,2018-06-08 16:00:00,BOS,SHD,regular,,,,,,,
+10486,Stage 4,2018-06-08 18:00:00,FLA,DAL,regular,,,,,,,
+10487,Stage 4,2018-06-08 20:00:00,PHI,SEO,regular,,,,,,,
+10488,Stage 4,2018-06-09 13:00:00,LDN,GLA,regular,,,,,,,
+10489,Stage 4,2018-06-09 15:00:00,NYE,SFS,regular,,,,,,,
+10490,Stage 4,2018-06-09 17:00:00,HOU,VAL,regular,,,,,,,
+10621,Stage 4,2018-06-13 16:00:00,GLA,SHD,regular,,,,,,,
+10622,Stage 4,2018-06-13 18:00:00,VAL,SFS,regular,,,,,,,
+10623,Stage 4,2018-06-13 20:00:00,SEO,DAL,regular,,,,,,,
+10624,Stage 4,2018-06-14 16:00:00,HOU,PHI,regular,,,,,,,
+10625,Stage 4,2018-06-14 18:00:00,FLA,LDN,regular,,,,,,,
+10626,Stage 4,2018-06-14 20:00:00,NYE,BOS,regular,,,,,,,
+10627,Stage 4,2018-06-15 16:00:00,HOU,NYE,regular,,,,,,,
+10628,Stage 4,2018-06-15 18:00:00,GLA,SEO,regular,,,,,,,
+10629,Stage 4,2018-06-15 20:00:00,DAL,VAL,regular,,,,,,,
+10630,Stage 4,2018-06-16 13:00:00,PHI,LDN,regular,,,,,,,
+10631,Stage 4,2018-06-16 15:00:00,SHD,SFS,regular,,,,,,,
+10632,Stage 4,2018-06-16 17:00:00,BOS,FLA,regular,,,,,,,
