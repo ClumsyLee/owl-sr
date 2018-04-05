@@ -6,7 +6,7 @@ from csv import (reader as csv_reader,
 from datetime import datetime
 from typing import Dict, List, NamedTuple, Set, Tuple
 
-from game import Game
+from game import Game, TEAMS
 
 import requests
 
@@ -198,7 +198,7 @@ def load_availabilities(
             team_members = defaultdict(set)
 
             for name, team in row.items():
-                if not team:
+                if team not in TEAMS:
                     continue
                 team_members[team].add(name)
 
