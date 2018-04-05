@@ -95,14 +95,14 @@ class MatchCard(object):
         self.rows = [
             f"""<tr scope="row" class="{' '.join(classes1)}">
   <th class="text-right compact">{render_team_logo(match.teams[0])}</th>
-  <td>{render_team_link(predictor, match.teams[0])}</td>
+  <td>{render_team_link(predictor, match.teams[0], match.full_rosters[0])}</td>
   <td class="d-none d-sm-table-cell">{score1}</td>
   {render_chance_cell(p_win)}
   <td class="text-center">{e_diff:+.1f}</td>
 </tr>""",
             f"""<tr scope="row" class="{' '.join(classes2)}">
   <th class="text-right compact">{render_team_logo(match.teams[1])}</th>
-  <td>{render_team_link(predictor, match.teams[1])}</td>
+  <td>{render_team_link(predictor, match.teams[1], match.full_rosters[1])}</td>
   <td class="d-none d-sm-table-cell">{score2}</td>
   {render_chance_cell(1 - p_win)}
   <td class="text-center">{-e_diff:+.1f}</td>
@@ -182,9 +182,14 @@ def render_team_logo(team, width=30) -> str:
     return f'<img src="imgs/{name}.png" alt="{name} Logo" width="{width}">'
 
 
-def render_team_link(predictor, team) -> str:
+def render_team_link(predictor, team, full_roster=None) -> str:
+    if full_roster is None:
+        rating = predictor.ratings[team]
+    else:
+        roster = predictor._best_roster(team, full_roster)
+        rating = predictor._roster_rating(roster)
+
     name = TEAM_NAMES[team]
-    rating = predictor.ratings[team]
     title = f'{round(rating.mu)} ± {round(rating.sigma * RATING_CONFIDENCE)}'
 
     return f'<a href="/{name}" class="team" data-toggle="tooltip" data-placement="right" title="{title}">{name}</a>'
