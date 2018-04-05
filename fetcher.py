@@ -35,6 +35,16 @@ class CSVGame(NamedTuple):
     score2: int = None
     roster1: str = None
     roster2: str = None
+    full_roster1: str = None
+    full_roster2: str = None
+
+
+def join_names(names: List[str]) -> str:
+    return '|'.join(sorted(names))
+
+
+def split_names(names_str: str) -> List[str]:
+    return names_str.split('|')
 
 
 def fetch_games() -> List[CSVGame]:
@@ -47,7 +57,7 @@ def fetch_games() -> List[CSVGame]:
         games += parse_match(raw_match)
     games.sort(key=lambda game: game.start_time)
 
-    return games
+    return fill_availabilities(games)
 
 
 def parse_match(raw_match) -> List[CSVGame]:
@@ -116,8 +126,8 @@ def parse_game(raw_game, base_game: CSVGame, team1_id: int,
         print(f'{game_id}: Invalid player numbers, skipping.')
         return None
 
-    roster1 = '|'.join(sorted(roster1))
-    roster2 = '|'.join(sorted(roster2))
+    roster1 = join_names(roster1)
+    roster2 = join_names(roster2)
 
     game = base_game._replace(game_id=game_id, game_number=game_number,
                               map_name=map_name,
@@ -149,25 +159,29 @@ def load_games(csv_filename: str = GAMES_CSV) -> Tuple[List[Game], List[Game]]:
                                            '%Y-%m-%d %H:%M:%S')
             teams = (csv_game.team1, csv_game.team2)
             match_format = csv_game.match_format
+            full_rosters = (split_names(csv_game.full_roster1),
+                            split_names(csv_game.full_roster2))
 
             if csv_game.game_id:
                 game_id = int(csv_game.game_id)
                 game_number = int(csv_game.game_number)
                 map_name = csv_game.map_name
                 score = (int(csv_game.score1), int(csv_game.score2))
-                rosters = (csv_game.roster1.split('|'),
-                           csv_game.roster2.split('|'))
+                rosters = (split_names(csv_game.roster1),
+                           split_names(csv_game.roster2))
 
                 game = Game(match_id=match_id, stage=stage,
                             start_time=start_time, teams=teams,
                             match_format=match_format, game_id=game_id,
                             game_number=game_number, map_name=map_name,
-                            score=score, rosters=rosters)
+                            score=score, rosters=rosters,
+                            full_rosters=full_rosters)
                 past_games.append(game)
             else:
                 game = Game(match_id=match_id, stage=stage,
                             start_time=start_time, teams=teams,
-                            match_format=match_format)
+                            match_format=match_format,
+                            full_rosters=full_rosters)
                 future_games.append(game)
 
     return past_games, future_games
@@ -191,6 +205,30 @@ def load_availabilities(
             availabilities[(stage, match_number)] = team_members
 
     return availabilities
+
+
+def fill_availabilities(games: List[CSVGame]) -> List[CSVGame]:
+    availabilities = load_availabilities()
+    match_ids = defaultdict(set)
+    filled_games = []
+
+    for game in games:
+        key1 = game.stage, game.team1
+        key2 = game.stage, game.team2
+
+        match_ids[key1].add(game.match_id)
+        match_ids[key2].add(game.match_id)
+
+        match_key1 = (game.stage, len(match_ids[key1]))
+        match_key2 = (game.stage, len(match_ids[key2]))
+
+        full_roster1 = join_names(availabilities[match_key1][game.team1])
+        full_roster2 = join_names(availabilities[match_key2][game.team2])
+
+        filled_games.append(game._replace(full_roster1=full_roster1,
+                                          full_roster2=full_roster2))
+
+    return filled_games
 
 
 def save_ratings_history(history, mu, sigma, csv_filename: str = RATINGS_CSV):

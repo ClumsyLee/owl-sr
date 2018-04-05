@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import NamedTuple, Tuple
+from typing import List, NamedTuple, Tuple
 
 DRAWABLE_MAPS = set([
     'hanamura', 'horizon-lunar-colony', 'temple-of-anubis', 'volskaya',
@@ -7,6 +7,7 @@ DRAWABLE_MAPS = set([
 ])
 
 Roster = Tuple[str, str, str, str, str, str]
+FullRoster = List[str]
 
 
 class Game(NamedTuple):
@@ -22,6 +23,7 @@ class Game(NamedTuple):
     map_name: str = None
     score: Tuple[int, int] = None
     rosters: Tuple[Roster, Roster] = None
+    full_rosters: Tuple[FullRoster, FullRoster] = None
 
     @property
     def drawable(self):
