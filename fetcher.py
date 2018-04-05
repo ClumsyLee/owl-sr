@@ -33,18 +33,8 @@ class CSVGame(NamedTuple):
     map_name: str = None
     score1: int = None
     score2: int = None
-    team1_p1: str = None
-    team1_p2: str = None
-    team1_p3: str = None
-    team1_p4: str = None
-    team1_p5: str = None
-    team1_p6: str = None
-    team2_p1: str = None
-    team2_p2: str = None
-    team2_p3: str = None
-    team2_p4: str = None
-    team2_p5: str = None
-    team2_p6: str = None
+    roster1: str = None
+    roster2: str = None
 
 
 def fetch_games() -> List[CSVGame]:
@@ -107,33 +97,32 @@ def parse_game(raw_game, base_game: CSVGame, team1_id: int,
     map_name = raw_game['attributes']['map']
     score = raw_game['points']
 
-    n_team1 = 0
-    n_team2 = 0
-    names = {}
+    roster1 = []
+    roster2 = []
 
     for raw_player in raw_game['players']:
         team_id = raw_player['team']['id']
         name = raw_player['player']['name']
 
         if team_id == team1_id:
-            n_team1 += 1
-            name_key = f'team1_p{n_team1}'
+            roster1.append(name)
         elif team_id == team2_id:
-            n_team2 += 1
-            name_key = f'team2_p{n_team2}'
+            roster2.append(name)
         else:
             print(f'{game_id}: Invalid team id ({name}, {team_id}), skipping.')
             continue
 
-        names[name_key] = name
-
-    if n_team1 != 6 or n_team2 != 6:
+    if len(roster1) != 6 or len(roster2) != 6:
         print(f'{game_id}: Invalid player numbers, skipping.')
         return None
 
+    roster1 = '|'.join(sorted(roster1))
+    roster2 = '|'.join(sorted(roster2))
+
     game = base_game._replace(game_id=game_id, game_number=game_number,
                               map_name=map_name,
-                              score1=score[0], score2=score[1], **names)
+                              score1=score[0], score2=score[1],
+                              roster1=roster1, roster2=roster2)
     return game
 
 
@@ -166,14 +155,8 @@ def load_games(csv_filename: str = GAMES_CSV) -> Tuple[List[Game], List[Game]]:
                 game_number = int(csv_game.game_number)
                 map_name = csv_game.map_name
                 score = (int(csv_game.score1), int(csv_game.score2))
-                rosters = (
-                    tuple(sorted([csv_game.team1_p1, csv_game.team1_p2,
-                                  csv_game.team1_p3, csv_game.team1_p4,
-                                  csv_game.team1_p5, csv_game.team1_p6])),
-                    tuple(sorted([csv_game.team2_p1, csv_game.team2_p2,
-                                  csv_game.team2_p3, csv_game.team2_p4,
-                                  csv_game.team2_p5, csv_game.team2_p6]))
-                )
+                rosters = (csv_game.roster1.split('|'),
+                           csv_game.roster2.split('|'))
 
                 game = Game(match_id=match_id, stage=stage,
                             start_time=start_time, teams=teams,
