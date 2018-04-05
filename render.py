@@ -1,4 +1,5 @@
 from collections import defaultdict, OrderedDict
+from datetime import datetime
 
 from fetcher import load_games
 from predictor import PlayerTrueSkillPredictor
@@ -293,9 +294,9 @@ def render_index(predictor, future_games) -> None:
         win = wins[team]
         loss = losses[team]
         map_diff = map_diffs[team]
-        p_top3, p_top1 = p_stage[team]
+        p_top4, p_top1 = p_stage[team]
 
-        classes = ['win' if i < 3 else 'loss']
+        classes = ['win' if i < 4 else 'loss']
         if i < 2 and stage_finished:
             classes.append('highlight')
 
@@ -305,7 +306,7 @@ def render_index(predictor, future_games) -> None:
   <td class="text-center">{win}</td>
   <td class="text-center d-none d-sm-table-cell">{loss}</td>
   <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
-  {render_chance_cell(p_top3)}
+  {render_chance_cell(p_top4)}
   {render_chance_cell(p_top1)}
 </tr>""")
 
@@ -321,7 +322,7 @@ def render_index(predictor, future_games) -> None:
           <th scope="col" class="compacter">win</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
-          <th scope="col" class="compact">top 3<br>prob.</th>
+          <th scope="col" class="compact">top 4<br>prob.</th>
           <th scope="col" class="compact">top 1<br>prob.</th>
         </tr>
       </thead>
@@ -334,13 +335,7 @@ def render_index(predictor, future_games) -> None:
     render_page('index', title, content)
 
 
-def render_match_cards(past_games, future_games, day_limit=2):
-    # Only predict the upcoming matches.
-    if len(future_games) > 0:
-        first_date = without_time(future_games[0].start_time)
-        future_games = [game for game in future_games
-                        if (game.start_time - first_date).days < day_limit]
-
+def render_match_cards(past_games, future_games):
     predictor = PlayerTrueSkillPredictor()
     past_matches = defaultdict(list)
 
@@ -383,10 +378,11 @@ def render_match_cards(past_games, future_games, day_limit=2):
 
 def render_matches(match_cards):
     card_groups = MatchCard.group_by_date(match_cards)
-    dates = list(card_groups.keys())
+    today = without_time(datetime.now())
+    dates = [date for date in card_groups.keys() if date >= today]
     sections = []
 
-    for date in reversed(dates):
+    for date in dates:
         cards = card_groups[date]
         date_str = cards[0].date_str
 

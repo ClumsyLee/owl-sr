@@ -178,22 +178,22 @@ class Predictor(object):
                 win, map_diff = max_wins[team]
                 max_wins[team] = (win + 1, map_diff + 4)
 
-        min_3rd_wins = list(sorted(min_wins.values()))[-3]
-        max_4th_wins = list(sorted(max_wins.values()))[-4]
+        min_4th_wins = list(sorted(min_wins.values()))[-4]
+        max_5th_wins = list(sorted(max_wins.values()))[-5]
 
-        for team, (p_top3, p_top1) in prediction.items():
-            if max_wins[team] < min_3rd_wins:
-                p_top3 = False
+        for team, (p_top4, p_top1) in prediction.items():
+            if max_wins[team] < min_4th_wins:
+                p_top4 = False
                 p_top1 = False
-            elif min_wins[team] > max_4th_wins:
-                p_top3 = True
+            elif min_wins[team] > max_5th_wins:
+                p_top4 = True
 
                 if self.stage_title_losses[team] > 0:
                     p_top1 = False
                 elif self.stage_finished:
                     p_top1 = True
 
-            prediction[team] = (p_top3, p_top1)
+            prediction[team] = (p_top4, p_top1)
 
         return prediction
 
@@ -204,7 +204,7 @@ class Predictor(object):
         p_wins_regular = self._p_wins(teams, match_format='regular')
         p_wins_title = self._p_wins(teams, match_format='title')
 
-        top3_count = {team: 0 for team in teams}
+        top4_count = {team: 0 for team in teams}
         top1_count = {team: 0 for team in teams}
 
         for i in range(iters):
@@ -230,32 +230,53 @@ class Predictor(object):
                 head_to_head_map_diffs[(team1, team2)] += map_diff
                 head_to_head_map_diffs[(team2, team1)] -= map_diff
 
-            # Determine top 3 teams.
-            top3 = self._top3_teams(teams, wins, map_diffs,
+            # Determine top 4 teams.
+            top4 = self._top4_teams(teams, wins, map_diffs,
                                     head_to_head_map_diffs, p_wins_regular)
-            for team in top3:
-                top3_count[team] += 1
+            for team in top4:
+                top4_count[team] += 1
 
             # Determine top 1 teams.
-            first, second, third = top3
+            t1, t2, t3, t4 = top4
+            progress = sum(self.stage_title_wins[team] for team in top4)
 
-            if self.stage_title_wins[second] > 0:
+            # Determine top 1's opponent.
+            if progress == 0:
+                if p_wins_title[(t1, t2)] > p_wins_title[(t1, t4)]:
+                    t2, t4 = t4, t2
+                if p_wins_title[(t1, t3)] > p_wins_title[(t1, t4)]:
+                    t3, t4 = t4, t3
+
+                if random() < p_wins_title[(t4, t1)]:
+                    t1, t4 = t4, t1
+            elif progress == 1:
+                t2t3 = []
+
+                for team in top4:
+                    if self.stage_title_wins[team] > 0:
+                        t1 = team
+                    elif self.stage_title_losses[team] > 0:
+                        t4 = team
+                    else:
+                        t2t3.append(team)
+
+                t2, t3 = t2t3
+
+            if self.stage_title_wins[t2] > 0:
                 pass
-            elif self.stage_title_wins[third] > 0:
-                second = third
-            elif random() < p_wins_title[(third, second)]:
-                second = third
+            elif (self.stage_title_wins[t3] > 0 or
+                  random() < p_wins_title[(t3, t2)]):
+                t2, t3 = t3, t2
 
-            if self.stage_title_wins[first] > 0:
+            if self.stage_title_wins[t1] > 0:
                 pass
-            elif self.stage_title_wins[second] > 1:
-                first = second
-            elif random() < p_wins_title[(second, first)]:
-                first = second
+            elif (self.stage_title_wins[t2] > 0 or
+                  random() < p_wins_title[(t2, t1)]):
+                t1, t2 = t2, t1
 
-            top1_count[first] += 1
+            top1_count[t1] += 1
 
-        return {team: (top3_count[team] / iters, top1_count[team] / iters)
+        return {team: (top4_count[team] / iters, top1_count[team] / iters)
                 for team in teams}
 
     def _predict_bo_match_score(self, teams: Tuple[str, str],
@@ -425,7 +446,7 @@ class Predictor(object):
 
         return p_wins
 
-    def _top3_teams(self, teams, wins, map_diffs, head_to_head_map_diffs,
+    def _top4_teams(self, teams, wins, map_diffs, head_to_head_map_diffs,
                     p_wins_regular):
         def cmp_team(team1, team2):
             if wins[team1] < wins[team2]:
@@ -446,7 +467,7 @@ class Predictor(object):
                 return -1
 
         teams = list(sorted(teams, key=cmp_to_key(cmp_team), reverse=True))
-        return teams[:3]
+        return teams[:4]
 
 
 class SimplePredictor(Predictor):
@@ -692,14 +713,14 @@ def predict_stage():
                    reverse=True)
 
     print(predictor.base_stage)
-    print(f'       Top3   Top1  Roster')
+    print(f'       Top4   Top1  Roster')
     for team in teams:
-        p_top3, p_top1 = p_stage[team]
+        p_top4, p_top1 = p_stage[team]
 
-        if isinstance(p_top3, bool):
-            top3 = str(p_top3)
+        if isinstance(p_top4, bool):
+            top4 = str(p_top4)
         else:
-            top3 = f'{round(p_top3 * 100)}%'
+            top4 = f'{round(p_top4 * 100)}%'
 
         if isinstance(p_top1, bool):
             top1 = str(p_top1)
@@ -708,7 +729,7 @@ def predict_stage():
 
         roster = ' '.join(predictor.best_rosters[team])
 
-        print(f'{team:>4}  {top3:>5}  {top1:>5}  {roster}')
+        print(f'{team:>4}  {top4:>5}  {top1:>5}  {roster}')
 
 
 def save_ratings():
