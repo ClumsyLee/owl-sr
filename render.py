@@ -378,7 +378,7 @@ def render_match_cards(past_games, future_matches):
 def render_matches(match_cards):
     card_groups = MatchCard.group_by_date(match_cards)
     now = datetime.now()
-    dates = [date for date in card_groups.keys() if (now - date).days <= 1]
+    dates = [date for date in card_groups.keys() if (now - date).days <= 0]
     sections = []
 
     for date in dates:
