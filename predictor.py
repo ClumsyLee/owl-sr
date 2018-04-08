@@ -428,10 +428,14 @@ class Predictor(object):
 
         for team1 in TEAMS:
             for team2 in TEAMS:
+                if team1 == team2:
+                    continue
+
                 team_pair = (team1, team2)
+                full_roster_pair = (full_rosters[team1], full_rosters[team2])
 
                 match = Game(teams=team_pair, match_format='title',
-                             full_rosters=full_rosters)
+                             full_rosters=full_roster_pair)
                 p_win, _ = self.predict_match(match)
                 p_wins[team_pair] = p_win
 
