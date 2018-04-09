@@ -380,8 +380,10 @@ class Predictor(object):
                         if TEAM_DIVISIONS[team] == 'ATL'][:3]
             pac_top3 = [team for team in standings
                         if TEAM_DIVISIONS[team] == 'PAC'][:3]
-            top6 = [team for team in standings
-                    if team in atl_top3 or team in pac_top3]
+
+            seeds = [atl_top3[0], pac_top3[0]]
+            top6 = seeds + [team for team in standings
+                            if team in atl_top3[1:] or team in pac_top3[1:]]
 
             for team in top6:
                 top6_count[team] += 1
@@ -403,31 +405,42 @@ class Predictor(object):
                   random() < p_wins_playoff[(t5, t4)]):
                 t4, t5 = t5, t4
 
-            if top6.index(t4) < top6.index(t3):
-                t3, t4 = t4, t3
+            # Reseed.
+            t1, t2, t3, t4 = sorted([t1, t2, t3, t4],
+                                    key=lambda team: standings.index(team))
 
             # Series C.
-            if self.playoff_wins[t1] >= 3:
+            if t1 in seeds and self.playoff_wins[t1] >= 3:
                 pass
-            elif (self.playoff_wins[t4] >= 6 or
-                  random() < p_wins_playoff[(t4, t1)]):
+            elif t1 not in seeds and self.playoff_wins[t1] >= 6:
+                pass
+            elif t4 in seeds and self.playoff_wins[t4] >= 3:
+                t1, t4 = t4, t1
+            elif t4 not in seeds and self.playoff_wins[t4] >= 6:
+                t1, t4 = t4, t1
+            elif random() < p_wins_playoff[(t4, t1)]:
                 t1, t4 = t4, t1
 
             # Series D.
-            if self.playoff_wins[t2] >= 3:
+            if t2 in seeds and self.playoff_wins[t2] >= 3:
                 pass
-            elif (self.playoff_wins[t3] >= 6 or
-                  random() < p_wins_playoff[(t3, t2)]):
+            elif t2 not in seeds and self.playoff_wins[t2] >= 6:
+                pass
+            elif t3 in seeds and self.playoff_wins[t3] >= 3:
+                t2, t3 = t3, t2
+            elif t3 not in seeds and self.playoff_wins[t3] >= 6:
+                t2, t3 = t3, t2
+            elif random() < p_wins_playoff[(t3, t2)]:
                 t2, t3 = t3, t2
 
             # Championship.
-            if t1 == top6[0] and self.playoff_wins[t1] >= 6:
+            if t1 in seeds and self.playoff_wins[t1] >= 6:
                 pass
-            elif t1 == top6[3] and self.playoff_wins[t1] >= 9:
+            elif t1 not in seeds and self.playoff_wins[t1] >= 9:
                 pass
-            elif t2 == top6[1] and self.playoff_wins[t2] >= 6:
+            elif t2 in seeds and self.playoff_wins[t2] >= 6:
                 t1, t2 = t2, t1
-            elif t2 == top6[2] and self.playoff_wins[t2] >= 9:
+            elif t2 not in seeds and self.playoff_wins[t2] >= 9:
                 t1, t2 = t2, t1
             elif random() < p_wins_playoff[(t2, t1)]:
                 t1, t2 = t2, t1

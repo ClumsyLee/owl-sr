@@ -214,7 +214,7 @@ def render_chance_cell(p_win, extra_classes = []):
     if percent == 0:
         classes.add('low-chance')
 
-    return f'<td class="{" ".join(classes)}" style="background-color: rgba(255, 137, 0, {percent / 100});">{p_str}</td>'
+    return f'<td class="{" ".join(sorted(classes))}" style="background-color: rgba(255, 137, 0, {percent / 100});">{p_str}</td>'
 
 
 def render_page(endpoint: str, title: str, content: str) -> None:
