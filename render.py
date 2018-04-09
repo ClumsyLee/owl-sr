@@ -196,7 +196,7 @@ def render_team_link(predictor, team, full_roster=None) -> str:
     return f'<a href="/{name}" class="team" data-toggle="tooltip" data-placement="right" title="{title}">{name}</a>'
 
 
-def render_chance_cell(p_win):
+def render_chance_cell(p_win, extra_classes = []):
     percent = round(p_win * 100)
 
     if isinstance(p_win, bool):
@@ -209,9 +209,10 @@ def render_chance_cell(p_win):
         else:
             p_str = f'{percent}%'
 
-    classes = ['text-center']
+    classes = set(extra_classes)
+    classes.add('text-center')
     if percent == 0:
-        classes.append('low-chance')
+        classes.add('low-chance')
 
     return f'<td class="{" ".join(classes)}" style="background-color: rgba(255, 137, 0, {percent / 100});">{p_str}</td>'
 
@@ -280,6 +281,8 @@ def render_index(predictor, future_matches) -> None:
     content = ''
 
     p_stage = predictor.predict_stage(future_matches)
+    p_season = predictor.predict_season(future_matches)
+
     wins = predictor.stage_wins
     losses = predictor.stage_losses
     map_diffs = predictor.stage_map_diffs
@@ -299,6 +302,7 @@ def render_index(predictor, future_matches) -> None:
         loss = losses[team]
         map_diff = map_diffs[team]
         p_top4, p_top1 = p_stage[team]
+        p_playoff, p_champion = p_season[team]
 
         classes = ['win' if i < 4 else 'loss']
         if i < 2 and stage_finished:
@@ -312,6 +316,8 @@ def render_index(predictor, future_matches) -> None:
   <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
   {render_chance_cell(p_top4)}
   {render_chance_cell(p_top1)}
+  {render_chance_cell(p_playoff, ('d-none', 'd-sm-table-cell'))}
+  {render_chance_cell(p_champion, ('d-none', 'd-sm-table-cell'))}
 </tr>""")
 
     title = f'{predictor.base_stage} Standings'
@@ -328,6 +334,8 @@ def render_index(predictor, future_matches) -> None:
           <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
           <th scope="col" class="compact">top 4<br>prob.</th>
           <th scope="col" class="compact">top 1<br>prob.</th>
+          <th scope="col" class="compact d-none d-sm-table-cell">playoff<br>prob.</th>
+          <th scope="col" class="compact d-none d-sm-table-cell">champion<br>prob.</th>
         </tr>
       </thead>
       <tbody>
