@@ -78,6 +78,8 @@ def parse_match(raw_match) -> List[CSVGame]:
 
     if 'Title Matches' in stage:
         match_format = 'title'
+    elif 'Preseason' in stage:
+        match_format = 'preseason'
     else:
         match_format = 'regular'
 

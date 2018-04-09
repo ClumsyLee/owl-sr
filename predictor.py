@@ -28,8 +28,11 @@ class Predictor(object):
             lambda: deque(maxlen=roster_queue_size))
         self.last_full_rosters = defaultdict(set)
 
-        # Global standings.
+        # Season standings.
+        self.wins = defaultdict(int)
+        self.losses = defaultdict(int)
         self.map_diffs = defaultdict(int)
+        self.head_to_head_diffs = defaultdict(int)
         self.head_to_head_map_diffs = defaultdict(int)
 
         # Stage standings.
@@ -122,7 +125,7 @@ class Predictor(object):
 
     def predict_match_score(self, match: Game) -> PScores:
         """Predict the scores of a given match."""
-        if match.match_format == 'regular':
+        if match.match_format in ('preseason', 'regular'):
             drawables = [True, False, True, False]
             return self._predict_bo_score(match.teams, rosters=match.rosters,
                                           full_rosters=match.full_rosters,
@@ -356,6 +359,7 @@ class Predictor(object):
         # Wins & map diffs.
         team1, team2 = game.teams
         score1, score2 = game.score
+        is_regular = game.match_format == 'regular'
         is_title = game.match_format == 'title'
 
         if game.score[0] != game.score[1]:
@@ -364,12 +368,14 @@ class Predictor(object):
             else:
                 loser, winner = game.teams
 
-            self.map_diffs[winner] += 1
-            self.map_diffs[loser] -= 1
-            self.head_to_head_map_diffs[(winner, loser)] += 1
-            self.head_to_head_map_diffs[(loser, winner)] -= 1
+            if is_regular:
+                # Season standings.
+                self.map_diffs[winner] += 1
+                self.map_diffs[loser] -= 1
+                self.head_to_head_map_diffs[(winner, loser)] += 1
+                self.head_to_head_map_diffs[(loser, winner)] -= 1
 
-            if not is_title:
+                # Stage standings.
                 self.stage_map_diffs[winner] += 1
                 self.stage_map_diffs[loser] -= 1
                 self.stage_head_to_head_map_diffs[(winner, loser)] += 1
@@ -378,20 +384,34 @@ class Predictor(object):
             # Handle the match result.
             if self.score[winner] == self.score[loser]:
                 # The winner won the match.
-                if is_title:
-                    self.stage_title_wins[winner] += 1
-                    self.stage_title_losses[loser] += 1
-                else:
+                if is_regular:
+                    # Season standings.
+                    self.wins[winner] += 1
+                    self.losses[loser] += 1
+                    self.head_to_head_diffs[((winner, loser))] += 1
+                    self.head_to_head_diffs[((loser, winner))] -= 1
+
+                    # Stage standings.
                     self.stage_wins[winner] += 1
                     self.stage_losses[loser] += 1
+                elif is_title:
+                    self.stage_title_wins[winner] += 1
+                    self.stage_title_losses[loser] += 1
             elif self.score[winner] == self.score[loser] - 1:
                 # The winner avoided the loss.
-                if is_title:
-                    self.stage_title_wins[loser] -= 1
-                    self.stage_title_losses[winner] -= 1
-                else:
+                if is_regular:
+                    # Season standings.
+                    self.wins[loser] -= 1
+                    self.losses[winner] -= 1
+                    self.head_to_head_diffs[((winner, loser))] += 1
+                    self.head_to_head_diffs[((loser, winner))] -= 1
+
+                    # Stage standings.
                     self.stage_wins[loser] -= 1
                     self.stage_losses[winner] -= 1
+                elif is_title:
+                    self.stage_title_wins[loser] -= 1
+                    self.stage_title_losses[winner] -= 1
 
             self.score[winner] += 1
 
