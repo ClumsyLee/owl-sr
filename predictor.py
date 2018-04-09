@@ -376,14 +376,14 @@ class Predictor(object):
                                                head_to_head_map_diffs,
                                                head_to_head_diffs,
                                                p_wins_regular)
-            atl_top3 = [team for team in standings
-                        if TEAM_DIVISIONS[team] == 'ATL'][:3]
-            pac_top3 = [team for team in standings
-                        if TEAM_DIVISIONS[team] == 'PAC'][:3]
+            atl_seed = [team for team in standings
+                        if TEAM_DIVISIONS[team] == 'ATL'][0]
+            pac_seed = [team for team in standings
+                        if TEAM_DIVISIONS[team] == 'PAC'][0]
 
-            seeds = [atl_top3[0], pac_top3[0]]
+            seeds = [atl_seed, pac_seed]
             top6 = seeds + [team for team in standings
-                            if team in atl_top3[1:] or team in pac_top3[1:]]
+                            if team not in seeds][:4]
 
             for team in top6:
                 top6_count[team] += 1
