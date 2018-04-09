@@ -9,6 +9,21 @@ DRAWABLE_MAPS = set([
 TEAMS = set(['BOS', 'DAL', 'FLA', 'GLA', 'HOU', 'LDN',
              'NYE', 'PHI', 'SEO', 'SFS', 'SHD', 'VAL'])
 
+TEAM_DIVISIONS = {
+    'BOS': 'ATL',
+    'DAL': 'PAC',
+    'FLA': 'ATL',
+    'GLA': 'PAC',
+    'HOU': 'ATL',
+    'LDN': 'ATL',
+    'NYE': 'ATL',
+    'PHI': 'ATL',
+    'SEO': 'PAC',
+    'SFS': 'PAC',
+    'SHD': 'PAC',
+    'VAL': 'PAC'
+}
+
 Roster = Tuple[str, str, str, str, str, str]
 FullRoster = Set[str]
 
