@@ -37,6 +37,13 @@ tr.highlight {
   background-color: lightyellow;
 }
 
+tr.atl-division {
+}
+
+tr.pac-division {
+  background-color: #F8F8F8;
+}
+
 .low-chance {
   color: #ccc;
 }

@@ -2,7 +2,7 @@ from collections import defaultdict, OrderedDict
 from datetime import datetime
 
 from fetcher import load_games
-from game import Game
+from game import Game, TEAM_DIVISIONS
 from predictor import PlayerTrueSkillPredictor, Predictor
 
 
@@ -298,24 +298,36 @@ def render_index(predictor, future_matches) -> None:
     rows = []
 
     for i, team in enumerate(teams):
+        division = TEAM_DIVISIONS[team].lower()
+
         win = wins[team]
         loss = losses[team]
         map_diff = map_diffs[team]
+
+        season_win = predictor.wins[team]
+        season_loss = predictor.losses[team]
+        season_map_diff = predictor.map_diffs[team]
+
         p_top4, p_top1 = p_stage[team]
         p_playoff, p_champion = p_season[team]
 
-        classes = ['win' if i < 4 else 'loss']
+        classes = set()
+        classes.add(division + '-division')
+        classes.add('win' if i < 4 else 'loss')
         if i < 2 and stage_finished:
-            classes.append('highlight')
+            classes.add('highlight')
 
-        rows.append(f"""<tr scope="row" class="{' '.join(classes)}">
+        rows.append(f"""<tr scope="row" class="{' '.join(sorted(classes))}">
   <th class="text-right">{render_team_logo(team)}</th>
   <td>{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>
-  <td class="text-center d-none d-sm-table-cell">{loss}</td>
-  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
+  <td class="text-center d-none d-lg-table-cell">{loss}</td>
+  <td class="text-center d-none d-xl-table-cell">{map_diff:+}</td>
   {render_chance_cell(p_top4)}
   {render_chance_cell(p_top1)}
+  <td class="text-center d-none d-sm-table-cell">{season_win}</td>
+  <td class="text-center d-none d-lg-table-cell">{season_loss}</td>
+  <td class="text-center d-none d-xl-table-cell">{season_map_diff:+}</td>
   {render_chance_cell(p_playoff, ('d-none', 'd-sm-table-cell'))}
   {render_chance_cell(p_champion, ('d-none', 'd-sm-table-cell'))}
 </tr>""")
@@ -329,13 +341,16 @@ def render_index(predictor, future_matches) -> None:
         <tr class="text-center">
           <th scope="col" class="compact"></th>
           <th scope="col"></th>
-          <th scope="col" class="compacter">win</th>
-          <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
-          <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
-          <th scope="col" class="compact">stage<br>title</th>
-          <th scope="col" class="compact">stage<br>champion</th>
-          <th scope="col" class="compact d-none d-sm-table-cell">season<br>playoff</th>
-          <th scope="col" class="compact d-none d-sm-table-cell">season<br>champion</th>
+          <th scope="col" class="compacter">stage<br>win</th>
+          <th scope="col" class="compacter d-none d-lg-table-cell">loss</th>
+          <th scope="col" class="compacter d-none d-xl-table-cell">map +/-</th>
+          <th scope="col" class="compact">title</th>
+          <th scope="col" class="compact">champion</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">season<br>win</th>
+          <th scope="col" class="compacter d-none d-lg-table-cell">loss</th>
+          <th scope="col" class="compacter d-none d-xl-table-cell">map +/-</th>
+          <th scope="col" class="compact d-none d-sm-table-cell">playoff</th>
+          <th scope="col" class="compact d-none d-sm-table-cell">champion</th>
         </tr>
       </thead>
       <tbody>
