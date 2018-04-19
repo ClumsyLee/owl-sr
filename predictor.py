@@ -307,22 +307,32 @@ class Predictor(object):
         pac_max_wins = {team: max_win for team, max_win in max_wins.items()
                         if TEAM_DIVISIONS[team] == 'PAC'}
 
-        min_3th_wins = {
-            'ATL': list(sorted(atl_min_wins.values()))[-3],
-            'PAC': list(sorted(pac_min_wins.values()))[-3]
+        min_division_1st_wins = {
+            'ATL': list(sorted(atl_min_wins.values()))[-1],
+            'PAC': list(sorted(pac_min_wins.values()))[-1]
         }
-        max_4th_wins = {
-            'ATL': list(sorted(atl_max_wins.values()))[-4],
-            'PAC': list(sorted(pac_max_wins.values()))[-4]
+        max_division_2nd_wins = {
+            'ATL': list(sorted(atl_max_wins.values()))[-2],
+            'PAC': list(sorted(pac_max_wins.values()))[-2]
         }
+        min_6th_win = list(sorted(min_wins.values()))[-6]
+        max_7th_win = list(sorted(max_wins.values()))[-7]
+
+        playoff_false_bars = {division: min(min_division_1st_wins[division],
+                                            min_6th_win)
+                              for division in ('ATL', 'PAC')}
+        # TODO: #6 does not guarantee playoff spot actually.
+        playoff_true_bars = {division: min(max_division_2nd_wins[division],
+                                           max_7th_win)
+                             for division in ('ATL', 'PAC')}
 
         for team, (p_top6, p_top1) in prediction.items():
             division = TEAM_DIVISIONS[team]
 
-            if max_wins[team] < min_3th_wins[division]:
+            if max_wins[team] < playoff_false_bars[division]:
                 p_top6 = False
                 p_top1 = False
-            elif min_wins[team] > max_4th_wins[division]:
+            elif min_wins[team] > playoff_true_bars[division]:
                 p_top6 = True
 
             prediction[team] = (p_top6, p_top1)
