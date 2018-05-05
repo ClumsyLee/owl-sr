@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 3</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10598">
     <thead>
@@ -60,25 +65,20 @@
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
   <td><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2647 ± 355">Dynasty</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">4</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.44);">44%</td>
   <td class="text-center">-0.3</td>
 </tr>
-      <tr scope="row" class="win">
+      <tr scope="row" class="win lost">
   <th class="text-right compact"><img src="imgs/Outlaws.png" alt="Outlaws Logo" width="30"></th>
   <td><a href="/Outlaws" class="team" data-toggle="tooltip" data-placement="right" title="2708 ± 315">Outlaws</a></td>
-  <td class="d-none d-sm-table-cell"></td>
+  <td class="d-none d-sm-table-cell">0</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.56);">56%</td>
   <td class="text-center">+0.3</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 3</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10596">
     <thead>
       <tr class="text-center">
@@ -958,10 +958,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [10527, 10532, 10536, 10225, 10234, 10236, 10241, 10248, 10253, 10264, 10266, 10566, 10571, '', '', 10278, 10286, 10290, 10297, 10302, 10305, 10315, 10323, 10579, 10582, '', '', 10334, 10341, 10347, 10353, 10359, 10365, 10374, 10379, 10596, ''];
-var opponents = ['Dragons', 'Outlaws', 'Excelsior', 'Fuel', 'Gladiator', 'Mayhem', 'Uprising', 'Dragons', 'Excelsior', 'Spitfire', 'Outlaws', 'Valiant', 'Shock', '', '', 'Valiant', 'Shock', 'Fuel', 'Gladiator', 'Dragons', 'Fusion', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', '', '', 'Valiant', 'Shock', 'Fuel', 'Gladiator', 'Dragons', 'Uprising', 'Fusion', 'Excelsior', 'Spitfire', ''];
-var scores1 = [4, 2, 3, 2, 4, 4, 4, 3, 2, 0, 3, 0, 3, '', '', 4, 3, 3, 3, 3, 3, 2, 0, 1, 3, '', '', 0, 4, 3, 2, 3, 1, 3, 0, 2, ''];
-var scores2 = [0, 1, 1, 1, 0, 0, 0, 1, 3, 4, 2, 3, 2, '', '', 0, 1, 1, 1, 1, 1, 3, 4, 3, 1, '', '', 4, 0, 2, 3, 1, 2, 2, 4, 3, ''];
+var matchIds = [10527, 10532, 10536, 10225, 10234, 10236, 10241, 10248, 10253, 10264, 10266, 10566, 10571, '', '', 10278, 10286, 10290, 10297, 10302, 10305, 10315, 10323, 10579, 10582, '', '', 10334, 10341, 10347, 10353, 10359, 10365, 10374, 10379, 10596, 10598];
+var opponents = ['Dragons', 'Outlaws', 'Excelsior', 'Fuel', 'Gladiator', 'Mayhem', 'Uprising', 'Dragons', 'Excelsior', 'Spitfire', 'Outlaws', 'Valiant', 'Shock', '', '', 'Valiant', 'Shock', 'Fuel', 'Gladiator', 'Dragons', 'Fusion', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', '', '', 'Valiant', 'Shock', 'Fuel', 'Gladiator', 'Dragons', 'Uprising', 'Fusion', 'Excelsior', 'Spitfire', 'Outlaws'];
+var scores1 = [4, 2, 3, 2, 4, 4, 4, 3, 2, 0, 3, 0, 3, '', '', 4, 3, 3, 3, 3, 3, 2, 0, 1, 3, '', '', 0, 4, 3, 2, 3, 1, 3, 0, 2, 4];
+var scores2 = [0, 1, 1, 1, 0, 0, 0, 1, 3, 4, 2, 3, 2, '', '', 0, 1, 1, 1, 1, 1, 3, 4, 3, 1, '', '', 4, 0, 2, 3, 1, 2, 2, 4, 3, 0];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -983,10 +983,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#AA8A00',
-      data: [2758, 2758, 2892, 2923, 3130, 3177, 3304, 3097, 3045, 2884, 2965, 2684, 2646, 2646, 2646, 2801, 2817, 2879, 2916, 2905, 2987, 2980, 2803, 2774, 2798, 2798, 2798, 2743, 2785, 2777, 2747, 2572, 2507, 2740, 2625, 2647, 2647],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2758, 2758, 2892, 2923, 3130, 3177, 3304, 3097, 3045, 2884, 2965, 2684, 2646, 2646, 2646, 2801, 2817, 2879, 2916, 2905, 2987, 2980, 2803, 2774, 2798, 2798, 2798, 2743, 2785, 2777, 2747, 2572, 2507, 2740, 2625, 2647, 2800],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
