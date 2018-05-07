@@ -268,9 +268,9 @@ class Predictor(object):
                   random() < p_wins_title[(t3, t2)]):
                 t2, t3 = t3, t2
 
-            if self.stage_title_wins[t1] > 0:
+            if self.stage_title_wins[t1] > 1:
                 pass
-            elif (self.stage_title_wins[t2] > 0 or
+            elif (self.stage_title_wins[t2] > 1 or
                   random() < p_wins_title[(t2, t1)]):
                 t1, t2 = t2, t1
 
