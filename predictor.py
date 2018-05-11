@@ -656,9 +656,8 @@ class Predictor(object):
 
         for teams, p_win in self._p_wins(full_rosters, 'playoff').items():
             p_loss = 1 - p_win
-            p_wins[teams] = (10 * p_win**3 * p_loss**2 +
-                             5 * p_win**4 * p_loss +
-                             p_win**5)
+            p_wins[teams] = (3 * p_win**2 * p_loss +
+                             p_win**3)
 
         return p_wins
 
