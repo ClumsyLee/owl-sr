@@ -95,16 +95,16 @@ class MatchCard(object):
 
         self.rows = [
             f"""<tr scope="row" class="{' '.join(classes1)}">
-  <th class="text-right compact">{render_team_logo(match.teams[0])}</th>
+  <th class="text-right compacter">{render_team_logo(match.teams[0])}</th>
   <td>{render_team_link(predictor, match.teams[0], match.full_rosters[0])}</td>
-  <td class="d-none d-sm-table-cell">{score1}</td>
+  <td>{score1}</td>
   {render_chance_cell(p_win)}
   <td class="text-center">{e_diff:+.1f}</td>
 </tr>""",
             f"""<tr scope="row" class="{' '.join(classes2)}">
-  <th class="text-right compact">{render_team_logo(match.teams[1])}</th>
+  <th class="text-right compacter">{render_team_logo(match.teams[1])}</th>
   <td>{render_team_link(predictor, match.teams[1], match.full_rosters[1])}</td>
-  <td class="d-none d-sm-table-cell">{score2}</td>
+  <td>{score2}</td>
   {render_chance_cell(1 - p_win)}
   <td class="text-center">{-e_diff:+.1f}</td>
 </tr>"""]
@@ -114,9 +114,9 @@ class MatchCard(object):
     <thead>
       <tr class="text-center">
         <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">{{0.header}}</th>
-        <th scope="col" class="compact d-none d-sm-table-cell"></th>
+        <th scope="col" class="compacter"></th>
         <th scope="col" class="compact">win<br>prob.</th>
-        <th scope="col" class="compact">map<br>+/-</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
       </tr>
     </thead>
     <tbody>
@@ -635,6 +635,9 @@ def render_teams(predictor, match_cards) -> None:
 def render_about():
     content = """<div class="row pt-4">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <h4 class="pt-4">Some Columns Are Missing on Mobiles?</h4>
+    <p>Try to turn your phone sideways.</p>
+
     <h4 class="pt-4">How Did You Compute These Numbers?</h4>
     <p>I used <a href="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">TrueSkill</a> to keep track of skill ratings of individual players and estimate the win probabilities based on the ratings.</p>
 
@@ -647,7 +650,7 @@ def render_about():
     <h4 class="pt-4">Why Not ELO/Glicko?</h4>
     <p>ELO and Glicko are designed for single-player games, which means every team will have a single rating. As a result, benching/transferring will not be handled properly.</p>
 
-    <h4 class="pt-4">Did You Consider Draws/Bans/Transfers/Underages?</h4>
+    <h4 class="pt-4">Did You Consider Draws/Bans/Transfers?</h4>
     <p>Yes.</p>
 
     <h4 class="pt-4">Did You Consider Tie-breakers/BO5 for the Title Matches?</h4>
