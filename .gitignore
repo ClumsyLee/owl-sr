@@ -99,3 +99,11 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Python env.
+/bin
+/pip-selfcheck.json
+/pyvenv.cfg
+
+# macOS.
+.DS_Store
