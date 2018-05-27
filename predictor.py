@@ -23,6 +23,7 @@ class Predictor(object):
     def __init__(self, roster_queue_size: int = 12) -> None:
         super().__init__()
 
+        self.roster_queue_size = roster_queue_size
         # Track recent used rosters.
         self.roster_queues = defaultdict(
             lambda: deque(maxlen=roster_queue_size))
@@ -756,6 +757,12 @@ class TrueSkillPredictor(Predictor):
                  beta: float = 2500.0 / 2.0, tau: float = 25.0 / 3.0,
                  draw_probability: float = 0.06, **kws) -> None:
         super().__init__(**kws)
+
+        self.mu = mu
+        self.sigma = sigma
+        self.beta = beta
+        self.tau = tau
+        self.draw_probability = draw_probability
 
         self.env_drawable = TrueSkill(mu=mu, sigma=sigma, beta=beta, tau=tau,
                                       draw_probability=draw_probability)

@@ -631,8 +631,8 @@ def render_teams(predictor, match_cards) -> None:
                     upper_bounds, card_groups[team])
 
 
-def render_about():
-    content = """<div class="row pt-4">
+def render_about(predictor):
+    content = f"""<div class="row pt-4">
   <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
     <h4 class="pt-4">Some Columns Are Missing on Mobiles?</h4>
     <p>Try to turn your phone sideways.</p>
@@ -656,15 +656,15 @@ def render_about():
     <p>Yes.</p>
 
     <h4 class="pt-4">But How Did You Determine the Rosters?</h4>
-    <p>For a given team, sort all the rosters of it during its last 12 games (maps) based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
+    <p>For a given team, sort all the rosters of it during its last {predictor.roster_queue_size} games (maps) based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
 
     <h4 class="pt-4">What Parameters Did You Use?</h4>
     <ul>
-      <li><var>mu</var> = 2500</li>
-      <li><var>sigma</var> = 2500 / 3</li>
-      <li><var>beta</var> = 2500 / 2</li>
-      <li><var>tau</var> = 25 / 3</li>
-      <li><var>draw_probability</var> = 0.06 or 0 (based on the map)</li>
+      <li><var>mu</var> = {predictor.mu:g}</li>
+      <li><var>sigma</var> = {predictor.sigma:g}</li>
+      <li><var>beta</var> = {predictor.beta:g}</li>
+      <li><var>tau</var> = {predictor.tau:g}</li>
+      <li><var>draw_probability</var> = {predictor.draw_probability:g} or 0 (depending on the map)</li>
     </ul>
     <p>All these parameters are tuned on matches from preseason, stage 1, and stage 2.</p>
 
@@ -686,7 +686,7 @@ def render_all():
     render_index(predictor, future_matches)
     render_matches(match_cards)
     render_teams(predictor, match_cards)
-    render_about()
+    render_about(predictor)
 
 
 if __name__ == '__main__':
