@@ -362,8 +362,7 @@ def render_index(predictor, future_matches) -> None:
     render_page('index', title, content)
 
 
-def render_match_cards(past_games, future_matches):
-    predictor = PlayerTrueSkillPredictor()
+def render_match_cards(predictor, past_games, future_matches):
     past_matches = defaultdict(list)
 
     for game in past_games:
@@ -681,10 +680,8 @@ def render_all():
     past_games, future_matches = load_games()
 
     predictor = PlayerTrueSkillPredictor()
-    predictor.train_games(past_games)
+    match_cards = render_match_cards(predictor, past_games, future_matches)
     predictor.save_ratings_history()
-
-    match_cards = render_match_cards(past_games, future_matches)
 
     render_index(predictor, future_matches)
     render_matches(match_cards)
