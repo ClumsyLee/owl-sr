@@ -95,15 +95,15 @@ class MatchCard(object):
 
         self.rows = [
             f"""<tr scope="row" class="{' '.join(classes1)}">
-  <th class="text-right compacter">{render_team_logo(match.teams[0])}</th>
-  <td>{render_team_link(predictor, match.teams[0], match.full_rosters[0])}</td>
+  <th class="text-right compact">{render_team_logo(match.teams[0])}</th>
+  <td class="pl-0">{render_team_link(predictor, match.teams[0], match.full_rosters[0])}</td>
   <td>{score1}</td>
   {render_chance_cell(p_win)}
   <td class="text-center">{e_diff:+.1f}</td>
 </tr>""",
             f"""<tr scope="row" class="{' '.join(classes2)}">
-  <th class="text-right compacter">{render_team_logo(match.teams[1])}</th>
-  <td>{render_team_link(predictor, match.teams[1], match.full_rosters[1])}</td>
+  <th class="text-right compact">{render_team_logo(match.teams[1])}</th>
+  <td class="pl-0">{render_team_link(predictor, match.teams[1], match.full_rosters[1])}</td>
   <td>{score2}</td>
   {render_chance_cell(1 - p_win)}
   <td class="text-center">{-e_diff:+.1f}</td>
@@ -319,7 +319,7 @@ def render_index(predictor, future_matches) -> None:
 
         rows.append(f"""<tr scope="row" class="{' '.join(sorted(classes))}">
   <th class="text-right">{render_team_logo(team)}</th>
-  <td>{render_team_link(predictor, team)}</td>
+  <td class="pl-0">{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>
   <td class="text-center d-none d-md-table-cell">{loss}</td>
   <td class="text-center d-none d-xl-table-cell">{map_diff:+}</td>
