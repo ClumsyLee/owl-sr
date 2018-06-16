@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 4</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10630">
     <thead>
@@ -60,25 +65,20 @@
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
   <td class="pl-0"><a href="/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2663 ± 344">Fusion</a></td>
-  <td></td>
+  <td>3</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.37);">37%</td>
   <td class="text-center">-0.6</td>
 </tr>
-      <tr scope="row" class="win">
+      <tr scope="row" class="win lost">
   <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
   <td class="pl-0"><a href="/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="2799 ± 292">Spitfire</a></td>
-  <td></td>
+  <td>1</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.63);">63%</td>
   <td class="text-center">+0.6</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 4</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10624">
     <thead>
       <tr class="text-center">
@@ -1205,10 +1205,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = ['', '', '', 10227, 10232, 10235, 10240, 10251, 10254, 10259, 10262, 10567, 10575, '', '', 10283, 10287, 10294, 10299, 10305, 10309, 10316, 10325, 10576, 10583, 10540, 10542, 10337, 10342, 10350, 10354, 10362, 10363, 10374, 10380, 10588, 10599, '', '', 10446, 10452, 10460, 10466, 10467, 10472, 10484, 10487, 10624, ''];
-var opponents = ['', '', '', 'Outlaws', 'Spitfire', 'Shock', 'Gladiator', 'Excelsior', 'Dragons', 'Valiant', 'Fuel', 'Uprising', 'Mayhem', '', '', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Dynasty', 'Excelsior', 'Dragons', 'Fuel', 'Gladiator', 'Valiant', 'Spitfire', 'Excelsior', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Excelsior', 'Shock', 'Dynasty', 'Dragons', 'Fuel', 'Valiant', '', '', 'Uprising', 'Mayhem', 'Dragons', 'Fuel', 'Excelsior', 'Gladiator', 'Shock', 'Dynasty', 'Outlaws', ''];
-var scores1 = ['', '', '', 3, 0, 2, 2, 3, 3, 0, 4, 0, 3, '', '', 4, 4, 3, 0, 1, 1, 4, 4, 3, 3, 3, 2, 2, 3, 3, 3, 2, 1, 2, 3, 3, 2, '', '', 3, 4, 4, 1, 0, 1, 2, 3, 1, ''];
-var scores2 = ['', '', '', 2, 4, 1, 3, 2, 2, 4, 0, 4, 2, '', '', 0, 0, 2, 4, 3, 3, 0, 0, 1, 2, 2, 3, 3, 1, 2, 2, 3, 3, 3, 2, 1, 3, '', '', 1, 0, 0, 3, 4, 3, 1, 2, 3, ''];
+var matchIds = ['', '', '', 10227, 10232, 10235, 10240, 10251, 10254, 10259, 10262, 10567, 10575, '', '', 10283, 10287, 10294, 10299, 10305, 10309, 10316, 10325, 10576, 10583, 10540, 10542, 10337, 10342, 10350, 10354, 10362, 10363, 10374, 10380, 10588, 10599, '', '', 10446, 10452, 10460, 10466, 10467, 10472, 10484, 10487, 10624, 10630];
+var opponents = ['', '', '', 'Outlaws', 'Spitfire', 'Shock', 'Gladiator', 'Excelsior', 'Dragons', 'Valiant', 'Fuel', 'Uprising', 'Mayhem', '', '', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Dynasty', 'Excelsior', 'Dragons', 'Fuel', 'Gladiator', 'Valiant', 'Spitfire', 'Excelsior', 'Uprising', 'Mayhem', 'Outlaws', 'Spitfire', 'Excelsior', 'Shock', 'Dynasty', 'Dragons', 'Fuel', 'Valiant', '', '', 'Uprising', 'Mayhem', 'Dragons', 'Fuel', 'Excelsior', 'Gladiator', 'Shock', 'Dynasty', 'Outlaws', 'Spitfire'];
+var scores1 = ['', '', '', 3, 0, 2, 2, 3, 3, 0, 4, 0, 3, '', '', 4, 4, 3, 0, 1, 1, 4, 4, 3, 3, 3, 2, 2, 3, 3, 3, 2, 1, 2, 3, 3, 2, '', '', 3, 4, 4, 1, 0, 1, 2, 3, 1, 3];
+var scores2 = ['', '', '', 2, 4, 1, 3, 2, 2, 4, 0, 4, 2, '', '', 0, 0, 2, 4, 3, 3, 0, 0, 1, 2, 2, 3, 3, 1, 2, 2, 3, 3, 3, 2, 1, 3, '', '', 1, 0, 0, 3, 4, 3, 1, 2, 3, 1];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -1230,10 +1230,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#FF9E1B',
-      data: [2500, 2500, 2500, 2559, 2337, 2368, 2270, 2629, 2499, 2320, 2501, 2390, 2318, 2318, 2318, 2777, 2874, 3011, 2862, 2771, 2781, 2822, 2920, 2958, 2947, 3026, 2964, 2878, 2862, 2895, 2884, 2891, 2800, 2740, 2625, 2682, 2647, 2647, 2647, 2661, 2891, 2959, 2756, 2682, 2642, 2757, 2794, 2663, 2663],
-      pointRadius: [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2500, 2500, 2500, 2559, 2337, 2368, 2270, 2629, 2499, 2320, 2501, 2390, 2318, 2318, 2318, 2777, 2874, 3011, 2862, 2771, 2781, 2822, 2920, 2958, 2947, 3026, 2964, 2878, 2862, 2895, 2884, 2891, 2800, 2740, 2625, 2682, 2647, 2647, 2647, 2661, 2891, 2959, 2756, 2682, 2642, 2757, 2794, 2663, 2760],
+      pointRadius: [0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
