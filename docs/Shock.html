@@ -46,6 +46,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 4</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="10631">
     <thead>
@@ -60,25 +65,20 @@
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
   <td class="pl-0"><a href="/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2742 ± 333">Shock</a></td>
-  <td></td>
+  <td>4</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.97);">97%</td>
   <td class="text-center">+2.8</td>
 </tr>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
   <td class="pl-0"><a href="/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="1946 ± 392">Dragons</a></td>
-  <td></td>
+  <td>0</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.03);">3%</td>
   <td class="text-center">-2.8</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 4</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="10622">
     <thead>
       <tr class="text-center">
@@ -1232,10 +1232,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [10525, 10526, 10531, 10223, 10231, 10235, 10246, 10247, 10255, 10261, 10265, 10565, 10571, '', '', 10280, 10286, 10291, 10301, 10303, 10312, 10321, 10324, 10577, 10581, '', '', 10335, 10341, 10346, 10352, 10358, 10363, 10373, 10378, 10590, 10591, '', '', 10443, 10451, 10458, 10463, 10471, 10475, 10484, 10489, 10622, ''];
-var opponents = ['Mayhem', 'Valiant', 'Spitfire', 'Valiant', 'Dragons', 'Fusion', 'Uprising', 'Spitfire', 'Fuel', 'Outlaws', 'Mayhem', 'Gladiator', 'Dynasty', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', 'Uprising', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Fusion', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', '', '', 'Gladiator', 'Dynasty', 'Spitfire', 'Outlaws', 'Fuel', 'Uprising', 'Fusion', 'Excelsior', 'Valiant', ''];
-var scores1 = [3, 2, 0, 0, 3, 1, 3, 1, 0, 1, 4, 1, 2, '', '', 0, 1, 1, 4, 3, 0, 1, 3, 2, 2, '', '', 3, 0, 0, 3, 4, 3, 1, 0, 3, 4, '', '', 1, 3, 2, 4, 3, 3, 1, 1, 1, ''];
-var scores2 = [1, 3, 4, 4, 1, 2, 2, 3, 3, 3, 0, 3, 3, '', '', 4, 3, 3, 0, 0, 4, 3, 1, 3, 3, '', '', 1, 4, 4, 1, 0, 1, 3, 4, 2, 0, '', '', 3, 1, 3, 0, 1, 1, 2, 2, 3, ''];
+var matchIds = [10525, 10526, 10531, 10223, 10231, 10235, 10246, 10247, 10255, 10261, 10265, 10565, 10571, '', '', 10280, 10286, 10291, 10301, 10303, 10312, 10321, 10324, 10577, 10581, '', '', 10335, 10341, 10346, 10352, 10358, 10363, 10373, 10378, 10590, 10591, '', '', 10443, 10451, 10458, 10463, 10471, 10475, 10484, 10489, 10622, 10631];
+var opponents = ['Mayhem', 'Valiant', 'Spitfire', 'Valiant', 'Dragons', 'Fusion', 'Uprising', 'Spitfire', 'Fuel', 'Outlaws', 'Mayhem', 'Gladiator', 'Dynasty', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', 'Uprising', '', '', 'Gladiator', 'Dynasty', 'Valiant', 'Dragons', 'Fuel', 'Fusion', 'Excelsior', 'Spitfire', 'Outlaws', 'Mayhem', '', '', 'Gladiator', 'Dynasty', 'Spitfire', 'Outlaws', 'Fuel', 'Uprising', 'Fusion', 'Excelsior', 'Valiant', 'Dragons'];
+var scores1 = [3, 2, 0, 0, 3, 1, 3, 1, 0, 1, 4, 1, 2, '', '', 0, 1, 1, 4, 3, 0, 1, 3, 2, 2, '', '', 3, 0, 0, 3, 4, 3, 1, 0, 3, 4, '', '', 1, 3, 2, 4, 3, 3, 1, 1, 1, 4];
+var scores2 = [1, 3, 4, 4, 1, 2, 2, 3, 3, 3, 0, 3, 3, '', '', 4, 3, 3, 0, 0, 4, 3, 1, 3, 3, '', '', 1, 4, 4, 1, 0, 1, 3, 4, 2, 0, '', '', 3, 1, 3, 0, 1, 1, 2, 2, 3, 0];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -1257,15 +1257,15 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#75787B',
       borderColor: '#FC4C02',
-      data: [2617, 2516, 2298, 2036, 2170, 2144, 2271, 2309, 2120, 2163, 2352, 2180, 2215, 2215, 2215, 2027, 2063, 2048, 2168, 2346, 2273, 2280, 2457, 2381, 2375, 2375, 2375, 2560, 2361, 2279, 2259, 2449, 2679, 2642, 2460, 2593, 2723, 2723, 2723, 2634, 2722, 2711, 2887, 2840, 2881, 2796, 2805, 2742, 2742],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2617, 2516, 2298, 2036, 2170, 2144, 2271, 2309, 2120, 2163, 2352, 2180, 2215, 2215, 2215, 2027, 2063, 2048, 2168, 2346, 2273, 2280, 2457, 2381, 2375, 2375, 2375, 2560, 2361, 2279, 2259, 2449, 2679, 2642, 2460, 2593, 2723, 2723, 2723, 2634, 2722, 2711, 2887, 2840, 2881, 2796, 2805, 2742, 2798],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2235, 2231, 2231, 2036, 1912, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1683, 1683, 1683, 2101, 2005, 1923, 1782, 1692, 1711, 1970, 2065, 2148, 2111, 2111, 2111, 2195, 2147, 2162, 1940, 1856, 1857, 2037, 1976, 1946, 1946],
+      data: [2235, 2231, 2231, 2036, 1912, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1683, 1683, 1683, 2101, 2005, 1923, 1782, 1692, 1711, 1970, 2065, 2148, 2111, 2111, 2111, 2195, 2147, 2162, 1940, 1856, 1857, 2037, 1976, 1946, 1768],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
