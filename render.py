@@ -314,8 +314,6 @@ def render_index(predictor, future_matches) -> None:
         classes = set()
         classes.add(division + '-division')
         classes.add('win' if i < 4 else 'loss')
-        if i < 2 and stage_finished:
-            classes.add('highlight')
 
         rows.append(f"""<tr scope="row" class="{' '.join(sorted(classes))}">
   <th class="text-right">{render_team_logo(team)}</th>
