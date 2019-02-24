@@ -7,48 +7,72 @@ from predictor import PlayerTrueSkillPredictor, Predictor
 
 
 TEAM_NAMES = {
-    'SHD': 'Dragons',
-    'SEO': 'Dynasty',
-    'NYE': 'Excelsior',
-    'DAL': 'Fuel',
-    'PHI': 'Fusion',
-    'GLA': 'Gladiator',
-    'FLA': 'Mayhem',
-    'HOU': 'Outlaws',
-    'SFS': 'Shock',
-    'LDN': 'Spitfire',
+    'ATL': 'Reign',
     'BOS': 'Uprising',
-    'VAL': 'Valiant'
+    'CDH': 'Hunters',
+    'DAL': 'Fuel',
+    'FLA': 'Mayhem',
+    'GLA': 'Gladiator',
+    'GZC': 'Charge',
+    'HOU': 'Outlaws',
+    'HZS': 'Spark',
+    'LDN': 'Spitfire',
+    'NYE': 'Excelsior',
+    'PAR': 'Eternal',
+    'PHI': 'Fusion',
+    'SEO': 'Dynasty',
+    'SFS': 'Shock',
+    'SHD': 'Dragons',
+    'TOR': 'Defiant',
+    'VAL': 'Valiant',
+    'VAN': 'Titans',
+    'WAS': 'Justice'
 }
 
 TEAM_FULL_NAMES = {
-    'SHD': 'Shanghai Dragons',
-    'SEO': 'Seoul Dynasty',
-    'NYE': 'New York Excelsior',
-    'DAL': 'Dallas Fuel',
-    'PHI': 'Philadelphia Fusion',
-    'GLA': 'Los Angeles Gladiators',
-    'FLA': 'Florida Mayhem',
-    'HOU': 'Houston Outlaws',
-    'SFS': 'San Francisco Shock',
-    'LDN': 'London Spitfire',
+    'ATL': 'Atlanta Reign',
     'BOS': 'Boston Uprising',
-    'VAL': 'Los Angeles Valiant'
+    'CDH': 'Chengdu Hunters',
+    'DAL': 'Dallas Fuel',
+    'FLA': 'Florida Mayhem',
+    'GLA': 'Los Angeles Gladiators',
+    'GZC': 'Guangzhou Charge',
+    'HOU': 'Houston Outlaws',
+    'HZS': 'Hangzhou Spark',
+    'LDN': 'London Spitfire',
+    'NYE': 'New York Excelsior',
+    'PAR': 'Paris Eternal',
+    'PHI': 'Philadelphia Fusion',
+    'SEO': 'Seoul Dynasty',
+    'SFS': 'San Francisco Shock',
+    'SHD': 'Shanghai Dragons',
+    'TOR': 'Toronto Defiant',
+    'VAL': 'Los Angeles Valiant',
+    'VAN': 'Vancouver Titans',
+    'WAS': 'Washington Justice'
 }
 
 TEAM_COLORS = {
-    'SHD': ('#D22630', '#000000'),
-    'SEO': ('#AA8A00', '#000000'),
-    'NYE': ('#0F57EA', '#171C38'),
-    'DAL': ('#0072CE', '#0C2340'),
-    'PHI': ('#FF9E1B', '#000000'),
-    'GLA': ('#3C1053', '#000000'),
-    'FLA': ('#FEDA00', '#AF272F'),
-    'HOU': ('#97D700', '#000000'),
-    'SFS': ('#FC4C02', '#75787B'),
-    'LDN': ('#59CBE8', '#FF8200'),
+    'ATL': ('#C4C4C4', '#910F1B'),
     'BOS': ('#174B97', '#F2DF00'),
-    'VAL': ('#4A7729', '#E5D660')
+    'CDH': ('#FFA000', '#B4926A'),
+    'DAL': ('#0072CE', '#0C2340'),
+    'FLA': ('#FEDA00', '#AF272F'),
+    'GLA': ('#3C1053', '#000000'),
+    'GZC': ('#67A2B2', '#122C42'),
+    'HOU': ('#97D700', '#000000'),
+    'HZS': ('#FB7299', '#5788CE'),
+    'LDN': ('#59CBE8', '#FF8200'),
+    'NYE': ('#0F57EA', '#171C38'),
+    'PAR': ('#8D042D', '#303D56'),
+    'PHI': ('#FF9E1B', '#000000'),
+    'SEO': ('#AA8A00', '#000000'),
+    'SFS': ('#FC4C02', '#75787B'),
+    'SHD': ('#D22630', '#000000'),
+    'TOR': ('#000000', '#C10021'),
+    'VAL': ('#4A7729', '#E5D660'),
+    'VAN': ('#09226B', '#2FB228'),
+    'WAS': ('#990034', '#003768')
 }
 
 RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
@@ -221,6 +245,16 @@ def render_page(endpoint: str, title: str, content: str) -> None:
     html = f"""<!doctype html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-49504108-8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-49504108-8');
+    </script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -281,7 +315,7 @@ def render_index(predictor, future_matches) -> None:
     content = ''
 
     p_stage = predictor.predict_stage(future_matches)
-    p_season = predictor.predict_season(future_matches)
+    # p_season = predictor.predict_season(future_matches)
 
     wins = predictor.stage_wins
     losses = predictor.stage_losses
@@ -294,7 +328,6 @@ def render_index(predictor, future_matches) -> None:
                                      wins[team],
                                      map_diffs[team]),
                    reverse=True)
-    stage_finished = predictor.stage_finished
     rows = []
 
     for i, team in enumerate(teams):
@@ -308,47 +341,43 @@ def render_index(predictor, future_matches) -> None:
         season_loss = predictor.losses[team]
         season_map_diff = predictor.map_diffs[team]
 
-        p_top4, p_top1 = p_stage[team]
-        p_playoff, p_champion = p_season[team]
+        p_title, p_top1 = p_stage[team]
+        # p_playoff, p_champion = p_season[team]
 
         classes = set()
         classes.add(division + '-division')
-        classes.add('win' if i < 4 else 'loss')
+        classes.add('win' if i < 8 else 'loss')
 
         rows.append(f"""<tr scope="row" class="{' '.join(sorted(classes))}">
   <th class="text-right">{render_team_logo(team)}</th>
   <td class="pl-0">{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>
-  <td class="text-center d-none d-md-table-cell">{loss}</td>
-  <td class="text-center d-none d-xl-table-cell">{map_diff:+}</td>
-  {render_chance_cell(p_top4)}
+  <td class="text-center d-none d-sm-table-cell">{loss}</td>
+  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
+  {render_chance_cell(p_title)}
   {render_chance_cell(p_top1)}
   <td class="text-center d-none d-sm-table-cell">{season_win}</td>
-  <td class="text-center d-none d-md-table-cell">{season_loss}</td>
-  <td class="text-center d-none d-xl-table-cell">{season_map_diff:+}</td>
-  {render_chance_cell(p_playoff, ('d-none', 'd-sm-table-cell'))}
-  {render_chance_cell(p_champion, ('d-none', 'd-sm-table-cell'))}
+  <td class="text-center d-none d-sm-table-cell">{season_loss}</td>
+  <td class="text-center d-none d-sm-table-cell">{season_map_diff:+}</td>
 </tr>""")
 
     title = f'{predictor.base_stage} Standings'
     content = f"""<h4 class="py-3 text-center">{title}</h4>
 <div class="row">
-  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+  <div class="col-xl-6 col-lg-7 col-md-9 col-sm-12 mx-auto">
     <table class="table">
       <thead>
         <tr class="text-center">
           <th scope="col" class="compact"></th>
           <th scope="col"></th>
           <th scope="col" class="compacter">stage<br>win</th>
-          <th scope="col" class="compacter d-none d-md-table-cell">loss</th>
-          <th scope="col" class="compacter d-none d-xl-table-cell">map +/-</th>
-          <th scope="col" class="compact">title</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
+          <th scope="col" class="compact">playoff</th>
           <th scope="col" class="compact">champion</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">season<br>win</th>
-          <th scope="col" class="compacter d-none d-md-table-cell">loss</th>
-          <th scope="col" class="compacter d-none d-xl-table-cell">map +/-</th>
-          <th scope="col" class="compact d-none d-sm-table-cell">playoff</th>
-          <th scope="col" class="compact d-none d-sm-table-cell">champion</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
+          <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
         </tr>
       </thead>
       <tbody>

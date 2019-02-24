@@ -6,22 +6,31 @@ DRAWABLE_MAPS = set([
     'eichenwalde', 'hollywood', 'kings-row', 'numbani'
 ])
 
-TEAMS = set(['BOS', 'DAL', 'FLA', 'GLA', 'HOU', 'LDN',
-             'NYE', 'PHI', 'SEO', 'SFS', 'SHD', 'VAL'])
+TEAMS = set([
+    'ATL', 'BOS', 'CDH', 'DAL', 'FLA', 'GLA', 'GZC', 'HOU', 'HZS', 'LDN',
+    'NYE', 'PAR', 'PHI', 'SEO', 'SFS', 'SHD', 'TOR', 'VAL', 'VAN', 'WAS'])
 
 TEAM_DIVISIONS = {
+    'ATL': 'ATL',
     'BOS': 'ATL',
+    'CDH': 'PAC',
     'DAL': 'PAC',
     'FLA': 'ATL',
     'GLA': 'PAC',
+    'GZC': 'PAC',
     'HOU': 'ATL',
+    'HZS': 'PAC',
     'LDN': 'ATL',
     'NYE': 'ATL',
+    'PAR': 'ATL',
     'PHI': 'ATL',
     'SEO': 'PAC',
     'SFS': 'PAC',
     'SHD': 'PAC',
-    'VAL': 'PAC'
+    'TOR': 'ATL',
+    'VAL': 'PAC',
+    'VAN': 'PAC',
+    'WAS': 'ATL'
 }
 
 Roster = Tuple[str, str, str, str, str, str]

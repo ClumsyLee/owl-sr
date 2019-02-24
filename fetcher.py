@@ -61,11 +61,11 @@ def fetch_games() -> List[CSVGame]:
 
 
 def parse_match(raw_match) -> List[CSVGame]:
-    if None in raw_match['competitors']:
+    if None in raw_match['competitors'] or 'abbreviatedName' not in raw_match['competitors'][0]:
         return []  # The competitors have not been decided, don't parse it.
 
     match_id = raw_match['id']
-    stage = raw_match['bracket']['stage']['title']
+    stage = raw_match['bracket']['stage']['tournament']['title']
     start_time = datetime.fromtimestamp(raw_match['startDate'] / 1000)
     team1_id = raw_match['competitors'][0]['id']
     team2_id = raw_match['competitors'][1]['id']
@@ -75,6 +75,9 @@ def parse_match(raw_match) -> List[CSVGame]:
     # Fix an API bug.
     if stage == 'Split 4':
         stage = 'Stage 4'
+    prefix = 'Overwatch League '
+    if stage.startswith(prefix):
+        stage = stage[len(prefix):]
 
     if 'Title Matches' in stage:
         match_format = 'title'

@@ -1,0 +1,578 @@
+{
+    "Ado": {
+        "mu": 2038,
+        "sigma": 578
+    },
+    "Agilities": {
+        "mu": 2383,
+        "sigma": 461
+    },
+    "AimGod": {
+        "mu": 2149,
+        "sigma": 663
+    },
+    "Altering": {
+        "mu": 1363,
+        "sigma": 511
+    },
+    "Anamo": {
+        "mu": 2280,
+        "sigma": 609
+    },
+    "Architect": {
+        "mu": 2914,
+        "sigma": 573
+    },
+    "Arhan": {
+        "mu": 2532,
+        "sigma": 771
+    },
+    "Ark": {
+        "mu": 3351,
+        "sigma": 455
+    },
+    "Asher": {
+        "mu": 2324,
+        "sigma": 518
+    },
+    "Avast": {
+        "mu": 2595,
+        "sigma": 812
+    },
+    "BABYBAY": {
+        "mu": 2497,
+        "sigma": 493
+    },
+    "BOS": {
+        "mu": 2928,
+        "sigma": 177
+    },
+    "Bani": {
+        "mu": 2955,
+        "sigma": 458
+    },
+    "Bdosin": {
+        "mu": 2680,
+        "sigma": 431
+    },
+    "BigGoose": {
+        "mu": 2801,
+        "sigma": 403
+    },
+    "Bischu": {
+        "mu": 2658,
+        "sigma": 425
+    },
+    "Boink": {
+        "mu": 1740,
+        "sigma": 575
+    },
+    "Boombox": {
+        "mu": 2706,
+        "sigma": 415
+    },
+    "Bunny": {
+        "mu": 2169,
+        "sigma": 581
+    },
+    "CWoosH": {
+        "mu": 2123,
+        "sigma": 509
+    },
+    "Carpe": {
+        "mu": 2389,
+        "sigma": 419
+    },
+    "Chipshajen": {
+        "mu": 1882,
+        "sigma": 533
+    },
+    "Clockwork": {
+        "mu": 2007,
+        "sigma": 678
+    },
+    "Closer": {
+        "mu": 2375,
+        "sigma": 561
+    },
+    "Coolmatt": {
+        "mu": 2346,
+        "sigma": 415
+    },
+    "Custa": {
+        "mu": 3225,
+        "sigma": 431
+    },
+    "DAL": {
+        "mu": 2745,
+        "sigma": 194
+    },
+    "Daemin": {
+        "mu": 1774,
+        "sigma": 741
+    },
+    "Danteh": {
+        "mu": 2312,
+        "sigma": 474
+    },
+    "DayFly": {
+        "mu": 1893,
+        "sigma": 755
+    },
+    "Diya": {
+        "mu": 1389,
+        "sigma": 493
+    },
+    "DreamKazper": {
+        "mu": 2970,
+        "sigma": 509
+    },
+    "EFFECT": {
+        "mu": 2002,
+        "sigma": 496
+    },
+    "Envy": {
+        "mu": 2484,
+        "sigma": 519
+    },
+    "Eqo": {
+        "mu": 3271,
+        "sigma": 508
+    },
+    "FCTFCTN": {
+        "mu": 2499,
+        "sigma": 783
+    },
+    "FLA": {
+        "mu": 2017,
+        "sigma": 190
+    },
+    "FLETA": {
+        "mu": 2757,
+        "sigma": 428
+    },
+    "Fate": {
+        "mu": 2872,
+        "sigma": 400
+    },
+    "Fearless": {
+        "mu": 1884,
+        "sigma": 563
+    },
+    "Fissure": {
+        "mu": 3584,
+        "sigma": 442
+    },
+    "Fiveking": {
+        "mu": 1429,
+        "sigma": 612
+    },
+    "Freefeel": {
+        "mu": 1267,
+        "sigma": 509
+    },
+    "Fury": {
+        "mu": 2907,
+        "sigma": 442
+    },
+    "GLA": {
+        "mu": 2963,
+        "sigma": 175
+    },
+    "Gambler": {
+        "mu": 2085,
+        "sigma": 593
+    },
+    "Gamsu": {
+        "mu": 2880,
+        "sigma": 410
+    },
+    "Geguri": {
+        "mu": 2279,
+        "sigma": 576
+    },
+    "Gesture": {
+        "mu": 2492,
+        "sigma": 405
+    },
+    "Grimreality": {
+        "mu": 2268,
+        "sigma": 819
+    },
+    "HOU": {
+        "mu": 2756,
+        "sigma": 197
+    },
+    "HaGoPeun": {
+        "mu": 2589,
+        "sigma": 632
+    },
+    "HarryHook": {
+        "mu": 2203,
+        "sigma": 442
+    },
+    "Hooreg": {
+        "mu": 2563,
+        "sigma": 597
+    },
+    "Hotba": {
+        "mu": 2598,
+        "sigma": 598
+    },
+    "Hydration": {
+        "mu": 3312,
+        "sigma": 464
+    },
+    "Jake": {
+        "mu": 2737,
+        "sigma": 425
+    },
+    "Janus": {
+        "mu": 2167,
+        "sigma": 532
+    },
+    "Jjonak": {
+        "mu": 3231,
+        "sigma": 408
+    },
+    "Joemeister": {
+        "mu": 2500,
+        "sigma": 833
+    },
+    "Kalios": {
+        "mu": 2198,
+        "sigma": 629
+    },
+    "Kariv": {
+        "mu": 3396,
+        "sigma": 409
+    },
+    "Kellex": {
+        "mu": 3021,
+        "sigma": 407
+    },
+    "KuKi": {
+        "mu": 2381,
+        "sigma": 591
+    },
+    "LDN": {
+        "mu": 2729,
+        "sigma": 176
+    },
+    "LiNkzr": {
+        "mu": 2730,
+        "sigma": 413
+    },
+    "Libero": {
+        "mu": 2585,
+        "sigma": 423
+    },
+    "Logix": {
+        "mu": 2339,
+        "sigma": 481
+    },
+    "MG": {
+        "mu": 898,
+        "sigma": 611
+    },
+    "Manneten": {
+        "mu": 2033,
+        "sigma": 436
+    },
+    "Mano": {
+        "mu": 3320,
+        "sigma": 474
+    },
+    "Meko": {
+        "mu": 3131,
+        "sigma": 402
+    },
+    "Mendokusaii": {
+        "mu": 2404,
+        "sigma": 827
+    },
+    "Mickie": {
+        "mu": 2379,
+        "sigma": 417
+    },
+    "Miro": {
+        "mu": 2188,
+        "sigma": 490
+    },
+    "Mistakes": {
+        "mu": 2414,
+        "sigma": 511
+    },
+    "Moth": {
+        "mu": 3025,
+        "sigma": 493
+    },
+    "Muma": {
+        "mu": 2513,
+        "sigma": 408
+    },
+    "Munchkin": {
+        "mu": 2570,
+        "sigma": 485
+    },
+    "NUS": {
+        "mu": 2976,
+        "sigma": 459
+    },
+    "NYE": {
+        "mu": 3163,
+        "sigma": 188
+    },
+    "Neko": {
+        "mu": 2880,
+        "sigma": 434
+    },
+    "Neptuno": {
+        "mu": 2741,
+        "sigma": 410
+    },
+    "Nevix": {
+        "mu": 2565,
+        "sigma": 444
+    },
+    "Nomy": {
+        "mu": 2351,
+        "sigma": 503
+    },
+    "NotE": {
+        "mu": 3253,
+        "sigma": 432
+    },
+    "Numlocked": {
+        "mu": 2410,
+        "sigma": 818
+    },
+    "OGE": {
+        "mu": 3000,
+        "sigma": 547
+    },
+    "PHI": {
+        "mu": 2760,
+        "sigma": 206
+    },
+    "Pine": {
+        "mu": 3360,
+        "sigma": 578
+    },
+    "Poko": {
+        "mu": 2508,
+        "sigma": 458
+    },
+    "Profit": {
+        "mu": 2527,
+        "sigma": 407
+    },
+    "Rascal": {
+        "mu": 2703,
+        "sigma": 659
+    },
+    "Rawkus": {
+        "mu": 2690,
+        "sigma": 404
+    },
+    "Roshan": {
+        "mu": 1473,
+        "sigma": 588
+    },
+    "SADO": {
+        "mu": 2856,
+        "sigma": 632
+    },
+    "SEO": {
+        "mu": 2684,
+        "sigma": 194
+    },
+    "SFS": {
+        "mu": 2798,
+        "sigma": 207
+    },
+    "SHD": {
+        "mu": 1768,
+        "sigma": 239
+    },
+    "SPREE": {
+        "mu": 3302,
+        "sigma": 717
+    },
+    "STRIKER": {
+        "mu": 3116,
+        "sigma": 405
+    },
+    "Saebyeolbe": {
+        "mu": 3072,
+        "sigma": 424
+    },
+    "Sayaplayer": {
+        "mu": 1799,
+        "sigma": 610
+    },
+    "Seagull": {
+        "mu": 3687,
+        "sigma": 490
+    },
+    "ShaDowBurn": {
+        "mu": 1908,
+        "sigma": 573
+    },
+    "Shaz": {
+        "mu": 2801,
+        "sigma": 403
+    },
+    "Silkthread": {
+        "mu": 2500,
+        "sigma": 833
+    },
+    "Sky": {
+        "mu": 2501,
+        "sigma": 745
+    },
+    "Snillo": {
+        "mu": 2654,
+        "sigma": 637
+    },
+    "Snow": {
+        "mu": 2601,
+        "sigma": 808
+    },
+    "Soon": {
+        "mu": 3319,
+        "sigma": 415
+    },
+    "Space": {
+        "mu": 3338,
+        "sigma": 491
+    },
+    "Surefour": {
+        "mu": 2622,
+        "sigma": 431
+    },
+    "Taimou": {
+        "mu": 2297,
+        "sigma": 505
+    },
+    "TiZi": {
+        "mu": 2500,
+        "sigma": 833
+    },
+    "TviQ": {
+        "mu": 1888,
+        "sigma": 434
+    },
+    "Undead": {
+        "mu": 1372,
+        "sigma": 584
+    },
+    "Unkoe": {
+        "mu": 2904,
+        "sigma": 432
+    },
+    "VAL": {
+        "mu": 3089,
+        "sigma": 178
+    },
+    "Verbo": {
+        "mu": 1600,
+        "sigma": 606
+    },
+    "Void": {
+        "mu": 2607,
+        "sigma": 708
+    },
+    "Wekeed": {
+        "mu": 2138,
+        "sigma": 556
+    },
+    "WooHyaL": {
+        "mu": 2384,
+        "sigma": 601
+    },
+    "XepheR": {
+        "mu": 2100,
+        "sigma": 670
+    },
+    "Xushu": {
+        "mu": 1794,
+        "sigma": 655
+    },
+    "ZUNBA": {
+        "mu": 2671,
+        "sigma": 435
+    },
+    "Zebbosai": {
+        "mu": 1911,
+        "sigma": 430
+    },
+    "Zuppeh": {
+        "mu": 1911,
+        "sigma": 430
+    },
+    "aKm": {
+        "mu": 2117,
+        "sigma": 562
+    },
+    "aWesomeGuy": {
+        "mu": 2019,
+        "sigma": 570
+    },
+    "birdring": {
+        "mu": 2790,
+        "sigma": 441
+    },
+    "cocco": {
+        "mu": 1949,
+        "sigma": 625
+    },
+    "dhaK": {
+        "mu": 2302,
+        "sigma": 548
+    },
+    "fragi": {
+        "mu": 2365,
+        "sigma": 445
+    },
+    "gido": {
+        "mu": 1736,
+        "sigma": 629
+    },
+    "iRemiix": {
+        "mu": 2394,
+        "sigma": 596
+    },
+    "iddqd": {
+        "mu": 2690,
+        "sigma": 818
+    },
+    "ryujehong": {
+        "mu": 3037,
+        "sigma": 424
+    },
+    "sinatraa": {
+        "mu": 2633,
+        "sigma": 560
+    },
+    "sleepy": {
+        "mu": 2587,
+        "sigma": 414
+    },
+    "super": {
+        "mu": 3061,
+        "sigma": 532
+    },
+    "tobi": {
+        "mu": 2690,
+        "sigma": 466
+    },
+    "xQc": {
+        "mu": 2473,
+        "sigma": 700
+    },
+    "zappis": {
+        "mu": 1933,
+        "sigma": 781
+    }
+}

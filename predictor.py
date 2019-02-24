@@ -1,6 +1,7 @@
 from collections import defaultdict, deque, OrderedDict
 from functools import cmp_to_key
 from itertools import chain
+import json
 from math import log, sqrt
 from random import choices, random
 from typing import Dict, List, Sequence, Set, Tuple
@@ -130,16 +131,15 @@ class Predictor(object):
         """Predict the scores of a given match."""
         if match.match_format in ('preseason', 'regular'):
             drawables = [True, False, True, False]
-            return self._predict_bo_score(match.teams, rosters=match.rosters,
-                                          full_rosters=match.full_rosters,
-                                          drawables=drawables)
-        elif match.match_format in ('title', 'playoff'):
-            drawables = [False, False, True, True, False]
-            return self._predict_bo_score(match.teams, rosters=match.rosters,
-                                          full_rosters=match.full_rosters,
-                                          drawables=drawables)
+        elif match.match_format in ('first-to-3'):
+            drawables = [False, False, False, False, False]
+        elif match.match_format in ('first-to-4'):
+            drawables = [False, False, False, False, False, False, False]
         else:
             raise NotImplementedError
+        return self._predict_bo_score(match.teams, rosters=match.rosters,
+                                      full_rosters=match.full_rosters,
+                                      drawables=drawables)
 
     def predict_match(self, match: Game) -> Tuple[float, float]:
         """Predict the win probability & diff expectation of a given match."""
@@ -173,22 +173,23 @@ class Predictor(object):
                 win, map_diff = max_wins[team]
                 max_wins[team] = (win + 1, map_diff + 4)
 
-        min_4th_wins = list(sorted(min_wins.values()))[-4]
-        max_5th_wins = list(sorted(max_wins.values()))[-5]
+        # TODO: Using top 8 is an approximation.
+        min_8th_wins = list(sorted(min_wins.values()))[-8]
+        max_9th_wins = list(sorted(max_wins.values()))[-9]
 
-        for team, (p_top4, p_top1) in prediction.items():
-            if max_wins[team] < min_4th_wins:
-                p_top4 = False
+        for team, (p_title, p_top1) in prediction.items():
+            if max_wins[team] < min_8th_wins:
+                p_title = False
                 p_top1 = False
-            elif min_wins[team] > max_5th_wins:
-                p_top4 = True
+            elif min_wins[team] > max_9th_wins:
+                p_title = True
 
                 if self.stage_title_losses[team] > 0:
                     p_top1 = False
                 elif self.stage_finished:
                     p_top1 = True
 
-            prediction[team] = (p_top4, p_top1)
+            prediction[team] = (p_title, p_top1)
 
         return prediction
 
@@ -201,13 +202,15 @@ class Predictor(object):
         scores_list, cum_weights_list = self._match_scores_cum_weights(matches)
         p_wins_regular = self._p_wins(full_rosters=full_rosters,
                                       match_format='regular')
-        p_wins_title = self._p_wins(full_rosters=full_rosters,
-                                    match_format='title')
+        p_wins_ft3 = self._p_wins(full_rosters=full_rosters,
+                                  match_format='first-to-3')
+        p_wins_ft4 = self._p_wins(full_rosters=full_rosters,
+                                  match_format='first-to-4')
 
-        top4_count = {team: 0 for team in TEAMS}
+        title_count = {team: 0 for team in TEAMS}
         top1_count = {team: 0 for team in TEAMS}
 
-        for i in range(iters):
+        for _ in range(iters):
             wins = self.stage_wins.copy()
             map_diffs = self.stage_map_diffs.copy()
             head_to_head_map_diffs = self.stage_head_to_head_map_diffs.copy()
@@ -230,236 +233,251 @@ class Predictor(object):
                 head_to_head_map_diffs[(team1, team2)] += map_diff
                 head_to_head_map_diffs[(team2, team1)] -= map_diff
 
-            # Determine top 4 teams.
-            top4 = self._stage_standings(wins, map_diffs,
-                                         head_to_head_map_diffs,
-                                         p_wins_regular)[:4]
-            for team in top4:
-                top4_count[team] += 1
+            # Determine the seeds.
+            teams = self._stage_standings(wins, map_diffs,
+                                          head_to_head_map_diffs,
+                                          p_wins_regular)
+
+            # Seed 0.
+            seeds = [teams[0]]
+            teams = teams[1:]
+
+            # Seed 1.
+            for i, team in enumerate(teams):
+                if TEAM_DIVISIONS[team] != TEAM_DIVISIONS[seeds[0]]:
+                    del teams[i]
+                    seeds.append(team)
+                    break
+
+            # Seed 2-7.
+            seeds += teams[:6]
+
+            for team in seeds:
+                title_count[team] += 1
 
             # Determine top 1 teams.
-            t1, t2, t3, t4 = top4
-            progress = sum(self.stage_title_wins[team] for team in top4)
+            # First round.
+            if random() < p_wins_ft3[(seeds[0], seeds[7])]:
+                seeds[7] = None
+            else:
+                seeds[0] = None
+            if random() < p_wins_ft3[(seeds[1], seeds[6])]:
+                seeds[6] = None
+            else:
+                seeds[1] = None
+            if random() < p_wins_ft3[(seeds[2], seeds[5])]:
+                seeds[5] = None
+            else:
+                seeds[2] = None
+            if random() < p_wins_ft3[(seeds[3], seeds[4])]:
+                seeds[4] = None
+            else:
+                seeds[3] = None
+            seeds = [team for team in seeds if team is not None]
 
-            # Determine top 1's opponent.
-            if progress == 0:
-                if p_wins_title[(t1, t2)] > p_wins_title[(t1, t4)]:
-                    t2, t4 = t4, t2
-                if p_wins_title[(t1, t3)] > p_wins_title[(t1, t4)]:
-                    t3, t4 = t4, t3
+            # Semi-finals.
+            if random() < p_wins_ft4[(seeds[0], seeds[3])]:
+                seeds[3] = None
+            else:
+                seeds[0] = None
+            if random() < p_wins_ft4[(seeds[1], seeds[2])]:
+                seeds[2] = None
+            else:
+                seeds[1] = None
+            seeds = [team for team in seeds if team is not None]
 
-                if random() < p_wins_title[(t4, t1)]:
-                    t1, t4 = t4, t1
-            elif progress == 1:
-                t2t3 = []
+            # Finals.
+            if random() < p_wins_ft4[(seeds[0], seeds[1])]:
+                seeds[1] = None
+            else:
+                seeds[0] = None
+            seeds = [team for team in seeds if team is not None]
 
-                for team in top4:
-                    if self.stage_title_wins[team] > 0:
-                        t1 = team
-                    elif self.stage_title_losses[team] > 0:
-                        t4 = team
-                    else:
-                        t2t3.append(team)
+            top1_count[seeds[0]] += 1
 
-                t2, t3 = t2t3
-
-            if self.stage_title_wins[t2] > 0:
-                pass
-            elif (self.stage_title_wins[t3] > 0 or
-                  random() < p_wins_title[(t3, t2)]):
-                t2, t3 = t3, t2
-
-            if self.stage_title_wins[t1] > 1:
-                pass
-            elif (self.stage_title_wins[t2] > 1 or
-                  random() < p_wins_title[(t2, t1)]):
-                t1, t2 = t2, t1
-
-            top1_count[t1] += 1
-
-        return {team: (top4_count[team] / iters, top1_count[team] / iters)
+        return {team: (title_count[team] / iters, top1_count[team] / iters)
                 for team in TEAMS}
 
-    def predict_season(self, matches: Sequence[Game]):
-        matches = [match for match in matches
-                   if match.match_format == 'regular']
-        prediction = self._predict_season(matches)
+    # def predict_season(self, matches: Sequence[Game]):
+    #     matches = [match for match in matches
+    #                if match.match_format == 'regular']
+    #     prediction = self._predict_season(matches)
 
-        # Normalize 0% and 100% for predictions.
-        wins = {team: (self.wins[team], self.map_diffs[team])
-                for team in TEAMS}
-        min_wins = wins.copy()
-        max_wins = wins.copy()
+    #     # Normalize 0% and 100% for predictions.
+    #     wins = {team: (self.wins[team], self.map_diffs[team])
+    #             for team in TEAMS}
+    #     min_wins = wins.copy()
+    #     max_wins = wins.copy()
 
-        for match in matches:
-            for team in match.teams:
-                win, map_diff = min_wins[team]
-                min_wins[team] = (win, map_diff - 4)
+    #     for match in matches:
+    #         for team in match.teams:
+    #             win, map_diff = min_wins[team]
+    #             min_wins[team] = (win, map_diff - 4)
 
-                win, map_diff = max_wins[team]
-                max_wins[team] = (win + 1, map_diff + 4)
+    #             win, map_diff = max_wins[team]
+    #             max_wins[team] = (win + 1, map_diff + 4)
 
-        atl_min_wins = {team: min_win for team, min_win in min_wins.items()
-                        if TEAM_DIVISIONS[team] == 'ATL'}
-        atl_max_wins = {team: max_win for team, max_win in max_wins.items()
-                        if TEAM_DIVISIONS[team] == 'ATL'}
-        pac_min_wins = {team: min_win for team, min_win in min_wins.items()
-                        if TEAM_DIVISIONS[team] == 'PAC'}
-        pac_max_wins = {team: max_win for team, max_win in max_wins.items()
-                        if TEAM_DIVISIONS[team] == 'PAC'}
+    #     atl_min_wins = {team: min_win for team, min_win in min_wins.items()
+    #                     if TEAM_DIVISIONS[team] == 'ATL'}
+    #     atl_max_wins = {team: max_win for team, max_win in max_wins.items()
+    #                     if TEAM_DIVISIONS[team] == 'ATL'}
+    #     pac_min_wins = {team: min_win for team, min_win in min_wins.items()
+    #                     if TEAM_DIVISIONS[team] == 'PAC'}
+    #     pac_max_wins = {team: max_win for team, max_win in max_wins.items()
+    #                     if TEAM_DIVISIONS[team] == 'PAC'}
 
-        min_division_1st_wins = {
-            'ATL': list(sorted(atl_min_wins.values()))[-1],
-            'PAC': list(sorted(pac_min_wins.values()))[-1]
-        }
-        max_division_2nd_wins = {
-            'ATL': list(sorted(atl_max_wins.values()))[-2],
-            'PAC': list(sorted(pac_max_wins.values()))[-2]
-        }
-        min_6th_win = list(sorted(min_wins.values()))[-6]
-        max_7th_win = list(sorted(max_wins.values()))[-7]
+    #     min_division_1st_wins = {
+    #         'ATL': list(sorted(atl_min_wins.values()))[-1],
+    #         'PAC': list(sorted(pac_min_wins.values()))[-1]
+    #     }
+    #     max_division_2nd_wins = {
+    #         'ATL': list(sorted(atl_max_wins.values()))[-2],
+    #         'PAC': list(sorted(pac_max_wins.values()))[-2]
+    #     }
+    #     min_6th_win = list(sorted(min_wins.values()))[-6]
+    #     max_7th_win = list(sorted(max_wins.values()))[-7]
 
-        playoff_false_bars = {division: min(min_division_1st_wins[division],
-                                            min_6th_win)
-                              for division in ('ATL', 'PAC')}
-        # TODO: #6 does not guarantee playoff spot actually.
-        playoff_true_bars = {division: min(max_division_2nd_wins[division],
-                                           max_7th_win)
-                             for division in ('ATL', 'PAC')}
+    #     playoff_false_bars = {division: min(min_division_1st_wins[division],
+    #                                         min_6th_win)
+    #                           for division in ('ATL', 'PAC')}
+    #     # TODO: #6 does not guarantee playoff spot actually.
+    #     playoff_true_bars = {division: min(max_division_2nd_wins[division],
+    #                                        max_7th_win)
+    #                          for division in ('ATL', 'PAC')}
 
-        for team, (p_top6, p_top1) in prediction.items():
-            division = TEAM_DIVISIONS[team]
+    #     for team, (p_top6, p_top1) in prediction.items():
+    #         division = TEAM_DIVISIONS[team]
 
-            if max_wins[team] < playoff_false_bars[division]:
-                p_top6 = False
-                p_top1 = False
-            elif min_wins[team] > playoff_true_bars[division]:
-                p_top6 = True
+    #         if max_wins[team] < playoff_false_bars[division]:
+    #             p_top6 = False
+    #             p_top1 = False
+    #         elif min_wins[team] > playoff_true_bars[division]:
+    #             p_top6 = True
 
-            prediction[team] = (p_top6, p_top1)
+    #         prediction[team] = (p_top6, p_top1)
 
-        return prediction
+    #     return prediction
 
-    def _predict_season(self, matches: Sequence[Game], iters=100000):
-        full_rosters = self.last_full_rosters.copy()
-        for match in matches:
-            for team, full_roster in zip(match.teams, match.full_rosters):
-                full_rosters[team] = full_roster
+    # def _predict_season(self, matches: Sequence[Game], iters=100000):
+    #     full_rosters = self.last_full_rosters.copy()
+    #     for match in matches:
+    #         for team, full_roster in zip(match.teams, match.full_rosters):
+    #             full_rosters[team] = full_roster
 
-        scores_list, cum_weights_list = self._match_scores_cum_weights(matches)
-        p_wins_regular = self._p_wins(full_rosters=full_rosters,
-                                      match_format='regular')
-        p_wins_playoff = self._p_playoff_series_wins(full_rosters=full_rosters)
+    #     scores_list, cum_weights_list = self._match_scores_cum_weights(matches)
+    #     p_wins_regular = self._p_wins(full_rosters=full_rosters,
+    #                                   match_format='regular')
+    #     p_wins_playoff = self._p_playoff_series_wins(full_rosters=full_rosters)
 
-        top6_count = {team: 0 for team in TEAMS}
-        top1_count = {team: 0 for team in TEAMS}
+    #     top6_count = {team: 0 for team in TEAMS}
+    #     top1_count = {team: 0 for team in TEAMS}
 
-        for i in range(iters):
-            wins = self.wins.copy()
-            map_diffs = self.map_diffs.copy()
-            head_to_head_map_diffs = self.head_to_head_map_diffs.copy()
-            head_to_head_diffs = self.head_to_head_diffs.copy()
+    #     for _ in range(iters):
+    #         wins = self.wins.copy()
+    #         map_diffs = self.map_diffs.copy()
+    #         head_to_head_map_diffs = self.head_to_head_map_diffs.copy()
+    #         head_to_head_diffs = self.head_to_head_diffs.copy()
 
-            for match, scores, cum_weights in zip(matches,
-                                                  scores_list,
-                                                  cum_weights_list):
-                team1, team2 = match.teams
-                score1, score2 = choices(scores, cum_weights=cum_weights)[0]
+    #         for match, scores, cum_weights in zip(matches,
+    #                                               scores_list,
+    #                                               cum_weights_list):
+    #             team1, team2 = match.teams
+    #             score1, score2 = choices(scores, cum_weights=cum_weights)[0]
 
-                if score1 > score2:
-                    wins[team1] += 1
-                    head_to_head_diffs[(team1, team2)] += 1
-                    head_to_head_diffs[(team2, team1)] -= 1
-                elif score1 < score2:
-                    wins[team2] += 1
-                    head_to_head_diffs[(team2, team1)] += 1
-                    head_to_head_diffs[(team1, team2)] -= 1
+    #             if score1 > score2:
+    #                 wins[team1] += 1
+    #                 head_to_head_diffs[(team1, team2)] += 1
+    #                 head_to_head_diffs[(team2, team1)] -= 1
+    #             elif score1 < score2:
+    #                 wins[team2] += 1
+    #                 head_to_head_diffs[(team2, team1)] += 1
+    #                 head_to_head_diffs[(team1, team2)] -= 1
 
-                map_diff = score1 - score2
-                map_diffs[team1] += map_diff
-                map_diffs[team2] -= map_diff
+    #             map_diff = score1 - score2
+    #             map_diffs[team1] += map_diff
+    #             map_diffs[team2] -= map_diff
 
-                head_to_head_map_diffs[(team1, team2)] += map_diff
-                head_to_head_map_diffs[(team2, team1)] -= map_diff
+    #             head_to_head_map_diffs[(team1, team2)] += map_diff
+    #             head_to_head_map_diffs[(team2, team1)] -= map_diff
 
-            # Determine top 6 teams.
-            standings = self._season_standings(wins, map_diffs,
-                                               head_to_head_map_diffs,
-                                               head_to_head_diffs,
-                                               p_wins_regular)
-            atl_seed = [team for team in standings
-                        if TEAM_DIVISIONS[team] == 'ATL'][0]
-            pac_seed = [team for team in standings
-                        if TEAM_DIVISIONS[team] == 'PAC'][0]
+    #         # Determine top 6 teams.
+    #         standings = self._season_standings(wins, map_diffs,
+    #                                            head_to_head_map_diffs,
+    #                                            head_to_head_diffs,
+    #                                            p_wins_regular)
+    #         atl_seed = [team for team in standings
+    #                     if TEAM_DIVISIONS[team] == 'ATL'][0]
+    #         pac_seed = [team for team in standings
+    #                     if TEAM_DIVISIONS[team] == 'PAC'][0]
 
-            seeds = [atl_seed, pac_seed]
-            top6 = seeds + [team for team in standings
-                            if team not in seeds][:4]
+    #         seeds = [atl_seed, pac_seed]
+    #         top6 = seeds + [team for team in standings
+    #                         if team not in seeds][:4]
 
-            for team in top6:
-                top6_count[team] += 1
+    #         for team in top6:
+    #             top6_count[team] += 1
 
-            # Determine top 1 teams.
-            t1, t2, t3, t4, t5, t6 = top6
+    #         # Determine top 1 teams.
+    #         t1, t2, t3, t4, t5, t6 = top6
 
-            # Series A.
-            if self.playoff_wins[t3] >= 3:
-                pass
-            elif (self.playoff_wins[t6] >= 3 or
-                  random() < p_wins_playoff[(t6, t3)]):
-                t3, t6 = t6, t3
+    #         # Series A.
+    #         if self.playoff_wins[t3] >= 3:
+    #             pass
+    #         elif (self.playoff_wins[t6] >= 3 or
+    #               random() < p_wins_playoff[(t6, t3)]):
+    #             t3, t6 = t6, t3
 
-            # Series B.
-            if self.playoff_wins[t4] >= 3:
-                pass
-            elif (self.playoff_wins[t5] >= 3 or
-                  random() < p_wins_playoff[(t5, t4)]):
-                t4, t5 = t5, t4
+    #         # Series B.
+    #         if self.playoff_wins[t4] >= 3:
+    #             pass
+    #         elif (self.playoff_wins[t5] >= 3 or
+    #               random() < p_wins_playoff[(t5, t4)]):
+    #             t4, t5 = t5, t4
 
-            # Reseed.
-            t1, t2, t3, t4 = sorted([t1, t2, t3, t4],
-                                    key=lambda team: standings.index(team))
+    #         # Reseed.
+    #         t1, t2, t3, t4 = sorted([t1, t2, t3, t4],
+    #                                 key=lambda team: standings.index(team))
 
-            # Series C.
-            if t1 in seeds and self.playoff_wins[t1] >= 3:
-                pass
-            elif t1 not in seeds and self.playoff_wins[t1] >= 6:
-                pass
-            elif t4 in seeds and self.playoff_wins[t4] >= 3:
-                t1, t4 = t4, t1
-            elif t4 not in seeds and self.playoff_wins[t4] >= 6:
-                t1, t4 = t4, t1
-            elif random() < p_wins_playoff[(t4, t1)]:
-                t1, t4 = t4, t1
+    #         # Series C.
+    #         if t1 in seeds and self.playoff_wins[t1] >= 3:
+    #             pass
+    #         elif t1 not in seeds and self.playoff_wins[t1] >= 6:
+    #             pass
+    #         elif t4 in seeds and self.playoff_wins[t4] >= 3:
+    #             t1, t4 = t4, t1
+    #         elif t4 not in seeds and self.playoff_wins[t4] >= 6:
+    #             t1, t4 = t4, t1
+    #         elif random() < p_wins_playoff[(t4, t1)]:
+    #             t1, t4 = t4, t1
 
-            # Series D.
-            if t2 in seeds and self.playoff_wins[t2] >= 3:
-                pass
-            elif t2 not in seeds and self.playoff_wins[t2] >= 6:
-                pass
-            elif t3 in seeds and self.playoff_wins[t3] >= 3:
-                t2, t3 = t3, t2
-            elif t3 not in seeds and self.playoff_wins[t3] >= 6:
-                t2, t3 = t3, t2
-            elif random() < p_wins_playoff[(t3, t2)]:
-                t2, t3 = t3, t2
+    #         # Series D.
+    #         if t2 in seeds and self.playoff_wins[t2] >= 3:
+    #             pass
+    #         elif t2 not in seeds and self.playoff_wins[t2] >= 6:
+    #             pass
+    #         elif t3 in seeds and self.playoff_wins[t3] >= 3:
+    #             t2, t3 = t3, t2
+    #         elif t3 not in seeds and self.playoff_wins[t3] >= 6:
+    #             t2, t3 = t3, t2
+    #         elif random() < p_wins_playoff[(t3, t2)]:
+    #             t2, t3 = t3, t2
 
-            # Championship.
-            if t1 in seeds and self.playoff_wins[t1] >= 6:
-                pass
-            elif t1 not in seeds and self.playoff_wins[t1] >= 9:
-                pass
-            elif t2 in seeds and self.playoff_wins[t2] >= 6:
-                t1, t2 = t2, t1
-            elif t2 not in seeds and self.playoff_wins[t2] >= 9:
-                t1, t2 = t2, t1
-            elif random() < p_wins_playoff[(t2, t1)]:
-                t1, t2 = t2, t1
+    #         # Championship.
+    #         if t1 in seeds and self.playoff_wins[t1] >= 6:
+    #             pass
+    #         elif t1 not in seeds and self.playoff_wins[t1] >= 9:
+    #             pass
+    #         elif t2 in seeds and self.playoff_wins[t2] >= 6:
+    #             t1, t2 = t2, t1
+    #         elif t2 not in seeds and self.playoff_wins[t2] >= 9:
+    #             t1, t2 = t2, t1
+    #         elif random() < p_wins_playoff[(t2, t1)]:
+    #             t1, t2 = t2, t1
 
-            top1_count[t1] += 1
+    #         top1_count[t1] += 1
 
-        return {team: (top6_count[team] / iters, top1_count[team] / iters)
-                for team in TEAMS}
+    #     return {team: (top6_count[team] / iters, top1_count[team] / iters)
+    #             for team in TEAMS}
 
     def _predict_bo_score(self, teams: Tuple[str, str],
                           rosters: Tuple[Roster, Roster],
@@ -827,8 +845,14 @@ class PlayerTrueSkillPredictor(TrueSkillPredictor):
     """Player-based TrueSkill predictor. Guess the rosters based on history
     when the rosters are not provided."""
 
+    INITIAL_RATINGS_FILENAME = 'initial_ratings.json'
+
     def __init__(self, **kws):
         super().__init__(**kws)
+
+        ratings = json.load(open(self.INITIAL_RATINGS_FILENAME))
+        for name, rating in ratings.items():
+            self.ratings[name] = Rating(mu=rating['mu'], sigma=rating['sigma'])
 
         self.best_rosters = {}
         self.ratings_history = OrderedDict()
@@ -965,39 +989,39 @@ def predict_stage():
     predictor.train_games(past_games)
 
     p_stage = predictor.predict_stage(future_matches)
-    p_season = predictor.predict_season(future_matches)
+    # p_season = predictor.predict_season(future_matches)
     teams = sorted(p_stage.keys(), key=lambda team: p_stage[team][-1],
                    reverse=True)
 
     print(predictor.base_stage)
-    print(f'       Top4   Top1   Top6   Top1  Roster')
+    print(f'      Title   Top1  Roster')
     for team in teams:
-        p_top4, p_top1 = p_stage[team]
-        p_season_top6, p_season_top1 = p_season[team]
+        p_title, p_top1 = p_stage[team]
+        # p_season_top6, p_season_top1 = p_season[team]
 
-        if isinstance(p_top4, bool):
-            top4 = str(p_top4)
+        if isinstance(p_title, bool):
+            title = str(p_title)
         else:
-            top4 = f'{round(p_top4 * 100)}%'
+            title = f'{round(p_title * 100)}%'
 
         if isinstance(p_top1, bool):
             top1 = str(p_top1)
         else:
             top1 = f'{round(p_top1 * 100)}%'
 
-        if isinstance(p_season_top6, bool):
-            season_top6 = str(p_season_top6)
-        else:
-            season_top6 = f'{round(p_season_top6 * 100)}%'
+        # if isinstance(p_season_top6, bool):
+        #     season_top6 = str(p_season_top6)
+        # else:
+        #     season_top6 = f'{round(p_season_top6 * 100)}%'
 
-        if isinstance(p_season_top1, bool):
-            season_top1 = str(p_season_top1)
-        else:
-            season_top1 = f'{round(p_season_top1 * 100)}%'
+        # if isinstance(p_season_top1, bool):
+        #     season_top1 = str(p_season_top1)
+        # else:
+        #     season_top1 = f'{round(p_season_top1 * 100)}%'
 
         roster = ' '.join(predictor.best_rosters[team])
 
-        print(f'{team:>4}  {top4:>5}  {top1:>5}  {season_top6:>5}  {season_top1:>5}  {roster}')
+        print(f'{team:>4}  {title:>5}  {top1:>5}  {roster}')
 
 
 def save_ratings():
