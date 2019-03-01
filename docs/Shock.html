@@ -98,15 +98,15 @@
   <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
   <td class="pl-0"><a href="/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2743 ± 365">Shock</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.84);">84%</td>
-  <td class="text-center">+1.7</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.89);">89%</td>
+  <td class="text-center">+2.0</td>
 </tr>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Justice.png" alt="Justice Logo" width="30"></th>
-  <td class="pl-0"><a href="/Justice" class="team" data-toggle="tooltip" data-placement="right" title="2311 ± 475">Justice</a></td>
+  <td class="pl-0"><a href="/Justice" class="team" data-toggle="tooltip" data-placement="right" title="2224 ± 466">Justice</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.16);">16%</td>
-  <td class="text-center">-1.7</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.11);">11%</td>
+  <td class="text-center">-2.0</td>
 </tr>
     </tbody>
   </table>
@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21126, 21128, 21244, ''];
-var opponents = ['Fuel', 'Gladiator', 'Titans', ''];
-var scores1 = [4, 2, 1, ''];
-var scores2 = [0, 3, 3, ''];
+var matchIds = [21126, 21128, 21244, '', ''];
+var opponents = ['Fuel', 'Gladiator', 'Titans', '', ''];
+var scores1 = [4, 2, 1, '', ''];
+var scores2 = [0, 3, 3, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -275,19 +275,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5'],
     datasets: [{
       backgroundColor: '#75787B',
       borderColor: '#FC4C02',
-      data: [2836, 2757, 2743, 2743],
-      pointRadius: [4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 0],
+      data: [2836, 2757, 2743, 2743, 2743],
+      pointRadius: [4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2270, 2311],
+      data: [2151, 2215, 2224, 2224, 2224],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -296,7 +296,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 2979],
+      data: [2914, 2900, 2979, 2979, 2979],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,

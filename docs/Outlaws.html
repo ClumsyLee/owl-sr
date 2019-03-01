@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21177, 21213, 21179, 21235];
-var opponents = ['Defiant', 'Uprising', 'Spark', 'Excelsior'];
-var scores1 = [2, 2, 3, 0];
-var scores2 = [3, 3, 1, 4];
+var matchIds = [21177, 21213, 21179, 21235, ''];
+var opponents = ['Defiant', 'Uprising', 'Spark', 'Excelsior', ''];
+var scores1 = [2, 2, 3, 0, ''];
+var scores2 = [3, 3, 1, 4, ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -275,19 +275,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5'],
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#97D700',
-      data: [2534, 2551, 2615, 2489],
-      pointRadius: [4, 4, 4, 4],
-      pointHitRadius: [6, 6, 6, 6],
-      pointHoverRadius: [6, 6, 6, 6],
+      data: [2534, 2551, 2615, 2489, 2489],
+      pointRadius: [4, 4, 4, 4, 0],
+      pointHitRadius: [6, 6, 6, 6, 0],
+      pointHoverRadius: [6, 6, 6, 6, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2270, 2311],
+      data: [2151, 2215, 2224, 2224, 2224],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -296,7 +296,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 2979],
+      data: [2914, 2900, 2979, 2979, 2979],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
