@@ -71,15 +71,15 @@
   <th class="text-right compact"><img src="imgs/Reign.png" alt="Reign Logo" width="30"></th>
   <td class="pl-0"><a href="/Reign" class="team" data-toggle="tooltip" data-placement="right" title="3120 ± 500">Reign</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.87);">87%</td>
-  <td class="text-center">+1.9</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.3</td>
 </tr>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
-  <td class="pl-0"><a href="/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2630 ± 382">Gladiator</a></td>
+  <td class="pl-0"><a href="/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2514 ± 374">Gladiator</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.13);">13%</td>
-  <td class="text-center">-1.9</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.3</td>
 </tr>
     </tbody>
   </table>
@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21241, 21261, 21178, 21263, ''];
-var opponents = ['Mayhem', 'Fusion', 'Defiant', 'Eternal', ''];
-var scores1 = [4, 2, 3, 4, ''];
-var scores2 = [0, 3, 1, 0, ''];
+var matchIds = [21241, 21261, 21178, 21263, '', ''];
+var opponents = ['Mayhem', 'Fusion', 'Defiant', 'Eternal', '', ''];
+var scores1 = [4, 2, 3, 4, '', ''];
+var scores2 = [0, 3, 1, 0, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -275,19 +275,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6'],
     datasets: [{
       backgroundColor: '#910F1B',
       borderColor: '#C4C4C4',
-      data: [2782, 2659, 2833, 3120, 3120],
-      pointRadius: [4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 0],
+      data: [2782, 2659, 2833, 3120, 3120, 3120],
+      pointRadius: [4, 4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2112],
+      data: [2151, 2215, 2224, 2112, 2112, 2112],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -296,7 +296,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3120],
+      data: [2914, 2900, 2979, 3120, 3120, 3120],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
