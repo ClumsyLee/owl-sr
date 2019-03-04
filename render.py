@@ -78,6 +78,15 @@ TEAM_COLORS = {
 RATING_CONFIDENCE = 1.64  # mu ± 1.64 * sigma -> 90% chance.
 
 
+def p_to_sort_key(p):
+    if p is True:
+        return 101
+    elif p is False:
+        return -1
+
+    return round(p * 100)
+
+
 class MatchCard(object):
     def __init__(self, predictor: Predictor, match: Game, use_date=False,
                  first_team=None) -> None:
@@ -322,8 +331,8 @@ def render_index(predictor, future_matches) -> None:
     map_diffs = predictor.stage_map_diffs
 
     teams = sorted(p_stage.keys(),
-                   key=lambda team: (round(p_stage[team][0] * 100),
-                                     round(p_stage[team][1] * 100),
+                   key=lambda team: (p_to_sort_key(p_stage[team][0]),
+                                     p_to_sort_key(p_stage[team][1]),
                                      predictor.stage_title_wins[team],
                                      wins[team],
                                      map_diffs[team]),
