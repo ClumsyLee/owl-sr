@@ -57,6 +57,38 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
+  <table class="table" id="21284">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 9</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Defiant.png" alt="Defiant Logo" width="30"></th>
+  <td class="pl-0"><a href="/Defiant" class="team" data-toggle="tooltip" data-placement="right" title="2687 ± 416">Defiant</a></td>
+  <td></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.59);">59%</td>
+  <td class="text-center">+0.4</td>
+</tr>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Spark.png" alt="Spark Logo" width="30"></th>
+  <td class="pl-0"><a href="/Spark" class="team" data-toggle="tooltip" data-placement="right" title="2586 ± 475">Spark</a></td>
+  <td></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.41);">41%</td>
+  <td class="text-center">-0.4</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<h5 class="pt-4">Stage 1</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
   <table class="table" id="21283">
     <thead>
       <tr class="text-center">
@@ -70,52 +102,20 @@
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Defiant.png" alt="Defiant Logo" width="30"></th>
   <td class="pl-0"><a href="/Defiant" class="team" data-toggle="tooltip" data-placement="right" title="2697 ± 424">Defiant</a></td>
-  <td></td>
+  <td>3</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.9);">90%</td>
   <td class="text-center">+2.1</td>
 </tr>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Hunters.png" alt="Hunters Logo" width="30"></th>
   <td class="pl-0"><a href="/Hunters" class="team" data-toggle="tooltip" data-placement="right" title="2143 ± 492">Hunters</a></td>
-  <td></td>
+  <td>1</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.1);">10%</td>
   <td class="text-center">-2.1</td>
 </tr>
     </tbody>
   </table>
 </div><div class="col-lg-4 col-md-6">
-  <table class="table" id="21284">
-    <thead>
-      <tr class="text-center">
-        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 9</th>
-        <th scope="col" class="compacter"></th>
-        <th scope="col" class="compact">win<br>prob.</th>
-        <th scope="col" class="compacter">map<br>+/-</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr scope="row" class="win">
-  <th class="text-right compact"><img src="imgs/Defiant.png" alt="Defiant Logo" width="30"></th>
-  <td class="pl-0"><a href="/Defiant" class="team" data-toggle="tooltip" data-placement="right" title="2697 ± 424">Defiant</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.6);">60%</td>
-  <td class="text-center">+0.5</td>
-</tr>
-      <tr scope="row" class="loss">
-  <th class="text-right compact"><img src="imgs/Spark.png" alt="Spark Logo" width="30"></th>
-  <td class="pl-0"><a href="/Spark" class="team" data-toggle="tooltip" data-placement="right" title="2586 ± 475">Spark</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.4);">40%</td>
-  <td class="text-center">-0.5</td>
-</tr>
-    </tbody>
-  </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 1</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
   <table class="table" id="21302">
     <thead>
       <tr class="text-center">
@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21177, 21178, 21180, 21253, 21302, ''];
-var opponents = ['Outlaws', 'Reign', 'Valiant', 'Excelsior', 'Uprising', ''];
-var scores1 = [3, 1, 2, 1, 3, ''];
-var scores2 = [2, 3, 1, 3, 1, ''];
+var matchIds = [21177, 21178, 21180, 21253, 21302, 21283];
+var opponents = ['Outlaws', 'Reign', 'Valiant', 'Excelsior', 'Uprising', 'Hunters'];
+var scores1 = [3, 1, 2, 1, 3, 3];
+var scores2 = [2, 3, 1, 3, 1, 1];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -279,10 +279,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#C10021',
       borderColor: '#000000',
-      data: [2608, 2438, 2531, 2571, 2697, 2697],
-      pointRadius: [4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 0],
+      data: [2608, 2438, 2531, 2571, 2697, 2687],
+      pointRadius: [4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
