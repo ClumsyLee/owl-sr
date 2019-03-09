@@ -57,33 +57,6 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
-  <table class="table" id="21265">
-    <thead>
-      <tr class="text-center">
-        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 9</th>
-        <th scope="col" class="compacter"></th>
-        <th scope="col" class="compact">win<br>prob.</th>
-        <th scope="col" class="compacter">map<br>+/-</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr scope="row" class="win">
-  <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
-  <td class="pl-0"><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2641 ± 393">Dynasty</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.89);">89%</td>
-  <td class="text-center">+2.0</td>
-</tr>
-      <tr scope="row" class="loss">
-  <th class="text-right compact"><img src="imgs/Justice.png" alt="Justice Logo" width="30"></th>
-  <td class="pl-0"><a href="/Justice" class="team" data-toggle="tooltip" data-placement="right" title="2112 ± 460">Justice</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.11);">11%</td>
-  <td class="text-center">-2.0</td>
-</tr>
-    </tbody>
-  </table>
-</div><div class="col-lg-4 col-md-6">
   <table class="table" id="21217">
     <thead>
       <tr class="text-center">
@@ -96,7 +69,7 @@
     <tbody>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
-  <td class="pl-0"><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2641 ± 393">Dynasty</a></td>
+  <td class="pl-0"><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2635 ± 390">Dynasty</a></td>
   <td></td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.45);">45%</td>
   <td class="text-center">-0.2</td>
@@ -116,6 +89,33 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
+  <table class="table" id="21265">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 9</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
+  <td class="pl-0"><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2641 ± 393">Dynasty</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.89);">89%</td>
+  <td class="text-center">+2.0</td>
+</tr>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Justice.png" alt="Justice Logo" width="30"></th>
+  <td class="pl-0"><a href="/Justice" class="team" data-toggle="tooltip" data-placement="right" title="2112 ± 460">Justice</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.11);">11%</td>
+  <td class="text-center">-2.0</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="21264">
     <thead>
       <tr class="text-center">
@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21231, 21271, 21233, 21223, 21264, '', ''];
-var opponents = ['Gladiator', 'Fuel', 'Hunters', 'Uprising', 'Excelsior', '', ''];
-var scores1 = [3, 1, 4, 1, 1, '', ''];
-var scores2 = [1, 3, 0, 3, 3, '', ''];
+var matchIds = [21231, 21271, 21233, 21223, 21264, 21265, ''];
+var opponents = ['Gladiator', 'Fuel', 'Hunters', 'Uprising', 'Excelsior', 'Justice', ''];
+var scores1 = [3, 1, 4, 1, 1, 3, ''];
+var scores2 = [1, 3, 0, 3, 3, 1, ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -279,15 +279,15 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#AA8A00',
-      data: [2914, 2665, 2864, 2688, 2641, 2641, 2641],
-      pointRadius: [4, 4, 4, 4, 4, 0, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 0, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 0, 0],
+      data: [2914, 2665, 2864, 2688, 2641, 2635, 2635],
+      pointRadius: [4, 4, 4, 4, 4, 4, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2112, 2112, 2112],
+      data: [2151, 2215, 2224, 2112, 2145, 2145, 2145],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
