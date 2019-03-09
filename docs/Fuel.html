@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21126, 21271, 21272, 21282, 21245, ''];
-var opponents = ['Shock', 'Dynasty', 'Charge', 'Fusion', 'Dragons', ''];
-var scores1 = [0, 3, 0, 3, 3, ''];
-var scores2 = [4, 1, 4, 1, 2, ''];
+var matchIds = [21126, 21271, 21272, 21282, 21245, '', ''];
+var opponents = ['Shock', 'Dynasty', 'Charge', 'Fusion', 'Dragons', '', ''];
+var scores1 = [0, 3, 0, 3, 3, '', ''];
+var scores2 = [4, 1, 4, 1, 2, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -275,19 +275,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7'],
     datasets: [{
       backgroundColor: '#0C2340',
       borderColor: '#0072CE',
-      data: [2238, 2556, 2270, 2468, 2582, 2582],
-      pointRadius: [4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 0],
+      data: [2238, 2556, 2270, 2468, 2582, 2582, 2582],
+      pointRadius: [4, 4, 4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2112, 2112],
+      data: [2151, 2215, 2224, 2112, 2112, 2112, 2112],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -296,7 +296,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3149],
+      data: [2914, 2900, 2979, 3120, 3149, 3149, 3200],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
