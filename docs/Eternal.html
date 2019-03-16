@@ -57,6 +57,38 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
+  <table class="table" id="21256">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Sunday, March 17</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Eternal.png" alt="Eternal Logo" width="30"></th>
+  <td class="pl-0"><a href="/Eternal" class="team" data-toggle="tooltip" data-placement="right" title="2333 ± 471">Eternal</a></td>
+  <td></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.29);">29%</td>
+  <td class="text-center">-1.0</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
+  <td class="pl-0"><a href="/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2568 ± 405">Fusion</a></td>
+  <td></td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.71);">71%</td>
+  <td class="text-center">+1.0</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<h5 class="pt-4">Stage 1</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
   <table class="table" id="21227">
     <thead>
       <tr class="text-center">
@@ -70,52 +102,20 @@
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Eternal.png" alt="Eternal Logo" width="30"></th>
   <td class="pl-0"><a href="/Eternal" class="team" data-toggle="tooltip" data-placement="right" title="2367 ± 486">Eternal</a></td>
-  <td></td>
+  <td>2</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.69);">69%</td>
   <td class="text-center">+0.9</td>
 </tr>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Justice.png" alt="Justice Logo" width="30"></th>
   <td class="pl-0"><a href="/Justice" class="team" data-toggle="tooltip" data-placement="right" title="2145 ± 474">Justice</a></td>
-  <td></td>
+  <td>1</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.31);">31%</td>
   <td class="text-center">-0.9</td>
 </tr>
     </tbody>
   </table>
 </div><div class="col-lg-4 col-md-6">
-  <table class="table" id="21256">
-    <thead>
-      <tr class="text-center">
-        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Sunday, March 17</th>
-        <th scope="col" class="compacter"></th>
-        <th scope="col" class="compact">win<br>prob.</th>
-        <th scope="col" class="compacter">map<br>+/-</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr scope="row" class="loss">
-  <th class="text-right compact"><img src="imgs/Eternal.png" alt="Eternal Logo" width="30"></th>
-  <td class="pl-0"><a href="/Eternal" class="team" data-toggle="tooltip" data-placement="right" title="2367 ± 486">Eternal</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.32);">32%</td>
-  <td class="text-center">-0.8</td>
-</tr>
-      <tr scope="row" class="win">
-  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
-  <td class="pl-0"><a href="/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2568 ± 405">Fusion</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.68);">68%</td>
-  <td class="text-center">+0.8</td>
-</tr>
-    </tbody>
-  </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 1</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
   <table class="table" id="21236">
     <thead>
       <tr class="text-center">
@@ -254,10 +254,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21209, 21243, 21263, 21303, 21236, '', ''];
-var opponents = ['Spitfire', 'Gladiator', 'Reign', 'Titans', 'Shock', '', ''];
-var scores1 = [3, 2, 0, 0, 1, '', ''];
-var scores2 = [1, 1, 4, 4, 3, '', ''];
+var matchIds = [21209, 21243, 21263, 21303, 21236, 21227, ''];
+var opponents = ['Spitfire', 'Gladiator', 'Reign', 'Titans', 'Shock', 'Justice', ''];
+var scores1 = [3, 2, 0, 0, 1, 2, ''];
+var scores2 = [1, 1, 4, 4, 3, 1, ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -279,15 +279,15 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#303D56',
       borderColor: '#8D042D',
-      data: [2732, 2841, 2536, 2375, 2367, 2367, 2367],
-      pointRadius: [4, 4, 4, 4, 4, 0, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 0, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 0, 0],
+      data: [2732, 2841, 2536, 2375, 2367, 2333, 2333],
+      pointRadius: [4, 4, 4, 4, 4, 4, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2138, 2138],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2099],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
