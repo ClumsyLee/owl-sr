@@ -284,9 +284,13 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 21256,Stage 1,2019-03-17 12:00:00,PHI,PAR,regular,20949,2,kings-row,3,2,Boombox|Poko|Sado|carpe|eqo|neptuNo,BenBest|Finnsi|HyP|Kruise|NiCOgdh|ShaDowBurn,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,BenBest|Finnsi|Greyy|HyP|Kruise|LhCloudy|NiCOgdh|ShaDowBurn|SoOn|danye
 21256,Stage 1,2019-03-17 12:00:00,PHI,PAR,regular,20950,3,horizon-lunar-colony,1,0,Boombox|Poko|Sado|carpe|eqo|neptuNo,BenBest|Finnsi|HyP|Kruise|NiCOgdh|SoOn,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,BenBest|Finnsi|Greyy|HyP|Kruise|LhCloudy|NiCOgdh|ShaDowBurn|SoOn|danye
 21256,Stage 1,2019-03-17 12:00:00,PHI,PAR,regular,20885,4,,3,0,Boombox|Poko|Sado|carpe|eqo|neptuNo,BenBest|Finnsi|HyP|Kruise|NiCOgdh|ShaDowBurn,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,BenBest|Finnsi|Greyy|HyP|Kruise|LhCloudy|NiCOgdh|ShaDowBurn|SoOn|danye
-21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,,,,,,,,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
-21218,Stage 1,2019-03-17 15:00:00,HOU,ATL,regular,,,,,,,,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|dafran
-21268,Stage 1,2019-03-17 16:30:00,GZC,VAN,regular,,,,,,,,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
+21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,20974,1,nepal,2,1,Ado|Corey|Fahzix|Gido|Janus|Sansam,Apply|HaGoPeun|Kris|Mcgravy|SWoN|bqb,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
+21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,20975,2,hollywood,3,2,Ado|Corey|Fahzix|Gido|Janus|Sansam,Apply|HaGoPeun|Kris|SWoN|bqb|xepheR,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
+21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,20976,3,volskaya,4,5,Ado|Corey|Fahzix|Gido|Janus|Sansam,Apply|HaGoPeun|Kris|SWoN|bqb|xepheR,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
+21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,20898,4,dorado,4,5,Ado|Corey|Fahzix|Gido|Janus|Sansam,Apply|HaGoPeun|Kris|SWoN|bqb|xepheR,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
+21228,Stage 1,2019-03-17 13:25:00,WAS,FLA,regular,22486,5,ilios,2,1,Ado|Corey|Fahzix|Gido|Janus|Sansam,Apply|HaGoPeun|Kris|Mcgravy|SWoN|bqb,Ado|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus,Apply|HaGoPeun|Kris|Mcgravy|SNT|SWoN|TviQ|bqb|sayaplayer|xepheR
+21218,Stage 1,2019-03-17 15:45:00,HOU,ATL,regular,,,,,,,,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|dafran
+21268,Stage 1,2019-03-17 17:00:00,GZC,VAN,regular,,,,,,,,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
 21313,Stage 2,2019-04-04 16:00:00,PHI,NYE,regular,,,,,,,,,
 21293,Stage 2,2019-04-04 17:30:00,BOS,ATL,regular,,,,,,,,,
 21219,Stage 2,2019-04-04 19:00:00,SHD,GLA,regular,,,,,,,,,
