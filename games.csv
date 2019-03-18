@@ -293,10 +293,7 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 21218,Stage 1,2019-03-17 15:45:00,HOU,ATL,regular,20887,2,kings-row,2,1,Boink|Danteh|Jake|Muma|Rawkus|SPREE,Daco|Erster|Kodak|Masaa|Pokpo|dafran,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|dafran
 21218,Stage 1,2019-03-17 15:45:00,HOU,ATL,regular,20888,3,horizon-lunar-colony,0,1,Boink|Danteh|Jake|Muma|Rawkus|SPREE,Daco|Dogman|Erster|Masaa|Pokpo|dafran,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|dafran
 21218,Stage 1,2019-03-17 15:45:00,HOU,ATL,regular,20889,4,,2,3,Boink|Danteh|Jake|Muma|Rawkus|SPREE,Daco|Dogman|Erster|Masaa|Pokpo|dafran,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|dafran
-21268,Stage 1,2019-03-17 17:20:00,GZC,VAN,regular,20956,1,ilios,1,2,Chara|Eileen|HOTBA|Happy|Rio|shu,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
-21268,Stage 1,2019-03-17 17:20:00,GZC,VAN,regular,20957,2,numbani,1,3,Chara|HOTBA|Happy|Kyb|Rio|shu,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
-21268,Stage 1,2019-03-17 17:20:00,GZC,VAN,regular,20958,3,volskaya,1,2,Chara|Eileen|HOTBA|Happy|Rio|shu,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
-21268,Stage 1,2019-03-17 17:20:00,GZC,VAN,regular,20959,4,dorado,1,3,Chara|HOTBA|Happy|Kyb|Rio|shu,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
+21268,Stage 1,2019-03-17 17:20:00,GZC,VAN,regular,,,,,,,,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight
 21313,Stage 2,2019-04-04 16:00:00,PHI,NYE,regular,,,,,,,,,
 21293,Stage 2,2019-04-04 17:30:00,BOS,ATL,regular,,,,,,,,,
 21219,Stage 2,2019-04-04 19:00:00,SHD,GLA,regular,,,,,,,,,
