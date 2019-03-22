@@ -131,9 +131,9 @@ class Predictor(object):
         """Predict the scores of a given match."""
         if match.match_format in ('preseason', 'regular'):
             drawables = [True, False, True, False]
-        elif match.match_format in ('first-to-3'):
+        elif match.match_format in ('best-of-5'):
             drawables = [False, False, False, False, False]
-        elif match.match_format in ('first-to-4'):
+        elif match.match_format in ('best-of-7'):
             drawables = [False, False, False, False, False, False, False]
         else:
             raise NotImplementedError
@@ -203,9 +203,9 @@ class Predictor(object):
         p_wins_regular = self._p_wins(full_rosters=full_rosters,
                                       match_format='regular')
         p_wins_ft3 = self._p_wins(full_rosters=full_rosters,
-                                  match_format='first-to-3')
+                                  match_format='best-of-5')
         p_wins_ft4 = self._p_wins(full_rosters=full_rosters,
-                                  match_format='first-to-4')
+                                  match_format='best-of-7')
 
         title_count = {team: 0 for team in TEAMS}
         top1_count = {team: 0 for team in TEAMS}

@@ -79,12 +79,11 @@ def parse_match(raw_match) -> List[CSVGame]:
     if stage.startswith(prefix):
         stage = stage[len(prefix):]
 
-    if 'Title Matches' in stage:
-        match_format = 'title'
-    elif 'Preseason' in stage:
-        match_format = 'preseason'
-    else:
+    best_of = raw_match.get('bestOf')
+    if best_of is None:
         match_format = 'regular'
+    else:
+        match_format = f'best-of-{best_of}'
 
     base_game = CSVGame(match_id=match_id, stage=stage, start_time=start_time,
                         team1=team1_abbr, team2=team2_abbr,
