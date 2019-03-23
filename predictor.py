@@ -562,7 +562,7 @@ class Predictor(object):
         team1, team2 = game.teams
         score1, score2 = game.score
         is_regular = game.match_format == 'regular'
-        is_title = game.match_format == 'title'
+        is_title = 'Title' in game.stage
         is_playoff = game.match_format == 'playoff'
 
         if game.score[0] != game.score[1]:
