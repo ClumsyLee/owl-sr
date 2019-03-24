@@ -56,6 +56,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 1 Title Matches</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="20305">
     <thead>
@@ -67,28 +72,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
   <td class="pl-0"><a href="/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2890 ± 374">Dynasty</a></td>
-  <td></td>
+  <td>0</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.15);">15%</td>
   <td class="text-center">-2.6</td>
 </tr>
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Titans.png" alt="Titans Logo" width="30"></th>
   <td class="pl-0"><a href="/Titans" class="team" data-toggle="tooltip" data-placement="right" title="3280 ± 456">Titans</a></td>
-  <td></td>
+  <td>4</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.85);">85%</td>
   <td class="text-center">+2.6</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 1 Title Matches</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="20301">
     <thead>
       <tr class="text-center">
@@ -312,10 +312,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21231, 21271, 21233, 21223, 21264, 21265, 21217, 20301];
-var opponents = ['Gladiator', 'Fuel', 'Hunters', 'Uprising', 'Excelsior', 'Justice', 'Spitfire', 'Excelsior'];
-var scores1 = [3, 1, 4, 1, 1, 3, 3, 3];
-var scores2 = [1, 3, 0, 3, 3, 1, 0, 1];
+var matchIds = [21231, 21271, 21233, 21223, 21264, 21265, 21217, 20301, 20305];
+var opponents = ['Gladiator', 'Fuel', 'Hunters', 'Uprising', 'Excelsior', 'Justice', 'Spitfire', 'Excelsior', 'Titans'];
+var scores1 = [3, 1, 4, 1, 1, 3, 3, 3, 0];
+var scores2 = [1, 3, 0, 3, 3, 1, 0, 1, 4];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -333,19 +333,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2'],
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#AA8A00',
-      data: [2914, 2665, 2864, 2688, 2641, 2635, 2767, 2890],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6],
+      data: [2914, 2665, 2864, 2688, 2641, 2635, 2767, 2890, 2793],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -354,7 +354,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,

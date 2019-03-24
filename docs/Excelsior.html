@@ -285,10 +285,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21221, 21127, 21242, 21235, 21253, 21264, 21255, 20301];
-var opponents = ['Uprising', 'Justice', 'Valiant', 'Outlaws', 'Defiant', 'Dynasty', 'Shock', 'Dynasty'];
-var scores1 = [2, 3, 3, 4, 3, 3, 4, 1];
-var scores2 = [1, 1, 2, 0, 1, 1, 0, 3];
+var matchIds = [21221, 21127, 21242, 21235, 21253, 21264, 21255, 20301, ''];
+var opponents = ['Uprising', 'Justice', 'Valiant', 'Outlaws', 'Defiant', 'Dynasty', 'Shock', 'Dynasty', ''];
+var scores1 = [2, 3, 3, 4, 3, 3, 4, 1, ''];
+var scores2 = [1, 1, 2, 0, 1, 1, 0, 3, ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -306,19 +306,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2'],
     datasets: [{
       backgroundColor: '#171C38',
       borderColor: '#0F57EA',
-      data: [2679, 2719, 2751, 2947, 2983, 3031, 3200, 3011],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6],
+      data: [2679, 2719, 2751, 2947, 2983, 3031, 3200, 3011, 3011],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -327,7 +327,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
