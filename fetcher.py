@@ -48,7 +48,7 @@ def split_names(names_str: str) -> List[str]:
 
 
 def fetch_games() -> List[CSVGame]:
-    url = BASE_URL + 'matches'
+    url = BASE_URL + 'match'
     params = {'size': 1000}
     result = requests.get(url, params).json()
 

@@ -98,15 +98,15 @@
   <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
   <td class="pl-0"><a href="/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="2513 ± 414">Dragons</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.12);">12%</td>
-  <td class="text-center">-2.0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.3</td>
 </tr>
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
-  <td class="pl-0"><a href="/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3011 ± 379">Excelsior</a></td>
+  <td class="pl-0"><a href="/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3123 ± 374">Excelsior</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.88);">88%</td>
-  <td class="text-center">+2.0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.3</td>
 </tr>
     </tbody>
   </table>
@@ -152,15 +152,15 @@
   <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
   <td class="pl-0"><a href="/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="2513 ± 414">Dragons</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.82);">82%</td>
-  <td class="text-center">+1.6</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.75);">75%</td>
+  <td class="text-center">+1.2</td>
 </tr>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
-  <td class="pl-0"><a href="/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2126 ± 415">Mayhem</a></td>
+  <td class="pl-0"><a href="/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2224 ± 460">Mayhem</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.18);">18%</td>
-  <td class="text-center">-1.6</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.25);">25%</td>
+  <td class="text-center">-1.2</td>
 </tr>
     </tbody>
   </table>
@@ -443,10 +443,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21176, 21222, 21281, 21215, 21245, 21226, 21266, '', '', ''];
-var opponents = ['Spark', 'Titans', 'Uprising', 'Hunters', 'Fuel', 'Fuel', 'Spitfire', '', '', ''];
-var scores1 = [1, 0, 3, 4, 2, 0, 3, '', '', ''];
-var scores2 = [3, 4, 1, 0, 3, 4, 2, '', '', ''];
+var matchIds = [21176, 21222, 21281, 21215, 21245, 21226, 21266, '', '', '', ''];
+var opponents = ['Spark', 'Titans', 'Uprising', 'Hunters', 'Fuel', 'Fuel', 'Spitfire', '', '', '', ''];
+var scores1 = [1, 0, 3, 4, 2, 0, 3, '', '', '', ''];
+var scores2 = [3, 4, 1, 0, 3, 4, 2, '', '', '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -464,19 +464,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1'],
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#D22630',
-      data: [2342, 2215, 2408, 2681, 2547, 2331, 2513, 2513, 2513, 2513],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0],
+      data: [2342, 2215, 2408, 2681, 2547, 2331, 2513, 2513, 2513, 2513, 2513],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2126],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -485,7 +485,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3411],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
