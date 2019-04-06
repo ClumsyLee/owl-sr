@@ -226,8 +226,20 @@ def fill_availabilities(games: List[CSVGame]) -> List[CSVGame]:
         match_key1 = (game.stage, len(match_ids[key1]))
         match_key2 = (game.stage, len(match_ids[key2]))
 
-        full_roster1 = join_names(availabilities[match_key1][game.team1])
-        full_roster2 = join_names(availabilities[match_key2][game.team2])
+        player_set1 = set(availabilities[match_key1][game.team1])
+        player_set2 = set(availabilities[match_key1][game.team2])
+
+        if game.roster1:
+            for player in split_names(game.roster1):
+                if player not in player_set1:
+                    print(f'Unknown player {player} in {match_key1}, {game.team1}.')
+        if game.roster2:
+            for player in split_names(game.roster2):
+                if player not in player_set2:
+                    print(f'Unknown player {player} in {match_key2}, {game.team2}.')
+
+        full_roster1 = join_names(player_set1)
+        full_roster2 = join_names(player_set2)
 
         filled_games.append(game._replace(full_roster1=full_roster1,
                                           full_roster2=full_roster2))
