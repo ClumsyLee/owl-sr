@@ -475,8 +475,14 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 21286,Stage 2,2019-04-18 20:35:00,VAN,DAL,regular,22687,2,hanamura,2,1,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Closer|NotE|OGE|ZachaREEE|aKm|uNKOE,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight,Closer|EFFECT|HarryHook|Mickie|NotE|OGE|Taimou|ZachaREEE|aKm|uNKOE
 21286,Stage 2,2019-04-18 20:35:00,VAN,DAL,regular,22688,3,blizzard-world,4,3,BUMPER|Haksal|JJANU|SLIME|SeoMinSoo|Twilight,Closer|NotE|OGE|ZachaREEE|aKm|uNKOE,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight,Closer|EFFECT|HarryHook|Mickie|NotE|OGE|Taimou|ZachaREEE|aKm|uNKOE
 21286,Stage 2,2019-04-18 20:35:00,VAN,DAL,regular,22782,4,junkertown,3,2,BUMPER|Haksal|Hooreg|JJANU|SLIME|Twilight,Closer|NotE|OGE|ZachaREEE|aKm|uNKOE,BUMPER|Haksal|Hooreg|JJANU|RAPEL|SLIME|SeoMinSoo|Stitch|Twilight,Closer|EFFECT|HarryHook|Mickie|NotE|OGE|Taimou|ZachaREEE|aKm|uNKOE
-21324,Stage 2,2019-04-19 16:00:00,NYE,ATL,regular,,,,,,,,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
-21250,Stage 2,2019-04-19 17:45:00,PHI,HOU,regular,,,,,,,,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt
+21324,Stage 2,2019-04-19 16:00:00,NYE,ATL,regular,22783,1,,0,2,Anamo|JJONAK|Libero|Mano|MekO|Nenne,Daco|Dogman|Erster|Masaa|Pokpo|babybay,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21324,Stage 2,2019-04-19 16:00:00,NYE,ATL,regular,22784,2,temple-of-anubis,2,3,Anamo|JJONAK|Libero|Mano|MekO|Nenne,Dogman|Erster|Masaa|Pokpo|babybay|frd,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21324,Stage 2,2019-04-19 16:00:00,NYE,ATL,regular,22785,3,kings-row,3,4,Anamo|JJONAK|Libero|Mano|MekO|Nenne,Daco|Dogman|Erster|Masaa|Pokpo|babybay,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21324,Stage 2,2019-04-19 16:00:00,NYE,ATL,regular,22786,4,,4,3,Anamo|JJONAK|Libero|Mano|MekO|Nenne,Daco|Dogman|Erster|Masaa|Pokpo|babybay,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21250,Stage 2,2019-04-19 17:55:00,PHI,HOU,regular,22689,1,,2,1,Boombox|Poko|Sado|carpe|eqo|neptuNo,ArHaN|Boink|Danteh|LiNkzr|Muma|Rawkus,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt
+21250,Stage 2,2019-04-19 17:55:00,PHI,HOU,regular,22690,2,temple-of-anubis,3,2,Boombox|Poko|Sado|carpe|eqo|neptuNo,ArHaN|Boink|Danteh|Muma|Rawkus|coolmatt,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt
+21250,Stage 2,2019-04-19 17:55:00,PHI,HOU,regular,22791,3,eichenwalde,2,0,Boombox|Poko|Sado|carpe|eqo|neptuNo,ArHaN|Boink|Danteh|Muma|Rawkus|coolmatt,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt
+21250,Stage 2,2019-04-19 17:55:00,PHI,HOU,regular,22792,4,gibraltar,3,0,Boombox|Poko|Sado|carpe|eqo|neptuNo,ArHaN|Boink|Danteh|Muma|Rawkus|coolmatt,Boombox|Elk|Poko|Sado|carpe|eqo|fragi|neptuNo|snillo,ArHaN|Bani|Boink|Danteh|Jake|LiNkzr|Muma|Rawkus|SPREE|coolmatt
 21287,Stage 2,2019-04-19 19:30:00,VAL,WAS,regular,,,,,,,,Agilities|Bunny|Custa|Fate|IZaYaKI|KSF|KariV|KuKi|SPACE,Ado|ArK|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus
 21260,Stage 2,2019-04-19 21:15:00,HZS,GZC,regular,,,,,,,,Adora|BEBE|Bazzi|GodsB|Guxue|Krystal|NoSmite|Revenge|Ria|SASIN|iDK,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu
 21342,Stage 2,2019-04-20 12:00:00,LDN,BOS,regular,,,,,,,,BIRDRING|Bdosin|Fury|Gesture|Guard|Krillin|NUS|Profit,AimGod|Axxiom|ColourHex|Fusions|Kellex|Persia|alemao|blase|rCk
@@ -572,7 +578,7 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 21422,Stage 3,2019-06-30 15:30:00,GLA,VAN,regular,,,,,,,,,
 21451,Stage 3,2019-06-30 17:15:00,CDH,SEO,regular,,,,,,,,,
 21461,Stage 3,2019-07-06 09:00:00,FLA,NYE,regular,,,,,,,,,
-21380,Stage 3,2019-07-06 12:30:00,PHI,WAS,regular,,,,,,,,,
+21380,Stage 3,2019-07-06 10:45:00,PHI,WAS,regular,,,,,,,,,
 21387,Stage 3,2019-07-06 12:30:00,TOR,ATL,regular,,,,,,,,,
 21396,Stage 3,2019-07-06 14:15:00,GZC,SHD,regular,,,,,,,,,
 21432,Stage 3,2019-07-07 09:00:00,PHI,SHD,regular,,,,,,,,,
