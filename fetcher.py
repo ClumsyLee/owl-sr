@@ -127,11 +127,12 @@ def parse_game(raw_game, base_game: CSVGame, team1_id: int,
             continue
 
     if len(roster1) != 6 or len(roster2) != 6:
-        print(f'{game_id}: Invalid player numbers, skipping.')
-        return None
+        print(f'{game_id}: Invalid player numbers ({roster1}, {roster2}).')
+        if len(roster1) < 6 or len(roster2) < 6:
+            return None
 
-    roster1 = join_names(roster1)
-    roster2 = join_names(roster2)
+    roster1 = join_names(roster1[:6])
+    roster2 = join_names(roster2[:6])
 
     game = base_game._replace(game_id=game_id, game_number=game_number,
                               map_name=map_name,
