@@ -131,15 +131,18 @@ class Predictor(object):
         """Predict the scores of a given match."""
         if match.match_format in ('preseason', 'regular'):
             drawables = [True, False, True, False]
+            max_wins = 4
         elif match.match_format in ('best-of-5'):
             drawables = [False, False, False, False, False]
+            max_wins = 3
         elif match.match_format in ('best-of-7'):
             drawables = [False, False, False, False, False, False, False]
+            max_wins = 4
         else:
             raise NotImplementedError
         return self._predict_bo_score(match.teams, rosters=match.rosters,
                                       full_rosters=match.full_rosters,
-                                      drawables=drawables)
+                                      drawables=drawables, max_wins=max_wins)
 
     def predict_match(self, match: Game) -> Tuple[float, float]:
         """Predict the win probability & diff expectation of a given match."""
@@ -482,9 +485,10 @@ class Predictor(object):
     def _predict_bo_score(self, teams: Tuple[str, str],
                           rosters: Tuple[Roster, Roster],
                           full_rosters: Tuple[FullRoster, FullRoster],
-                          drawables: List[bool]) -> PScores:
+                          drawables: List[bool], max_wins: int) -> PScores:
         """Predict the scores of a given BO match."""
         p_scores = defaultdict(float)
+        p_finished_scores = defaultdict(float)
         p_scores[(0, 0)] = 1.0
 
         p_undrawable = self.predict(teams, rosters=rosters,
@@ -498,8 +502,14 @@ class Predictor(object):
             new_p_scores = defaultdict(float)
 
             for (score1, score2), p in p_scores.items():
-                new_p_scores[(score1 + 1, score2)] += p * p_win
-                new_p_scores[(score1, score2 + 1)] += p * p_loss
+                if score1 + 1 == max_wins:
+                    p_finished_scores[(score1 + 1, score2)] += p * p_win
+                else:
+                    new_p_scores[(score1 + 1, score2)] += p * p_win
+                if score2 + 1 == max_wins:
+                    p_finished_scores[(score1, score2 + 1)] += p * p_loss
+                else:
+                    new_p_scores[(score1, score2 + 1)] += p * p_loss
                 if drawable:
                     new_p_scores[(score1, score2)] += p * p_draw
 
@@ -517,6 +527,10 @@ class Predictor(object):
                 new_p_scores[(score1, score2)] += p
 
         p_scores = new_p_scores
+
+        # Merge finished scores back.
+        for scores, p in p_finished_scores.items():
+            p_scores[scores] += p
 
         return p_scores
 
