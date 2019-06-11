@@ -1,0 +1,53 @@
+a.team {
+  color: #000;
+}
+
+table {
+  box-shadow: 1.5px 1.5px 5px 1px rgba(0, 0, 0, .2);
+}
+
+thead th {
+  font-weight: lighter;
+  font-size: 0.7em;
+  padding: 1px !important;
+  height: 15px;
+}
+
+.compact {
+  width: 10%;
+}
+
+.compacter {
+  width: 5%;
+}
+
+tr.win {
+  font-weight: bolder;
+}
+
+tr.lose {
+  font-weight: lighter;
+}
+
+tr.lost {
+  opacity: 0.2;
+}
+
+tr.highlight {
+  background-color: lightyellow;
+}
+
+tr.atl-division {
+}
+
+tr.pac-division {
+  background-color: #F8F8F8;
+}
+
+.low-chance {
+  color: #ccc;
+}
+
+.tooltip {
+  margin-left: 5px;
+}

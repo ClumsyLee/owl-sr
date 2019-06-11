@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="owl.css">
+
+    <title>About | OWL Ratings</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/s1/">Overwatch League Ratings</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/s1/">Standings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/s1/matches">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/s1/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row pt-4">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <h4 class="pt-4">Some Columns Are Missing on Mobiles?</h4>
+    <p>Try to turn your phone sideways.</p>
+
+    <h4 class="pt-4">How Did You Compute These Numbers?</h4>
+    <p>I used <a href="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">TrueSkill</a> to keep track of skill ratings of individual players and estimate the win probabilities based on the ratings.</p>
+
+    <h4 class="pt-4">What Is TrueSkill?</h4>
+    <p>It is a ranking system designed by <a href="https://www.microsoft.com/en-us/research">Microsoft Research</a>:</p>
+    <blockquote cite="https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/">
+      <p>"The TrueSkill ranking system is a skill based ranking system for Xbox Live developed at Microsoft Research. The purpose of a ranking system is to both identify and track the skills of gamers in a game (mode) in order to be able to match them into competitive matches. The TrueSkill ranking system only uses the final standings of all teams in a game in order to update the skill estimates (ranks) of all gamers playing in this game. Ranking systems have been proposed for many sports but possibly the most prominent ranking system in use today is ELO."</p>
+    </blockquote>
+
+    <h4 class="pt-4">Why Not ELO/Glicko?</h4>
+    <p>ELO and Glicko are designed for single-player games, which means every team will have a single rating. As a result, benching/transferring will not be handled properly.</p>
+
+    <h4 class="pt-4">Did You Consider Draws/Bans/Transfers?</h4>
+    <p>Yes.</p>
+
+    <h4 class="pt-4">Did You Consider Tie-breakers/BO5 for the Title Matches?</h4>
+    <p>Yes.</p>
+
+    <h4 class="pt-4">But How Did You Determine the Rosters?</h4>
+    <p>For a given team, sort all the rosters of it during its last 12 games (maps) based on their skill ratings, then pick the best one available. If there are no such rosters (e.g. a key member has gone), pick 6 players with the highest ratings.</p>
+
+    <h4 class="pt-4">What Parameters Did You Use?</h4>
+    <ul>
+      <li><var>mu</var> = 2500</li>
+      <li><var>sigma</var> = 833.333</li>
+      <li><var>beta</var> = 1250</li>
+      <li><var>tau</var> = 8.33333</li>
+      <li><var>draw_probability</var> = 0.06 or 0 (depending on the map)</li>
+    </ul>
+    <p>All these parameters are tuned on matches from preseason, stage 1, and stage 2.</p>
+
+    <h4 class="pt-4">May I See Your Source Code?</h4>
+    <p><a href="https://github.com/ThomasLee969/owl-sr">Sure</a>.</p>
+  </div>
+</div>
+    </div>
+
+    <hr class="mt-4 mb-2">
+    <footer class="text-center pb-2">Created by <a href="https://github.com/ThomasLee969">ClumsyLi</a></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+</html>

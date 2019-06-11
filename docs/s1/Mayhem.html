@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="owl.css">
+
+    <title>Florida Mayhem | OWL Ratings</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="/s1/">Overwatch League Ratings</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/s1/">Standings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/s1/matches">Matches</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/s1/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h4 class="py-3 text-center">
+  <img src="imgs/Mayhem.png" alt="Mayhem Logo" width="40">
+  <span class="align-middle pl-1">Florida Mayhem</span>
+</h4>
+<div class="row">
+  <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+    <canvas id="myChart"></canvas>
+  </div>
+</div>
+<h5 class="pt-4">Upcoming Matches</h5>
+<hr>
+<div class="row">
+
+</div>
+<h5 class="pt-4">Stage 4</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10632">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, June 16</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2049 ± 313">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.02);">2%</td>
+  <td class="text-center">-2.9</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Uprising" class="team" data-toggle="tooltip" data-placement="right" title="2884 ± 293">Uprising</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.98);">98%</td>
+  <td class="text-center">+2.9</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10625">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, June 14</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2093 ± 315">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.5</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="2735 ± 294">Spitfire</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.5</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10486">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, June 8</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2175 ± 318">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.18);">18%</td>
+  <td class="text-center">-1.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2550 ± 335">Fuel</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.82);">82%</td>
+  <td class="text-center">+1.6</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10480">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, June 6</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2165 ± 322">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.77);">77%</td>
+  <td class="text-center">+1.3</td>
+</tr>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="1857 ± 377">Dragons</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.23);">23%</td>
+  <td class="text-center">-1.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10478">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, June 2</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2180 ± 326">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.11);">11%</td>
+  <td class="text-center">-2.1</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Outlaws.png" alt="Outlaws Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Outlaws" class="team" data-toggle="tooltip" data-placement="right" title="2697 ± 338">Outlaws</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.89);">89%</td>
+  <td class="text-center">+2.1</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10474">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, June 1</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2128 ± 332">Mayhem</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2762 ± 358">Dynasty</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10459">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, May 24</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2197 ± 320">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.05);">5%</td>
+  <td class="text-center">-2.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2880 ± 311">Gladiator</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.95);">95%</td>
+  <td class="text-center">+2.6</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10456">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, May 23</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2194 ± 323">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.3</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2779 ± 333">Valiant</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10452">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, May 19</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2238 ± 324">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.15);">15%</td>
+  <td class="text-center">-1.8</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2661 ± 316">Fusion</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.85);">85%</td>
+  <td class="text-center">+1.8</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10447">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, May 17</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2198 ± 366">Mayhem</a></td>
+  <td>0</td>
+  <td class="low-chance text-center" style="background-color: rgba(255, 137, 0, 0.0);">&lt;1%</td>
+  <td class="text-center">-3.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3441 ± 336">Excelsior</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 1.0);">>99%</td>
+  <td class="text-center">+3.6</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div><h5 class="pt-4">Stage 3</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10591">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, May 3</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2297 ± 349">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.24);">24%</td>
+  <td class="text-center">-1.3</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2593 ± 377">Shock</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.76);">76%</td>
+  <td class="text-center">+1.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10589">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, May 2</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2344 ± 354">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.15);">15%</td>
+  <td class="text-center">-1.8</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2785 ± 333">Gladiator</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.85);">85%</td>
+  <td class="text-center">+1.8</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10377">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, April 27</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2372 ± 359">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.18);">18%</td>
+  <td class="text-center">-1.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2760 ± 371">Valiant</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.82);">82%</td>
+  <td class="text-center">+1.6</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10371">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, April 25</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2364 ± 390">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.66);">66%</td>
+  <td class="text-center">+0.7</td>
+</tr>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2192 ± 369">Fuel</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.34);">34%</td>
+  <td class="text-center">-0.7</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10364">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, April 20</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2377 ± 397">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.5</td>
+</tr>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="1692 ± 443">Dragons</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.5</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10360">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, April 19</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2332 ± 342">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.13);">13%</td>
+  <td class="text-center">-1.9</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Outlaws.png" alt="Outlaws Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Outlaws" class="team" data-toggle="tooltip" data-placement="right" title="2802 ± 336">Outlaws</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.87);">87%</td>
+  <td class="text-center">+1.9</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10356">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, April 14</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2271 ± 346">Mayhem</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.04);">4%</td>
+  <td class="text-center">-2.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Uprising" class="team" data-toggle="tooltip" data-placement="right" title="2988 ± 372">Uprising</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.96);">96%</td>
+  <td class="text-center">+2.6</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10349">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, April 12</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2303 ± 349">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.07);">7%</td>
+  <td class="text-center">-2.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="2930 ± 353">Spitfire</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.93);">93%</td>
+  <td class="text-center">+2.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10342">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, April 7</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2294 ± 353">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.3</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2878 ± 376">Fusion</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10336">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, April 5</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2356 ± 356">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.03);">3%</td>
+  <td class="text-center">-2.9</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="3180 ± 357">Excelsior</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.97);">97%</td>
+  <td class="text-center">+2.9</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div><h5 class="pt-4">Stage 2</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10582">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, March 23</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2384 ± 361">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.18);">18%</td>
+  <td class="text-center">-1.6</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="2774 ± 389">Dynasty</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.82);">82%</td>
+  <td class="text-center">+1.6</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10577">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, March 21</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2304 ± 369">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.36);">36%</td>
+  <td class="text-center">-0.7</td>
+</tr>
+      <tr scope="row" class="win lost">
+  <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2457 ± 388">Shock</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.64);">64%</td>
+  <td class="text-center">+0.7</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10320">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, March 16</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2246 ± 376">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.3</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2851 ± 392">Gladiator</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10318">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, March 15</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2041 ± 383">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.07);">7%</td>
+  <td class="text-center">-2.4</td>
+</tr>
+      <tr scope="row" class="win lost">
+  <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2668 ± 388">Valiant</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.93);">93%</td>
+  <td class="text-center">+2.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10313">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, March 10</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1897 ± 392">Mayhem</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.25);">25%</td>
+  <td class="text-center">-1.2</td>
+</tr>
+      <tr scope="row" class="win lost">
+  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2191 ± 416">Fuel</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.75);">75%</td>
+  <td class="text-center">+1.2</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10310">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, March 9</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1794 ± 401">Mayhem</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Outlaws.png" alt="Outlaws Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Outlaws" class="team" data-toggle="tooltip" data-placement="right" title="2452 ± 387">Outlaws</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10296">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, March 2</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1923 ± 407">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.13);">13%</td>
+  <td class="text-center">-1.9</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Uprising" class="team" data-toggle="tooltip" data-placement="right" title="2408 ± 394">Uprising</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.87);">87%</td>
+  <td class="text-center">+1.9</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10293">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, March 1</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1894 ± 414">Mayhem</a></td>
+  <td>1</td>
+  <td class="low-chance text-center" style="background-color: rgba(255, 137, 0, 0.0);">&lt;1%</td>
+  <td class="text-center">-3.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="3027 ± 403">Spitfire</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 1.0);">>99%</td>
+  <td class="text-center">+3.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10287">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, February 24</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1982 ± 419">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.03);">3%</td>
+  <td class="text-center">-2.8</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2777 ± 441">Fusion</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.97);">97%</td>
+  <td class="text-center">+2.8</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10282">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, February 22</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1922 ± 426">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.01);">1%</td>
+  <td class="text-center">-3.1</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="2903 ± 419">Excelsior</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.99);">99%</td>
+  <td class="text-center">+3.1</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div><h5 class="pt-4">Stage 1</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10575">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, February 10</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1851 ± 437">Mayhem</a></td>
+  <td>2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.11);">11%</td>
+  <td class="text-center">-2.1</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2390 ± 441">Fusion</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.89);">89%</td>
+  <td class="text-center">+2.1</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10568">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, February 8</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1775 ± 445">Mayhem</a></td>
+  <td>0</td>
+  <td class="low-chance text-center" style="background-color: rgba(255, 137, 0, 0.0);">&lt;1%</td>
+  <td class="text-center">-3.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="2965 ± 445">Excelsior</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 1.0);">>99%</td>
+  <td class="text-center">+3.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10265">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, February 2</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1986 ± 454">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.34);">34%</td>
+  <td class="text-center">-0.7</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2163 ± 429">Shock</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.66);">66%</td>
+  <td class="text-center">+0.7</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10260">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, January 31</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2041 ± 465">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.28);">28%</td>
+  <td class="text-center">-1.1</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Gladiator.png" alt="Gladiator Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Gladiator" class="team" data-toggle="tooltip" data-placement="right" title="2298 ± 458">Gladiator</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.72);">72%</td>
+  <td class="text-center">+1.1</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10257">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, January 27</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1961 ± 474">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.03);">3%</td>
+  <td class="text-center">-2.7</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Valiant.png" alt="Valiant Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Valiant" class="team" data-toggle="tooltip" data-placement="right" title="2765 ± 463">Valiant</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.97);">97%</td>
+  <td class="text-center">+2.7</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10252">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, January 25</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2094 ± 481">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.5</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Outlaws.png" alt="Outlaws Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Outlaws" class="team" data-toggle="tooltip" data-placement="right" title="2798 ± 476">Outlaws</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.5</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10242">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, January 19</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1835 ± 493">Mayhem</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.57);">57%</td>
+  <td class="text-center">+0.3</td>
+</tr>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="1758 ± 500">Dragons</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.43);">43%</td>
+  <td class="text-center">-0.3</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10236">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, January 17</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="1912 ± 498">Mayhem</a></td>
+  <td>0</td>
+  <td class="low-chance text-center" style="background-color: rgba(255, 137, 0, 0.0);">&lt;1%</td>
+  <td class="text-center">-3.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Dynasty.png" alt="Dynasty Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Dynasty" class="team" data-toggle="tooltip" data-placement="right" title="3130 ± 499">Dynasty</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 1.0);">>99%</td>
+  <td class="text-center">+3.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10230">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Friday, January 12</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2165 ± 510">Mayhem</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.29);">29%</td>
+  <td class="text-center">-1.0</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Uprising.png" alt="Uprising Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Uprising" class="team" data-toggle="tooltip" data-placement="right" title="2421 ± 525">Uprising</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.71);">71%</td>
+  <td class="text-center">+1.0</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10226">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Thursday, January 11</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2252 ± 525">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
+  <td class="text-center">-2.2</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Spitfire.png" alt="Spitfire Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Spitfire" class="team" data-toggle="tooltip" data-placement="right" title="2881 ± 535">Spitfire</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
+  <td class="text-center">+2.2</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div><h5 class="pt-4">Preseason</h5>
+<hr>
+<div class="row">
+  <div class="col-lg-4 col-md-6">
+  <table class="table" id="10535">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Saturday, December 9</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2393 ± 540">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.31);">31%</td>
+  <td class="text-center">-0.9</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2617 ± 539">Fuel</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.69);">69%</td>
+  <td class="text-center">+0.9</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
+  <table class="table" id="10525">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Wednesday, December 6</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Mayhem.png" alt="Mayhem Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Mayhem" class="team" data-toggle="tooltip" data-placement="right" title="2500 ± 558">Mayhem</a></td>
+  <td>1</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.5);">50%</td>
+  <td class="text-center">-0.0</td>
+</tr>
+      <tr scope="row" class="loss">
+  <th class="text-right compact"><img src="imgs/Shock.png" alt="Shock Logo" width="30"></th>
+  <td class="pl-0"><a href="/s1/Shock" class="team" data-toggle="tooltip" data-placement="right" title="2500 ± 558">Shock</a></td>
+  <td>3</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.5);">50%</td>
+  <td class="text-center">+0.0</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script>
+var matchIds = [10525, 10535, '', 10226, 10230, 10236, 10242, 10252, 10257, 10260, 10265, 10568, 10575, '', '', 10282, 10287, 10293, 10296, 10310, 10313, 10318, 10320, 10577, 10582, '', '', 10336, 10342, 10349, 10356, 10360, 10364, 10371, 10377, 10589, 10591, '', '', 10447, 10452, 10456, 10459, 10474, 10478, 10480, 10486, 10625, 10632, '', ''];
+var opponents = ['Shock', 'Fuel', '', 'Spitfire', 'Uprising', 'Dynasty', 'Dragons', 'Outlaws', 'Valiant', 'Gladiator', 'Shock', 'Excelsior', 'Fusion', '', '', 'Excelsior', 'Fusion', 'Spitfire', 'Uprising', 'Outlaws', 'Fuel', 'Valiant', 'Gladiator', 'Shock', 'Dynasty', '', '', 'Excelsior', 'Fusion', 'Spitfire', 'Uprising', 'Outlaws', 'Dragons', 'Fuel', 'Valiant', 'Gladiator', 'Shock', '', '', 'Excelsior', 'Fusion', 'Valiant', 'Gladiator', 'Dynasty', 'Outlaws', 'Dragons', 'Fuel', 'Spitfire', 'Uprising', '', ''];
+var scores1 = [1, 1, '', 1, 0, 0, 4, 0, 1, 1, 0, 0, 2, '', '', 1, 0, 1, 0, 2, 3, 3, 1, 3, 1, '', '', 0, 1, 0, 2, 1, 3, 3, 1, 0, 0, '', '', 0, 0, 1, 0, 2, 1, 3, 0, 0, 0, '', ''];
+var scores2 = [3, 3, '', 3, 4, 4, 0, 4, 3, 3, 4, 3, 3, '', '', 3, 4, 3, 4, 3, 2, 1, 2, 2, 3, '', '', 4, 3, 3, 3, 3, 1, 1, 3, 3, 4, '', '', 3, 4, 3, 4, 3, 3, 2, 4, 4, 4, '', ''];
+
+function gotoHash(hash) {
+    window.location.hash = '#';
+    window.location.hash = hash;
+
+    $('tr').removeClass('highlight');
+    $(hash + ' tr').addClass('highlight');
+}
+
+var ctx = document.getElementById('myChart');
+ctx.height = 220;
+var chart = new Chart(ctx.getContext('2d'), {
+  // The type of chart we want to create
+  type: 'line',
+
+  // The data for our dataset
+  data: {
+    labels: ['Preseason, Match 1', 'Preseason, Match 2', 'Preseason, Match 3', 'Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1, Match 8', 'Stage 1, Match 9', 'Stage 1, Match 10', 'Stage 1 - Title Matches, Match 1', 'Stage 1 - Title Matches, Match 2', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2, Match 8', 'Stage 2, Match 9', 'Stage 2, Match 10', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4', 'Stage 3, Match 5', 'Stage 3, Match 6', 'Stage 3, Match 7', 'Stage 3, Match 8', 'Stage 3, Match 9', 'Stage 3, Match 10', 'Stage 3 Title Matches, Match 1', 'Stage 3 Title Matches, Match 2', 'Stage 4, Match 1', 'Stage 4, Match 2', 'Stage 4, Match 3', 'Stage 4, Match 4', 'Stage 4, Match 5', 'Stage 4, Match 6', 'Stage 4, Match 7', 'Stage 4, Match 8', 'Stage 4, Match 9', 'Stage 4, Match 10', 'Stage 4 Title Matches, Match 1', 'Stage 4 Title Matches, Match 2'],
+    datasets: [{
+      backgroundColor: '#AF272F',
+      borderColor: '#FEDA00',
+      data: [2393, 2252, 2252, 2165, 1912, 1835, 2094, 1961, 2041, 1986, 1775, 1851, 1922, 1922, 1922, 1982, 1894, 1923, 1794, 1897, 2041, 2246, 2304, 2384, 2356, 2356, 2356, 2294, 2303, 2271, 2332, 2377, 2364, 2372, 2344, 2297, 2198, 2198, 2198, 2238, 2194, 2197, 2128, 2180, 2165, 2175, 2093, 2049, 2017, 2017, 2017],
+      pointRadius: [4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
+      fill: false
+    }, {
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+      borderColor: 'rgba(0, 0, 0, 0)',
+      data: [2235, 2231, 2231, 2036, 1912, 1758, 1563, 1712, 1876, 1834, 1775, 1851, 1844, 1844, 1844, 1867, 1855, 1766, 1596, 1722, 1627, 1583, 1575, 1759, 1683, 1683, 1683, 2101, 2005, 1923, 1782, 1692, 1711, 1970, 2065, 2148, 2111, 2111, 2111, 2195, 2147, 2162, 1940, 1856, 1857, 2037, 1976, 1946, 1768, 1768, 1768],
+      pointRadius: 0,
+      pointHitRadius: 0,
+      pointHoverRadius: 0,
+      pointBorderWidth: 0,
+      fill: '+1'
+    }, {
+      backgroundColor: 'rgba(0, 0, 0, 0.1)',
+      borderColor: 'rgba(0, 0, 0, 0)',
+      data: [2758, 2881, 2892, 2939, 3130, 3177, 3304, 3097, 3070, 3055, 3000, 3130, 3174, 3041, 3077, 3047, 3189, 3063, 3194, 3297, 3216, 3234, 3346, 3256, 3189, 3180, 3180, 3239, 3330, 3193, 3164, 3218, 3212, 3239, 3327, 3351, 3333, 3383, 3441, 3425, 3435, 3488, 3502, 3544, 3316, 3154, 3132, 3217, 3223, 3234, 3163],
+      pointRadius: 0,
+      pointHitRadius: 0,
+      pointHoverRadius: 0,
+      pointBorderWidth: 0,
+      fill: false
+    }]
+  },
+
+  // Configuration options go here
+  options: {
+    animation: false,
+    legend: {
+      display: false
+    },
+    scales: {
+      xAxes: [{
+        display: false
+      }],
+      yAxes: [{
+        ticks: {
+          stepSize: 500
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        footer: function(tooltipItems) {
+          var i = tooltipItems[0].index;
+          if (opponents[i] != '') {
+            return scores1[i] + ':' + scores2[i] + ' ' + opponents[i];
+          }
+        }
+      }
+    }
+  }
+});
+
+var isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+var lastMatchId = null;
+
+ctx.onclick = function(event) {
+  var elements = chart.getElementAtEvent(event);
+  if (elements.length == 0) {
+    lastMatchId = null;
+    return;
+  }
+
+  var match_id = matchIds[chart.getElementAtEvent(event)[0]._index];
+  if (isTouchDevice && match_id != lastMatchId) {
+    lastMatchId = match_id;
+    return;
+  }
+
+  lastMatchId = match_id;
+  gotoHash('#' + match_id);
+};
+</script>
+    </div>
+
+    <hr class="mt-4 mb-2">
+    <footer class="text-center pb-2">Created by <a href="https://github.com/ThomasLee969">ClumsyLi</a></footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+  </body>
+</html>
