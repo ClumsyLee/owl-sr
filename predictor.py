@@ -197,6 +197,8 @@ class Predictor(object):
         return prediction
 
     def _predict_stage(self, matches: Sequence[Game], iters=100000):
+        # This implementation is just stupid and doesn't work during the stage
+        # playoffs. Avoid it at all costs.
         full_rosters = self.last_full_rosters.copy()
         for match in matches:
             for team, full_roster in zip(match.teams, match.full_rosters):
