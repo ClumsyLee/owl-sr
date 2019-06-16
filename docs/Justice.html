@@ -640,10 +640,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21127, 21210, 21252, 21273, 21265, 21227, 21228, '', '', '', 21275, 21239, 21230, 21240, 21287, 21346, 21364, '', '', '', 21318, 21384, ''];
-var opponents = ['Excelsior', 'Spitfire', 'Fusion', 'Shock', 'Dynasty', 'Eternal', 'Mayhem', '', '', '', 'Defiant', 'Hunters', 'Excelsior', 'Reign', 'Valiant', 'Dragons', 'Uprising', '', '', '', 'Fuel', 'Spark', ''];
-var scores1 = [1, 2, 1, 0, 1, 1, 3, '', '', '', 1, 1, 0, 1, 1, 1, 3, '', '', '', 0, 0, ''];
-var scores2 = [3, 3, 3, 4, 3, 2, 2, '', '', '', 3, 3, 4, 3, 3, 3, 2, '', '', '', 3, 3, ''];
+var matchIds = [21127, 21210, 21252, 21273, 21265, 21227, 21228, '', '', '', 21275, 21239, 21230, 21240, 21287, 21346, 21364, '', '', '', 21318, 21384, '', ''];
+var opponents = ['Excelsior', 'Spitfire', 'Fusion', 'Shock', 'Dynasty', 'Eternal', 'Mayhem', '', '', '', 'Defiant', 'Hunters', 'Excelsior', 'Reign', 'Valiant', 'Dragons', 'Uprising', '', '', '', 'Fuel', 'Spark', '', ''];
+var scores1 = [1, 2, 1, 0, 1, 1, 3, '', '', '', 1, 1, 0, 1, 1, 1, 3, '', '', '', 0, 0, '', ''];
+var scores2 = [3, 3, 3, 4, 3, 2, 2, '', '', '', 3, 3, 4, 3, 3, 3, 2, '', '', '', 3, 3, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -661,19 +661,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4'],
     datasets: [{
       backgroundColor: '#003768',
       borderColor: '#990034',
-      data: [2343, 2311, 2224, 2112, 2145, 2099, 2143, 2143, 2143, 2143, 2167, 2176, 2104, 2019, 2077, 2098, 2257, 2257, 2257, 2257, 2178, 2175, 2175],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 0],
+      data: [2343, 2311, 2224, 2112, 2145, 2099, 2143, 2143, 2143, 2143, 2167, 2176, 2104, 2019, 2077, 2098, 2257, 2257, 2257, 2257, 2178, 2175, 2175, 2175],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2142, 2109],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2142, 2109, 2109],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -682,7 +682,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456, 3506],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
