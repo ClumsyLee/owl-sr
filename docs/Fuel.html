@@ -57,33 +57,6 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
-  <table class="table" id="21320">
-    <thead>
-      <tr class="text-center">
-        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Sunday, June 23</th>
-        <th scope="col" class="compacter"></th>
-        <th scope="col" class="compact">win<br>prob.</th>
-        <th scope="col" class="compacter">map<br>+/-</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr scope="row" class="loss">
-  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
-  <td class="pl-0"><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2411 ± 311">Fuel</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.41);">41%</td>
-  <td class="text-center">-0.4</td>
-</tr>
-      <tr scope="row" class="win">
-  <th class="text-right compact"><img src="imgs/Hunters.png" alt="Hunters Logo" width="30"></th>
-  <td class="pl-0"><a href="/Hunters" class="team" data-toggle="tooltip" data-placement="right" title="2507 ± 380">Hunters</a></td>
-  <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.59);">59%</td>
-  <td class="text-center">+0.4</td>
-</tr>
-    </tbody>
-  </table>
-</div><div class="col-lg-4 col-md-6">
   <table class="table" id="21405">
     <thead>
       <tr class="text-center">
@@ -96,17 +69,17 @@
     <tbody>
       <tr scope="row" class="loss">
   <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
-  <td class="pl-0"><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2411 ± 311">Fuel</a></td>
+  <td class="pl-0"><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2341 ± 309">Fuel</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.08);">8%</td>
-  <td class="text-center">-2.2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.06);">6%</td>
+  <td class="text-center">-2.5</td>
 </tr>
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Excelsior.png" alt="Excelsior Logo" width="30"></th>
   <td class="pl-0"><a href="/Excelsior" class="team" data-toggle="tooltip" data-placement="right" title="2979 ± 301">Excelsior</a></td>
   <td></td>
-  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.92);">92%</td>
-  <td class="text-center">+2.2</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.94);">94%</td>
+  <td class="text-center">+2.5</td>
 </tr>
     </tbody>
   </table>
@@ -116,6 +89,33 @@
 <hr>
 <div class="row">
   <div class="col-lg-4 col-md-6">
+  <table class="table" id="21320">
+    <thead>
+      <tr class="text-center">
+        <th scope="col" class="pl-3 text-left align-middle text-muted" colspan="2">Sunday, June 23</th>
+        <th scope="col" class="compacter"></th>
+        <th scope="col" class="compact">win<br>prob.</th>
+        <th scope="col" class="compacter">map<br>+/-</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" class="loss lost">
+  <th class="text-right compact"><img src="imgs/Fuel.png" alt="Fuel Logo" width="30"></th>
+  <td class="pl-0"><a href="/Fuel" class="team" data-toggle="tooltip" data-placement="right" title="2411 ± 311">Fuel</a></td>
+  <td>0</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.41);">41%</td>
+  <td class="text-center">-0.4</td>
+</tr>
+      <tr scope="row" class="win">
+  <th class="text-right compact"><img src="imgs/Hunters.png" alt="Hunters Logo" width="30"></th>
+  <td class="pl-0"><a href="/Hunters" class="team" data-toggle="tooltip" data-placement="right" title="2507 ± 380">Hunters</a></td>
+  <td>4</td>
+  <td class="text-center" style="background-color: rgba(255, 137, 0, 0.59);">59%</td>
+  <td class="text-center">+0.4</td>
+</tr>
+    </tbody>
+  </table>
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="21386">
     <thead>
       <tr class="text-center">
@@ -671,10 +671,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21126, 21271, 21272, 21282, 21245, 21226, 21267, '', '', '', 21270, 21297, 21286, 21325, 21345, 21314, 21371, 20314, '', '', 21336, 21318, 21326, 21402, 21386];
-var opponents = ['Shock', 'Dynasty', 'Charge', 'Fusion', 'Dragons', 'Dragons', 'Uprising', '', '', '', 'Defiant', 'Eternal', 'Titans', 'Dynasty', 'Valiant', 'Outlaws', 'Mayhem', 'Titans', '', '', 'Gladiator', 'Justice', 'Hunters', 'Titans', 'Spark'];
-var scores1 = [0, 3, 0, 3, 3, 4, 2, '', '', '', 4, 2, 0, 0, 4, 3, 3, 0, '', '', 0, 3, 1, 0, 0];
-var scores2 = [4, 1, 4, 1, 2, 0, 3, '', '', '', 0, 1, 4, 4, 0, 1, 1, 3, '', '', 4, 0, 3, 4, 3];
+var matchIds = [21126, 21271, 21272, 21282, 21245, 21226, 21267, '', '', '', 21270, 21297, 21286, 21325, 21345, 21314, 21371, 20314, '', '', 21336, 21318, 21326, 21402, 21386, 21320];
+var opponents = ['Shock', 'Dynasty', 'Charge', 'Fusion', 'Dragons', 'Dragons', 'Uprising', '', '', '', 'Defiant', 'Eternal', 'Titans', 'Dynasty', 'Valiant', 'Outlaws', 'Mayhem', 'Titans', '', '', 'Gladiator', 'Justice', 'Hunters', 'Titans', 'Spark', 'Hunters'];
+var scores1 = [0, 3, 0, 3, 3, 4, 2, '', '', '', 4, 2, 0, 0, 4, 3, 3, 0, '', '', 0, 3, 1, 0, 0, 0];
+var scores2 = [4, 1, 4, 1, 2, 0, 3, '', '', '', 0, 1, 4, 4, 0, 1, 1, 3, '', '', 4, 0, 3, 4, 3, 4];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -692,19 +692,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4', 'Stage 3, Match 5'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4', 'Stage 3, Match 5', 'Stage 3, Match 6'],
     datasets: [{
       backgroundColor: '#0C2340',
       borderColor: '#0072CE',
-      data: [2238, 2556, 2270, 2468, 2582, 2787, 2689, 2689, 2689, 2689, 2917, 2854, 2754, 2586, 2742, 2764, 2745, 2701, 2701, 2701, 2531, 2596, 2475, 2434, 2411],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6],
+      data: [2238, 2556, 2270, 2468, 2582, 2787, 2689, 2689, 2689, 2689, 2917, 2854, 2754, 2586, 2742, 2764, 2745, 2701, 2701, 2701, 2531, 2596, 2475, 2434, 2411, 2341],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2109, 2069, 2069, 2069],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2109, 2069, 2069, 2069, 2069],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -713,7 +713,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456, 3506, 3441],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456, 3506, 3441, 3441],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
