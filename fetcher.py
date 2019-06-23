@@ -228,7 +228,7 @@ def fill_availabilities(games: List[CSVGame]) -> List[CSVGame]:
         match_key2 = (game.stage, len(match_ids[key2]))
 
         player_set1 = set(availabilities[match_key1][game.team1])
-        player_set2 = set(availabilities[match_key1][game.team2])
+        player_set2 = set(availabilities[match_key2][game.team2])
 
         if game.roster1:
             for player in split_names(game.roster1):
