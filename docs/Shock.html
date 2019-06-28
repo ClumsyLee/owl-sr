@@ -810,10 +810,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21126, 21128, 21244, 21262, 21273, 21255, 21236, 20304, 20307, 20306, 21238, 21269, 21331, 21306, 21351, 21298, 21316, 20311, 20315, 20316, 21300, 21392, 21327, 21378, 21412, ''];
-var opponents = ['Fuel', 'Gladiator', 'Titans', 'Spark', 'Justice', 'Excelsior', 'Eternal', 'Defiant', 'Fusion', 'Titans', 'Valiant', 'Charge', 'Charge', 'Defiant', 'Spark', 'Fusion', 'Dragons', 'Dragons', 'Spark', 'Titans', 'Reign', 'Outlaws', 'Dynasty', 'Uprising', 'Mayhem', ''];
-var scores1 = [4, 2, 1, 3, 4, 0, 3, 3, 4, 3, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 2, 4, 4, 4, ''];
-var scores2 = [0, 3, 3, 1, 0, 4, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 3, 0, 0, 0, ''];
+var matchIds = [21126, 21128, 21244, 21262, 21273, 21255, 21236, 20304, 20307, 20306, 21238, 21269, 21331, 21306, 21351, 21298, 21316, 20311, 20315, 20316, 21300, 21392, 21327, 21378, 21412, '', ''];
+var opponents = ['Fuel', 'Gladiator', 'Titans', 'Spark', 'Justice', 'Excelsior', 'Eternal', 'Defiant', 'Fusion', 'Titans', 'Valiant', 'Charge', 'Charge', 'Defiant', 'Spark', 'Fusion', 'Dragons', 'Dragons', 'Spark', 'Titans', 'Reign', 'Outlaws', 'Dynasty', 'Uprising', 'Mayhem', '', ''];
+var scores1 = [4, 2, 1, 3, 4, 0, 3, 3, 4, 3, 4, 4, 4, 4, 4, 4, 4, 3, 4, 4, 3, 2, 4, 4, 4, '', ''];
+var scores2 = [0, 3, 3, 1, 0, 4, 1, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 2, 3, 0, 0, 0, '', ''];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -831,19 +831,19 @@ var chart = new Chart(ctx.getContext('2d'), {
 
   // The data for our dataset
   data: {
-    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4', 'Stage 3, Match 5', 'Stage 3, Match 6'],
+    labels: ['Stage 1, Match 1', 'Stage 1, Match 2', 'Stage 1, Match 3', 'Stage 1, Match 4', 'Stage 1, Match 5', 'Stage 1, Match 6', 'Stage 1, Match 7', 'Stage 1 Title Matches, Match 1', 'Stage 1 Title Matches, Match 2', 'Stage 1 Title Matches, Match 3', 'Stage 2, Match 1', 'Stage 2, Match 2', 'Stage 2, Match 3', 'Stage 2, Match 4', 'Stage 2, Match 5', 'Stage 2, Match 6', 'Stage 2, Match 7', 'Stage 2 Title Matches, Match 1', 'Stage 2 Title Matches, Match 2', 'Stage 2 Title Matches, Match 3', 'Stage 3, Match 1', 'Stage 3, Match 2', 'Stage 3, Match 3', 'Stage 3, Match 4', 'Stage 3, Match 5', 'Stage 3, Match 6', 'Stage 3, Match 7'],
     datasets: [{
       backgroundColor: '#75787B',
       borderColor: '#FC4C02',
-      data: [2836, 2757, 2743, 2786, 2861, 2706, 2711, 2876, 3071, 3105, 3212, 3263, 3303, 3355, 3418, 3500, 3567, 3517, 3594, 3686, 3540, 3243, 3362, 3381, 3406, 3406],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0],
+      data: [2836, 2757, 2743, 2786, 2861, 2706, 2711, 2876, 3071, 3105, 3212, 3263, 3303, 3355, 3418, 3500, 3567, 3517, 3594, 3686, 3540, 3243, 3362, 3381, 3406, 3406, 3406],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 0],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2109, 2069, 2069, 2069, 2069],
+      data: [2151, 2215, 2224, 2112, 2145, 2099, 2126, 2126, 2126, 2126, 2167, 2107, 2064, 2012, 2075, 2072, 2100, 2100, 2100, 2100, 2142, 2109, 2069, 2069, 2069, 2069, 2069],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
@@ -852,7 +852,7 @@ var chart = new Chart(ctx.getContext('2d'), {
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       borderColor: 'rgba(0, 0, 0, 0)',
-      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456, 3506, 3441, 3406],
+      data: [2914, 2900, 2979, 3120, 3149, 3031, 3200, 3280, 3452, 3411, 3490, 3418, 3357, 3484, 3537, 3500, 3567, 3600, 3612, 3686, 3540, 3455, 3456, 3506, 3441, 3406, 3406],
       pointRadius: 0,
       pointHitRadius: 0,
       pointHoverRadius: 0,
