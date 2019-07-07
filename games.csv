@@ -931,8 +931,11 @@ match_id,stage,start_time,team1,team2,match_format,game_id,game_number,map_name,
 21406,Stage 3,2019-07-07 11:00:00,WAS,GZC,regular,25227,2,volskaya,0,2,Ado|Corey|Hyeonu|Janus|Sansam|sleepy,Chara|HOTBA|Happy|Rio|nero|shu,Ado|ArK|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus|sleepy,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu
 21406,Stage 3,2019-07-07 11:00:00,WAS,GZC,regular,25228,3,eichenwalde,0,3,Ado|ArK|Corey|Gido|Janus|Stratus,Chara|HOTBA|Happy|Rio|nero|shu,Ado|ArK|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus|sleepy,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu
 21406,Stage 3,2019-07-07 11:00:00,WAS,GZC,regular,25156,4,gibraltar,2,3,Ado|ArK|Corey|Janus|Stratus|sleepy,HOTBA|Happy|Onlywish|Rio|Rise|nero,Ado|ArK|Corey|Fahzix|Gido|Hyeonu|Janus|Sansam|Stratus|sleepy,Chara|Eileen|HOTBA|Happy|Kyb|Onlywish|Rio|Rise|nero|shu
-21442,Stage 3,2019-07-07 13:15:00,FLA,ATL,regular,,,,,,,,DPI|Fate|GARGOYLE|HaGoPeun|Kris|RaiN|SNT|SWoN|bqb|byrem|sayaplayer|xepheR,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
-21415,Stage 3,2019-07-07 15:00:00,NYE,TOR,regular,,,,,,,,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Aid|Asher|Gods|Logix|Mangachu|Neko|RoKy|Yakpung|im37|ivy|sharyk
+21442,Stage 3,2019-07-07 13:15:00,FLA,ATL,regular,25157,1,ilios,1,2,Fate|Kris|bqb|byrem|sayaplayer|xepheR,Dogman|Erster|Masaa|Pokpo|babybay|frd,DPI|Fate|GARGOYLE|HaGoPeun|Kris|RaiN|SNT|SWoN|bqb|byrem|sayaplayer|xepheR,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21442,Stage 3,2019-07-07 13:15:00,FLA,ATL,regular,25158,2,horizon-lunar-colony,2,3,Fate|Kris|bqb|byrem|sayaplayer|xepheR,Dogman|Erster|Masaa|Pokpo|babybay|frd,DPI|Fate|GARGOYLE|HaGoPeun|Kris|RaiN|SNT|SWoN|bqb|byrem|sayaplayer|xepheR,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21442,Stage 3,2019-07-07 13:15:00,FLA,ATL,regular,25159,3,eichenwalde,1,3,Fate|HaGoPeun|Kris|bqb|sayaplayer|xepheR,Dogman|Erster|Masaa|Pokpo|babybay|frd,DPI|Fate|GARGOYLE|HaGoPeun|Kris|RaiN|SNT|SWoN|bqb|byrem|sayaplayer|xepheR,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21442,Stage 3,2019-07-07 13:15:00,FLA,ATL,regular,25160,4,dorado,1,2,Fate|HaGoPeun|Kris|bqb|sayaplayer|xepheR,Dogman|Erster|Masaa|NLaaeR|Pokpo|babybay,DPI|Fate|GARGOYLE|HaGoPeun|Kris|RaiN|SNT|SWoN|bqb|byrem|sayaplayer|xepheR,Daco|Dogman|Erster|Gator|Kodak|Masaa|NLaaeR|Pokpo|babybay|frd
+21415,Stage 3,2019-07-07 15:05:00,NYE,TOR,regular,,,,,,,,Anamo|Fl0w3R|JJONAK|Libero|Mano|MekO|Nenne|Pine|Saebyeolbe,Aid|Asher|Gods|Logix|Mangachu|Neko|RoKy|Yakpung|im37|ivy|sharyk
 21358,Stage 4,2019-07-25 16:00:00,HOU,PAR,regular,,,,,,,,,
 21423,Stage 4,2019-07-25 17:45:00,GLA,NYE,regular,,,,,,,,,
 21340,Stage 4,2019-07-25 19:30:00,GZC,PHI,regular,,,,,,,,,
