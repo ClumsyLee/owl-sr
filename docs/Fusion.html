@@ -56,6 +56,11 @@
 <h5 class="pt-4">Upcoming Matches</h5>
 <hr>
 <div class="row">
+  
+</div>
+<h5 class="pt-4">Stage 3</h5>
+<hr>
+<div class="row">
   <div class="col-lg-4 col-md-6">
   <table class="table" id="21432">
     <thead>
@@ -67,28 +72,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr scope="row" class="loss">
+      <tr scope="row" class="loss lost">
   <th class="text-right compact"><img src="imgs/Fusion.png" alt="Fusion Logo" width="30"></th>
   <td class="pl-0"><a href="/Fusion" class="team" data-toggle="tooltip" data-placement="right" title="2525 ± 312">Fusion</a></td>
-  <td></td>
+  <td>1</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.31);">31%</td>
   <td class="text-center">-0.9</td>
 </tr>
       <tr scope="row" class="win">
   <th class="text-right compact"><img src="imgs/Dragons.png" alt="Dragons Logo" width="30"></th>
   <td class="pl-0"><a href="/Dragons" class="team" data-toggle="tooltip" data-placement="right" title="2729 ± 339">Dragons</a></td>
-  <td></td>
+  <td>3</td>
   <td class="text-center" style="background-color: rgba(255, 137, 0, 0.69);">69%</td>
   <td class="text-center">+0.9</td>
 </tr>
     </tbody>
   </table>
-</div>
-</div>
-<h5 class="pt-4">Stage 3</h5>
-<hr>
-<div class="row">
-  <div class="col-lg-4 col-md-6">
+</div><div class="col-lg-4 col-md-6">
   <table class="table" id="21380">
     <thead>
       <tr class="text-center">
@@ -698,10 +698,10 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 <script>
-var matchIds = [21211, 21261, 21232, 21282, 21252, 21246, 21256, 20303, 20307, '', 21313, 21247, 21277, 21332, 21285, 21250, 21298, '', '', '', 21349, 21393, 21337, 21413, 21310, 21380, ''];
-var opponents = ['Spitfire', 'Reign', 'Mayhem', 'Fuel', 'Justice', 'Valiant', 'Eternal', 'Reign', 'Shock', '', 'Excelsior', 'Mayhem', 'Defiant', 'Spitfire', 'Excelsior', 'Outlaws', 'Shock', '', '', '', 'Spark', 'Gladiator', 'Uprising', 'Reign', 'Uprising', 'Justice', ''];
-var scores1 = [3, 3, 1, 1, 3, 3, 3, 3, 0, '', 0, 3, 3, 1, 1, 4, 0, '', '', '', 0, 1, 2, 3, 3, 3, ''];
-var scores2 = [1, 2, 2, 3, 1, 2, 1, 1, 4, '', 4, 1, 1, 2, 3, 0, 4, '', '', '', 4, 3, 1, 2, 2, 1, ''];
+var matchIds = [21211, 21261, 21232, 21282, 21252, 21246, 21256, 20303, 20307, '', 21313, 21247, 21277, 21332, 21285, 21250, 21298, '', '', '', 21349, 21393, 21337, 21413, 21310, 21380, 21432];
+var opponents = ['Spitfire', 'Reign', 'Mayhem', 'Fuel', 'Justice', 'Valiant', 'Eternal', 'Reign', 'Shock', '', 'Excelsior', 'Mayhem', 'Defiant', 'Spitfire', 'Excelsior', 'Outlaws', 'Shock', '', '', '', 'Spark', 'Gladiator', 'Uprising', 'Reign', 'Uprising', 'Justice', 'Dragons'];
+var scores1 = [3, 3, 1, 1, 3, 3, 3, 3, 0, '', 0, 3, 3, 1, 1, 4, 0, '', '', '', 0, 1, 2, 3, 3, 3, 1];
+var scores2 = [1, 2, 2, 3, 1, 2, 1, 1, 4, '', 4, 1, 1, 2, 3, 0, 4, '', '', '', 4, 3, 1, 2, 2, 1, 3];
 
 function gotoHash(hash) {
     window.location.hash = '#';
@@ -723,10 +723,10 @@ var chart = new Chart(ctx.getContext('2d'), {
     datasets: [{
       backgroundColor: '#000000',
       borderColor: '#FF9E1B',
-      data: [2707, 2810, 2616, 2482, 2580, 2568, 2637, 2758, 2587, 2587, 2484, 2535, 2624, 2567, 2589, 2716, 2645, 2645, 2645, 2645, 2503, 2466, 2459, 2520, 2502, 2525, 2525],
-      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 0],
-      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 0],
-      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 0],
+      data: [2707, 2810, 2616, 2482, 2580, 2568, 2637, 2758, 2587, 2587, 2484, 2535, 2624, 2567, 2589, 2716, 2645, 2645, 2645, 2645, 2503, 2466, 2459, 2520, 2502, 2525, 2489],
+      pointRadius: [4, 4, 4, 4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4],
+      pointHitRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6],
+      pointHoverRadius: [6, 6, 6, 6, 6, 6, 6, 6, 6, 0, 6, 6, 6, 6, 6, 6, 6, 0, 0, 0, 6, 6, 6, 6, 6, 6, 6],
       fill: false
     }, {
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
