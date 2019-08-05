@@ -4,6 +4,7 @@ from csv import (reader as csv_reader,
                  DictReader,
                  DictWriter)
 from datetime import datetime
+from pprint import pprint
 from typing import Dict, List, NamedTuple, Set, Tuple
 
 from game import Game, TEAMS
@@ -108,7 +109,17 @@ def parse_game(raw_game, base_game: CSVGame, team1_id: int,
 
     game_id = raw_game['id']
     game_number = raw_game['number']
-    map_name = raw_game['attributes']['map']
+    if 'map' in raw_game['attributes']:
+        map_name = raw_game['attributes']['map']
+    else:
+        map_guid = raw_game['attributes']['mapGuid']
+        if map_guid == '0x08000000000002AF':
+            map_name = 'hollywood'
+        elif map_guid == '0x0800000000000756':
+            map_name = 'junkertown'
+        else:
+            print('Failed to get map for', (base_game, game_number, map_guid))
+            exit()
     score = raw_game['points']
 
     roster1 = []
