@@ -361,8 +361,8 @@ def render_index(predictor, future_matches) -> None:
   <th class="text-right">{render_team_logo(team)}</th>
   <td class="pl-0">{render_team_link(predictor, team)}</td>
   <td class="text-center">{win}</td>
-  <td class="text-center d-none d-sm-table-cell">{loss}</td>
-  <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
+  <td class="text-center">{loss}</td>
+  <td class="text-center">{map_diff:+}</td>
   <td class="text-center d-none d-sm-table-cell">{season_win}</td>
   <td class="text-center d-none d-sm-table-cell">{season_loss}</td>
   <td class="text-center d-none d-sm-table-cell">{season_map_diff:+}</td>
@@ -378,8 +378,8 @@ def render_index(predictor, future_matches) -> None:
           <th scope="col" class="compact"></th>
           <th scope="col"></th>
           <th scope="col" class="compacter">stage<br>win</th>
-          <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
-          <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
+          <th scope="col" class="compacter">loss</th>
+          <th scope="col" class="compacter">map +/-</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">season<br>win</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
