@@ -363,8 +363,6 @@ def render_index(predictor, future_matches) -> None:
   <td class="text-center">{win}</td>
   <td class="text-center d-none d-sm-table-cell">{loss}</td>
   <td class="text-center d-none d-sm-table-cell">{map_diff:+}</td>
-  {render_chance_cell(p_title)}
-  {render_chance_cell(p_top1)}
   <td class="text-center d-none d-sm-table-cell">{season_win}</td>
   <td class="text-center d-none d-sm-table-cell">{season_loss}</td>
   <td class="text-center d-none d-sm-table-cell">{season_map_diff:+}</td>
@@ -382,8 +380,6 @@ def render_index(predictor, future_matches) -> None:
           <th scope="col" class="compacter">stage<br>win</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
-          <th scope="col" class="compact">playoff</th>
-          <th scope="col" class="compact">champion</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">season<br>win</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">loss</th>
           <th scope="col" class="compacter d-none d-sm-table-cell">map +/-</th>
